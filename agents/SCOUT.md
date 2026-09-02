@@ -21,17 +21,28 @@ Work the sources in this order and stop when you have 10 candidates or exhaust t
 budget (12 searches, 15 fetches). Use the domain-specific hunting grounds in the table
 below before the generic method:
 
-1. **Community lists first.** r/BuyItForLife, r/homeassistant, r/dumbphones-adjacent
-   threads, Home Assistant forum "works locally" threads, ESPHome and Zigbee2MQTT
-   supported-device indexes, the Hacker News "dumb appliance" recurring threads.
-   These are where the answers already are. Search here before you search retailers.
-2. **Manufacturers known for manual controls** in this category — commercial and
-   contractor-grade lines, restaurant supply, laboratory supply, and Amish/off-grid
-   suppliers all systematically sell radio-free equipment.
-3. **"No app required" / "manual control" / "no wifi" phrasing** on retailer and
+1. **Search the commercial equivalent first.** This is the highest-yield move in the
+   whole procedure and it is not obvious, so it goes first. For any consumer category
+   that has gone cloud-first, find what a business buys instead: restaurant and food
+   service supply, commercial laundry, contractor and electrical supply houses,
+   laboratory supply, digital signage, hospitality and property-management SKUs. A
+   business will not tolerate equipment that stops working when a vendor's server does,
+   and that intolerance keeps mechanical and local-only controls in production long after
+   the consumer line abandoned them. In Phase 0 this pattern produced verified records in
+   three unrelated domains — laundry, kitchen and lighting — and it is frequently *cheaper*
+   than the smart consumer product, not more expensive.
+
+2. **Community lists.** r/BuyItForLife, r/homeassistant, Home Assistant forum
+   "works locally" threads, ESPHome and Zigbee2MQTT supported-device indexes, the
+   recurring Hacker News "dumb appliance" threads. These are where the answers already
+   are. Search here before you search retailers.
+3. **Off-grid and Amish suppliers**, which systematically stock radio-free equipment
+   across kitchen, laundry, lighting and climate.
+4. **"No app required" / "manual control" / "no wifi" phrasing** on retailer and
    manufacturer pages.
-4. **Negative space:** find the top 5 smart devices in this category, then find what
-   their owners buy instead when they refuse the app.
+5. **Negative space:** find the top 5 smart devices in this category, then find what
+   their owners buy instead when they refuse the app. One-star reviews mentioning "now
+   requires an account" are a direct index into both this list and the vendor ledger.
 
 ## Output
 
@@ -88,10 +99,12 @@ about this exact question for this exact domain.
 
 Two heuristics that generalize across every domain:
 
-1. **Commercial and contractor-grade lines are systematically dumber than consumer lines.**
-   A business will not tolerate equipment that stops working when a vendor's server does.
-   When a consumer category has gone fully cloud, the commercial equivalent is usually the
-   answer, and often costs less than the smart consumer version.
-2. **Find the top 5 cloud-bound products in the subcategory, then find what their angriest
-   reviewers bought instead.** One-star reviews mentioning "now requires an account" are a
-   direct index into both this list and the vendor ledger.
+1. **Within a product line, the model number is the whole story.** Vendors routinely sell
+   the radio-free and radio-equipped versions side by side under nearly identical names —
+   Brother HL-L2400D vs HL-L2405W, Honeywell T4 Pro vs T5/T6, VIOFO A119 V3 vs A139,
+   Amana RCS10DSE vs RCS10TS. This is good news twice over: the dumb option usually still
+   exists, and the vendor's own FCC filings for the connected sibling become the control
+   that proves the quiet one has no radio.
+2. **A vendor that files FCC grants for some models and not others is a gift.** It means
+   absence of a grant is meaningful. Prefer such vendors when you have a choice of
+   candidates, because their records verify faster and more defensibly.
