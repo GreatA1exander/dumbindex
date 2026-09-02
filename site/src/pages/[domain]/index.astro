@@ -13,6 +13,7 @@ const subs = populatedSubs(domain.slug);
 <Base title={domain.name} current={domain.slug} description={domain.blurb}>
   <h1>{domain.name}</h1>
   <p class="lede">{domain.blurb}</p>
+  {domain.problem && <p class="lede">{domain.problem}</p>}
 
   {subs.length > 0 && (
     <p class="filters">

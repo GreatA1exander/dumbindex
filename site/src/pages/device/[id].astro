@@ -1,7 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import Tier from "../../components/Tier.astro";
-import { devices, TIERS, domainBySlug, ageDays, slugify } from "../../lib/data.js";
+import { devices, TIERS, domainBySlug, ageDays, slugify, vendorFor } from "../../lib/data.js";
 
 export function getStaticPaths() {
   return devices.map((d) => ({ params: { id: d.model_id }, props: { d } }));
@@ -9,6 +9,7 @@ export function getStaticPaths() {
 const { d } = Astro.props;
 const dom = domainBySlug.get(d.category);
 const age = ageDays(d.last_verified);
+const vendor = vendorFor(d.make);
 const fmt = (v) => (v == null ? "unknown" : Array.isArray(v) ? (v.length ? v.join(", ") : "none") : String(v).replace(/_/g, " "));
 ---
 <Base title={`${d.make} ${d.model}`} description={d.the_unplug_test?.slice(0, 155)}>
@@ -44,7 +45,10 @@ const fmt = (v) => (v == null ? "unknown" : Array.isArray(v) ? (v.length ? v.joi
       <tr><th>Parts available</th><td>{fmt(d.repairability?.parts_available)}</td></tr>
       <tr><th>Availability</th><td>{fmt(d.availability)}</td></tr>
       <tr><th>Price band</th><td>{d.price_band ?? "unknown"}{d.price_observed && <span class="age"> (seen {d.price_observed})</span>}</td></tr>
-      <tr><th>Vendor risk</th><td>{d.vendor_risk == null ? "unknown" : `${d.vendor_risk} / 3`}</td></tr>
+      <tr><th>Vendor risk</th><td>
+        {d.vendor_risk == null ? "not assessed" : <>{d.vendor_risk} / 3</>}
+        {vendor && <> — <a href={`/vendors/#${vendor.slug}`}>{vendor.incidents.length} incident{vendor.incidents.length === 1 ? "" : "s"} on record</a></>}
+      </td></tr>
     </tbody>
   </table>
 

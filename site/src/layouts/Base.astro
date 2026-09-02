@@ -28,6 +28,7 @@ const full = title ? `${title} — dumbindex` : "dumbindex";
             <li><a href={`/${d.slug}/`} aria-current={current === d.slug ? "page" : undefined}>{d.name}</a></li>
           ))}
           <li><a href="/changed/" aria-current={current === "changed" ? "page" : undefined}>Changed</a></li>
+          <li><a href="/vendors/" aria-current={current === "vendors" ? "page" : undefined}>Vendors</a></li>
           <li><a href="/method/" aria-current={current === "method" ? "page" : undefined}>Method</a></li>
         </ul>
       </div>

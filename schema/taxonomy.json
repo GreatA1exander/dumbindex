@@ -1,47 +1,314 @@
 {
-  "_comment": "Single source of truth. The site builds its navigation from this file; SCOUT rotates categories through it; the schema's category enum must match these slugs. Adding a domain or subcategory is a human decision (PRINCIPLES §6).",
+  "_comment": "Single source of truth. The site builds its navigation from this file; SCOUT rotates categories through it; the schema's category enum must match these slugs. Adding a domain or subcategory is a human decision (PRINCIPLES \u00a76).",
   "version": 1,
   "domains": [
-    {"slug":"kitchen","name":"Kitchen & Cooking","blurb":"Refrigeration, cooking, and countertop appliances.",
-     "subcategories":["refrigerator","freezer","range","cooktop","wall oven","microwave","dishwasher","kettle","toaster","coffee maker","blender","food processor","stand mixer","pressure cooker","air fryer","rice cooker","sous vide","range hood","garbage disposal","ice maker","water filter"]},
-
-    {"slug":"laundry","name":"Laundry & Cleaning","blurb":"Washers, dryers, vacuums, and floor care.",
-     "subcategories":["washing machine","clothes dryer","vacuum","robot vacuum","carpet cleaner","steam cleaner","iron","garment steamer","sewing machine"]},
-
-    {"slug":"climate","name":"Climate & Air","blurb":"Heating, cooling, and air quality.",
-     "subcategories":["thermostat","window AC","portable AC","mini split","space heater","fan","ceiling fan","humidifier","dehumidifier","air purifier","air quality monitor","water heater","radiator valve"]},
-
-    {"slug":"lighting","name":"Lighting & Electrical","blurb":"Bulbs, switches, outlets, and power.",
-     "subcategories":["light bulb","light fixture","lamp","wall switch","dimmer","smart plug alternative","outlet timer","mechanical timer","power strip","surge protector","UPS","extension cord","generator transfer switch"]},
-
-    {"slug":"security","name":"Security & Access","blurb":"Locks, cameras, alarms, and entry.",
-     "subcategories":["door lock","deadbolt","padlock","doorbell","intercom","indoor camera","outdoor camera","NVR","alarm panel","door sensor","motion sensor","glass break sensor","safe","garage door opener","gate opener","key fob"]},
-
-    {"slug":"automotive","name":"Automotive","blurb":"Dashcams, head units, and everything in the car.",
-     "subcategories":["dashcam","backup camera","head unit","car stereo","GPS navigation","OBD-II scanner","radar detector","tire inflator","tire pressure gauge","jump starter","battery charger","car alarm","EV charger","tracker","CB radio"]},
-
-    {"slug":"av","name":"Audio & Video","blurb":"Displays, speakers, and playback.",
-     "subcategories":["television","monitor","projector","AV receiver","amplifier","powered speaker","bookshelf speaker","soundbar","headphones","turntable","CD player","radio","shortwave radio","media player","DVD/Blu-ray player","microphone","mixer"]},
-
-    {"slug":"computing","name":"Computing & Networking","blurb":"Routers, printers, storage, and peripherals.",
-     "subcategories":["router","access point","switch","modem","NAS","external drive","printer","scanner","label printer","keyboard","mouse","KVM","docking station","webcam","external monitor"]},
-
-    {"slug":"photo","name":"Cameras & Optics","blurb":"Photography, trail cameras, and optics.",
-     "subcategories":["digital camera","film camera","action camera","trail camera","instant camera","camcorder","flash","light meter","binoculars","rifle scope","spotting scope","telescope","drone","gimbal"]},
-
-    {"slug":"health","name":"Health & Personal Care","blurb":"Measurement and personal devices.",
-     "subcategories":["bathroom scale","blood pressure monitor","thermometer","pulse oximeter","glucose meter","CPAP","nebulizer","hearing aid","electric toothbrush","shaver","hair clipper","massager","TENS unit","heating pad"]},
-
-    {"slug":"baby-pet","name":"Baby & Pet","blurb":"Monitors, feeders, and care devices.",
-     "subcategories":["baby monitor","audio monitor","bottle warmer","breast pump","baby scale","pet feeder","pet water fountain","pet door","pet camera","pet tracker","aquarium controller","chicken coop door"]},
-
-    {"slug":"tools","name":"Tools & Outdoor","blurb":"Power tools, yard, and workshop.",
-     "subcategories":["drill","saw","battery platform","air compressor","pressure washer","lawn mower","robot mower","string trimmer","leaf blower","snow blower","chainsaw","generator","welder","multimeter","weather station","irrigation controller","sprinkler timer","pool controller","grill","smoker","thermometer probe"]},
-
-    {"slug":"wearables","name":"Watches & Wearables","blurb":"Timekeeping and body-worn devices.",
-     "subcategories":["wristwatch","alarm clock","clock radio","stopwatch","fitness tracker","heart rate monitor","GPS watch","dive computer","hearing protection"]},
-
-    {"slug":"office","name":"Office & Hobby","blurb":"Desk equipment and hobbyist gear.",
-     "subcategories":["shredder","calculator","typewriter","label maker","laminator","e-reader","digital audio recorder","musical instrument","synthesizer","guitar pedal","3D printer","CNC","soldering station","bench power supply","oscilloscope"]}
+    {
+      "slug": "kitchen",
+      "name": "Kitchen & Cooking",
+      "blurb": "Refrigeration, cooking, and countertop appliances.",
+      "subcategories": [
+        "refrigerator",
+        "freezer",
+        "range",
+        "cooktop",
+        "wall oven",
+        "microwave",
+        "dishwasher",
+        "kettle",
+        "toaster",
+        "coffee maker",
+        "blender",
+        "food processor",
+        "stand mixer",
+        "pressure cooker",
+        "air fryer",
+        "rice cooker",
+        "sous vide",
+        "range hood",
+        "garbage disposal",
+        "ice maker",
+        "water filter"
+      ]
+    },
+    {
+      "slug": "laundry",
+      "name": "Laundry & Cleaning",
+      "blurb": "Washers, dryers, vacuums, and floor care.",
+      "subcategories": [
+        "washing machine",
+        "clothes dryer",
+        "vacuum",
+        "robot vacuum",
+        "carpet cleaner",
+        "steam cleaner",
+        "iron",
+        "garment steamer",
+        "sewing machine"
+      ]
+    },
+    {
+      "slug": "climate",
+      "name": "Climate & Air",
+      "blurb": "Heating, cooling, and air quality.",
+      "subcategories": [
+        "thermostat",
+        "window AC",
+        "portable AC",
+        "mini split",
+        "space heater",
+        "fan",
+        "ceiling fan",
+        "humidifier",
+        "dehumidifier",
+        "air purifier",
+        "air quality monitor",
+        "water heater",
+        "radiator valve"
+      ],
+      "problem": "Thermostats are a bright spot. The non-connected models are cheap, widely sold, and sit right next to their Wi-Fi siblings on the same shelf \u2014 so the only thing standing between you and a thermostat that will never need an account is knowing the model number."
+    },
+    {
+      "slug": "lighting",
+      "name": "Lighting & Electrical",
+      "blurb": "Bulbs, switches, outlets, and power.",
+      "subcategories": [
+        "light bulb",
+        "light fixture",
+        "lamp",
+        "wall switch",
+        "dimmer",
+        "smart plug alternative",
+        "outlet timer",
+        "mechanical timer",
+        "power strip",
+        "surge protector",
+        "UPS",
+        "extension cord",
+        "generator transfer switch"
+      ]
+    },
+    {
+      "slug": "security",
+      "name": "Security & Access",
+      "blurb": "Locks, cameras, alarms, and entry.",
+      "subcategories": [
+        "door lock",
+        "deadbolt",
+        "padlock",
+        "doorbell",
+        "intercom",
+        "indoor camera",
+        "outdoor camera",
+        "NVR",
+        "alarm panel",
+        "door sensor",
+        "motion sensor",
+        "glass break sensor",
+        "safe",
+        "garage door opener",
+        "gate opener",
+        "key fob"
+      ],
+      "problem": "The category with the most to lose. Cameras, locks and openers are exactly where a vendor's decision to shut down a server or revoke an API has the sharpest consequences, and several have done it. Prefer ONVIF cameras with a recorder you own, and openers whose wall button was never in question."
+    },
+    {
+      "slug": "automotive",
+      "name": "Automotive",
+      "blurb": "Dashcams, head units, and everything in the car.",
+      "subcategories": [
+        "dashcam",
+        "backup camera",
+        "head unit",
+        "car stereo",
+        "GPS navigation",
+        "OBD-II scanner",
+        "radar detector",
+        "tire inflator",
+        "tire pressure gauge",
+        "jump starter",
+        "battery charger",
+        "car alarm",
+        "EV charger",
+        "tracker",
+        "CB radio"
+      ],
+      "problem": "Dashcams split cleanly: the ones that write to an SD card and the ones that want a subscription. Cellular and cloud models charge monthly for storage you could hold in your hand, and several vendors have made the app the only way to change a setting. The good news is that this is one of the few categories where the dumb option is also the cheaper and better-performing one."
+    },
+    {
+      "slug": "av",
+      "name": "Audio & Video",
+      "blurb": "Displays, speakers, and playback.",
+      "subcategories": [
+        "television",
+        "monitor",
+        "projector",
+        "AV receiver",
+        "amplifier",
+        "powered speaker",
+        "bookshelf speaker",
+        "soundbar",
+        "headphones",
+        "turntable",
+        "CD player",
+        "radio",
+        "shortwave radio",
+        "media player",
+        "DVD/Blu-ray player",
+        "microphone",
+        "mixer"
+      ],
+      "problem": "Televisions are nearly a lost category. Every major brand has stopped selling consumer sets without a smart platform, and the platform is increasingly the product: home screens sell placement, and some sets analyse what is on screen. What remains is small non-smart panels, commercial signage displays, or buying a smart set and never giving it Wi-Fi."
+    },
+    {
+      "slug": "computing",
+      "name": "Computing & Networking",
+      "blurb": "Routers, printers, storage, and peripherals.",
+      "subcategories": [
+        "router",
+        "access point",
+        "switch",
+        "modem",
+        "NAS",
+        "external drive",
+        "printer",
+        "scanner",
+        "label printer",
+        "keyboard",
+        "mouse",
+        "KVM",
+        "docking station",
+        "webcam",
+        "external monitor"
+      ],
+      "problem": "Printers are the worst offenders on this site. Manufacturers have shipped firmware that disables third-party cartridges on machines customers already owned, gated ink behind subscriptions, and made accounts mandatory to finish setup. The reliable escape is a printer with no network interface at all \u2014 if it cannot reach the manufacturer, none of this can happen to it."
+    },
+    {
+      "slug": "photo",
+      "name": "Cameras & Optics",
+      "blurb": "Photography, trail cameras, and optics.",
+      "subcategories": [
+        "digital camera",
+        "film camera",
+        "action camera",
+        "trail camera",
+        "instant camera",
+        "camcorder",
+        "flash",
+        "light meter",
+        "binoculars",
+        "rifle scope",
+        "spotting scope",
+        "telescope",
+        "drone",
+        "gimbal"
+      ],
+      "problem": "Trail cameras divide on cellular versus SD card, and the SD card side wins on almost every axis: no subscription, no account, and batteries that last months instead of weeks because nothing is powering a radio."
+    },
+    {
+      "slug": "health",
+      "name": "Health & Personal Care",
+      "blurb": "Measurement and personal devices.",
+      "subcategories": [
+        "bathroom scale",
+        "blood pressure monitor",
+        "thermometer",
+        "pulse oximeter",
+        "glucose meter",
+        "CPAP",
+        "nebulizer",
+        "hearing aid",
+        "electric toothbrush",
+        "shaver",
+        "hair clipper",
+        "massager",
+        "TENS unit",
+        "heating pad"
+      ]
+    },
+    {
+      "slug": "baby-pet",
+      "name": "Baby & Pet",
+      "blurb": "Monitors, feeders, and care devices.",
+      "subcategories": [
+        "baby monitor",
+        "audio monitor",
+        "bottle warmer",
+        "breast pump",
+        "baby scale",
+        "pet feeder",
+        "pet water fountain",
+        "pet door",
+        "pet camera",
+        "pet tracker",
+        "aquarium controller",
+        "chicken coop door"
+      ]
+    },
+    {
+      "slug": "tools",
+      "name": "Tools & Outdoor",
+      "blurb": "Power tools, yard, and workshop.",
+      "subcategories": [
+        "drill",
+        "saw",
+        "battery platform",
+        "air compressor",
+        "pressure washer",
+        "lawn mower",
+        "robot mower",
+        "string trimmer",
+        "leaf blower",
+        "snow blower",
+        "chainsaw",
+        "generator",
+        "welder",
+        "multimeter",
+        "weather station",
+        "irrigation controller",
+        "sprinkler timer",
+        "pool controller",
+        "grill",
+        "smoker",
+        "thermometer probe"
+      ]
+    },
+    {
+      "slug": "wearables",
+      "name": "Watches & Wearables",
+      "blurb": "Timekeeping and body-worn devices.",
+      "subcategories": [
+        "wristwatch",
+        "alarm clock",
+        "clock radio",
+        "stopwatch",
+        "fitness tracker",
+        "heart rate monitor",
+        "GPS watch",
+        "dive computer",
+        "hearing protection"
+      ]
+    },
+    {
+      "slug": "office",
+      "name": "Office & Hobby",
+      "blurb": "Desk equipment and hobbyist gear.",
+      "subcategories": [
+        "shredder",
+        "calculator",
+        "typewriter",
+        "label maker",
+        "laminator",
+        "e-reader",
+        "digital audio recorder",
+        "musical instrument",
+        "synthesizer",
+        "guitar pedal",
+        "3D printer",
+        "CNC",
+        "soldering station",
+        "bench power supply",
+        "oscilloscope"
+      ]
+    }
   ]
 }

@@ -7,6 +7,16 @@ import { join, dirname } from "node:path";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../../..");
 
 export const taxonomy = JSON.parse(readFileSync(join(ROOT, "schema/taxonomy.json"), "utf8"));
+export const ledger = JSON.parse(readFileSync(join(ROOT, "data/vendors.json"), "utf8"));
+export const vendors = Object.entries(ledger.vendors ?? {})
+  .map(([slug, v]) => ({ slug, ...v }))
+  .sort((a, b) => b.vendor_risk - a.vendor_risk || a.name.localeCompare(b.name));
+export const riskScale = ledger._scale ?? {};
+
+// Match a device to its ledger entry by make. Vendors not in the ledger simply
+// have no entry yet — that is not the same as a clean record, and the UI says so.
+export const vendorFor = (make) =>
+  vendors.find((v) => v.name.toLowerCase().startsWith(String(make).toLowerCase().split(" ")[0]));
 export const domains = taxonomy.domains;
 export const domainBySlug = new Map(domains.map((d) => [d.slug, d]));
 

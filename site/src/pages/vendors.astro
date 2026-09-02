@@ -1,0 +1,54 @@
+---
+import Base from "../layouts/Base.astro";
+import { vendors, riskScale, devices } from "../lib/data.js";
+const count = (slug, name) => devices.filter((d) =>
+  d.make.toLowerCase().startsWith(name.toLowerCase().split(" ")[0])).length;
+---
+<Base title="Vendor ledger" current="vendors"
+      description="Dated, sourced incidents of manufacturers removing function from devices people already bought.">
+  <h1>Vendor ledger</h1>
+  <p class="lede">
+    A device's tier describes the hardware. This describes the company behind it — because
+    the most common way a good device goes bad is not wear, it is a decision made in an
+    office after you have already paid. Only dated, sourced incidents are recorded here.
+    Reputation is not evidence, and a vendor with a documented incident is never scored 0
+    no matter how good its current products are.
+  </p>
+
+  <h2>The scale</h2>
+  <table class="spec">
+    <tbody>
+      {Object.entries(riskScale).map(([n, desc]) => (
+        <tr><th>{n} / 3</th><td>{desc}</td></tr>
+      ))}
+    </tbody>
+  </table>
+
+  {vendors.map((v) => (
+    <section id={v.slug}>
+      <h2>{v.name} — {v.vendor_risk} / 3</h2>
+      <p>{v.summary}</p>
+      {v.incidents.length === 0 ? (
+        <p class="age">No incident on record. This means nothing was found, not that nothing happened.</p>
+      ) : (
+        <table class="spec">
+          <tbody>
+            {v.incidents.map((i) => (
+              <tr>
+                <th>{i.date}</th>
+                <td>
+                  {i.description}
+                  <br /><span class="evc">{i.class}</span> <a href={i.source} rel="nofollow">source</a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+      <p><strong>What to do:</strong> {v.verdict}</p>
+      {count(v.slug, v.name) > 0 && (
+        <p class="age">{count(v.slug, v.name)} device{count(v.slug, v.name) === 1 ? "" : "s"} from this vendor listed.</p>
+      )}
+    </section>
+  ))}
+</Base>
