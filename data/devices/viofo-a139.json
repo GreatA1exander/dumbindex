@@ -4,68 +4,81 @@
   "model": "A139",
   "category": "automotive",
   "subcategory": "dashcam",
-
   "tier": "D1",
-  "tier_rationale": "Has Wi-Fi and Bluetooth, but VIOFO operates no cloud service for it — the app connects peer-to-peer to the camera's own access point with no account, so the only network endpoint is hardware the owner controls.",
-
+  "tier_rationale": "Has Wi-Fi and Bluetooth, but VIOFO operates no cloud service for it \u2014 the app connects peer-to-peer to the camera's own access point with no account, so the only network endpoint is hardware the owner controls.",
   "status": "verified",
   "rejection_reason": null,
-
   "the_unplug_test": "Nothing changes. The camera records to its microSD card whether or not a phone is nearby, and there is no vendor server involved even when you do use the app. The Wi-Fi is the camera's own access point: your phone joins it directly to change settings or pull clips. VIOFO does not offer remote viewing, so there is no cloud feature to lose.",
-
   "account_required": "none",
   "works_offline": "fully",
   "offline_losses": [],
   "firmware_ota_forced": "no",
-  "local_api": ["ble"],
+  "local_api": [
+    "ble"
+  ],
   "phones_home": "none",
-
-  "radios": ["wifi", "ble"],
+  "radios": [
+    "wifi",
+    "ble"
+  ],
   "fcc_id": "2AMBWA139",
   "fcc_checked": true,
-
   "liberation": null,
-
   "repairability": {
     "parts_available": "unknown",
     "ifixit_score": null,
     "notes": null
   },
-
   "availability": "in_stock",
   "price_band": null,
   "price_observed": null,
   "where_to_buy": [],
   "affiliate": null,
-
   "vendor_risk": 0,
-
   "sources": [
-    {"url": "https://fccid.io/2AMBWA139",
-     "class": "A", "accessed": "2026-09-01",
-     "supports": "FCC grant 2AMBWA139 for the A139 covers Bluetooth (2402-2480 MHz) and Wi-Fi (2412-2462, 5180-5240, 5745-5825 MHz), confirming which radios are present.",
-     "archive_url": null},
-    {"url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/how-to-connect-viofo-wi-fi-and-use-viofo-app",
-     "class": "A", "accessed": "2026-09-01",
-     "supports": "The app connects by joining the camera's own Wi-Fi access point directly (SSID VIOFO_<model>_XXXX with a default password). No account creation is described anywhere in the setup flow.",
-     "archive_url": null},
-    {"url": "https://support.blackboxmycar.com/article/7ozt0v48qa-can-i-connect-my-viofo-dashcam-to-my-car-s-wifi-hotspot-for-remote-viewing",
-     "class": "B", "accessed": "2026-09-01",
-     "supports": "Specialist dashcam retailer states VIOFO dashcams have no cloud functionality and footage can only be viewed over a local Wi-Fi connection within range of the camera.",
-     "archive_url": null}
+    {
+      "url": "https://fccid.io/2AMBWA139",
+      "class": "A",
+      "accessed": "2026-09-01",
+      "supports": "FCC grant 2AMBWA139 for the A139 covers Bluetooth (2402-2480 MHz) and Wi-Fi (2412-2462, 5180-5240, 5745-5825 MHz), confirming which radios are present.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/how-to-connect-viofo-wi-fi-and-use-viofo-app",
+      "class": "A",
+      "accessed": "2026-09-01",
+      "supports": "The app connects by joining the camera's own Wi-Fi access point directly (SSID VIOFO_<model>_XXXX with a default password). No account creation is described anywhere in the setup flow.",
+      "archive_url": null
+    },
+    {
+      "url": "https://support.blackboxmycar.com/article/7ozt0v48qa-can-i-connect-my-viofo-dashcam-to-my-car-s-wifi-hotspot-for-remote-viewing",
+      "class": "B",
+      "accessed": "2026-09-01",
+      "supports": "Specialist dashcam retailer states VIOFO dashcams have no cloud functionality and footage can only be viewed over a local Wi-Fi connection within range of the camera.",
+      "archive_url": null
+    }
   ],
-
   "open_questions": [
     "Current US price band and a manufacturer purchase link were not checked in this run.",
-    "Wi-Fi Station Mode lets the camera join an existing network — confirm from the manual that this is used only for local access and firmware download, and does not register the camera with any VIOFO endpoint.",
+    "Wi-Fi Station Mode lets the camera join an existing network \u2014 confirm from the manual that this is used only for local access and firmware download, and does not register the camera with any VIOFO endpoint.",
     "Confirm whether firmware updates are SD-card-only on this model as they are on the A119 V3, or whether Station Mode enables an in-app update path."
   ],
   "conflicts_with": null,
   "notes": "Useful contrast with the A119 V3: this device has radios and an app but is still D1 rather than D2, because there is no vendor cloud for the cloud to be optional about. Tier is not a function of how much radio hardware is present.",
-
   "first_published": "2026-09-01",
   "last_verified": "2026-09-01",
-  "changelog": [{"date": "2026-09-01", "change": "First published at D1.", "source": null}],
-
-  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-01-phase0", "searches": 2}
+  "changelog": [
+    {
+      "date": "2026-09-01",
+      "change": "First published at D1.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-01-phase0",
+    "searches": 2
+  }
 }

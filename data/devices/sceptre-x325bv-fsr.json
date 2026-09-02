@@ -4,63 +4,77 @@
   "model": "X325BV-FSR",
   "category": "av",
   "subcategory": "television",
-
   "tier": "D0",
-  "tier_rationale": "The manufacturer's own specification page enumerates every input on the set — three HDMI, VGA, component, composite, USB, optical audio, ATSC tuner — and no network interface of any kind appears. There is no smart platform, no operating system, and no Wi-Fi or Ethernet.",
-
+  "tier_rationale": "The manufacturer's own specification page enumerates every input on the set \u2014 three HDMI, VGA, component, composite, USB, optical audio, ATSC tuner \u2014 and no network interface of any kind appears. There is no smart platform, no operating system, and no Wi-Fi or Ethernet.",
   "the_unplug_test": "There is no router to unplug. This television has no network interface, no operating system, no app store, no microphone, and no home screen full of things it wants you to watch. It turns on to whatever input it was on. Nobody can push an update that adds advertising to it, because nothing can reach it.",
-
   "status": "verified",
   "rejection_reason": null,
-
   "account_required": "none",
   "works_offline": "fully",
   "offline_losses": [],
   "firmware_ota_forced": "no",
-  "local_api": ["none"],
+  "local_api": [
+    "none"
+  ],
   "phones_home": "none",
-
-  "radios": ["none"],
+  "radios": [
+    "none"
+  ],
   "fcc_id": null,
   "fcc_checked": false,
-
   "liberation": null,
-
   "repairability": {
     "parts_available": "unknown",
     "ifixit_score": null,
     "notes": null
   },
-
   "availability": "in_stock",
   "price_band": "$250-280",
   "price_observed": "2026-09-02",
-  "where_to_buy": [{"name": "Sceptre (manufacturer)", "url": "https://www.sceptre.com/TV/LED-HDTV/X325BV-FSR-32-LED-TV-product1013category1category21.html"}],
-  "affiliate": null,
-
-  "vendor_risk": 0,
-
-  "sources": [
-    {"url": "https://www.sceptre.com/TV/LED-HDTV/X325BV-FSR-32-LED-TV-product1013category1category21.html",
-     "class": "A", "accessed": "2026-09-02",
-     "supports": "Manufacturer specification page enumerates all connectivity: 3x HDMI, VGA, component, composite, 3.5mm audio in/out, SPDIF optical, USB 2.0, ATSC/NTSC/Clear QAM tuner. No WiFi, Ethernet, smart platform, operating system or app support listed, and no microphone. Priced $269.99.",
-     "archive_url": null},
-    {"url": "https://www.consumerreports.org/electronics-computers/tvs/sceptre-x325bv-fsr/m393710/",
-     "class": "B", "accessed": "2026-09-02",
-     "supports": "Independent lab review records the set as not internet enabled, corroborating the absence of a network interface.",
-     "archive_url": null}
+  "where_to_buy": [
+    {
+      "name": "Sceptre (manufacturer)",
+      "url": "https://www.sceptre.com/TV/LED-HDTV/X325BV-FSR-32-LED-TV-product1013category1category21.html"
+    }
   ],
-
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.sceptre.com/TV/LED-HDTV/X325BV-FSR-32-LED-TV-product1013category1category21.html",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer specification page enumerates all connectivity: 3x HDMI, VGA, component, composite, 3.5mm audio in/out, SPDIF optical, USB 2.0, ATSC/NTSC/Clear QAM tuner. No WiFi, Ethernet, smart platform, operating system or app support listed, and no microphone. Priced $269.99.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.consumerreports.org/electronics-computers/tvs/sceptre-x325bv-fsr/m393710/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Independent lab review records the set as not internet enabled, corroborating the absence of a network interface.",
+      "archive_url": null
+    }
+  ],
   "open_questions": [
-    "FCC grantee search for Sceptre not yet run — worth recording the sibling control formally even though the spec sheet is unambiguous.",
+    "FCC grantee search for Sceptre not yet run \u2014 worth recording the sibling control formally even though the spec sheet is unambiguous.",
     "Confirm whether Sceptre still manufactures this model or is selling through remaining stock; the non-smart TV category shrinks every year."
   ],
   "conflicts_with": null,
-  "notes": "Televisions are the worst category on this site and the one people ask about most. Samsung, LG, Sony, TCL, Hisense and Vizio have all stopped selling consumer sets without a smart platform, so what remains is: small non-smart panels from Sceptre, Westinghouse, Impecca and Supersonic — almost all 32 inches or under; commercial digital-signage displays, which cost considerably more; or buying a smart set and never giving it Wi-Fi, which works until the manufacturer decides it does not.",
-
+  "notes": "Televisions are the worst category on this site and the one people ask about most. Samsung, LG, Sony, TCL, Hisense and Vizio have all stopped selling consumer sets without a smart platform, so what remains is: small non-smart panels from Sceptre, Westinghouse, Impecca and Supersonic \u2014 almost all 32 inches or under; commercial digital-signage displays, which cost considerably more; or buying a smart set and never giving it Wi-Fi, which works until the manufacturer decides it does not.",
   "first_published": "2026-09-02",
   "last_verified": "2026-09-02",
-  "changelog": [{"date": "2026-09-02", "change": "First published at D0.", "source": null}],
-
-  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-02-phase0", "searches": 3}
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-phase0",
+    "searches": 3
+  }
 }

@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import { changeFeed } from "../lib/data.js";
-const feed = changeFeed();
+const { material, listings } = changeFeed();
 ---
 <Base title="What changed" current="changed"
       description="Tier changes, vendor incidents, and devices that got worse after purchase.">
@@ -12,16 +12,20 @@ const feed = changeFeed();
     behind a subscription. Every published record is re-checked monthly and everything we
     find lands here.
   </p>
-  {feed.length === 0 ? (
-    <p class="empty">Nothing recorded yet. This page fills in as the monthly refresh runs.</p>
+  <h2>Devices that changed</h2>
+  {material.length === 0 ? (
+    <p class="empty">
+      Nothing yet. This is the good outcome — it means no device we list has lost
+      function since we checked it. The monthly refresh fills this in when one does.
+    </p>
   ) : (
     <div class="tablewrap">
     <table class="devices">
       <tbody>
-        {feed.map((c) => (
+        {material.map((c) => (
           <tr>
             <td class="num">{c.date}</td>
-            <td><a href={`/device/${c.device.model_id}/`}>{c.device.make} {c.device.model}</a></td>
+            <td><a href={c.device.status === "rejected" ? "/rejected/" : `/device/${c.device.model_id}/`}>{c.device.make} {c.device.model}</a></td>
             <td>{c.change}</td>
           </tr>
         ))}
@@ -29,4 +33,20 @@ const feed = changeFeed();
     </table>
     </div>
   )}
-</Base>
+
+  <h2>Newly listed</h2>
+  <p class="age">Routine additions to the catalog. Kept separate so the section above stays worth reading.</p>
+  <div class="tablewrap">
+  <table class="devices">
+    <tbody>
+      {listings.map((c) => (
+        <tr>
+          <td class="num">{c.date}</td>
+          <td><a href={c.device.status === "rejected" ? "/rejected/" : `/device/${c.device.model_id}/`}>{c.device.make} {c.device.model}</a></td>
+          <td>{c.change}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+  </Base>

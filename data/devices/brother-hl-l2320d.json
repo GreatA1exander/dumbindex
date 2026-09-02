@@ -4,62 +4,71 @@
   "model": "HL-L2320D",
   "category": "computing",
   "subcategory": "printer",
-
   "tier": "D0",
   "tier_rationale": "Brother's own specification page lists Hi-Speed USB 2.0 as the sole interface and states the model lacks wireless and built-in Ethernet, while naming the wireless variants in the same series.",
-
   "the_unplug_test": "Nothing changes. USB in, paper out. No radio, no account, no app, and nothing that can reach a Brother server. Predates the era when a printer expected a relationship with its manufacturer.",
-
   "status": "verified",
   "rejection_reason": null,
-
   "account_required": "none",
   "works_offline": "fully",
   "offline_losses": [],
   "firmware_ota_forced": "no",
-  "local_api": ["none"],
+  "local_api": [
+    "none"
+  ],
   "phones_home": "none",
-
-  "radios": ["none"],
+  "radios": [
+    "none"
+  ],
   "fcc_id": null,
   "fcc_checked": true,
-
   "liberation": null,
-
   "repairability": {
     "parts_available": "yes",
     "ifixit_score": null,
     "notes": "TN630/TN660 toner and DR630 drum are separate units and still widely stocked years after discontinuation."
   },
-
   "availability": "discontinued",
   "price_band": null,
   "price_observed": null,
   "where_to_buy": [],
   "affiliate": null,
-
   "vendor_risk": 1,
-
   "sources": [
-    {"url": "https://support.brother.com/g/b/spec.aspx?c=us&lang=en&prod=hll2320d_us_as",
-     "class": "A", "accessed": "2026-09-01",
-     "supports": "Manufacturer specification page: interface is Hi-Speed USB 2.0 only; model lacks built-in Ethernet and wireless, while HL-L2305W / HL-L2340DW / HL-L2360DW in the same series are listed with IEEE 802.11b/g/n.",
-     "archive_url": null},
-    {"url": "https://www.brother-usa.com/products/hll2320d",
-     "class": "A", "accessed": "2026-09-01",
-     "supports": "Brother USA product page displays a 'Discontinued' status. Legacy list price $109.99.",
-     "archive_url": null}
+    {
+      "url": "https://support.brother.com/g/b/spec.aspx?c=us&lang=en&prod=hll2320d_us_as",
+      "class": "A",
+      "accessed": "2026-09-01",
+      "supports": "Manufacturer specification page: interface is Hi-Speed USB 2.0 only; model lacks built-in Ethernet and wireless, while HL-L2305W / HL-L2340DW / HL-L2360DW in the same series are listed with IEEE 802.11b/g/n.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.brother-usa.com/products/hll2320d",
+      "class": "A",
+      "accessed": "2026-09-01",
+      "supports": "Brother USA product page displays a 'Discontinued' status. Legacy list price $109.99.",
+      "archive_url": null
+    }
   ],
-
   "open_questions": [
-    "Secondhand price band not established — worth recording once a few completed sales are observed."
+    "Secondhand price band not established \u2014 worth recording once a few completed sales are observed."
   ],
   "conflicts_with": null,
   "notes": "Listed under 'discontinued but worth hunting'. Radio-free laser printers are getting rarer, so the secondhand market for these matters more than it would in most categories.",
-
   "first_published": "2026-09-01",
   "last_verified": "2026-09-01",
-  "changelog": [{"date": "2026-09-01", "change": "First published at D0, discontinued.", "source": null}],
-
-  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-01-phase0", "searches": 2}
+  "changelog": [
+    {
+      "date": "2026-09-01",
+      "change": "First published at D0, discontinued.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-01-phase0",
+    "searches": 2
+  }
 }

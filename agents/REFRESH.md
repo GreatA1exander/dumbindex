@@ -38,12 +38,18 @@ A single JSON object:
   "model_id": "...",
   "changed": true,
   "changes": [{"field": "tier", "from": "D2", "to": "REJECT",
+               "kind": "tier_change",
                "reason": "...", "source": {"url":"...","class":"A","accessed":"..."}}],
   "last_verified": "YYYY-MM-DD",
   "alert": "string or null",
   "vendor_ledger_proposal": null
 }
 ```
+
+Every change you write carries a `kind`: `tier_change`, `vendor_incident`,
+`availability`, or `correction`. Never use `listed` — that is reserved for a device's
+first appearance. The site leads its public feed with everything that is not `listed`, so
+a mis-labelled cosmetic edit pushes a real warning further down the page.
 
 Set `alert` to a one-line human-readable warning **only** when a device got materially
 worse. Alerts become the site's changelog feed and, eventually, its email list. They are

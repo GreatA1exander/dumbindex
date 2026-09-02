@@ -4,62 +4,77 @@
   "model": "RCS10DSE",
   "category": "kitchen",
   "subcategory": "microwave",
-
   "tier": "D0",
   "tier_rationale": "Manufacturer product documentation lists a 10-minute dial timer with four power levels and no connectivity, programmable memory or app feature; the sibling RCS10TS in the same series is the touch-control programmable variant, confirming the dial model is a deliberate tier.",
-
   "the_unplug_test": "You turn a dial. It runs for that long and stops. There is nothing to set up, nothing to pair, no clock that flashes after a power cut, and no company involved in heating your food. If you open the door mid-cycle the timer resets to zero, which is the entire complexity budget of this appliance.",
-
   "status": "verified",
   "rejection_reason": null,
-
   "account_required": "none",
   "works_offline": "fully",
   "offline_losses": [],
   "firmware_ota_forced": "no",
-  "local_api": ["none"],
+  "local_api": [
+    "none"
+  ],
   "phones_home": "none",
-
-  "radios": ["none"],
+  "radios": [
+    "none"
+  ],
   "fcc_id": null,
   "fcc_checked": false,
-
   "liberation": null,
-
   "repairability": {
     "parts_available": "yes",
     "ifixit_score": null,
     "notes": "Commercial food-service equipment: rated 100 cycles/day, parts distributed through restaurant supply channels, and designed to be repaired rather than replaced. Stainless interior and exterior."
   },
-
   "availability": "in_stock",
   "price_band": "$450-550",
   "price_observed": "2026-09-02",
-  "where_to_buy": [{"name": "ACP Solutions (manufacturer)", "url": "https://www.acpsolutions.com/amana-products/microwaves/rcs-1000/"}],
-  "affiliate": null,
-
-  "vendor_risk": 0,
-
-  "sources": [
-    {"url": "https://www.acpsolutions.com/amana-products/microwaves/rcs-1000/",
-     "class": "A", "accessed": "2026-09-02",
-     "supports": "Manufacturer (ACP Inc, who make Amana Commercial microwaves) documents the RCS10DSE as the dial-control model: 10-minute timer auto-resetting to zero, 4 power levels, 1000 W, 1.2 cu ft, 100 cycles/day. No WiFi, programmable memory or app feature listed. Sibling control: the RCS10TS in the same series is the touch-control model with 100 programmable menu items.",
-     "archive_url": null},
-    {"url": "https://www.webstaurantstore.com/amana-rcs10dse-medium-volume-stainless-steel-commercial-microwave-120v-1000w/140RCS10DSE.html",
-     "class": "C", "accessed": "2026-09-02",
-     "supports": "Distributor listing corroborating current availability at $487 and describing mechanical dial controls with no digital or connected features.",
-     "archive_url": null}
+  "where_to_buy": [
+    {
+      "name": "ACP Solutions (manufacturer)",
+      "url": "https://www.acpsolutions.com/amana-products/microwaves/rcs-1000/"
+    }
   ],
-
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.acpsolutions.com/amana-products/microwaves/rcs-1000/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer (ACP Inc, who make Amana Commercial microwaves) documents the RCS10DSE as the dial-control model: 10-minute timer auto-resetting to zero, 4 power levels, 1000 W, 1.2 cu ft, 100 cycles/day. No WiFi, programmable memory or app feature listed. Sibling control: the RCS10TS in the same series is the touch-control model with 100 programmable menu items.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.webstaurantstore.com/amana-rcs10dse-medium-volume-stainless-steel-commercial-microwave-120v-1000w/140RCS10DSE.html",
+      "class": "C",
+      "accessed": "2026-09-02",
+      "supports": "Distributor listing corroborating current availability at $487 and describing mechanical dial controls with no digital or connected features.",
+      "archive_url": null
+    }
+  ],
   "open_questions": [
-    "Consumer microwaves are a harder problem than this commercial one — worth a separate pass to find a domestic model with mechanical controls still in production."
+    "Consumer microwaves are a harder problem than this commercial one \u2014 worth a separate pass to find a domestic model with mechanical controls still in production."
   ],
   "conflicts_with": null,
   "notes": "Another instance of the commercial-grade escape hatch. It costs more than a domestic microwave and is plainly better built, and its simplicity is a commercial requirement rather than a nostalgia feature: a kitchen cannot have staff learning a menu system.",
-
   "first_published": "2026-09-02",
   "last_verified": "2026-09-02",
-  "changelog": [{"date": "2026-09-02", "change": "First published at D0.", "source": null}],
-
-  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-02-phase0", "searches": 3, "failed_fetches": 3}
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-phase0",
+    "searches": 3,
+    "failed_fetches": 3
+  }
 }

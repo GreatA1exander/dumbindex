@@ -77,6 +77,8 @@
     "changelog": {"type":"array","items":{
       "type":"object","required":["date","change"],"additionalProperties":false,
       "properties":{"date":{"type":"string","format":"date"},"change":{"type":"string"},
+                    "kind":{"enum":["listed","tier_change","vendor_incident","availability","correction"],
+                            "description":"'listed' is routine; everything else is material and leads the /changed feed"},
                     "source":{"type":["string","null"]}}}},
 
     "agent_meta": {"type":"object","additionalProperties":true,

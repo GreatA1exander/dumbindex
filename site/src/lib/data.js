@@ -71,11 +71,18 @@ export function ageDays(iso) {
   return Math.round((Date.now() - Date.parse(iso)) / 864e5);
 }
 
-// Every changelog entry across every device, newest first — powers /changed.
+// Powers /changed. Material changes and routine listings are separated on purpose:
+// a feed that promises "your device got worse" and delivers "we added a device"
+// teaches readers to ignore it, and then the one alert that matters gets ignored too.
 export function changeFeed() {
-  return devices
+  // `rejected` is defined above; both lists feed the same timeline.
+  const all = [...devices, ...rejected]
     .flatMap((d) => (d.changelog ?? []).map((c) => ({ ...c, device: d })))
     .sort((a, b) => b.date.localeCompare(a.date));
+  return {
+    material: all.filter((c) => c.kind && c.kind !== "listed"),
+    listings: all.filter((c) => !c.kind || c.kind === "listed"),
+  };
 }
 
 export const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
