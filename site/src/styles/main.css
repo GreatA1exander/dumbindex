@@ -1,0 +1,89 @@
+/* dumbindex — service-manual aesthetic. System fonts only (a webfont is a
+   third-party request). Dark mode by preference, no toggle. See BRAND.md. */
+
+:root {
+  --paper: #faf9f7;  --ink: #16150f;   --ink-soft: #55524a;
+  --rule: #ddd9d0;   --rule-soft: #eae7e0;
+  --signal: #b4400f; --ok: #1f6f3c;    --warn: #8a6d1a;
+  --d0: #1f6f3c; --d1: #2a5d8f; --d2: #8a6d1a; --d3: #7a4a8f;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14150f; --ink: #eae7dd; --ink-soft: #9a968a;
+    --rule: #33352b;  --rule-soft: #24261e;
+    --signal: #e8763f; --ok: #6fbf8c; --warn: #d6b558;
+    --d0: #6fbf8c; --d1: #7fb0e0; --d2: #d6b558; --d3: #c096d8;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 16px/1.55 var(--sans);
+}
+.wrap { max-width: 62rem; margin: 0 auto; padding: 0 1rem; }
+a { color: inherit; text-underline-offset: 2px; }
+a:hover { color: var(--signal); }
+
+/* ---- masthead ---- */
+header.top { border-bottom: 2px solid var(--ink); }
+.masthead { display: flex; flex-wrap: wrap; align-items: baseline; gap: .75rem; padding: .9rem 0 .7rem; }
+.logo { font: 700 1.35rem/1 var(--mono); letter-spacing: -.02em; text-decoration: none; }
+.logo span { color: var(--signal); }
+.tag { color: var(--ink-soft); font-size: .82rem; }
+nav.domains { border-bottom: 1px solid var(--rule); padding: .45rem 0; }
+nav.domains ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .15rem .9rem; }
+nav.domains a { font-size: .78rem; text-decoration: none; color: var(--ink-soft); white-space: nowrap; }
+nav.domains a:hover, nav.domains a[aria-current] { color: var(--signal); text-decoration: underline; }
+
+/* ---- tier badges: text carries the meaning, colour only reinforces ---- */
+.tier { font: 700 .72rem/1 var(--mono); border: 1.5px solid currentColor;
+        padding: .2rem .3rem; border-radius: 2px; text-decoration: none; white-space: nowrap; }
+.tier.D0 { color: var(--d0); } .tier.D1 { color: var(--d1); }
+.tier.D2 { color: var(--d2); } .tier.D3 { color: var(--d3); }
+
+/* ---- the table is the product ---- */
+.tablewrap { overflow-x: auto; }
+table.devices { width: 100%; border-collapse: collapse; font-size: .87rem; }
+table.devices th { text-align: left; font: 600 .72rem/1.3 var(--mono); text-transform: uppercase;
+  letter-spacing: .04em; color: var(--ink-soft); border-bottom: 1.5px solid var(--ink); padding: .4rem .5rem; }
+table.devices td { border-bottom: 1px solid var(--rule-soft); padding: .45rem .5rem; vertical-align: baseline; }
+table.devices tr:hover td { background: var(--rule-soft); }
+.model { font-family: var(--mono); font-size: .82rem; }
+td.num, th.num { text-align: right; font-family: var(--mono); font-size: .78rem; white-space: nowrap; }
+
+/* age of a claim, visibly decaying — decay should be embarrassing, not invisible */
+.age { font: .72rem/1 var(--mono); color: var(--ink-soft); }
+.age.stale { color: var(--warn); }
+.age.rotten { color: var(--signal); font-weight: 700; }
+
+.filters { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0; align-items: center; }
+.filters .lbl { font: .72rem/1 var(--mono); color: var(--ink-soft); text-transform: uppercase; }
+
+h1 { font-size: 1.5rem; line-height: 1.25; margin: 1.4rem 0 .4rem; letter-spacing: -.015em; }
+h2 { font-size: 1.05rem; margin: 1.8rem 0 .5rem; border-bottom: 1px solid var(--rule); padding-bottom: .25rem; }
+h3 { font-size: .95rem; margin: 1.2rem 0 .3rem; }
+.lede { color: var(--ink-soft); max-width: 44rem; margin: 0 0 1rem; }
+
+/* ---- device page ---- */
+.unplug { border-left: 3px solid var(--signal); background: var(--rule-soft);
+          padding: .8rem 1rem; margin: 1rem 0 1.5rem; max-width: 46rem; }
+.unplug h2 { border: 0; margin: 0 0 .35rem; font: 600 .72rem/1 var(--mono);
+             text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); }
+.unplug p { margin: 0; font-size: 1.02rem; }
+table.spec { width: 100%; max-width: 46rem; border-collapse: collapse; font-size: .87rem; }
+table.spec th { text-align: left; width: 14rem; font-weight: 600; color: var(--ink-soft);
+  padding: .35rem .5rem .35rem 0; border-bottom: 1px solid var(--rule-soft); vertical-align: baseline; }
+table.spec td { padding: .35rem 0; border-bottom: 1px solid var(--rule-soft); }
+.evc { font: 700 .68rem/1 var(--mono); border: 1px solid var(--rule); padding: .15rem .28rem; border-radius: 2px; color: var(--ink-soft); }
+.sources { list-style: none; padding: 0; font-size: .85rem; }
+.sources li { padding: .4rem 0; border-bottom: 1px solid var(--rule-soft); }
+
+.empty { border: 1px dashed var(--rule); padding: 1.5rem; color: var(--ink-soft); text-align: center; font-size: .9rem; }
+footer { border-top: 2px solid var(--ink); margin-top: 3rem; padding: 1rem 0 2rem; font-size: .78rem; color: var(--ink-soft); }
+footer ul { list-style: none; padding: 0; margin: .5rem 0; }
+footer .promise { font-family: var(--mono); font-size: .72rem; }
+@media print { nav.domains, footer { display: none; } }

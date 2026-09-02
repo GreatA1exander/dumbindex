@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+import { changeFeed } from "../lib/data.js";
+const feed = changeFeed();
+---
+<Base title="What changed" current="changed"
+      description="Tier changes, vendor incidents, and devices that got worse after purchase.">
+  <h1>What changed</h1>
+  <p class="lede">
+    A device's tier is a snapshot, not a property. Vendors revoke it after you have paid —
+    a firmware update adds an account requirement, a server shuts down, a feature moves
+    behind a subscription. Every published record is re-checked monthly and everything we
+    find lands here.
+  </p>
+  {feed.length === 0 ? (
+    <p class="empty">Nothing recorded yet. This page fills in as the monthly refresh runs.</p>
+  ) : (
+    <div class="tablewrap">
+    <table class="devices">
+      <tbody>
+        {feed.map((c) => (
+          <tr>
+            <td class="num">{c.date}</td>
+            <td><a href={`/device/${c.device.model_id}/`}>{c.device.make} {c.device.model}</a></td>
+            <td>{c.change}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    </div>
+  )}
+</Base>

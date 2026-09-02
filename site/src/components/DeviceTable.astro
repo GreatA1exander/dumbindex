@@ -1,0 +1,45 @@
+---
+import Tier from "./Tier.astro";
+import { ageDays } from "../lib/data.js";
+const { rows, showDomain = true } = Astro.props;
+const cls = (n) => (n == null ? "" : n > 180 ? "age rotten" : n > 60 ? "age stale" : "age");
+---
+{rows.length === 0 ? (
+  <p class="empty">
+    Nothing verified here yet. Records appear only after they clear the evidence bar
+    — see <a href="/method/">Method</a>.
+  </p>
+) : (
+  <div class="tablewrap">
+  <table class="devices">
+    <thead>
+      <tr>
+        <th>Device</th>
+        {showDomain && <th>Type</th>}
+        <th>Tier</th>
+        <th>Account</th>
+        <th>Forced&nbsp;OTA</th>
+        <th class="num">Price</th>
+        <th class="num">Verified</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((d) => (
+        <tr>
+          <td>
+            <a href={`/device/${d.model_id}/`}>{d.make}</a>
+            <span class="model"> {d.model}</span>
+            {d.availability === "discontinued" && <span class="age"> · discontinued</span>}
+          </td>
+          {showDomain && <td>{d.subcategory ?? d.category}</td>}
+          <td><Tier tier={d.tier} /></td>
+          <td>{d.account_required === "none" ? "none" : d.account_required?.replace(/_/g, " ")}</td>
+          <td>{d.firmware_ota_forced === "no" ? "no" : d.firmware_ota_forced?.replace(/_/g, " ")}</td>
+          <td class="num">{d.price_band ?? "—"}</td>
+          <td class="num"><span class={cls(ageDays(d.last_verified))}>{d.last_verified ?? "—"}</span></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+)}

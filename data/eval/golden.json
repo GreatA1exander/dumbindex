@@ -1,0 +1,1 @@
+{"devices": [], "_note": "Hand-verified regression set. Build in Phase 0.5 before enabling the cron. Include 5 ambiguous devices and 3 traps (look D2, actually REJECT)."}

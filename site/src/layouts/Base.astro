@@ -1,0 +1,51 @@
+---
+import { domains } from "../lib/data.js";
+import "../styles/main.css";
+const { title, description, current } = Astro.props;
+const full = title ? `${title} — dumbindex` : "dumbindex";
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{full}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="alternate" type="application/json" href="/devices.json" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="masthead">
+        <a class="logo" href="/">dumb<span>index</span></a>
+        <span class="tag">Devices that still work when the internet doesn't.</span>
+      </div>
+    </div>
+    <nav class="domains" aria-label="Domains">
+      <div class="wrap">
+        <ul>
+          <li><a href="/" aria-current={current === "home" ? "page" : undefined}>All</a></li>
+          {domains.map((d) => (
+            <li><a href={`/${d.slug}/`} aria-current={current === d.slug ? "page" : undefined}>{d.name}</a></li>
+          ))}
+          <li><a href="/changed/" aria-current={current === "changed" ? "page" : undefined}>Changed</a></li>
+          <li><a href="/method/" aria-current={current === "method" ? "page" : undefined}>Method</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="wrap"><slot /></main>
+  <footer>
+    <div class="wrap">
+      <p class="promise">
+        No trackers. No cookies. No third-party requests. No JavaScript required.
+        Every page under 60&nbsp;KB.
+      </p>
+      <p>
+        Research is agent-assisted and human-reviewed — see <a href="/method/">Method</a>.
+        Device data is CC&nbsp;BY-SA and available as <a href="/devices.json">JSON</a>.
+        Corrections welcome; we would rather be corrected than trusted.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

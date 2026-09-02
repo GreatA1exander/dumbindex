@@ -1,0 +1,16 @@
+---
+import Base from "../../layouts/Base.astro";
+import DeviceTable from "../../components/DeviceTable.astro";
+import { TIERS, byTier } from "../../lib/data.js";
+
+export function getStaticPaths() {
+  return Object.keys(TIERS).map((t) => ({ params: { tier: t.toLowerCase() }, props: { t } }));
+}
+const { t } = Astro.props;
+const meta = TIERS[t];
+---
+<Base title={`${t} — ${meta.name}`} description={meta.short}>
+  <h1>{t} · {meta.name}</h1>
+  <p class="lede">{meta.short} <a href="/method/">How tiers are assigned</a>.</p>
+  <DeviceTable rows={byTier(t)} />
+</Base>

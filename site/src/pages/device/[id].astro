@@ -1,0 +1,105 @@
+---
+import Base from "../../layouts/Base.astro";
+import Tier from "../../components/Tier.astro";
+import { devices, TIERS, domainBySlug, ageDays, slugify } from "../../lib/data.js";
+
+export function getStaticPaths() {
+  return devices.map((d) => ({ params: { id: d.model_id }, props: { d } }));
+}
+const { d } = Astro.props;
+const dom = domainBySlug.get(d.category);
+const age = ageDays(d.last_verified);
+const fmt = (v) => (v == null ? "unknown" : Array.isArray(v) ? (v.length ? v.join(", ") : "none") : String(v).replace(/_/g, " "));
+---
+<Base title={`${d.make} ${d.model}`} description={d.the_unplug_test?.slice(0, 155)}>
+  <p class="age">
+    <a href={`/${d.category}/`}>{dom?.name}</a>
+    {d.subcategory && <> / <a href={`/${d.category}/${slugify(d.subcategory)}/`}>{d.subcategory}</a></>}
+  </p>
+  <h1>{d.make} <span class="model">{d.model}</span></h1>
+
+  <p class="filters">
+    <Tier tier={d.tier} /> <strong>{TIERS[d.tier]?.name}</strong>
+    <span class="age">— {TIERS[d.tier]?.short}</span>
+  </p>
+
+  <div class="unplug">
+    <h2>The unplug test</h2>
+    <p>{d.the_unplug_test}</p>
+  </div>
+
+  {d.tier_rationale && <p class="lede"><strong>Why this tier:</strong> {d.tier_rationale}</p>}
+
+  <h2>Specifications</h2>
+  <table class="spec">
+    <tbody>
+      <tr><th>Account required</th><td>{fmt(d.account_required)}</td></tr>
+      <tr><th>Works offline</th><td>{fmt(d.works_offline)}</td></tr>
+      {d.offline_losses?.length > 0 && <tr><th>Lost when offline</th><td>{d.offline_losses.join(", ")}</td></tr>}
+      <tr><th>Forced firmware updates</th><td>{fmt(d.firmware_ota_forced)}</td></tr>
+      <tr><th>Radios</th><td>{fmt(d.radios)}</td></tr>
+      <tr><th>FCC ID</th><td>{d.fcc_id ?? (d.fcc_checked ? "no intentional-radiator grant found" : "not checked")}</td></tr>
+      <tr><th>Local control</th><td>{fmt(d.local_api)}</td></tr>
+      <tr><th>Phones home</th><td>{fmt(d.phones_home)}</td></tr>
+      <tr><th>Parts available</th><td>{fmt(d.repairability?.parts_available)}</td></tr>
+      <tr><th>Availability</th><td>{fmt(d.availability)}</td></tr>
+      <tr><th>Price band</th><td>{d.price_band ?? "unknown"}{d.price_observed && <span class="age"> (seen {d.price_observed})</span>}</td></tr>
+      <tr><th>Vendor risk</th><td>{d.vendor_risk == null ? "unknown" : `${d.vendor_risk} / 3`}</td></tr>
+    </tbody>
+  </table>
+
+  {d.liberation && (
+    <>
+      <h2>Making it local</h2>
+      <p>
+        {d.liberation.method} — {d.liberation.difficulty}, {d.liberation.reversible ? "reversible" : "not reversible"},
+        {d.liberation.maintained ? " actively maintained" : " unmaintained (verify before relying on it)"}.
+        {" "}<a href={d.liberation.guide_url}>Guide</a>
+      </p>
+    </>
+  )}
+
+  {d.where_to_buy?.length > 0 && (
+    <>
+      <h2>Where to buy</h2>
+      <ul class="sources">
+        {d.where_to_buy.map((w) => <li><a href={w.url} rel="nofollow">{w.name}</a></li>)}
+      </ul>
+    </>
+  )}
+
+  {d.open_questions?.length > 0 && (
+    <>
+      <h2>Open questions</h2>
+      <ul class="sources">{d.open_questions.map((q) => <li>{q}</li>)}</ul>
+    </>
+  )}
+
+  <h2>Sources</h2>
+  <p class="age">
+    Class A is primary (manual, FCC filing, teardown). Class B is corroborated community
+    reporting. Class C is never sufficient alone.
+  </p>
+  <ul class="sources">
+    {d.sources?.map((s) => (
+      <li>
+        <span class="evc">{s.class}</span> <a href={s.url} rel="nofollow">{s.url}</a>
+        <br /><span class="age">{s.supports} — accessed {s.accessed}</span>
+        {s.archive_url && <> · <a href={s.archive_url}>archived</a></>}
+      </li>
+    ))}
+  </ul>
+
+  {d.changelog?.length > 0 && (
+    <>
+      <h2>History</h2>
+      <ul class="sources">
+        {d.changelog.map((c) => <li><span class="model">{c.date}</span> — {c.change}</li>)}
+      </ul>
+    </>
+  )}
+
+  <p class={age > 180 ? "age rotten" : age > 60 ? "age stale" : "age"}>
+    Last verified {d.last_verified}{age != null && ` — ${age} days ago`}.
+  </p>
+</Base>

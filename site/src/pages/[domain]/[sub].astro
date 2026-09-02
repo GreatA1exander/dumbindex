@@ -1,0 +1,24 @@
+---
+import Base from "../../layouts/Base.astro";
+import DeviceTable from "../../components/DeviceTable.astro";
+import { domains, populatedSubs, bySub, slugify } from "../../lib/data.js";
+
+// Only build subcategory pages that have devices. A generated stub with nothing
+// in it is worth nothing to a reader or a crawler (BRAND.md).
+export function getStaticPaths() {
+  return domains.flatMap((d) =>
+    populatedSubs(d.slug).map(({ sub }) => ({
+      params: { domain: d.slug, sub: slugify(sub) },
+      props: { domain: d, sub },
+    }))
+  );
+}
+const { domain, sub } = Astro.props;
+const rows = bySub(domain.slug, sub);
+---
+<Base title={`${sub} — ${domain.name}`} current={domain.slug}
+      description={`Verified ${sub} models that work without a vendor cloud.`}>
+  <p class="age"><a href={`/${domain.slug}/`}>{domain.name}</a> /</p>
+  <h1>{sub}</h1>
+  <DeviceTable rows={rows} showDomain={false} />
+</Base>

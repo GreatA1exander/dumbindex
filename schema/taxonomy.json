@@ -1,0 +1,47 @@
+{
+  "_comment": "Single source of truth. The site builds its navigation from this file; SCOUT rotates categories through it; the schema's category enum must match these slugs. Adding a domain or subcategory is a human decision (PRINCIPLES §6).",
+  "version": 1,
+  "domains": [
+    {"slug":"kitchen","name":"Kitchen & Cooking","blurb":"Refrigeration, cooking, and countertop appliances.",
+     "subcategories":["refrigerator","freezer","range","cooktop","wall oven","microwave","dishwasher","kettle","toaster","coffee maker","blender","food processor","stand mixer","pressure cooker","air fryer","rice cooker","sous vide","range hood","garbage disposal","ice maker","water filter"]},
+
+    {"slug":"laundry","name":"Laundry & Cleaning","blurb":"Washers, dryers, vacuums, and floor care.",
+     "subcategories":["washing machine","clothes dryer","vacuum","robot vacuum","carpet cleaner","steam cleaner","iron","garment steamer","sewing machine"]},
+
+    {"slug":"climate","name":"Climate & Air","blurb":"Heating, cooling, and air quality.",
+     "subcategories":["thermostat","window AC","portable AC","mini split","space heater","fan","ceiling fan","humidifier","dehumidifier","air purifier","air quality monitor","water heater","radiator valve"]},
+
+    {"slug":"lighting","name":"Lighting & Electrical","blurb":"Bulbs, switches, outlets, and power.",
+     "subcategories":["light bulb","light fixture","lamp","wall switch","dimmer","smart plug alternative","outlet timer","mechanical timer","power strip","surge protector","UPS","extension cord","generator transfer switch"]},
+
+    {"slug":"security","name":"Security & Access","blurb":"Locks, cameras, alarms, and entry.",
+     "subcategories":["door lock","deadbolt","padlock","doorbell","intercom","indoor camera","outdoor camera","NVR","alarm panel","door sensor","motion sensor","glass break sensor","safe","garage door opener","gate opener","key fob"]},
+
+    {"slug":"automotive","name":"Automotive","blurb":"Dashcams, head units, and everything in the car.",
+     "subcategories":["dashcam","backup camera","head unit","car stereo","GPS navigation","OBD-II scanner","radar detector","tire inflator","tire pressure gauge","jump starter","battery charger","car alarm","EV charger","tracker","CB radio"]},
+
+    {"slug":"av","name":"Audio & Video","blurb":"Displays, speakers, and playback.",
+     "subcategories":["television","monitor","projector","AV receiver","amplifier","powered speaker","bookshelf speaker","soundbar","headphones","turntable","CD player","radio","shortwave radio","media player","DVD/Blu-ray player","microphone","mixer"]},
+
+    {"slug":"computing","name":"Computing & Networking","blurb":"Routers, printers, storage, and peripherals.",
+     "subcategories":["router","access point","switch","modem","NAS","external drive","printer","scanner","label printer","keyboard","mouse","KVM","docking station","webcam","external monitor"]},
+
+    {"slug":"photo","name":"Cameras & Optics","blurb":"Photography, trail cameras, and optics.",
+     "subcategories":["digital camera","film camera","action camera","trail camera","instant camera","camcorder","flash","light meter","binoculars","rifle scope","spotting scope","telescope","drone","gimbal"]},
+
+    {"slug":"health","name":"Health & Personal Care","blurb":"Measurement and personal devices.",
+     "subcategories":["bathroom scale","blood pressure monitor","thermometer","pulse oximeter","glucose meter","CPAP","nebulizer","hearing aid","electric toothbrush","shaver","hair clipper","massager","TENS unit","heating pad"]},
+
+    {"slug":"baby-pet","name":"Baby & Pet","blurb":"Monitors, feeders, and care devices.",
+     "subcategories":["baby monitor","audio monitor","bottle warmer","breast pump","baby scale","pet feeder","pet water fountain","pet door","pet camera","pet tracker","aquarium controller","chicken coop door"]},
+
+    {"slug":"tools","name":"Tools & Outdoor","blurb":"Power tools, yard, and workshop.",
+     "subcategories":["drill","saw","battery platform","air compressor","pressure washer","lawn mower","robot mower","string trimmer","leaf blower","snow blower","chainsaw","generator","welder","multimeter","weather station","irrigation controller","sprinkler timer","pool controller","grill","smoker","thermometer probe"]},
+
+    {"slug":"wearables","name":"Watches & Wearables","blurb":"Timekeeping and body-worn devices.",
+     "subcategories":["wristwatch","alarm clock","clock radio","stopwatch","fitness tracker","heart rate monitor","GPS watch","dive computer","hearing protection"]},
+
+    {"slug":"office","name":"Office & Hobby","blurb":"Desk equipment and hobbyist gear.",
+     "subcategories":["shredder","calculator","typewriter","label maker","laminator","e-reader","digital audio recorder","musical instrument","synthesizer","guitar pedal","3D printer","CNC","soldering station","bench power supply","oscilloscope"]}
+  ]
+}

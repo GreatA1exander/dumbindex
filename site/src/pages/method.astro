@@ -1,0 +1,83 @@
+---
+import Base from "../layouts/Base.astro";
+import Tier from "../components/Tier.astro";
+import { TIERS } from "../lib/data.js";
+---
+<Base title="Method" current="method"
+      description="How devices are researched, how tiers are assigned, and what our evidence standard is.">
+  <h1>Method</h1>
+  <p class="lede">
+    We answer one narrow question and try to answer it well: what does this device require
+    in order to work? We are not a review site. We do not rank on performance, taste, or
+    value — only on independence from the vendor.
+  </p>
+
+  <h2>The ladder</h2>
+  <table class="spec">
+    <tbody>
+      {Object.entries(TIERS).map(([t, m]) => (
+        <tr><th><Tier tier={t} /> {m.name}</th><td>{m.short}</td></tr>
+      ))}
+    </tbody>
+  </table>
+  <p>
+    <strong>Core function</strong> means the thing the device exists to do. A
+    refrigerator's core function is refrigeration, not the door screen. A video doorbell's
+    includes showing you who is there — so a doorbell needing the cloud for video is not
+    cloud-optional no matter how well the chime works offline.
+  </p>
+  <p>
+    Devices that require a cloud or an account for core function, gate hardware behind a
+    subscription, or whose vendor has remotely removed a feature from units already sold
+    are rejected outright and do not appear.
+  </p>
+
+  <h2>Evidence</h2>
+  <p>
+    Every claim carries a source, an evidence class, and the date we read it.
+  </p>
+  <table class="spec">
+    <tbody>
+      <tr><th><span class="evc">A</span> Primary</th><td>Manufacturer manual or spec sheet, FCC equipment authorization filings, firmware release notes, photographed teardowns.</td></tr>
+      <tr><th><span class="evc">B</span> Corroborated</th><td>Home Assistant and ESPHome device databases, Zigbee2MQTT and Z-Wave JS indexes, iFixit, detailed community reports.</td></tr>
+      <tr><th><span class="evc">C</span> Weak</th><td>Vendor marketing, retailer bullet points, undated forum comments. Never sufficient on its own.</td></tr>
+    </tbody>
+  </table>
+  <p>
+    A tier requires one Class A source or two independent Class B sources. Where we cannot
+    meet that bar, the field reads <em>unknown</em> and the device may not be listed at
+    all. <strong>An empty field is a correct answer; a guess is a defect.</strong>
+  </p>
+  <p>
+    One check does a lot of work: any device sold in the US containing a radio must hold
+    an FCC equipment authorization. No intentional-radiator grant is strong evidence there
+    is no radio to begin with.
+  </p>
+
+  <h2>Decay</h2>
+  <p>
+    Every record shows when it was last verified, and that date greys and then reddens as
+    it ages. Evidence older than 18 months does not support a tier and the record is
+    re-checked or withdrawn. Devices that stop being sold are marked discontinued, never
+    deleted — the historical record is part of the point.
+  </p>
+
+  <h2>How this is made</h2>
+  <p>
+    Research is <strong>agent-assisted and human-reviewed</strong>. Language models find
+    candidates and gather sources under a fixed procedure; a script rejects any record
+    that fails the evidence rules; a human reviews every change before it publishes. We
+    say so plainly because you would work it out anyway, and because the method is
+    checkable: every source is linked, so you can verify us rather than trust us.
+  </p>
+
+  <h2>Money</h2>
+  <p>
+    Nothing on this site is paid placement. There is no advertising today. If retailer
+    links ever carry affiliate codes they will be disclosed on the link itself, not buried
+    in a footer. <strong>No commercial relationship will ever affect a tier</strong> — that
+    is written down here before there is any revenue to tempt us, so it is a standing
+    commitment rather than a later defence.
+  </p>
+  <p>Device data is published under CC BY-SA as <a href="/devices.json">devices.json</a>. Take it.</p>
+</Base>

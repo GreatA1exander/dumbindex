@@ -1,0 +1,58 @@
+// Build-time data access. `data/` is the source of truth; the site is a pure
+// function of it (README invariant 1). Nothing here writes.
+import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { join, dirname } from "node:path";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../../..");
+
+export const taxonomy = JSON.parse(readFileSync(join(ROOT, "schema/taxonomy.json"), "utf8"));
+export const domains = taxonomy.domains;
+export const domainBySlug = new Map(domains.map((d) => [d.slug, d]));
+
+function loadDevices() {
+  const dir = join(ROOT, "data/devices");
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")))
+    // Only verified records reach the site. Everything else is work in progress.
+    .filter((d) => d.status === "verified" || d.status === "needs_reverification")
+    .sort((a, b) => (a.make + a.model).localeCompare(b.make + b.model));
+}
+
+export const devices = loadDevices();
+
+export const TIERS = {
+  D0: { name: "No Radio",      short: "No radio at all. It cannot phone home." },
+  D1: { name: "Local Only",    short: "Speaks only to hardware you control." },
+  D2: { name: "Cloud-Optional",short: "Full function with the router off." },
+  D3: { name: "Liberatable",   short: "Cloud-bound as sold; a local path exists." },
+};
+
+export const byDomain = (slug) => devices.filter((d) => d.category === slug);
+export const bySub = (slug, sub) => devices.filter((d) => d.category === slug && d.subcategory === sub);
+export const byTier = (t) => devices.filter((d) => d.tier === t);
+
+// Subcategories that actually have devices — never render an empty page.
+export function populatedSubs(slug) {
+  const d = domainBySlug.get(slug);
+  if (!d) return [];
+  return d.subcategories
+    .map((s) => ({ sub: s, count: bySub(slug, s).length }))
+    .filter((x) => x.count > 0);
+}
+
+export function ageDays(iso) {
+  if (!iso) return null;
+  return Math.round((Date.now() - Date.parse(iso)) / 864e5);
+}
+
+// Every changelog entry across every device, newest first — powers /changed.
+export function changeFeed() {
+  return devices
+    .flatMap((d) => (d.changelog ?? []).map((c) => ({ ...c, device: d })))
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");

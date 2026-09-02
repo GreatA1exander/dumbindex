@@ -1,0 +1,10 @@
+{
+  "prompt_version": null,
+  "last_run": null,
+  "domain_rotation_pos": 0,
+  "next_domain": "automotive",
+  "shard_index": 0,
+  "shard_count": 4,
+  "unfinished": [],
+  "_note": "Strict rotation through schema/taxonomy.json domains. The agent never chooses; it reads domain_rotation_pos and advances it. Starting on automotive deliberately — dashcams are the highest-yield domain to prove the pipeline on."
+}

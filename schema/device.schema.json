@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dumbhome.org/schema/device.schema.json",
+  "title": "Device record",
+  "type": "object",
+  "required": ["model_id","make","model","category","tier","status","the_unplug_test","sources","last_verified"],
+  "additionalProperties": false,
+  "properties": {
+    "model_id":   {"type":"string","pattern":"^[a-z0-9]+(-[a-z0-9]+)*$","description":"slug, make-model, stable forever"},
+    "make":       {"type":"string"},
+    "model":      {"type":"string","description":"exact enough to buy"},
+    "category":   {"enum":["kitchen", "laundry", "climate", "lighting", "security", "automotive", "av", "computing", "photo", "health", "baby-pet", "tools", "wearables", "office"],
+                   "description":"domain slug; must exist in schema/taxonomy.json"},
+    "subcategory":{"type":["string","null"],"description":"must be listed under this domain in schema/taxonomy.json"},
+
+    "tier":       {"enum":["D0","D1","D2","D3","REJECT"]},
+    "tier_rationale": {"type":"string","description":"which decision-table row fired, in one sentence"},
+
+    "status":     {"enum":["verified","insufficient_evidence","needs_reverification","rejected","blocked"]},
+    "rejection_reason": {"type":["string","null"]},
+
+    "the_unplug_test": {"type":"string","maxLength":600,
+      "description":"2-4 plain sentences: what happens when the router is off"},
+
+    "account_required":       {"enum":["none","app_only","for_setup","for_core","unknown"]},
+    "works_offline":          {"enum":["fully","partially","no","unknown"]},
+    "offline_losses":         {"type":"array","items":{"type":"string"},"description":"what specifically stops working"},
+    "firmware_ota_forced":    {"enum":["no","yes","yes_but_blockable","unknown"]},
+    "local_api":              {"type":"array","items":{"enum":["none","rest","mqtt","matter","zigbee","zwave","thread","modbus","ble","rs485","ir","unknown"]}},
+    "phones_home":            {"enum":["none","telemetry","analytics","heavy","unknown"]},
+
+    "radios":     {"type":"array","items":{"enum":["none","wifi","ble","zigbee","zwave","thread","cellular","lora","nfc","unknown"]}},
+    "fcc_id":     {"type":["string","null"]},
+    "fcc_checked":{"type":"boolean"},
+
+    "liberation": {"type":["object","null"],"additionalProperties":false,
+      "properties":{
+        "method":{"type":"string","description":"e.g. ESPHome flash via UART"},
+        "difficulty":{"enum":["software","disassembly","soldering"]},
+        "reversible":{"type":"boolean"},
+        "maintained":{"type":"boolean"},
+        "guide_url":{"type":"string"}
+      }},
+
+    "repairability": {"type":"object","additionalProperties":false,
+      "properties":{
+        "parts_available":{"enum":["yes","limited","no","unknown"]},
+        "ifixit_score":{"type":["number","null"]},
+        "notes":{"type":["string","null"]}
+      }},
+
+    "availability": {"enum":["in_stock","limited","discontinued","unknown"]},
+    "price_band":   {"type":["string","null"],"description":"e.g. $150-200"},
+    "price_observed":{"type":["string","null"],"format":"date"},
+    "where_to_buy": {"type":"array","items":{"type":"object","required":["name","url"],
+      "properties":{"name":{"type":"string"},"url":{"type":"string"}},"additionalProperties":false}},
+    "affiliate":    {"type":["object","null"],"description":"human-filled only; agents must leave null"},
+
+    "vendor_risk":  {"type":["integer","null"],"minimum":0,"maximum":3},
+
+    "sources": {"type":"array","minItems":1,"items":{
+      "type":"object","required":["url","class","accessed","supports"],"additionalProperties":false,
+      "properties":{
+        "url":{"type":"string"},
+        "class":{"enum":["A","B","C"]},
+        "accessed":{"type":"string","format":"date"},
+        "supports":{"type":"string","description":"which claim this backs"},
+        "archive_url":{"type":["string","null"]}
+      }}},
+
+    "open_questions": {"type":"array","items":{"type":"string"}},
+    "conflicts_with": {"type":["string","null"]},
+    "notes":          {"type":["string","null"]},
+
+    "first_published": {"type":"string","format":"date"},
+    "last_verified":   {"type":"string","format":"date"},
+    "changelog": {"type":"array","items":{
+      "type":"object","required":["date","change"],"additionalProperties":false,
+      "properties":{"date":{"type":"string","format":"date"},"change":{"type":"string"},
+                    "source":{"type":["string","null"]}}}},
+
+    "agent_meta": {"type":"object","additionalProperties":true,
+      "description":"model, prompt version, run id, search count — for the critic loop"}
+  }
+}

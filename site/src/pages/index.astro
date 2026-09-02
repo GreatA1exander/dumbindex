@@ -1,0 +1,41 @@
+---
+import Base from "../layouts/Base.astro";
+import DeviceTable from "../components/DeviceTable.astro";
+import Tier from "../components/Tier.astro";
+import { devices, TIERS, domains, byDomain } from "../lib/data.js";
+---
+<Base title="Devices that still work when the internet doesn't" current="home"
+      description="A verified catalog of appliances, dashcams, cameras, printers and tools that work without a vendor cloud.">
+  <h1>Devices that still work when the internet doesn't</h1>
+  <p class="lede">
+    Every entry answers one question: <strong>what does this device require in order to
+    work?</strong> Not which is best — which ones keep working when a vendor shuts down a
+    server, mandates an account, or moves a feature you paid for behind a subscription.
+    Every claim is sourced and dated.
+  </p>
+
+  <div class="filters">
+    <span class="lbl">Tier</span>
+    {Object.entries(TIERS).map(([t, m]) => (
+      <span><Tier tier={t} /> <span class="age">{m.name}</span></span>
+    ))}
+  </div>
+
+  <h2>All verified devices ({devices.length})</h2>
+  <DeviceTable rows={devices} />
+
+  <h2>By type</h2>
+  <div class="tablewrap">
+  <table class="devices">
+    <tbody>
+      {domains.map((d) => (
+        <tr>
+          <td><a href={`/${d.slug}/`}>{d.name}</a></td>
+          <td class="age">{d.blurb}</td>
+          <td class="num">{byDomain(d.slug).length}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+</Base>

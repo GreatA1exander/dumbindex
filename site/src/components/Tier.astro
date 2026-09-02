@@ -1,0 +1,5 @@
+---
+const { tier, link = true } = Astro.props;
+const Tag = link ? "a" : "span";
+---
+<Tag class={`tier ${tier}`} href={link ? `/tier/${tier.toLowerCase()}/` : undefined}>{tier}</Tag>
