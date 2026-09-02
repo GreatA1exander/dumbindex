@@ -33,6 +33,19 @@ function loadDevices() {
 
 export const devices = loadDevices();
 
+// Rejections are published too. A reader searching for a specific popular device
+// deserves a clear answer rather than silence — silence reads as "not researched".
+function loadRejected() {
+  const dir = join(ROOT, "data/devices");
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")))
+    .filter((d) => d.status === "rejected")
+    .sort((a, b) => (a.make + a.model).localeCompare(b.make + b.model));
+}
+export const rejected = loadRejected();
+
 export const TIERS = {
   D0: { name: "No Radio",      short: "No radio at all. It cannot phone home." },
   D1: { name: "Local Only",    short: "Speaks only to hardware you control." },

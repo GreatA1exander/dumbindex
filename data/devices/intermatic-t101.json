@@ -1,0 +1,63 @@
+{
+  "model_id": "intermatic-t101",
+  "make": "Intermatic",
+  "model": "T101",
+  "category": "lighting",
+  "subcategory": "mechanical timer",
+
+  "tier": "D0",
+  "tier_rationale": "An electromechanical time switch: a synchronous clock motor turns a dial, and physical trippers throw a 40 A contact. There is no logic board, no radio, and nothing to configure in software.",
+
+  "the_unplug_test": "This device has no opinion about your router. It is a clock motor, a dial, and two little metal trippers you slide around the rim to say when the contact should close. You set it with your fingers. It will still be doing exactly this in twenty years, and the only failure mode is a worn clock motor, which is a replaceable part.",
+
+  "status": "verified",
+  "rejection_reason": null,
+
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": ["none"],
+  "phones_home": "none",
+
+  "radios": ["none"],
+  "fcc_id": null,
+  "fcc_checked": true,
+
+  "liberation": null,
+
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Intermatic sells the clock mechanism on its own as the T101M, so the wearing part can be replaced without discarding the enclosure or rewiring anything."
+  },
+
+  "availability": "in_stock",
+  "price_band": "$40-70",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [{"name": "Intermatic (manufacturer)", "url": "https://www.intermatic.com/Product/T101?setcontextlanguagecode=en"}],
+  "affiliate": null,
+
+  "vendor_risk": 0,
+
+  "sources": [
+    {"url": "https://www.intermatic.com/Product/T101?setcontextlanguagecode=en",
+     "class": "A", "accessed": "2026-09-02",
+     "supports": "Manufacturer product page: 24-hour mechanical time switch, 120 VAC 60 Hz, SPST, indoor metal enclosure, one-hour minimum interval, up to 12 on/off operations per day, manual override, one ON and one OFF tripper included. No electronic or connected features listed.",
+     "archive_url": null},
+    {"url": "https://support.intermatic.com/hc/en-us/articles/41893757982747-How-Do-I-Set-Up-and-Operate-a-T100-Series-Mechanical-Time-Switch",
+     "class": "A", "accessed": "2026-09-02",
+     "supports": "Manufacturer setup documentation describes operation entirely in physical terms — rotating the dial to current time and positioning trippers — with no app, pairing, or configuration software anywhere in the procedure.",
+     "archive_url": null}
+  ],
+
+  "open_questions": [],
+  "conflicts_with": null,
+  "notes": "Included as the floor of the scale. Everything else on this site is measured against devices like this one: it cannot be enshittified because there is nothing in it to change. Intermatic also sells electronic and connected timers, so as always the model number is what matters.",
+
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [{"date": "2026-09-02", "change": "First published at D0.", "source": null}],
+
+  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-02-phase0", "searches": 2}
+}

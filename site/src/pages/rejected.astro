@@ -1,0 +1,49 @@
+---
+import Base from "../layouts/Base.astro";
+import { rejected, domainBySlug } from "../lib/data.js";
+---
+<Base title="Rejected" current="rejected"
+      description="Popular devices that did not qualify, and exactly why — so a search for them returns an answer rather than silence.">
+  <h1>Rejected</h1>
+  <p class="lede">
+    These devices were researched to the same standard as everything else and did not
+    qualify. They are listed rather than omitted because people search for them by name,
+    and finding nothing looks the same as not having checked. A rejection here is a
+    specific, sourced claim about what the device requires — not a verdict on whether it
+    is any good at its job.
+  </p>
+  <p class="lede">
+    A device is rejected when its <strong>core function</strong> needs a vendor cloud or a
+    mandatory account with no documented local path, or when a subscription gates
+    something the hardware can already do.
+  </p>
+
+  {rejected.length === 0 ? (
+    <p class="empty">Nothing rejected yet.</p>
+  ) : (
+    rejected.map((d) => (
+      <section>
+        <h2>{d.make} {d.model}</h2>
+        <p class="age">
+          {domainBySlug.get(d.category)?.name}{d.subcategory && <> · {d.subcategory}</>}
+          {d.price_band && <> · {d.price_band}</>}
+        </p>
+        <div class="unplug">
+          <h2>The unplug test</h2>
+          <p>{d.the_unplug_test}</p>
+        </div>
+        <p><strong>Why it was rejected:</strong> {d.rejection_reason}</p>
+        {d.notes && <p>{d.notes}</p>}
+        <p class="age">Sources:</p>
+        <ul class="sources">
+          {d.sources?.map((s) => (
+            <li>
+              <span class="evc">{s.class}</span> <a href={s.url} rel="nofollow">{s.url}</a>
+              <br /><span class="age">{s.supports} — accessed {s.accessed}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  )}
+</Base>
