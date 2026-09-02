@@ -98,6 +98,25 @@ device or in its documentation.
 This heuristic is cheap, deterministic, and checkable by a small model. Use it before
 you use judgment.
 
+### Other third parties with enforcement power
+
+The FCC check works because someone with the power to punish a lie has already made the
+manufacturer answer the question. The same logic gives you other cheap, strong evidence —
+look for it before you resort to reading marketing copy:
+
+- **Standardised-exam approval** (SAT, ACT, AP, and most professional licensing bodies)
+  categorically excludes devices with communication capability. An exam-approved
+  calculator or watch has been certified radio-free by a body that enforces it.
+- **Commercial and food-service certifications** (NSF, ETL-Sanitation, cETLus) indicate a
+  product built for an operator who cannot tolerate cloud dependence, and such lines
+  usually document their controls precisely.
+- **Intrinsic-safety and hazardous-location ratings** (ATEX, Class I Div 2) severely
+  constrain what radios a device may contain.
+- **Prison, hospital, and government procurement variants** of consumer products are
+  routinely stripped of radios, and the stripped SKU is usually purchasable by anyone.
+
+Record which of these you used in the source's `supports` note, the same as an FCC check.
+
 ---
 
 ## 4. Rules for the agent, in priority order

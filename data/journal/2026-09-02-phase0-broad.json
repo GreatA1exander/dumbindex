@@ -1,0 +1,78 @@
+{
+  "run_id": "2026-09-02-phase0-broad",
+  "job": "verify",
+  "prompt_version": "phase-0-manual",
+  "model": "claude-opus-5",
+  "goal": "Exercise every path in the system across a variety of domains, complex and simple, rather than maximise record count.",
+
+  "devices": [
+    {"model_id": "brother-hl-l2400d", "outcome": "verified", "tier": "D0"},
+    {"model_id": "brother-hl-l2320d", "outcome": "verified", "tier": "D0", "note": "discontinued path"},
+    {"model_id": "chamberlain-b4643t", "outcome": "verified", "tier": "D2", "note": "forced the tier/vendor_risk split"},
+    {"model_id": "honeywell-home-th4110u2005", "outcome": "verified", "tier": "D0"},
+    {"model_id": "browning-strike-force-pro-x-1080", "outcome": "verified", "tier": "D0"},
+    {"model_id": "sceptre-x325bv-fsr", "outcome": "verified", "tier": "D0"},
+    {"model_id": "sonoff-basicr2", "outcome": "insufficient_evidence", "note": "held deliberately; tests the hold path"},
+    {"model_id": "intermatic-t101", "outcome": "verified", "tier": "D0"},
+    {"model_id": "speed-queen-tc5003wn", "outcome": "verified", "tier": "D0"},
+    {"model_id": "omron-bp5255", "outcome": "verified", "tier": "D2"},
+    {"model_id": "ring-battery-doorbell-2k", "outcome": "rejected", "tier": "REJECT", "note": "first REJECT"},
+    {"model_id": "casio-f-91w", "outcome": "verified", "tier": "D0", "note": "published on two Class B; Class A pending"},
+    {"model_id": "davis-vantage-vue-weatherlink", "outcome": "verified", "tier": "D2"},
+    {"model_id": "amana-rcs10dse", "outcome": "verified", "tier": "D0", "note": "3 failed fetches before finding the real manufacturer"},
+    {"model_id": "vtech-dm221", "outcome": "verified", "tier": "D1"},
+    {"model_id": "ti-36x-pro", "outcome": "verified", "tier": "D0"}
+  ],
+
+  "sources_that_worked": [
+    {"domain": "fccid.io", "claims_supported": 6,
+     "note": "Still the single highest-yield source. Worked in both directions this run: proving absence via the sibling control (Resideo, Browning/Quest, VIOFO) and proving exactly which radio is present (VTech DM221 — two grants, DECT only, no WiFi)."},
+    {"domain": "manufacturer support/spec subdomains", "claims_supported": 12,
+     "note": "support.brother.com, honeywellhome.com, speedqueen.com, acpsolutions.com, education.ti.com, davisinstruments.com, sceptre.com. Spec tables that state 'WiFi: No' explicitly are the fastest Class A available."},
+    {"domain": "home-assistant.io", "claims_supported": 2,
+     "note": "Best source for vendor incidents and liberation paths. Their integration-removal posts are dated, specific, and name alternatives."},
+    {"domain": "ring.com", "claims_supported": 2,
+     "note": "Vendors document their own subscription gates plainly in support articles. For REJECT cases the vendor is often the best Class A source against itself."}
+  ],
+
+  "sources_that_failed": [
+    {"domain": "manuals.plus", "fetches": 1, "error": "HTTP 403", "note": "confirmed again from run 1"},
+    {"domain": "device.report", "fetches": 1, "error": "HTTP 403"},
+    {"domain": "katom.com", "fetches": 1, "error": "HTTP 403"},
+    {"domain": "www.bestbuy.com", "fetches": 1, "error": "timeout 60s"},
+    {"domain": "www.casio.com", "fetches": 1, "error": "timeout 60s", "note": "cost the Casio record its Class A source"},
+    {"domain": "vtechphones.com", "fetches": 1, "error": "redirect loop"},
+    {"domain": "amanacommercial.com", "fetches": 1, "error": "DNS ENOTFOUND — brand site does not exist; ACP Inc is the actual manufacturer"},
+    {"domain": "chamberlain.com/collections", "fetches": 1, "error": "HTTP 404"},
+    {"domain": "intermatic.com/en/... path", "fetches": 1, "error": "HTTP 404 — guessed path; site search found the real one"}
+  ],
+
+  "searches_used": 34,
+  "wall_clock_min": 74,
+  "subagent_failures": [],
+
+  "rules_added": [
+    "PRINCIPLES §1 — tier describes the device, vendor_risk describes the vendor. REJECT no longer absorbs vendor conduct.",
+    "PRINCIPLES §3 — new subsection on third parties with enforcement power: exam approvals, commercial/sanitation certifications, intrinsic-safety ratings, and stripped procurement SKUs are all cheap strong evidence of absent radios.",
+    "VERIFIER — decision table explicitly guarded against vendor-conduct contamination.",
+    "REFRESH — every change must carry a `kind`; `listed` is reserved for first appearance."
+  ],
+
+  "system_gaps_found": [
+    {"gap": "Rejected records validated fine and were then silently dropped from the build. A reader searching a popular device by name could not distinguish 'rejected' from 'never checked'.",
+     "fix": "Added /rejected, publishing the reason and sources."},
+    {"gap": "/changed promised 'vendors revoke features after you have paid' and rendered 16 'First published' rows. The signal was drowned by housekeeping.",
+     "fix": "Added changelog.kind; the page now leads with material changes and files listings separately."},
+    {"gap": "The vendor ledger existed as data with no UI at all.",
+     "fix": "Added /vendors with the risk scale and per-incident sources; device pages link vendor_risk to the entry."},
+    {"gap": "Domain pages had no per-domain context, which BRAND.md had specified.",
+     "fix": "Added problem statements to taxonomy.json for the six populated domains."}
+  ],
+
+  "stalls": [
+    {"category": "kitchen/range", "reason": "Manufacturers mix connected and non-connected SKUs within one model line with no naming convention that distinguishes them. Could not pin an exact buyable model number. Pivoted to a commercial microwave.",
+     "recommendation": "Ranges and refrigerators likely need a different procedure than the rest of kitchen — probably starting from a retailer's filterable spec search rather than from the manufacturer."}
+  ],
+
+  "surprises": "Two things. First, the Chamberlain case broke the ladder rather than fitting it: a vendor can behave appallingly while the hardware in front of you stays perfectly usable offline, and conflating those produces a REJECT that a reader will test and find wrong. Separating tier from vendor_risk made the site strictly more informative. Second, the commercial-grade escape hatch showed up independently in three unrelated domains — laundry (Speed Queen), kitchen (Amana/ACP), and lighting (Intermatic) — which suggests it should be promoted from a SCOUT hint to a first-class discovery strategy: for any consumer category that has gone cloud-first, search the commercial equivalent first rather than last."
+}
