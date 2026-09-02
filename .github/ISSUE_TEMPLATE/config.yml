@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Email us instead
+    url: mailto:support@dumbindex.com
+    about: If you would rather not open a public issue. Same commitments either way — see /corrections.
+  - name: How we verify a device
+    url: https://dumbindex.com/how-to-check/
+    about: The FCC lookup, the sibling control, and the rest of the method — so you can check us, or check something we have not covered.

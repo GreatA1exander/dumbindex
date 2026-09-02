@@ -1,0 +1,43 @@
+name: A device got worse
+description: A device lost function after people had already bought it. This is the most valuable report you can file.
+title: "[changed] "
+labels: ["downgrade", "needs-verification"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the report this project exists for. A firmware update that added an account
+        requirement, a server shutdown, a feature moved behind a subscription, a vendor
+        revoking access it previously granted — anything where the device someone bought is
+        no longer the device they have.
+
+        It does not matter whether we currently list the device.
+  - type: input
+    id: device
+    attributes:
+      label: Make and exact model
+      description: The model number matters more than you would think — manufacturers sell connected and non-connected versions under nearly identical names.
+      placeholder: "Chamberlain B4643T"
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes:
+      label: What stopped working, and when
+      description: What worked before, what happens now, and roughly when it changed.
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Anything that backs this up
+      description: |
+        A link to release notes, a vendor announcement, a forum thread, a news report — anything.
+        If you have none, say so and describe what you tried. First-hand accounts from people who
+        own the thing are genuinely useful; we can usually find the paperwork afterwards.
+    validations: { required: false }
+  - type: checkboxes
+    id: firsthand
+    attributes:
+      label: Is this first-hand?
+      options:
+        - label: This happened to a device I own
+        - label: I read about it somewhere

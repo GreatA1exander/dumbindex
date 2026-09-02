@@ -3,7 +3,27 @@
 A catalog of devices that still work when the internet does not.
 Appliances, dashcams, cameras, printers, tools — 14 domains, US market.
 
-Agent-researched, human-reviewed, statically rendered.
+Agent-researched, human-reviewed, statically rendered. → **[dumbindex.com](https://dumbindex.com)**
+
+[![gates](https://github.com/GreatA1exander/dumbindex/actions/workflows/ci.yml/badge.svg)](https://github.com/GreatA1exander/dumbindex/actions/workflows/ci.yml)
+
+Every device answers one question: **what does this device require in order to work?**
+Not which is best — which ones keep working when a vendor shuts down a server, mandates an
+account, or moves a feature you already paid for behind a subscription. Every claim is
+sourced, graded and dated.
+
+The prompts that drive the research are in [`agents/`](agents/), published rather than
+hidden. A site whose whole claim is "check us" has no business being opaque about its own
+method.
+
+**Status: pre-launch.** The catalogue is being populated by hand before automation is
+turned on — see [BACKLOG.md](BACKLOG.md) for the launch gate.
+[Contributions](CONTRIBUTING.md): issues open, `data/` PRs not yet, code PRs welcome.
+
+## Licence
+
+Code (prompts, schema, scripts, site) is [MIT](LICENSE).
+Device data is [CC BY-SA 4.0](data/LICENSE) — reuse it, keep it open.
 
 ## Repo map
 

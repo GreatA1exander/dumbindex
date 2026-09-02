@@ -1,0 +1,62 @@
+name: gates
+
+# The evidence bar is enforced by scripts, not by a reviewer's patience. Every push
+# and every pull request runs the same gates a local `npm run check` runs, so a record
+# below the standard cannot merge regardless of who wrote it or how plausible it reads.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Weekly link-rot sweep. Sources disappear quietly; nothing else would notice.
+    - cron: '17 6 * * 1'
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install site dependencies
+        run: npm ci --prefix site
+
+      # Schema conformance, the Class A / two-Class-B evidence bar, taxonomy discipline,
+      # staleness expiry, D3 liberation links, and the no-agent-affiliate-links rule.
+      - name: Validate records
+        run: node scripts/validate.mjs
+
+      # Hand-verified expectations including trap cases — devices whose correct answer is
+      # the opposite of what pattern-matching suggests. A trap regression fails the build
+      # even when the overall score looks healthy.
+      - name: Golden regression gate
+        run: node scripts/score-golden.mjs
+
+      - name: Build site
+        run: npm run build --prefix site
+
+      # The footer promises no trackers, no third-party requests, no JavaScript and
+      # pages under 60 KB. This is that promise made checkable.
+      - name: Page weight and no-third-party check
+        run: node scripts/pageweight.mjs
+
+  # Link rot is slow and occasionally flaky against rate-limiting hosts, so it runs on a
+  # schedule rather than blocking every PR. Dead sources are a real defect — a claim whose
+  # evidence has vanished cannot stay verified — but they are not a reason to block a merge
+  # that has nothing to do with them.
+  links:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check every cited source resolves
+        run: node scripts/check-links.mjs

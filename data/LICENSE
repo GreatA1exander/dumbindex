@@ -1,0 +1,33 @@
+Device data — Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0)
+
+Copyright (c) 2026 dumbindex contributors
+
+Everything in this directory — the device records, the taxonomy, the vendor
+ledger, the evaluation set and the run journals — is licensed under
+CC BY-SA 4.0.
+
+Full legal code: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by-sa/4.0/
+
+You are free to share and adapt this data for any purpose, including
+commercially, provided you:
+
+  ATTRIBUTION   — credit dumbindex (https://dumbindex.com) and link the licence.
+  SHARE-ALIKE   — license your derivative catalogue under CC BY-SA 4.0 as well.
+
+Why share-alike rather than something more permissive: the value of this data
+is that it is checked and kept current, and a catalogue that can be enclosed
+stops being checkable. If you build on it, the result should stay as open as
+what you started from.
+
+A NOTE ON ACCURACY
+
+This data describes what devices required at the time each record was verified.
+Every record carries its `last_verified` date and its sources so you can check
+it yourself. Manufacturers change device behaviour after sale — that is the
+entire reason this project exists — so a record is a dated observation, not a
+guarantee about a device you buy tomorrow. Re-check before relying on it.
+
+Provided as-is, with no warranty. See /how-to-check on the site for the method,
+and /corrections for how to tell us we got something wrong.

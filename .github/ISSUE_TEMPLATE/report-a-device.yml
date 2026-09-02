@@ -1,0 +1,38 @@
+name: Suggest a device
+description: A device that belongs in the catalogue.
+title: "[device] "
+labels: ["candidate"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Boring devices are the most welcome ones. A mechanical timer nobody writes about is
+        worth more here than another widely-reviewed smart gadget.
+
+        Commercial and contractor-grade equipment is especially useful — businesses will not
+        buy hardware that stops working when a vendor's server does, which is why those lines
+        keep local controls in production long after the consumer versions drop them.
+  - type: input
+    id: device
+    attributes:
+      label: Make and exact model
+      description: Exact enough to buy. "Bosch dishwasher" is not a candidate; "Bosch SHE53C85N" is.
+    validations: { required: true }
+  - type: dropdown
+    id: tier
+    attributes:
+      label: How independent do you think it is?
+      description: A guess is fine — we verify everything ourselves. "Not sure" is a perfectly good answer.
+      options:
+        - "Not sure"
+        - "No radio at all"
+        - "Has a radio but only talks to hardware I control"
+        - "Works fully offline, but the vendor has a cloud"
+        - "Needs the cloud as sold, but can be freed (ESPHome, Tasmota, etc.)"
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes:
+      label: What makes it worth listing
+      description: What happens when the router is off? Any links to a manual or spec sheet are gold.
+    validations: { required: true }

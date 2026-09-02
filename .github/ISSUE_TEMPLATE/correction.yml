@@ -1,0 +1,32 @@
+name: We got something wrong
+description: A wrong tier, a dead link, a source that does not say what we claim it says.
+title: "[correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This site is only worth reading if being wrong has consequences. Corrections that hold
+        up get applied, and the device's history records what changed and when — we do not
+        quietly edit.
+
+        If a source we cited turns out not to support the claim, the claim comes down even if
+        we still believe it. Believing something is not evidence.
+  - type: input
+    id: page
+    attributes:
+      label: Which record or page
+      placeholder: "/device/viofo-a119-v3/"
+    validations: { required: true }
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: What we say, and what is actually the case.
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What supports the correction
+      description: A link beats an assertion, and a manufacturer's own page beats a forum post — but a specific first-hand account beats nothing at all.
+    validations: { required: false }
