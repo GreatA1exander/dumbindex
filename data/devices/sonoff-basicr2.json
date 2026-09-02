@@ -5,16 +5,20 @@
   "category": "lighting",
   "subcategory": "smart plug alternative",
   "tier": "D3",
-  "tier_rationale": "PROVISIONAL \u2014 not published. Ships expecting the eWeLink app and cloud, and a maintained third-party firmware (Tasmota) gives full local control. What is not established is whether an eWeLink account is strictly required as sold, which is the difference between D3 and D2.",
-  "the_unplug_test": "Not written. This record has not cleared the evidence bar and must not be published until the account question below is settled \u2014 writing a confident unplug paragraph on unresolved evidence is exactly the failure this status exists to prevent.",
-  "status": "insufficient_evidence",
+  "tier_rationale": "Cloud-dependent as sold: the BASICR2 is not among the models supporting Sonoff DIY mode, so the eWeLink app and account are required to commission the device's actual purpose \u2014 network-controlled switching. A maintained local path exists via serial-flashed Tasmota, which is the definition of D3.",
+  "the_unplug_test": "As sold, the useful half stops. The physical button on the module still toggles the relay, but the reason you bought a Wi-Fi switch \u2014 controlling it from somewhere else, or from an automation \u2014 needs the eWeLink app, and commissioning it needs an eWeLink account. Flash Tasmota over the serial header and that inverts completely: the switch answers local HTTP or MQTT on your own network and never contacts anyone. That is a soldering-iron afternoon, not a settings toggle.",
+  "status": "verified",
   "rejection_reason": null,
-  "account_required": "unknown",
-  "works_offline": "unknown",
-  "offline_losses": [],
+  "account_required": "for_core",
+  "works_offline": "partially",
+  "offline_losses": [
+    "network and app control of the relay",
+    "automations and schedules",
+    "initial commissioning, which requires the eWeLink app"
+  ],
   "firmware_ota_forced": "unknown",
   "local_api": [
-    "unknown"
+    "none"
   ],
   "phones_home": "unknown",
   "radios": [
@@ -34,12 +38,12 @@
     "ifixit_score": null,
     "notes": null
   },
-  "availability": "unknown",
+  "availability": "discontinued",
   "price_band": null,
   "price_observed": null,
   "where_to_buy": [],
   "affiliate": null,
-  "vendor_risk": null,
+  "vendor_risk": 0,
   "sources": [
     {
       "url": "https://templates.blakadder.com/sonoff_BASICR2.html",
@@ -54,24 +58,48 @@
       "accessed": "2026-09-02",
       "supports": "Tasmota project documentation for Sonoff DIY mode, indicating an over-the-air path exists in addition to serial flashing.",
       "archive_url": null
+    },
+    {
+      "url": "https://tasmota.github.io/docs/Sonoff-DIY/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Tasmota project documentation states DIY mode is officially supported only on the Sonoff Basic R3, RF R3 and Mini \u2014 not the BASICR2 \u2014 and that the DIY procedure itself begins by pairing the device with the eWeLink app. Together these settle the decisive question: the BASICR2 requires eWeLink as sold, and its local path is serial flashing.",
+      "archive_url": null
+    },
+    {
+      "url": "https://sonoff.tech/en-us/products/sonoff-basicr4-wi-fi-smart-switch",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "SONOFF's current lineup lists the BASICR4 as the shipping basic switch; the BASICR2 is superseded and no longer sold new.",
+      "archive_url": null
     }
   ],
   "open_questions": [
-    "DECISIVE: is an eWeLink account mandatory to complete first-time setup and operate the relay as sold? If setup can be completed without registering, this is D2, not D3. Every other question is secondary to this one.",
-    "Sonoff's own DIY mode reportedly allows local control without Tasmota and without the eWeLink cloud \u2014 but one source indicates DIY mode must first be enabled by pairing with the eWeLink app. Confirm whether initial cloud pairing is required to unlock it.",
-    "Is the BASICR2 still in production, or superseded by the BASICR4? Availability was not established and the record cannot publish without it.",
-    "Does the device continue switching on its local schedule with WAN blocked, or does it fail open/closed?"
+    "Verify the BASICR4 successor and publish it as its own record \u2014 it is the model a reader can actually buy, and its DIY-mode support may place it at D2 rather than D3.",
+    "Confirm whether the BASICR2's physical button continues to switch the relay when the device has never been commissioned, which would sharpen the offline description."
   ],
   "conflicts_with": null,
-  "notes": "Held deliberately. The manufacturer's own article on cloud-free control truncated on fetch and no substitute source settled the account question. The tier could legitimately move to D2 once that is resolved, and publishing D3 now would misrepresent a device that may need no liberation at all.",
+  "notes": "Resolved by the first refresh run. The record had been held because one unresolved fact \u2014 whether an eWeLink account is mandatory as sold \u2014 decided between D3 and D2. It is D3: the BASICR2 predates Sonoff's DIY mode, so there is no account-free commissioning path. The same run also found the device discontinued, which is the more useful finding for a reader and the reason the successor is now the priority.",
   "first_published": "2026-09-02",
   "last_verified": "2026-09-02",
   "changelog": [
     {
       "date": "2026-09-02",
       "change": "Held at insufficient_evidence pending the eWeLink account question.",
-      "source": null,
-      "kind": "listed"
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-02",
+      "change": "Question resolved. The BASICR2 is not DIY-mode supported, so eWeLink is required as sold and the local path is serial-flashed Tasmota. Published at D3.",
+      "kind": "correction",
+      "source": "https://tasmota.github.io/docs/Sonoff-DIY/"
+    },
+    {
+      "date": "2026-09-02",
+      "change": "Discontinued \u2014 superseded by the BASICR4. No longer available new.",
+      "kind": "availability",
+      "source": "https://sonoff.tech/en-us/products/sonoff-basicr4-wi-fi-smart-switch"
     }
   ],
   "agent_meta": {
@@ -81,5 +109,5 @@
     "searches": 2
   },
   "local_replacement": "full",
-  "local_replacement_note": "Tasmota replaces eWeLink entirely, exposing the relay over local HTTP or MQTT with no vendor involvement."
+  "local_replacement_note": "Tasmota, flashed over the serial header, replaces eWeLink completely \u2014 the relay then answers local HTTP or MQTT with no vendor involvement. Note the BASICR2 cannot use Sonoff's over-the-air DIY flashing path, which covers only the BASICR3, RF R3 and Mini; this one needs a 3.3V USB serial adapter and physical access to the pins."
 }

@@ -1,0 +1,50 @@
+---
+import Base from "../layouts/Base.astro";
+import { devices } from "../lib/data.js";
+const openQs = devices.reduce((n, d) => n + (d.open_questions?.length ?? 0), 0);
+---
+<Base title="Corrections" current="corrections"
+      description="How to tell us we are wrong, and what we commit to doing about it.">
+  <h1>Corrections</h1>
+  <p class="lede">
+    This site is only worth reading if being wrong has consequences. Every claim is
+    sourced and dated so you can check us, and this page exists so that checking us has
+    somewhere to go.
+  </p>
+
+  <p><a href="mailto:support@dumbindex.com?subject=Correction"><strong>support@dumbindex.com</strong></a></p>
+
+  <h2>What is worth sending</h2>
+  <ul>
+    <li><strong>A wrong tier.</strong> The most valuable correction there is. Tell us what the device actually does with the router off.</li>
+    <li><strong>A device that changed.</strong> A firmware update that added an account requirement, a server shutdown, a feature moved behind a subscription. This is the thing we most want to hear and the thing we are slowest to notice on our own.</li>
+    <li><strong>A dead or misread source.</strong> If a link is gone, or it does not say what we claim it says, that is a defect regardless of whether the conclusion was right.</li>
+    <li><strong>A device we should cover.</strong> Especially a boring one. A mechanical timer nobody writes about is worth more here than another thinkpiece magnet.</li>
+    <li><strong>An answer to an open question.</strong> There are currently {openQs} unresolved questions recorded across the catalog, each printed on the device page that owns it.</li>
+  </ul>
+
+  <h2>What helps most</h2>
+  <p>
+    A link beats an assertion, and a manufacturer's own page beats a forum post — though a
+    specific forum post with details beats nothing at all, and plenty of what we know came
+    from someone who owned the thing. If you are telling us a device behaves differently
+    from how we describe it, saying what you tried is enough: we can find the paperwork.
+  </p>
+
+  <h2>What we commit to</h2>
+  <ul>
+    <li>A correction that holds up gets applied, and the device's history records what changed and when. We do not quietly edit.</li>
+    <li>If a source we cited turns out not to support the claim, the claim comes down even when we still believe it. Believing something is not evidence.</li>
+    <li>If we cannot verify your correction, we record it as an open question on the device rather than discarding it.</li>
+    <li>Corrections are never suppressed because of a commercial relationship. There are none today, and if that ever changes the rule stays.</li>
+  </ul>
+
+  <h2>Things we will not change</h2>
+  <p>
+    We do not remove a rejection because a manufacturer asks. We do not raise a tier
+    without evidence that the device behaves differently — a vendor's assurance about
+    future intentions is not a fact about the hardware. If you represent a manufacturer
+    and we have something wrong, the fix is the same as for anyone else: show us what the
+    device does.
+  </p>
+</Base>

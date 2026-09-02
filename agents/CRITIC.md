@@ -55,6 +55,14 @@ the reasoning. Attach before/after scores to the PR.
 
 - Change at most **three rules per cycle.** More than that and you cannot attribute the
   next cycle's score movement to anything.
+- **Distinguish a superseded expectation from a surrendered one.** Golden cases may be
+  edited when the evidence genuinely changed — an open question was resolved, a vendor
+  shipped an update, a product was discontinued — and every such edit must record
+  `superseded_expectation` with the prior value and the reason. An expectation edited
+  because a run kept failing it is the exact corruption this gate exists to prevent, and
+  it will look identical to a legitimate edit six months later unless the reason is
+  written down at the time. Audit these every cycle: a run of edits with thin reasons is
+  the clearest early symptom of a project quietly lowering its standards.
 - Never weaken §2 (evidence classes) or §4.1 (cite or null) to raise throughput. If
   throughput is the problem, the answer is more runs or narrower scope, never a lower
   bar. Note this explicitly if you find yourself tempted — that temptation is itself a

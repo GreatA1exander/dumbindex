@@ -33,7 +33,7 @@
     },
     {
       "id": "sonoff-basicr2",
-      "difficulty": "trap",
+      "difficulty": "ambiguous",
       "result": "PASS",
       "detail": ""
     },

@@ -1,0 +1,139 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="How to check a device yourself" current="how-to-check"
+      description="The FCC lookup, the sibling control, and the other checks we use to establish whether a device has a radio in it.">
+  <h1>How to check a device yourself</h1>
+  <p class="lede">
+    This is the method we use, written out so you can apply it to something we have not
+    covered — or use it to catch us being wrong. None of it requires special access. The
+    first check does most of the work and takes about two minutes.
+  </p>
+
+  <h2>1. Look up the FCC grant</h2>
+  <p>
+    Anything sold in the United States containing a deliberate radio transmitter must hold
+    an FCC equipment authorization, and the ID has to appear on the device or in its
+    documentation. This is a legal requirement with an enforcement body behind it, which
+    makes it far better evidence than anything a manufacturer writes in marketing copy.
+  </p>
+  <p>
+    Search <a href="https://fccid.io" rel="nofollow">fccid.io</a> for the manufacturer and
+    model. A grant for an <em>intentional radiator</em> lists the frequency bands, which
+    tells you exactly which radios are inside — 2412–2462&nbsp;MHz is Wi-Fi,
+    2402–2480&nbsp;MHz is Bluetooth, 1920–1930&nbsp;MHz is DECT, 902–928&nbsp;MHz is a
+    proprietary or Z-Wave-style link.
+  </p>
+  <p>
+    A Part&nbsp;15B <em>verification</em> is the opposite of a radio grant — it covers
+    unintentional emissions from ordinary electronics, and its presence supports the
+    conclusion that there is no transmitter.
+  </p>
+
+  <h2>2. Do not trust an absent grant on its own</h2>
+  <p>
+    This is the step people skip, and it is the one that makes the check trustworthy.
+    Finding no grant might mean the device has no radio — or it might mean you searched
+    badly, or the grant is filed under a contract manufacturer's name.
+  </p>
+  <p>
+    <strong>Search the grantee, not just the model.</strong> Pull up everything that
+    manufacturer has filed. If they demonstrably file grants for their models that do have
+    radios, then the absence of one for your model is meaningful. If they have never filed
+    anything, you have learned nothing.
+  </p>
+  <p>
+    This works because manufacturers routinely sell the connected and non-connected
+    versions of the same product side by side. Their own paperwork for the connected
+    sibling becomes the control that proves the quiet one is quiet.
+  </p>
+  <p class="age">
+    Watch for the filing being under a name you do not recognise — Browning's trail cameras
+    are filed by Quest Cameras, and Amana's commercial microwaves are made by ACP. A brand
+    is not always a manufacturer.
+  </p>
+
+  <h2>3. Let a third party with enforcement power do the work</h2>
+  <p>
+    The FCC check works because someone who can punish a lie has already made the
+    manufacturer answer the question. The same logic gives you other cheap, strong
+    evidence:
+  </p>
+  <ul>
+    <li><strong>Standardised-exam approval.</strong> The SAT, ACT, AP and most professional licensing bodies prohibit devices capable of communication. An exam-approved calculator or watch has been certified radio-free by a body that enforces it.</li>
+    <li><strong>Commercial and food-service certifications</strong> (NSF, ETL-Sanitation) indicate equipment built for an operator who cannot tolerate cloud dependence — and those product lines document their controls precisely.</li>
+    <li><strong>Intrinsic-safety and hazardous-location ratings</strong> (ATEX, Class&nbsp;I Div&nbsp;2) severely constrain what radios a device may legally contain.</li>
+  </ul>
+
+  <h2>4. Read the quick-start guide, not the box</h2>
+  <p>
+    Marketing copy says what the manufacturer wants to be true. The installation and
+    quick-start guides say what setup actually requires, because they have to work. When
+    the box says "no app required" and the setup guide opens with "download the app to
+    begin", the guide is correct.
+  </p>
+  <p>
+    Specification tables are better still. Many manufacturers state connectivity as an
+    explicit field — <span class="model">Wi-Fi: Not supported</span> — which is about as
+    unambiguous as evidence gets.
+  </p>
+  <p class="age">
+    Manual aggregator sites tend to block automated access; go to the manufacturer's own
+    support domain, or search for the specific procedure you care about, which usually
+    surfaces their own knowledge-base article.
+  </p>
+
+  <h2>5. The model number is the whole story</h2>
+  <p>
+    Almost every trap in this subject is a model-number trap. Vendors sell the radio-free
+    and radio-equipped versions under names a shelf tag will not distinguish: Brother
+    HL-L2400D and HL-L2405W, Honeywell T4 Pro and T5, VIOFO A119&nbsp;V3 and A139, Amana
+    RCS10DSE and RCS10TS. A review of "the Brother laser printer" tells you nothing.
+    Always resolve to the exact SKU before concluding anything.
+  </p>
+
+  <h2>6. Ask what happens when the router is off</h2>
+  <p>
+    Where a radio does exist, the question stops being <em>can it connect</em> and becomes
+    <em>what breaks when it doesn't</em>. Work through these in order:
+  </p>
+  <ul>
+    <li>Can setup be completed without creating an account?</li>
+    <li>Does the device work with no network configured at all?</li>
+    <li>Does it work with the WAN blocked but the LAN present?</li>
+    <li>What <em>specifically</em> stops working — and is any of it the thing the device is for?</li>
+    <li>Is there a documented local API, or a standard protocol like ONVIF, RTSP, Zigbee, Z-Wave or Matter?</li>
+    <li><strong>Can firmware updates be declined?</strong></li>
+  </ul>
+  <p>
+    That last one matters more than the rest combined. A device that works offline today
+    but accepts updates it cannot refuse works offline only until the manufacturer decides
+    otherwise. It is also the question fewest manufacturers answer, which is itself
+    informative.
+  </p>
+
+  <h2>7. Weigh what you found</h2>
+  <p>
+    We grade evidence in three classes and will not publish a tier on the weakest one
+    alone:
+  </p>
+  <table class="spec">
+    <tbody>
+      <tr><th><span class="evc">A</span> Primary</th><td>Manufacturer manual or spec sheet, FCC filings, firmware release notes, photographed teardowns.</td></tr>
+      <tr><th><span class="evc">B</span> Corroborated</th><td>Home Assistant and ESPHome device databases, Zigbee2MQTT and Z-Wave&nbsp;JS indexes, iFixit, detailed first-hand community reports.</td></tr>
+      <tr><th><span class="evc">C</span> Weak</th><td>Vendor marketing, retailer bullet points, undated forum comments. Never sufficient alone.</td></tr>
+    </tbody>
+  </table>
+  <p>
+    One Class&nbsp;A source, or two independent Class&nbsp;B sources. Two sources are only
+    independent if they are not quoting each other and not both derived from the vendor's
+    own copy — five retailers repeating one spec sheet is one source, not five.
+  </p>
+
+  <h2>If you find we are wrong</h2>
+  <p>
+    <a href="mailto:support@dumbindex.com?subject=Correction">support@dumbindex.com</a>.
+    We would rather be corrected than trusted, and
+    <a href="/corrections/">this is what we commit to doing about it</a>.
+  </p>
+</Base>

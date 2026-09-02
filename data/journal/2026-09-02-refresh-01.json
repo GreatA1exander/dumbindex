@@ -1,0 +1,45 @@
+{
+  "run_id": "2026-09-02-refresh-01",
+  "job": "refresh",
+  "prompt_version": "phase-0-manual",
+  "model": "claude-opus-5",
+  "goal": "First execution of the refresh loop. Prove the mechanism rather than find changes — every record was verified within 24 hours, so change detection could not succeed by construction.",
+
+  "scope": "All 21 records: mechanical link check across every source, plus targeted resolution of the highest-value open question in the catalog.",
+
+  "link_check": {
+    "links_tested": 71,
+    "ok": 71,
+    "blocked": 0,
+    "dead": 0,
+    "note": "Built scripts/check-links.mjs for this. It distinguishes DEAD (404/410/unreachable) from BLOCKED (403/429 — alive but refuses bots), because conflating them would have us withdraw records over sites that work fine for a reader. Notably the domains that blocked WebFetch during verification (manuals.plus, device.report, katom.com) do not appear here — they were never cited, because the procedure routed around them to primary sources."
+  },
+
+  "devices": [
+    {"model_id": "sonoff-basicr2", "outcome": "resolved",
+     "from": "insufficient_evidence", "to": "verified D3",
+     "note": "Also found discontinued and superseded by the BASICR4."}
+  ],
+
+  "findings": [
+    "The decisive question on the held SONOFF record is settled: Tasmota's documentation establishes DIY mode covers only the BASICR3, RF R3 and Mini, and that the DIY procedure itself begins with eWeLink pairing. So the BASICR2 requires an eWeLink account as sold and its only local path is serial flashing. That is D3, not D2.",
+    "The same run found the BASICR2 discontinued. This is the more useful finding: had the record published a week earlier at D3 without the availability check, the site would have been recommending a liberation path for a product nobody can buy. The refresh loop caught a stale recommendation before it existed rather than after."
+  ],
+
+  "system_gaps_found": [
+    {"gap": "Same-date entries on /updates sorted by device name, burying the run's two material findings under sixteen routine listings.",
+     "fix": "Timeline now ranks material changes above corrections above listings within a date."},
+    {"gap": "Resolving the held record invalidated its golden case, which expected insufficient_evidence. The gate correctly failed at 95% overall / 80% traps.",
+     "fix": "Added superseded_expectation to the case recording the prior value and why it moved, plus a rule in golden.json and CRITIC.md distinguishing a superseded expectation (evidence changed) from a surrendered one (a run kept failing). The second is the corruption this gate exists to prevent and looks identical to the first six months later unless the reason is written down at the time."}
+  ],
+
+  "honest_limitations": [
+    "This run could not test change detection. Every record was 0-1 days old, so there was nothing to detect. What it did test: the link checker, the insufficient_evidence to verified transition, the availability path, changelog kinds reaching the reader, and the golden gate's reaction to a legitimately changed expectation.",
+    "The /downgrades filter was verified by temporarily injecting a tier_change entry, confirming it rendered, and reverting — the same technique used to prove the golden gate bites. No fabricated change was committed.",
+    "The catalog still has zero real downgrades. That is honest but unproven: the page is empty because nothing has been re-checked after enough time has passed, not because we have established that nothing changed."
+  ],
+
+  "searches_used": 3,
+  "wall_clock_min": 22,
+  "surprises": "The most valuable output of a refresh run was not a tier change but an availability change. The loop is framed around catching devices that get worse, and the first thing it actually caught was a recommendation going stale. Worth widening how REFRESH thinks about decay: a correct tier on an unbuyable product is still a wrong answer to the reader's real question."
+}

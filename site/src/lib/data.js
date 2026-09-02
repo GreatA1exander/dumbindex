@@ -79,8 +79,11 @@ const MATERIAL = new Set(["tier_change", "vendor_incident"]);
 export function timeline() {
   return [...devices, ...rejected]
     .flatMap((d) => (d.changelog ?? []).map((c) => ({ ...c, kind: c.kind ?? "listed", device: d })))
-    .sort((a, b) => b.date.localeCompare(a.date));
+    // Newest first; within a day, material changes outrank routine listings so a
+    // downgrade is never buried under the day's additions.
+    .sort((a, b) => b.date.localeCompare(a.date) || rank(a.kind) - rank(b.kind));
 }
+const rank = (k) => (MATERIAL.has(k) ? 0 : k === "correction" || k === "availability" ? 1 : 2);
 export const downgrades = () => timeline().filter((c) => MATERIAL.has(c.kind));
 
 export const KIND_LABEL = {

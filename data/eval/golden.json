@@ -1,5 +1,5 @@
 {
-  "_note": "The regression gate. Every prompt change is scored against this before merge; a change that does not improve the score is not merged. Cases were hand-verified during Phase 0 \u2014 the expected values are what a careful human concluded from the cited evidence, not what any model produced. Add cases as new failure modes are discovered; never edit an expected value to make a run pass.",
+  "_note": "The regression gate. Every prompt change is scored against this before merge; a change that does not improve the score is not merged. Cases were hand-verified \u2014 expected values are what a careful human concluded from the cited evidence, not what any model produced.\n\nEDITING EXPECTATIONS: never lower an expectation because a run failed it \u2014 that is the failure mode this file exists to prevent. The one legitimate edit is when the underlying evidence genuinely changes: new research resolves an open question, a vendor ships a firmware update, a product is discontinued. Such an edit must record `superseded_expectation` with what it used to be and why it moved, so the history stays auditable and the distinction between 'the world changed' and 'we gave up' remains visible.",
   "version": 1,
   "built": "2026-09-02",
   "cases": [
@@ -65,14 +65,22 @@
       "make": "SONOFF",
       "model": "BASICR2",
       "category": "lighting",
-      "expected_tier": null,
-      "expected_status": "insufficient_evidence",
-      "difficulty": "trap",
-      "why": "Whether an eWeLink account is mandatory as sold is unresolved, and that single fact is the difference between D3 and D2.",
-      "trap": "A maintained Tasmota path is easy to find and makes D3 feel obvious. The correct answer is to hold the record. Any run that publishes a tier here has failed, regardless of which tier it picked.",
+      "expected_tier": "D3",
+      "expected_status": "verified",
+      "difficulty": "ambiguous",
+      "why": "Cloud-dependent as sold with a maintained but soldering-level local path. Also discontinued, superseded by the BASICR4 \u2014 the record must publish with that status rather than being dropped.",
       "must_find": [
         "tasmota"
-      ]
+      ],
+      "superseded_expectation": {
+        "was": {
+          "expected_tier": null,
+          "expected_status": "insufficient_evidence"
+        },
+        "changed": "2026-09-02",
+        "reason": "The first refresh run resolved the decisive question rather than the standard being lowered. Tasmota's own documentation establishes that DIY mode covers only the BASICR3, RF R3 and Mini, and that the DIY procedure begins with eWeLink pairing \u2014 so the BASICR2 requires an eWeLink account as sold and its local path is serial flashing. That is D3. Holding was the correct answer while the fact was unknown; it stopped being correct once the fact was known."
+      },
+      "expected_availability": "discontinued"
     },
     {
       "id": "davis-vantage-vue-weatherlink",
@@ -257,5 +265,6 @@
         "education.ti.com"
       ]
     }
-  ]
+  ],
+  "_gap": "This set currently has NO case testing the discipline of holding a record at insufficient_evidence. It had one \u2014 the SONOFF BASICR2 \u2014 and lost it when research resolved the question. That discipline is the most valuable thing the traps protect, so the next genuine hold encountered in a run MUST be added here as a trap case. Until then this file is weaker than its score suggests."
 }
