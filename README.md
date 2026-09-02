@@ -55,3 +55,18 @@ Scheduled runs: see OPERATIONS.md §1.
 3. Build `data/eval/golden.json` from the best 20–25.
 4. Scaffold the Astro site against real data.
 5. Turn on the daily schedule.
+
+## Deploying to Cloudflare Pages
+
+The domain is already on Cloudflare, so Pages is the path of least resistance.
+
+| Setting | Value |
+|---|---|
+| Build command | `npm --prefix site run build` |
+| Build output directory | `site/dist` |
+| Node version | `24` (set `NODE_VERSION=24` as a build env var) |
+| Root directory | repo root |
+
+`site/public/_headers` ships a CSP that blocks scripts and all off-origin requests
+outright — the footer promise enforced by the browser rather than asserted in prose.
+If a future change needs JavaScript, the CSP fails first and loudly, which is the point.

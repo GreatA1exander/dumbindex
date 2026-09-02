@@ -1,0 +1,7 @@
+# Cloudflare Pages. The CSP is the footer promise made enforceable by the browser:
+# nothing loads from anywhere but this origin, and there is no script to run.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
