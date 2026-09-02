@@ -1,0 +1,33 @@
+{
+  "run_id": "2026-09-01-phase0",
+  "job": "verify",
+  "prompt_version": "phase-0-manual",
+  "model": "claude-opus-5",
+  "devices": [
+    {"model_id": "viofo-a119-v3", "outcome": "verified", "tier": "D0"},
+    {"model_id": "viofo-a139", "outcome": "verified", "tier": "D1"}
+  ],
+  "sources_that_worked": [
+    {"domain": "fccid.io", "claims_supported": 3,
+     "note": "Highest-value source in the run. The grantee search — not the model search — is what makes an absent grant interpretable."},
+    {"domain": "viofo.com", "claims_supported": 4,
+     "note": "Manufacturer spec tables state Wi-Fi/Bluetooth support explicitly. Vendor knowledge-base blog posts carry the firmware procedure."},
+    {"domain": "support.blackboxmycar.com", "claims_supported": 1,
+     "note": "Specialist retailer support desk. Good Class B for 'does this vendor operate a cloud at all' questions."}
+  ],
+  "sources_that_failed": [
+    {"domain": "manuals.plus", "fetches": 1, "claims_supported": 0, "error": "HTTP 403"},
+    {"domain": "device.report", "fetches": 1, "claims_supported": 0, "error": "HTTP 403"},
+    {"domain": "support.viofo.com", "fetches": 1, "claims_supported": 0,
+     "error": "Article page lists PDF links only; content not inline"}
+  ],
+  "searches_used": 6,
+  "wall_clock_min": 9,
+  "subagent_failures": [],
+  "rules_added": [
+    "PRINCIPLES §3 — an absent FCC grant is only evidence with the sibling-model control; search the grantee, not the model.",
+    "VERIFIER step 4 — radios are not cloud. Name the vendor's cloud endpoint before assigning D2, or it is probably D1.",
+    "VERIFIER step 1 — manual-aggregator sites 403 automated fetches; go to the manufacturer domain or search the specific procedure."
+  ],
+  "surprises": "The D1/D2 boundary turned out to be the interesting one, not D0/D1. The A139 has Wi-Fi, Bluetooth, and a phone app, and is still D1 — VIOFO runs no cloud service whatsoever, so the app is peer-to-peer to the camera's own AP. An agent pattern-matching on 'has Wi-Fi and an app' would have called it D2 and been wrong. Also worth noting: VIOFO sells radio-free and radio-equipped models side by side in the same product line, which is what makes their FCC filing history such a clean control group. Look for other vendors with that shape."
+}

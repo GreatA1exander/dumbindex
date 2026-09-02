@@ -1,7 +1,7 @@
 # CRITIC — the meta loop
 
-Model: large (Opus). Monthly. This is the agent that makes the system better rather than
-bigger.
+Model: **Opus 5** at `effort: max`. Monthly. This is the agent that makes the system
+better rather than bigger. It runs twelve times a year — cost is irrelevant.
 
 ---
 

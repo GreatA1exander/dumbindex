@@ -1,7 +1,10 @@
 # REFRESH — decay agent
 
-Model: small (Haiku / Sonnet). One published device per invocation. Runs on a rolling
-shard so every record is re-checked roughly monthly.
+Model: **Haiku 4.5**. One published device per invocation. Runs on a rolling shard so
+every record is re-checked roughly monthly.
+
+> Haiku genuinely fits here: the question is narrow ("did anything change since this
+> date?"), the page count is small, and 200K context is ample.
 
 ---
 

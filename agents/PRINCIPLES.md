@@ -76,9 +76,14 @@ device or in its documentation.
   model.
 - **A grant for an intentional radiator names the radios.** Internal photos and the RF
   exposure exhibit usually identify the exact Wi-Fi/BLE module.
-- **No intentional-radiator grant for a model that is otherwise mains-powered is strong
-  Class A evidence of D0.** Note that a Part 15B "verification" (unintentional radiator)
-  is not a radio grant — it is the opposite, and it supports D0.
+- **A missing grant is only evidence when you have the sibling control.** "No grant
+  found" on its own is weak — it may just mean you searched badly. What makes it strong
+  is establishing that *the vendor demonstrably files when it has radios*: list the
+  grants that vendor does hold, confirm they cover the models with Wi-Fi or Bluetooth,
+  and only then treat the gap for your model as meaningful. **Always search the grantee,
+  not just the model.** Record the sibling grants you found in the `supports` note.
+- A Part 15B "verification" (unintentional radiator) is not a radio grant — it is the
+  opposite, and it supports D0.
 - Record `fcc_id` on the device record when found, and `fcc_checked: true` with the date
   when the check was performed and came up empty.
 

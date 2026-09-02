@@ -1,6 +1,9 @@
 # SCOUT — discovery agent
 
-Model: small (Haiku / Sonnet). One category per invocation. Cheap, wide, permissive.
+Model: **Sonnet 5** at `effort: low`. One domain per invocation. Cheap, wide, permissive.
+
+> Not Haiku 4.5: discovery reads a lot of forum pages, and Haiku's 200K context is the
+> binding constraint long before its reasoning is.
 
 ---
 

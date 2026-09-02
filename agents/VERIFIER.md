@@ -1,7 +1,8 @@
 # VERIFIER — evidence agent
 
-Model: mid (Sonnet). **One device per invocation.** This is the agent that determines
-whether the site is trustworthy. Everything else is logistics.
+Model: **Opus 5** at `effort: high`. **One device per invocation.** This is the agent
+that determines whether the site is trustworthy. Everything else is logistics — and at
+1.67x Sonnet 5's price, using anything cheaper here is a false economy.
 
 ---
 
@@ -14,11 +15,16 @@ produce a publishable record backed by qualifying evidence, or prove that you ca
 ## Procedure — follow in order, do not skip
 
 1. **Find the manual.** Search for `"{{MODEL}}" manual filetype:pdf` and the
-   manufacturer's support page. The installation and quick-start guides are the highest
+   manufacturer's support page. **Manual-aggregator sites (manuals.plus, device.report,
+   manualslib) reliably return 403 to automated fetches — do not spend budget on them.**
+   Go to the manufacturer's own support domain, or search for the specific procedure
+   (e.g. `"{{MODEL}}" firmware update`), which usually surfaces the vendor's own
+   knowledge-base article containing the same facts. The installation and quick-start guides are the highest
    value documents in this project: they state what setup actually requires. Download and
    read the setup section and the specification table.
 
-2. **Run the FCC check** (§3 of the principles). Search fccid.io for the make and model.
+2. **Run the FCC check** (§3 of the principles). Search fccid.io for the **grantee**, not
+   just the model — you need the vendor's whole grant list to interpret an absence.
    Record `fcc_id` if found and what radios the grant covers. Record
    `fcc_checked: true` with today's date either way. **Do this before forming an
    opinion** — it is the cheapest disambiguator you have.
@@ -42,6 +48,13 @@ produce a publishable record backed by qualifying evidence, or prove that you ca
    | Core function requires cloud with no cited path, or account mandatory at setup, or capability is subscription-gated | **REJECT** |
 
    If two rows both seem to apply, you have a fact wrong. Go back to step 3.
+
+   **The most common tier error is reading radios as cloud.** A device with Wi-Fi, an
+   app, and Bluetooth is D1 — not D2 — when the vendor operates no cloud at all and the
+   app talks peer-to-peer to the device's own access point. D2 means a vendor cloud
+   exists and is optional. If no cloud exists, there is nothing to be optional about.
+   Before assigning D2, name the vendor's cloud endpoint. If you cannot name it, you are
+   probably looking at D1.
 
 5. **Score the secondary axes** — `firmware_ota_forced`, `local_api`, `account_required`,
    `phones_home`, `repairability`, `availability`, `price_band`. Every one may be
