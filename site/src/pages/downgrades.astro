@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+import { downgrades, KIND_LABEL } from "../lib/data.js";
+const rows = downgrades();
+---
+<Base title="Downgrades" current="downgrades"
+      description="Devices that lost function after people had already bought them.">
+  <h1>Downgrades</h1>
+  <p class="lede">
+    Devices that got <strong>worse after people had already bought them</strong> — a
+    firmware update that added an account requirement, a server shutdown, a feature moved
+    behind a subscription, a vendor revoking access it had previously granted.
+  </p>
+  <p class="lede">
+    This is the page the whole project exists to fill, and it is deliberately kept narrow.
+    Routine additions to the catalog live on <a href="/updates/">Updates</a> so that
+    anything appearing here is worth your attention.
+  </p>
+  {rows.length === 0 ? (
+    <p class="empty">
+      Nothing recorded. No device we list has lost function since we verified it —
+      which is the outcome we want, not an empty page waiting to be filled.
+    </p>
+  ) : (
+    <div class="tablewrap">
+    <table class="devices">
+      <tbody>
+        {rows.map((c) => (
+          <tr>
+            <td class="num">{c.date}</td>
+            <td><span class={`kind k-${c.kind}`}>{KIND_LABEL[c.kind]}</span></td>
+            <td>
+              <a href={c.device.status === "rejected" ? "/rejected/" : `/device/${c.device.model_id}/`}>
+                {c.device.make} {c.device.model}
+              </a>
+            </td>
+            <td>{c.change}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    </div>
+  )}
+</Base>

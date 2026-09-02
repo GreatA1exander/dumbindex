@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import { timeline, KIND_LABEL, downgrades } from "../lib/data.js";
+const rows = timeline();
+const bad = downgrades().length;
+---
+<Base title="Updates" current="updates"
+      description="Everything that has changed in the catalog: new listings, tier changes, vendor incidents and corrections.">
+  <h1>Updates</h1>
+  <p class="lede">
+    Everything that has changed in the catalog, newest first — new listings, tier changes,
+    vendor incidents and corrections. If you only want to know when a device you already
+    own has got <em>worse</em>, <a href="/downgrades/">that has its own page</a>{bad > 0 ? ` (${bad} so far)` : " and is empty, which is the good outcome"}.
+  </p>
+  <div class="tablewrap">
+  <table class="devices">
+    <tbody>
+      {rows.map((c) => (
+        <tr>
+          <td class="num">{c.date}</td>
+          <td><span class={`kind k-${c.kind}`}>{KIND_LABEL[c.kind] ?? c.kind}</span></td>
+          <td>
+            <a href={c.device.status === "rejected" ? "/rejected/" : `/device/${c.device.model_id}/`}>
+              {c.device.make} {c.device.model}
+            </a>
+          </td>
+          <td>{c.change}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+</Base>

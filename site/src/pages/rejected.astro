@@ -33,6 +33,16 @@ import { rejected, domainBySlug } from "../lib/data.js";
           <p>{d.the_unplug_test}</p>
         </div>
         <p><strong>Why it was rejected:</strong> {d.rejection_reason}</p>
+        {d.alternatives?.length > 0 && (
+          <>
+            <p><strong>Consider instead:</strong></p>
+            <ul class="sources">
+              {d.alternatives.map((a) => (
+                <li><a href={`/device/${a.model_id}/`}>{a.model_id}</a><br />{a.why}</li>
+              ))}
+            </ul>
+          </>
+        )}
         {d.notes && <p>{d.notes}</p>}
         <p class="age">Sources:</p>
         <ul class="sources">

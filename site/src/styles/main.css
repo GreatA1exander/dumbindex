@@ -55,6 +55,29 @@ table.devices tr:hover td { background: var(--rule-soft); }
 .model { font-family: var(--mono); font-size: .82rem; }
 td.num, th.num { text-align: right; font-family: var(--mono); font-size: .78rem; white-space: nowrap; }
 
+.famtag { font: 600 .64rem/1 var(--mono); text-transform: uppercase; letter-spacing: .05em;
+          color: var(--ink-soft); border: 1px solid var(--rule); padding: .12rem .3rem;
+          border-radius: 2px; margin-left: .3rem; }
+.identify { border-left: 3px solid var(--ink-soft); background: var(--rule-soft);
+            padding: .8rem 1rem; margin: 1rem 0 1.5rem; max-width: 46rem; }
+.identify h2 { border: 0; margin: 0 0 .35rem; font: 600 .72rem/1 var(--mono);
+               text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); }
+.identify p { margin: 0; }
+
+/* change kinds. "got worse" is the only one that shouts. */
+.kind { font: 600 .68rem/1 var(--mono); text-transform: uppercase; letter-spacing: .04em;
+        padding: .2rem .34rem; border-radius: 2px; border: 1px solid currentColor; white-space: nowrap; }
+.k-listed { color: var(--ink-soft); }
+.k-tier_change, .k-vendor_incident { color: var(--signal); font-weight: 700; }
+.k-availability, .k-correction { color: var(--ink-soft); }
+
+/* local_replacement: how much of the vendor cloud you can run yourself */
+.lr { font: 600 .72rem/1 var(--mono); }
+.lr-full { color: var(--ok); }
+.lr-partial { color: var(--warn); }
+.lr-none { color: var(--signal); }
+.lr-not_applicable, .lr-unknown { color: var(--ink-soft); font-weight: 400; }
+
 /* age of a claim, visibly decaying — decay should be embarrassing, not invisible */
 .age { font: .72rem/1 var(--mono); color: var(--ink-soft); }
 .age.stale { color: var(--warn); }

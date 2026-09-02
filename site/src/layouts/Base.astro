@@ -27,8 +27,10 @@ const full = title ? `${title} — dumbindex` : "dumbindex";
           {domains.map((d) => (
             <li><a href={`/${d.slug}/`} aria-current={current === d.slug ? "page" : undefined}>{d.name}</a></li>
           ))}
-          <li><a href="/changed/" aria-current={current === "changed" ? "page" : undefined}>Changed</a></li>
+          <li><a href="/updates/" aria-current={current === "updates" ? "page" : undefined}>Updates</a></li>
+          <li><a href="/downgrades/" aria-current={current === "downgrades" ? "page" : undefined}>Downgrades</a></li>
           <li><a href="/vendors/" aria-current={current === "vendors" ? "page" : undefined}>Vendors</a></li>
+          <li><a href="/self-hostable/" aria-current={current === "self-hostable" ? "page" : undefined}>Self-hostable</a></li>
           <li><a href="/rejected/" aria-current={current === "rejected" ? "page" : undefined}>Rejected</a></li>
           <li><a href="/method/" aria-current={current === "method" ? "page" : undefined}>Method</a></li>
         </ul>

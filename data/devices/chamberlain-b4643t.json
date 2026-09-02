@@ -98,5 +98,7 @@
     "prompt_version": "phase-0-manual",
     "run_id": "2026-09-02-phase0",
     "searches": 3
-  }
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "ratgdo \u2014 an ESPHome board on the opener's three terminals \u2014 replaces every myQ function locally, including status and light control, and is what Home Assistant recommended by name when Chamberlain cut off API access."
 }

@@ -4,15 +4,11 @@
   "model": "Beryl AX (GL-MT3000)",
   "category": "computing",
   "subcategory": "router",
-
   "tier": "D2",
-  "tier_rationale": "Ships running OpenWrt with the full LuCI interface, administered over a local address with no account, and firmware can be upgraded from a local file. GL.iNet does operate GoodCloud remote management, which is what places this at D2 rather than D1 — the cloud exists, it is simply not needed.",
-
-  "the_unplug_test": "You still own the router. Administration happens at 192.168.8.1 on your own network with a password you set — no account, no app, no pairing to a manufacturer. Underneath it is OpenWrt, and the LuCI interface is right there rather than hidden, so the device is configurable to a depth most consumer routers do not permit. GL.iNet's GoodCloud remote-management service exists if you want to reach the router from outside; skipping it costs you nothing locally.",
-
+  "tier_rationale": "Ships running OpenWrt with the full LuCI interface, administered over a local address with no account, and firmware can be upgraded from a local file. GL.iNet does operate GoodCloud remote management, which is what places this at D2 rather than D1 \u2014 the cloud exists, it is simply not needed.",
+  "the_unplug_test": "You still own the router. Administration happens at 192.168.8.1 on your own network with a password you set \u2014 no account, no app, no pairing to a manufacturer. Underneath it is OpenWrt, and the LuCI interface is right there rather than hidden, so the device is configurable to a depth most consumer routers do not permit. GL.iNet's GoodCloud remote-management service exists if you want to reach the router from outside; skipping it costs you nothing locally.",
   "status": "verified",
   "rejection_reason": null,
-
   "account_required": "app_only",
   "works_offline": "fully",
   "offline_losses": [
@@ -20,48 +16,72 @@
     "online firmware update checking (local file upgrade still works)"
   ],
   "firmware_ota_forced": "no",
-  "local_api": ["rest", "unknown"],
+  "local_api": [
+    "rest",
+    "unknown"
+  ],
   "phones_home": "unknown",
-
-  "radios": ["wifi"],
+  "radios": [
+    "wifi"
+  ],
   "fcc_id": null,
   "fcc_checked": false,
-
   "liberation": null,
-
-  "repairability": {"parts_available": "unknown", "ifixit_score": null,
-    "notes": "Running stock OpenWrt means the software side outlives vendor support: the OpenWrt project, not GL.iNet, decides how long this hardware keeps getting updates."},
-
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Running stock OpenWrt means the software side outlives vendor support: the OpenWrt project, not GL.iNet, decides how long this hardware keeps getting updates."
+  },
   "availability": "in_stock",
   "price_band": null,
   "price_observed": null,
-  "where_to_buy": [{"name": "GL.iNet (manufacturer)", "url": "https://www.gl-inet.com/en-us/products/gl-mt3000"}],
-  "affiliate": null,
-
-  "vendor_risk": 0,
-
-  "sources": [
-    {"url": "https://docs.gl-inet.com/router/en/4/user_guide/gl-mt3000/",
-     "class": "A", "accessed": "2026-09-02",
-     "supports": "Manufacturer documentation: setup is via the local web admin panel at 192.168.8.1 with no account creation step described. OpenWrt is the stock firmware and the LuCI interface is reachable from Advanced Settings. Firmware offers both online check and local-file upgrade, with no forced automatic update described. GoodCloud is presented as an optional application.",
-     "archive_url": null},
-    {"url": "https://docs.gl-inet.com/router/en/4/faq/what_is_luci/",
-     "class": "A", "accessed": "2026-09-02",
-     "supports": "Manufacturer FAQ confirming LuCI is the OpenWrt web interface, reached from the local admin panel and authenticated with the same locally-set password — no vendor account involved.",
-     "archive_url": null}
+  "where_to_buy": [
+    {
+      "name": "GL.iNet (manufacturer)",
+      "url": "https://www.gl-inet.com/en-us/products/gl-mt3000"
+    }
   ],
-
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://docs.gl-inet.com/router/en/4/user_guide/gl-mt3000/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer documentation: setup is via the local web admin panel at 192.168.8.1 with no account creation step described. OpenWrt is the stock firmware and the LuCI interface is reachable from Advanced Settings. Firmware offers both online check and local-file upgrade, with no forced automatic update described. GoodCloud is presented as an optional application.",
+      "archive_url": null
+    },
+    {
+      "url": "https://docs.gl-inet.com/router/en/4/faq/what_is_luci/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer FAQ confirming LuCI is the OpenWrt web interface, reached from the local admin panel and authenticated with the same locally-set password \u2014 no vendor account involved.",
+      "archive_url": null
+    }
+  ],
   "open_questions": [
     "Is GoodCloud opt-in or enabled by default out of the box? The documentation presents it as optional but does not state the default, and that default is the difference between a clean D2 and a caveat.",
     "Does the router contact GL.iNet on first boot for firmware checks even when GoodCloud is unused, and can that be disabled in the UI?",
-    "Confirm the OpenWrt build is close enough to upstream that the community can flash vanilla OpenWrt if GL.iNet stops shipping updates — that would be a meaningful longevity claim worth recording."
+    "Confirm the OpenWrt build is close enough to upstream that the community can flash vanilla OpenWrt if GL.iNet stops shipping updates \u2014 that would be a meaningful longevity claim worth recording."
   ],
   "conflicts_with": null,
   "notes": "Routers are the device most able to protect every other device in the house, which makes their own independence unusually load-bearing. Shipping OpenWrt with LuCI exposed rather than hidden is the distinguishing decision here: most consumer routers now open with an account signup, and several major vendors have moved remote administration behind one.",
-
   "first_published": "2026-09-02",
   "last_verified": "2026-09-02",
-  "changelog": [{"date": "2026-09-02", "change": "First published at D2.", "kind": "listed", "source": null}],
-
-  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-02-phase0", "searches": 2}
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-phase0",
+    "searches": 2
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "The router already runs OpenWrt, so local administration is the native mode rather than a substitute. GoodCloud's remote-access function is replaced by WireGuard or Tailscale, both of which the device can host itself."
 }

@@ -98,11 +98,23 @@ structure is what makes it a reference. Navigation is generated from
 - **Device page.** `the_unplug_test` paragraph at the very top, above the fold and above
   the spec table. Then specs, then sources **with their evidence class visible**, then the
   changelog. Publishing the evidence class is unusual and it is the credibility moat.
-- **`/changed`.** Reverse-chronological feed of tier changes and vendor incidents. This
-  becomes the newsletter and it is the reason people return. Build it early even while empty.
+- **`/updates`.** The full reverse-chronological feed — new listings, tier changes,
+  vendor incidents, corrections. This is the subscribable thing.
+- **`/downgrades`.** A filtered view of the same timeline showing only devices that got
+  *worse after purchase*. This is the newsletter and the reason people return, and it is
+  deliberately narrow: a feed that cries wolf about its own housekeeping teaches readers
+  to skip it, and then the one alert that matters gets skipped too. One source of truth,
+  two views — the downgrade page is a filter, never a second list to maintain.
+- **`/self-hostable`.** Devices at D2 whose cloud can be fully replaced by software you
+  run. The tier deliberately excludes "you could firewall it", because that describes the
+  reader's network rather than the product — this page is where that difference lives.
 - **`/method`.** The ladder, the evidence rules, and a plain statement that research is
   agent-assisted with human review. Volunteering that reads as confidence; this audience
   will work it out regardless.
+
+- **`/rejected`.** Popular devices that did not qualify, with the reason and the sources,
+  each pointing at an alternative. Listed rather than omitted because people search these
+  by name, and finding nothing looks identical to not having checked.
 
 **Cross-cutting views** — cheap to generate, disproportionately useful:
 `/tier/d0` (the purists' list), `/no-account`, `/no-forced-updates`, `/discontinued`.

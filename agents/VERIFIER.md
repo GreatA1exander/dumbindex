@@ -63,7 +63,10 @@ produce a publishable record backed by qualifying evidence, or prove that you ca
    probably looking at D1.
 
 5. **Score the secondary axes** — `firmware_ota_forced`, `local_api`, `account_required`,
-   `phones_home`, `repairability`, `availability`, `price_band`. Every one may be
+   `phones_home`, `repairability`, `availability`, `price_band`, and for anything at D2 or
+   D3, `local_replacement`: can the vendor cloud's function be rebuilt on hardware the
+   owner runs? Name the software in `local_replacement_note` rather than gesturing at
+   "third-party tools". Every one may be
    `unknown`. `unknown` is a normal, publishable value; a wrong value is not.
 
 6. **Check the vendor ledger.** Read `data/vendors.json`. If the vendor is absent, search
@@ -83,7 +86,11 @@ Set `status`:
 - `"verified"` — meets §2 evidence rules, ready to publish
 - `"insufficient_evidence"` — you searched within budget and could not qualify it;
   populate `open_questions` with the *specific* questions that would resolve it
-- `"rejected"` — fails the decision table; set `rejection_reason`
+- `"rejected"` — fails the decision table; set `rejection_reason`, **and populate
+  `alternatives` with at least one record from this catalog that does the job.** A
+  rejection with nowhere to go wastes the reader's trip and reads as a complaint rather
+  than a service. If no verified alternative exists yet, say so in `open_questions` —
+  finding one is then a discovery task, not a blank to leave.
 
 ## The thing to remember
 

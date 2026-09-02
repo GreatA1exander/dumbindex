@@ -10,6 +10,7 @@ const { d } = Astro.props;
 const dom = domainBySlug.get(d.category);
 const age = ageDays(d.last_verified);
 const vendor = vendorFor(d.make);
+const LR = {"not_applicable": "nothing to replace — no vendor cloud", "none": "no self-hosted replacement exists", "partial": "partly replaceable on your own hardware", "full": "fully replaceable on your own hardware", "unknown": "not established"};
 const fmt = (v) => (v == null ? "unknown" : Array.isArray(v) ? (v.length ? v.join(", ") : "none") : String(v).replace(/_/g, " "));
 ---
 <Base title={`${d.make} ${d.model}`} description={d.the_unplug_test?.slice(0, 155)}>
@@ -24,10 +25,34 @@ const fmt = (v) => (v == null ? "unknown" : Array.isArray(v) ? (v.length ? v.joi
     <span class="age">— {TIERS[d.tier]?.short}</span>
   </p>
 
+  {d.record_type === "family" && (
+    <p class="lede">
+      This is a <strong>product line</strong> rather than a single model. The manufacturer
+      sells connected and non-connected versions side by side and changes model numbers
+      faster than we can track them, so the durable answer is how to tell them apart —
+      the last check is yours to make at the point of purchase.
+    </p>
+  )}
+
   <div class="unplug">
     <h2>The unplug test</h2>
     <p>{d.the_unplug_test}</p>
   </div>
+
+  {d.identify && (
+    <div class="identify">
+      <h2>How to identify the non-connected version</h2>
+      <p>{d.identify}</p>
+    </div>
+  )}
+
+  {d.known_dumb_models?.length > 0 && (
+    <>
+      <h2>Verified examples</h2>
+      <p class="age">Confirmed against the procedure above on the dates in Sources. Not exhaustive.</p>
+      <ul class="sources">{d.known_dumb_models.map((m) => <li class="model">{m}</li>)}</ul>
+    </>
+  )}
 
   {d.tier_rationale && <p class="lede"><strong>Why this tier:</strong> {d.tier_rationale}</p>}
 
@@ -42,6 +67,13 @@ const fmt = (v) => (v == null ? "unknown" : Array.isArray(v) ? (v.length ? v.joi
       <tr><th>FCC ID</th><td>{d.fcc_id ?? (d.fcc_checked ? "no intentional-radiator grant found" : "not checked")}</td></tr>
       <tr><th>Local control</th><td>{fmt(d.local_api)}</td></tr>
       <tr><th>Phones home</th><td>{fmt(d.phones_home)}</td></tr>
+      {d.local_replacement && d.local_replacement !== "not_applicable" && (
+        <tr><th>Self-hostable</th><td>
+          <span class={`lr lr-${d.local_replacement}`}>{d.local_replacement}</span>
+          <span class="age"> — {LR[d.local_replacement]}</span>
+          {d.local_replacement_note && <><br />{d.local_replacement_note}</>}
+        </td></tr>
+      )}
       <tr><th>Parts available</th><td>{fmt(d.repairability?.parts_available)}</td></tr>
       <tr><th>Availability</th><td>{fmt(d.availability)}</td></tr>
       <tr><th>Price band</th><td>{d.price_band ?? "unknown"}{d.price_observed && <span class="age"> (seen {d.price_observed})</span>}</td></tr>
@@ -60,6 +92,17 @@ const fmt = (v) => (v == null ? "unknown" : Array.isArray(v) ? (v.length ? v.joi
         {d.liberation.maintained ? " actively maintained" : " unmaintained (verify before relying on it)"}.
         {" "}<a href={d.liberation.guide_url}>Guide</a>
       </p>
+    </>
+  )}
+
+  {d.alternatives?.length > 0 && (
+    <>
+      <h2>Consider instead</h2>
+      <ul class="sources">
+        {d.alternatives.map((a) => (
+          <li><a href={`/device/${a.model_id}/`}><strong>{a.model_id}</strong></a><br />{a.why}</li>
+        ))}
+      </ul>
     </>
   )}
 

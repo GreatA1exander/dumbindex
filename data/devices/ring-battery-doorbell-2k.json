@@ -64,7 +64,9 @@
       "archive_url": null
     }
   ],
-  "open_questions": [],
+  "open_questions": [
+    "Find and verify a doorbell-form-factor camera with local recording (ONVIF/RTSP or onboard SD) so the alternative is a like-for-like swap rather than a different product category."
+  ],
   "conflicts_with": null,
   "notes": "Listed as a rejection rather than omitted, because people search for this specifically and deserve to find a clear answer rather than silence. The rejection is not about Ring being a bad camera \u2014 it is that the hardware in your hand cannot record to anything you own, at any price, ever. Contrast with an ONVIF camera writing to a recorder in your own house, which costs less per year and keeps working when Amazon has an outage.",
   "first_published": "2026-09-02",
@@ -82,5 +84,13 @@
     "prompt_version": "phase-0-manual",
     "run_id": "2026-09-02-phase0",
     "searches": 3
-  }
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "This is the whole objection. There is no local storage, no RTSP or ONVIF output, and no documented way to record to hardware you own \u2014 at any price.",
+  "alternatives": [
+    {
+      "model_id": "reolink-rlc-810a",
+      "why": "A PoE camera speaking standard ONVIF and RTSP into a recorder you own, with person and vehicle detection running on the camera and no subscription. Not a doorbell \u2014 you would pair it with a conventional wired chime \u2014 but it answers the actual question of seeing who came to the door, and the footage lands on your hardware."
+    }
+  ]
 }

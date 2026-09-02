@@ -4,63 +4,75 @@
   "model": "DM221",
   "category": "baby-pet",
   "subcategory": "audio monitor",
-
   "tier": "D1",
   "tier_rationale": "FCC grants for both the baby unit and the parent unit cover DECT only (1921.536-1928.448 MHz) with no Wi-Fi or Bluetooth. The single radio present is a point-to-point link between two units the owner holds, so there is no path to any vendor service.",
-
-  "the_unplug_test": "Nothing changes, and nothing ever could. The two units talk to each other directly over DECT — the same technology as a cordless phone — and neither has the hardware to reach your router, let alone the internet. There is no app, no account, no pairing to a phone, and no video stream sitting on someone's server. It is a radio link between two objects in your house.",
-
+  "the_unplug_test": "Nothing changes, and nothing ever could. The two units talk to each other directly over DECT \u2014 the same technology as a cordless phone \u2014 and neither has the hardware to reach your router, let alone the internet. There is no app, no account, no pairing to a phone, and no video stream sitting on someone's server. It is a radio link between two objects in your house.",
   "status": "verified",
   "rejection_reason": null,
-
   "account_required": "none",
   "works_offline": "fully",
   "offline_losses": [],
   "firmware_ota_forced": "no",
-  "local_api": ["none"],
+  "local_api": [
+    "none"
+  ],
   "phones_home": "none",
-
-  "radios": ["unknown"],
+  "radios": [
+    "unknown"
+  ],
   "fcc_id": "EW780818000A / EW780818001A",
   "fcc_checked": true,
-
   "liberation": null,
-
   "repairability": {
     "parts_available": "limited",
     "ifixit_score": null,
     "notes": "Rechargeable parent-unit battery is the wear item; the baby unit runs from mains. Replacement units are cheap enough that repair is rarely economic."
   },
-
   "availability": "in_stock",
   "price_band": "$35-60",
   "price_observed": "2026-09-02",
   "where_to_buy": [],
   "affiliate": null,
-
   "vendor_risk": 0,
-
   "sources": [
-    {"url": "https://fccid.io/search.php?q=VTech+DM221",
-     "class": "A", "accessed": "2026-09-02",
-     "supports": "Two FCC grants filed by VTech Telecommunications for the DM221 system — EW780818000A (baby unit) and EW780818001A (parent unit) — both covering 1921.536-1928.448 MHz, the DECT band, exclusively. No Wi-Fi or Bluetooth appears in either filing, establishing that the system has no radio capable of reaching a network.",
-     "archive_url": null},
-    {"url": "https://www.todaysparent.com/product-reviews/vtech-dm221-review/",
-     "class": "B", "accessed": "2026-09-02",
-     "supports": "Independent review confirming DECT 6.0 operation with no internet connection required, two-way talk-back, and a parent unit with roughly 16 hours of battery life.",
-     "archive_url": null}
+    {
+      "url": "https://fccid.io/search.php?q=VTech+DM221",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Two FCC grants filed by VTech Telecommunications for the DM221 system \u2014 EW780818000A (baby unit) and EW780818001A (parent unit) \u2014 both covering 1921.536-1928.448 MHz, the DECT band, exclusively. No Wi-Fi or Bluetooth appears in either filing, establishing that the system has no radio capable of reaching a network.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.todaysparent.com/product-reviews/vtech-dm221-review/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Independent review confirming DECT 6.0 operation with no internet connection required, two-way talk-back, and a parent unit with roughly 16 hours of battery life.",
+      "archive_url": null
+    }
   ],
-
   "open_questions": [
     "Confirm the current retail price band from a first-party or major retailer source; the band recorded here is approximate.",
-    "VTech also sells Wi-Fi video monitors under similar branding — worth a warning note about which model prefixes carry a network radio."
+    "VTech also sells Wi-Fi video monitors under similar branding \u2014 worth a warning note about which model prefixes carry a network radio."
   ],
   "conflicts_with": null,
   "notes": "Baby monitors are the category where the cloud question stops being abstract, and Wi-Fi video monitors have a long public history of being accessed by people who should not have had access. A DECT audio monitor sidesteps the entire class of problem: there is no account to compromise, no server to breach, and no stream leaving the building. The trade is that you get audio rather than video, and no viewing from work.",
-
   "first_published": "2026-09-02",
   "last_verified": "2026-09-02",
-  "changelog": [{"date": "2026-09-02", "change": "First published at D1.", "kind": "listed", "source": null}],
-
-  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-02-phase0", "searches": 4, "failed_fetches": 3}
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-phase0",
+    "searches": 4,
+    "failed_fetches": 3
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
 }

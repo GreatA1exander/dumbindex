@@ -42,6 +42,14 @@ from a vendor with an app and a cloud is D2 even when you run it entirely on a L
 the record should say plainly that a local-only deployment is possible, because that is
 what the reader actually wants to know.
 
+**Record what a motivated owner can achieve, separately from the tier.** Keeping the
+firewall out of the tier is correct, but it loses something real: a D2 you can block with
+no loss and self-host entirely is a materially better product than a D2 that degrades.
+That belongs in `local_replacement` — `full`, `partial`, `none`, or `not_applicable` when
+no vendor cloud exists — with `local_replacement_note` naming the actual software
+(Frigate, Blue Iris, ESPHome, ratgdo, weewx, WireGuard). A D2 marked `full` is close to
+D1 in practice and the site surfaces it that way. Never let this field influence the tier.
+
 **Tier describes the device. `vendor_risk` describes the vendor. Never mix them.**
 A vendor that has revoked features from units already sold does not, by that fact alone,
 change what the device in front of you does when the router is off. Record the conduct in
@@ -188,6 +196,28 @@ that accepts forced OTA is a D2 device only until the vendor decides otherwise. 
 on the page.
 
 ---
+
+## 5b. Family records — when a model number is the wrong answer
+
+Some categories churn SKUs faster than this project can track them, and large kitchen
+appliances are the worst: manufacturers sell connected and non-connected versions inside
+one line with no naming convention separating them, and revise model numbers annually. A
+single SKU published today is stale within a year, and chasing them is a losing race.
+
+For these, write a **family record** (`record_type: "family"`) whose deliverable is the
+*procedure* rather than the product: `identify` tells the reader exactly how to check a
+model themselves — which spec-sheet field to look for, what the connected variant is
+called, which parts of the model number are noise. The last step belongs to the buyer at
+the point of purchase, and that is a feature, not a compromise: a method stays true after
+every SKU on the shelf has been replaced.
+
+Family records meet the same evidence bar as any other. The best `identify` text is
+sourced to the manufacturer's own support documentation — vendors frequently publish the
+check, because their customers ask which model they own. `known_dumb_models` may list
+verified examples but is always explicitly non-exhaustive.
+
+Use a family record only when a single model number genuinely cannot be pinned. Prefer a
+device record whenever one is available.
 
 ## 6. Scope
 

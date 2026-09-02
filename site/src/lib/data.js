@@ -71,18 +71,28 @@ export function ageDays(iso) {
   return Math.round((Date.now() - Date.parse(iso)) / 864e5);
 }
 
-// Powers /changed. Material changes and routine listings are separated on purpose:
-// a feed that promises "your device got worse" and delivers "we added a device"
-// teaches readers to ignore it, and then the one alert that matters gets ignored too.
-export function changeFeed() {
-  // `rejected` is defined above; both lists feed the same timeline.
-  const all = [...devices, ...rejected]
-    .flatMap((d) => (d.changelog ?? []).map((c) => ({ ...c, device: d })))
+// One timeline, two views. /updates shows everything; /downgrades filters to the
+// entries that mean a device got worse. Deriving both from the same list means the
+// alarm channel can never drift out of sync with the record it describes.
+const MATERIAL = new Set(["tier_change", "vendor_incident"]);
+
+export function timeline() {
+  return [...devices, ...rejected]
+    .flatMap((d) => (d.changelog ?? []).map((c) => ({ ...c, kind: c.kind ?? "listed", device: d })))
     .sort((a, b) => b.date.localeCompare(a.date));
-  return {
-    material: all.filter((c) => c.kind && c.kind !== "listed"),
-    listings: all.filter((c) => !c.kind || c.kind === "listed"),
-  };
 }
+export const downgrades = () => timeline().filter((c) => MATERIAL.has(c.kind));
+
+export const KIND_LABEL = {
+  listed: "new",
+  tier_change: "got worse",
+  vendor_incident: "vendor",
+  availability: "stock",
+  correction: "correction",
+};
+
+// Devices whose vendor cloud can be fully replaced with hardware you run.
+// This is not a tier — it is what a motivated owner can achieve with one.
+export const selfHostable = () => devices.filter((d) => d.local_replacement === "full");
 
 export const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");

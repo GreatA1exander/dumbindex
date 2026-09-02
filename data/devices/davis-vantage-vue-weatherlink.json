@@ -83,5 +83,7 @@
     "prompt_version": "phase-0-manual",
     "run_id": "2026-09-02-phase0",
     "searches": 2
-  }
+  },
+  "local_replacement": "unknown",
+  "local_replacement_note": "weewx is the obvious candidate for pulling data off the console into your own database, but compatibility with this specific WeatherLink Console was not verified in this run."
 }

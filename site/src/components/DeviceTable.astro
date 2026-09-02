@@ -29,6 +29,7 @@ const cls = (n) => (n == null ? "" : n > 180 ? "age rotten" : n > 60 ? "age stal
           <td>
             <a href={`/device/${d.model_id}/`}>{d.make}</a>
             <span class="model"> {d.model}</span>
+            {d.record_type === "family" && <span class="famtag"> product line</span>}
             {d.availability === "discontinued" && <span class="age"> · discontinued</span>}
           </td>
           {showDomain && <td>{d.subcategory ?? d.category}</td>}

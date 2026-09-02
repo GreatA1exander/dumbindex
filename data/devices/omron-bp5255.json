@@ -81,5 +81,7 @@
     "prompt_version": "phase-0-manual",
     "run_id": "2026-09-02-phase0",
     "searches": 2
-  }
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No self-hosted replacement for OMRON Connect was found. The device's own 30-reading memory is the local store, and that is all there is."
 }

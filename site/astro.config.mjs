@@ -8,4 +8,6 @@ export default defineConfig({
   trailingSlash: "always",
   build: { inlineStylesheets: "always" },
   devToolbar: { enabled: false },
+  // /changed was split into /updates (everything) and /downgrades (devices that got worse).
+  redirects: { "/changed": "/updates/" },
 });

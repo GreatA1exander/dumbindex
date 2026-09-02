@@ -73,5 +73,7 @@
     "prompt_version": "phase-0-manual",
     "run_id": "2026-09-02-phase0",
     "searches": 2
-  }
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
 }

@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import DeviceTable from "../components/DeviceTable.astro";
+import { selfHostable } from "../lib/data.js";
+const rows = selfHostable();
+---
+<Base title="Self-hostable" current="self-hostable"
+      description="Devices whose vendor cloud can be replaced entirely by software you run yourself.">
+  <h1>Self-hostable</h1>
+  <p class="lede">
+    These devices ship with a vendor cloud, so they are not D0 or D1 — but everything that
+    cloud does can be replaced by software running on hardware you own. Block them at the
+    firewall and you lose nothing you cannot rebuild yourself.
+  </p>
+  <p class="lede">
+    We keep this separate from the tier on purpose. Whether you <em>can</em> firewall a
+    device is a fact about the product; whether you <em>have</em> is a fact about your
+    network, and the tier should mean the same thing for every reader. This page is where
+    the difference lives.
+  </p>
+  <DeviceTable rows={rows} />
+  <p class="age">
+    The replacement software named on each device page is the specific thing to install —
+    Frigate, Blue Iris, ZoneMinder, Home Assistant, ESPHome, ratgdo, WireGuard.
+  </p>
+</Base>

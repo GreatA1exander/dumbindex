@@ -8,7 +8,13 @@
   "properties": {
     "model_id":   {"type":"string","pattern":"^[a-z0-9]+(-[a-z0-9]+)*$","description":"slug, make-model, stable forever"},
     "make":       {"type":"string"},
-    "model":      {"type":"string","description":"exact enough to buy"},
+    "model":      {"type":"string","description":"exact enough to buy, unless record_type is 'family'"},
+    "record_type":{"enum":["device","family"],"default":"device",
+      "description":"'family' covers a product line where the manufacturer mixes connected and non-connected SKUs and churns model numbers faster than we can track. A family record tells the reader how to identify the non-connected variant themselves rather than naming a SKU that will be stale in six months."},
+    "identify":   {"type":["string","null"],
+      "description":"family records only: how to tell the non-connected variant apart on a spec sheet or shelf tag"},
+    "known_dumb_models": {"type":"array","items":{"type":"string"},
+      "description":"family records only: examples verified at the accessed date. Explicitly non-exhaustive."},
     "category":   {"enum":["kitchen", "laundry", "climate", "lighting", "security", "automotive", "av", "computing", "photo", "health", "baby-pet", "tools", "wearables", "office"],
                    "description":"domain slug; must exist in schema/taxonomy.json"},
     "subcategory":{"type":["string","null"],"description":"must be listed under this domain in schema/taxonomy.json"},
@@ -28,6 +34,11 @@
     "firmware_ota_forced":    {"enum":["no","yes","yes_but_blockable","unknown"]},
     "local_api":              {"type":"array","items":{"enum":["none","rest","mqtt","matter","zigbee","zwave","thread","modbus","ble","rs485","ir","unknown"]}},
     "phones_home":            {"enum":["none","telemetry","analytics","heavy","unknown"]},
+
+    "local_replacement":      {"enum":["not_applicable","none","partial","full","unknown"],
+      "description":"Can the vendor cloud's function be replaced by hardware the owner runs? not_applicable when no vendor cloud exists (D0/D1). This is deliberately NOT a tier input — the tier describes the product, this describes what a motivated owner can achieve."},
+    "local_replacement_note": {"type":["string","null"],
+      "description":"Name the actual software or hardware: Frigate, Blue Iris, Home Assistant, ESPHome, ratgdo, weewx."},
 
     "radios":     {"type":"array","items":{"enum":["none","wifi","ble","zigbee","zwave","thread","cellular","lora","nfc","unknown"]}},
     "fcc_id":     {"type":["string","null"]},
@@ -67,6 +78,10 @@
         "supports":{"type":"string","description":"which claim this backs"},
         "archive_url":{"type":["string","null"]}
       }}},
+
+    "alternatives": {"type":"array","description":"Other records worth considering instead. Required on rejections.",
+      "items":{"type":"object","required":["model_id","why"],"additionalProperties":false,
+        "properties":{"model_id":{"type":"string"},"why":{"type":"string"}}}},
 
     "open_questions": {"type":"array","items":{"type":"string"}},
     "conflicts_with": {"type":["string","null"]},

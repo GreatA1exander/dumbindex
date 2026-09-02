@@ -70,6 +70,24 @@ for (const f of files) {
   // Unknowns are fine; silent unknowns are not.
   if (d.status === "insufficient_evidence" && !(d.open_questions?.length)) E(`insufficient_evidence with no open_questions`);
   if (d.tier === "REJECT" && !d.rejection_reason) E(`REJECT with no rejection_reason`);
+
+  // A rejection with nowhere to go wastes the reader's trip. If no alternative exists
+  // yet, that is a finding to record in open_questions, not a blank to leave.
+  if (d.status === "rejected" && !(d.alternatives?.length) && !(d.open_questions?.length))
+    E(`rejected with neither an alternative nor an open question about finding one`);
+  for (const a of d.alternatives ?? [])
+    if (!existsSync(join(DEVICES, `${a.model_id}.json`)))
+      E(`alternative '${a.model_id}' does not exist in the catalog`);
+
+  // D0 and D1 have no vendor cloud by definition, so there is nothing to self-host.
+  if (["D0", "D1"].includes(d.tier) && d.local_replacement && d.local_replacement !== "not_applicable")
+    E(`${d.tier} should have local_replacement 'not_applicable' — the tier means no vendor cloud exists`);
+  if (d.status === "verified" && ["D2", "D3"].includes(d.tier) && !d.local_replacement)
+    W(`${d.tier} with no local_replacement — the reader cannot tell whether the cloud is replaceable`);
+
+  // Family records answer a different question and need different fields.
+  if (d.record_type === "family" && !d.identify)
+    E(`family record with no 'identify' guidance — that guidance is the entire point`);
 }
 
 for (const w of warn) console.log(`WARN  ${w}`);
