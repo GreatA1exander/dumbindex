@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "node ../scripts/validate.mjs && astro build && node ../scripts/pageweight.mjs"
+    "check": "node ../scripts/validate.mjs && node ../scripts/score-golden.mjs && astro build && node ../scripts/pageweight.mjs"
   },
   "dependencies": {
     "astro": "^5.14.1"

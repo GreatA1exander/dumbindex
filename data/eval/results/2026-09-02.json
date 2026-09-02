@@ -1,0 +1,107 @@
+{
+  "date": "2026-09-02",
+  "overall": 100,
+  "by_difficulty": {
+    "easy": 100,
+    "ambiguous": 100,
+    "trap": 100
+  },
+  "cases": [
+    {
+      "id": "viofo-a119-v3",
+      "difficulty": "easy",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "viofo-a139",
+      "difficulty": "trap",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "chamberlain-b4643t",
+      "difficulty": "trap",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "ring-battery-doorbell-2k",
+      "difficulty": "trap",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "sonoff-basicr2",
+      "difficulty": "trap",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "davis-vantage-vue-weatherlink",
+      "difficulty": "ambiguous",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "omron-bp5255",
+      "difficulty": "ambiguous",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "brother-hl-l2400d",
+      "difficulty": "ambiguous",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "brother-hl-l2320d",
+      "difficulty": "easy",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "honeywell-home-th4110u2005",
+      "difficulty": "easy",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "sceptre-x325bv-fsr",
+      "difficulty": "easy",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "browning-strike-force-pro-x-1080",
+      "difficulty": "easy",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "intermatic-t101",
+      "difficulty": "easy",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "speed-queen-tc5003wn",
+      "difficulty": "ambiguous",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "casio-f-91w",
+      "difficulty": "ambiguous",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "amana-rcs10dse",
+      "difficulty": "ambiguous",
+      "result": "PASS",
+      "detail": ""
+    }
+  ]
+}

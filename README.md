@@ -41,10 +41,19 @@ BRAND.md           name, visual system, monetization guardrails
 ## Running
 
 ```bash
-node scripts/validate.mjs     # schema-check every record
+node scripts/validate.mjs      # schema + evidence-bar + taxonomy checks
+node scripts/score-golden.mjs  # the regression gate; exits 1 if a trap case fails
+node scripts/pageweight.mjs    # enforces the footer promise against the build
+npm --prefix site run check    # all of the above plus a build
 npm --prefix site run dev
-npm --prefix site run build
 ```
+
+**The golden gate is the important one.** `data/eval/golden.json` holds hand-verified
+expectations including four trap cases — devices whose correct answer is the opposite of
+what pattern-matching suggests. A trap regression exits non-zero and blocks the merge
+regardless of the overall score. Note that the set currently scores 100% by construction:
+it was built from the same Phase 0 records it scores, so it measures *regression*, not
+present accuracy. It earns teeth as prompts change underneath it.
 
 Scheduled runs: see OPERATIONS.md §1.
 

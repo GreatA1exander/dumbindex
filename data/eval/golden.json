@@ -1,1 +1,90 @@
-{"devices": [], "_note": "Hand-verified regression set. Build in Phase 0.5 before enabling the cron. Include 5 ambiguous devices and 3 traps (look D2, actually REJECT)."}
+{
+  "_note": "The regression gate. Every prompt change is scored against this before merge; a change that does not improve the score is not merged. Cases were hand-verified during Phase 0 — the expected values are what a careful human concluded from the cited evidence, not what any model produced. Add cases as new failure modes are discovered; never edit an expected value to make a run pass.",
+  "version": 1,
+  "built": "2026-09-02",
+  "cases": [
+    {"id": "viofo-a119-v3", "make": "VIOFO", "model": "A119 V3", "category": "automotive",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "easy",
+     "why": "Manufacturer spec states Wi-Fi and Bluetooth not supported; no FCC intentional-radiator grant while siblings have them.",
+     "must_find": ["fccid.io", "viofo.com"]},
+
+    {"id": "viofo-a139", "make": "VIOFO", "model": "A139", "category": "automotive",
+     "expected_tier": "D1", "expected_status": "verified", "difficulty": "trap",
+     "why": "Has Wi-Fi, Bluetooth and a phone app, but VIOFO operates no cloud service — the app is peer-to-peer to the camera's own AP.",
+     "trap": "Pattern-matching on 'has Wi-Fi and an app' yields D2. There must be a vendor cloud for the cloud to be optional. Failing this case means the D1/D2 boundary is not understood.",
+     "must_find": ["fccid.io"]},
+
+    {"id": "chamberlain-b4643t", "make": "Chamberlain", "model": "B4643T", "category": "security",
+     "expected_tier": "D2", "expected_vendor_risk": 3, "expected_status": "verified", "difficulty": "trap",
+     "why": "The door opens from the wall button and RF remote with no network. Chamberlain's revocation of third-party API access is vendor conduct, scored at vendor_risk 3, not a tier input.",
+     "trap": "The vendor's behaviour is genuinely hostile and invites a REJECT. Publishing REJECT sends a reader hunting for a problem they will not find. Tier describes the device; vendor_risk describes the vendor.",
+     "must_find": ["home-assistant.io"]},
+
+    {"id": "ring-battery-doorbell-2k", "make": "Ring", "model": "Battery Doorbell 2K", "category": "security",
+     "expected_tier": "REJECT", "expected_status": "rejected", "difficulty": "trap",
+     "why": "No local storage exists at any price, and reviewing recorded video requires a subscription. Core function of a video doorbell includes seeing who was there.",
+     "trap": "Live view works without a subscription, which reads as 'partially offline' and tempts a D2. The test is whether the device can record to anything the owner controls. It cannot.",
+     "must_find": ["ring.com"]},
+
+    {"id": "sonoff-basicr2", "make": "SONOFF", "model": "BASICR2", "category": "lighting",
+     "expected_tier": null, "expected_status": "insufficient_evidence", "difficulty": "trap",
+     "why": "Whether an eWeLink account is mandatory as sold is unresolved, and that single fact is the difference between D3 and D2.",
+     "trap": "A maintained Tasmota path is easy to find and makes D3 feel obvious. The correct answer is to hold the record. Any run that publishes a tier here has failed, regardless of which tier it picked.",
+     "must_find": ["tasmota"]},
+
+    {"id": "davis-vantage-vue-weatherlink", "make": "Davis Instruments", "model": "Vantage Vue with WeatherLink Console", "category": "tools",
+     "expected_tier": "D2", "expected_status": "verified", "difficulty": "ambiguous",
+     "why": "WeatherLink Cloud exists and is optional; console holds the full database locally. Arguably D1 if the sensor link proves to be open — flagging that in open_questions is the correct behaviour, not picking silently.",
+     "must_find": ["davisinstruments.com"]},
+
+    {"id": "omron-bp5255", "make": "OMRON", "model": "Silver BP5255", "category": "health",
+     "expected_tier": "D2", "expected_status": "verified", "difficulty": "ambiguous",
+     "why": "Bluetooth and an OMRON cloud exist but the manual documents standalone use and onboard storage. Account is app-only.",
+     "must_find": ["omronhealthcare.com"]},
+
+    {"id": "brother-hl-l2400d", "make": "Brother", "model": "HL-L2400D", "category": "computing",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "ambiguous",
+     "why": "USB-only with no network interface. Firmware can still be pushed from the host computer, which is a real caveat but not a radio — D0 stands and the caveat belongs in open_questions.",
+     "must_find": ["brother-usa.com"]},
+
+    {"id": "brother-hl-l2320d", "make": "Brother", "model": "HL-L2320D", "category": "computing",
+     "expected_tier": "D0", "expected_availability": "discontinued", "expected_status": "verified", "difficulty": "easy",
+     "why": "USB-only per manufacturer spec page; product page shows Discontinued. Must be published with discontinued status, not dropped.",
+     "must_find": ["brother.com"]},
+
+    {"id": "honeywell-home-th4110u2005", "make": "Honeywell Home", "model": "T4 Pro", "category": "climate",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "easy",
+     "why": "Manufacturer spec states 'WiFi: No' and 'RedLINK: No'; Resideo holds grants only for its connected thermostats.",
+     "must_find": ["honeywellhome.com", "fccid.io"]},
+
+    {"id": "sceptre-x325bv-fsr", "make": "Sceptre", "model": "X325BV-FSR", "category": "av",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "easy",
+     "why": "Manufacturer spec enumerates every input; no network interface of any kind appears.",
+     "must_find": ["sceptre.com"]},
+
+    {"id": "browning-strike-force-pro-x-1080", "make": "Browning", "model": "Strike Force Pro X 1080", "category": "photo",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "easy",
+     "why": "Sold in the manufacturer's explicitly non-cellular line; the grantee that files Browning's authorizations holds a cellular grant only for the Command X.",
+     "must_find": ["browningtrailcameras.com", "fccid.io"]},
+
+    {"id": "intermatic-t101", "make": "Intermatic", "model": "T101", "category": "lighting",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "easy",
+     "why": "Electromechanical clock motor and physical trippers. The floor of the scale.",
+     "must_find": ["intermatic.com"]},
+
+    {"id": "speed-queen-tc5003wn", "make": "Speed Queen", "model": "TC5003WN", "category": "laundry",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "ambiguous",
+     "why": "Mechanical dial controls, no connectivity listed. Whether the timer is a true cam timer or an electronic timer behind a dial is unresolved and does not change the tier — recording that uncertainty is correct behaviour.",
+     "must_find": ["speedqueen.com"]},
+
+    {"id": "casio-f-91w", "make": "Casio", "model": "F-91W", "category": "wearables",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "ambiguous",
+     "why": "Obviously radio-free, but the manufacturer page timed out and the record rests on two Class B sources. The correct behaviour is to publish under the two-Class-B rule and say so, not to claim Class A.",
+     "must_find": []},
+
+    {"id": "amana-rcs10dse", "make": "Amana Commercial", "model": "RCS10DSE", "category": "kitchen",
+     "expected_tier": "D0", "expected_status": "verified", "difficulty": "ambiguous",
+     "why": "Three fetches failed (manufacturer domain, two distributors) before ACP Inc was identified as the actual manufacturer. The evidence exists but is not at the first URL — giving up early yields a wrong insufficient_evidence.",
+     "must_find": ["acpsolutions.com"]}
+  ]
+}
