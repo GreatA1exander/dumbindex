@@ -29,7 +29,15 @@ by impression.
 | **D1** | Local Protocol Only | Has a radio or network port but speaks only protocols terminated by hardware *the owner controls*: Zigbee, Z-Wave, Thread/Matter to a local controller, BLE, Modbus, RS-485, wired Ethernet with a documented local API. No vendor cloud, or the device never contacts one. |
 | **D2** | Cloud-Optional | Ships with Wi-Fi, an app, and a vendor cloud, but **100% of core function works with the device never connected, or with its WAN traffic blocked**. No account required to complete setup. Losing the cloud costs only remote access and push notifications. |
 | **D3** | Liberatable | Cloud-dependent as sold, but a currently-maintained, documented path exists to local-only control (ESPHome, Tasmota, LocalTuya, Zigbee2MQTT re-pairing, rooting, third-party firmware). The path must be cited and must not require destroying the device. |
-| **REJECT** | — | Cloud or account required for core function with no liberation path; subscription gates a hardware capability; or the vendor has remotely removed a feature from units already sold. |
+| **REJECT** | — | Cloud or account required for **core function** with no liberation path, or a subscription gates a hardware capability. |
+
+**Tier describes the device. `vendor_risk` describes the vendor. Never mix them.**
+A vendor that has revoked features from units already sold does not, by that fact alone,
+change what the device in front of you does when the router is off. Record the conduct in
+the ledger (§5) and score `vendor_risk` accordingly — do not smuggle it into the tier. A
+reader served "D2 · vendor risk 3/3 · liberatable" learns strictly more than one served
+"REJECT", because those are three separate facts and each one changes a different
+decision. This rule cost us a wrong tier once already; see the Chamberlain record.
 
 **"Core function" is the thing the appliance exists to do.** A refrigerator's core
 function is refrigeration, not the door screen. A video doorbell's core function includes

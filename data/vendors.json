@@ -1,1 +1,98 @@
-{"vendors": {}, "_note": "The enshittification ledger. Dated, sourced incidents only. vendor_risk 0-3 is computed from this, never from reputation."}
+{
+  "_note": "The enshittification ledger. Dated, sourced incidents only. vendor_risk 0-3 is computed from this, never from reputation. A vendor with a documented incident cannot be scored 0 no matter how good the current product is.",
+  "_scale": {
+    "0": "No documented incident of a shipped device losing function after purchase.",
+    "1": "One disputed or narrow incident, or a pattern alleged but not established.",
+    "2": "At least one established incident of shipped devices losing function.",
+    "3": "Repeated, established, cross-jurisdiction pattern of removing function from devices already sold."
+  },
+  "vendors": {
+    "hp": {
+      "name": "HP Inc.",
+      "vendor_risk": 3,
+      "summary": "Repeatedly shipped firmware that disabled third-party cartridges on printers customers already owned, across multiple jurisdictions and more than a decade. Settled repeatedly without admitting wrongdoing.",
+      "incidents": [
+        {
+          "date": "2020-11",
+          "type": "forced_firmware_removed_function",
+          "description": "A firmware update enabled Dynamic Security on some already-sold printer models, blocking non-HP cartridges. Customers were not notified the update would impede function and had no way to opt out.",
+          "source": "https://www.theregister.com/2025/03/19/hp_printer_lawsuit_settled/",
+          "class": "B"
+        },
+        {
+          "date": "2025-03",
+          "type": "settlement",
+          "description": "Class action settled with court approval. No customer payout and no admission of wrongdoing; owners of 21 named models gained the option to decline Dynamic Security firmware, and to downgrade firmware on those models only.",
+          "source": "https://www.techspot.com/news/107266-hp-settles-lawsuit-over-ink-blocking-printer-update.html",
+          "class": "B"
+        },
+        {
+          "date": "2018-2022",
+          "type": "prior_settlements",
+          "description": "Earlier Dynamic Security settlements: $1.5M in California (2018), AUD$50 per affected customer in Australia (2018), EUR10M in Italy (2020), $1.35M in Europe (2022).",
+          "source": "https://milberg.com/news/hp-printer-ink-monopoly/",
+          "class": "B"
+        }
+      ],
+      "verdict": "Assume any networked HP printer may lose third-party cartridge support via an update you cannot decline. Only models explicitly covered by the 2025 settlement have a documented opt-out."
+    },
+    "brother": {
+      "name": "Brother Industries",
+      "vendor_risk": 1,
+      "summary": "Accused in 2025 of degrading third-party toner behaviour via firmware and of pulling older firmware from support portals. Brother denies it. The allegation is credible enough to record and not established enough to score higher.",
+      "incidents": [
+        {
+          "date": "2025-03",
+          "type": "alleged_firmware_degradation",
+          "description": "Right-to-repair advocates alleged firmware updates degraded third-party toner function, including colour registration on colour models. Brother denies its updates block third-party consumables and attributes the reports to variation in third-party toner quality. Not independently established either way.",
+          "source": "https://www.theregister.com/2025/03/06/brother_firmware_update_toner/",
+          "class": "B"
+        },
+        {
+          "date": "2025-03",
+          "type": "vendor_denial",
+          "description": "Brother's public denial, reported alongside the user complaints.",
+          "source": "https://www.tomshardware.com/peripherals/printers/brother-denies-firmware-blocks-third-party-toner-and-ink-use",
+          "class": "B"
+        }
+      ],
+      "verdict": "Prefer Brother models with no network interface, where the dispute is structurally moot \u2014 the printer cannot fetch an update on its own. On networked Brother models, decline firmware updates unless you need a specific fix."
+    },
+    "viofo": {
+      "name": "VIOFO",
+      "vendor_risk": 0,
+      "summary": "No incident found. Operates no cloud service for its dashcams at all, sells radio-free and radio-equipped models side by side, and distributes firmware as SD-card files rather than over the air.",
+      "incidents": [],
+      "verdict": "Structurally low risk: with no cloud and no OTA channel, there is no mechanism by which a shipped VIOFO camera could be changed after purchase."
+    },
+    "chamberlain": {
+      "name": "Chamberlain Group (myQ, LiftMaster)",
+      "vendor_risk": 3,
+      "summary": "Systematically closed a previously open ecosystem on hardware already installed in customers' garages: dropped HomeKit, then Google Assistant, then shut off third-party API access entirely.",
+      "incidents": [
+        {
+          "date": "2022",
+          "type": "integration_removed",
+          "description": "Discontinued the official Apple HomeKit integration for myQ.",
+          "source": "https://www.home-assistant.io/blog/2023/11/06/removal-of-myq-integration/",
+          "class": "B"
+        },
+        {
+          "date": "2023",
+          "type": "integration_removed",
+          "description": "Ended support for Google Assistant.",
+          "source": "https://www.home-assistant.io/blog/2023/11/06/removal-of-myq-integration/",
+          "class": "B"
+        },
+        {
+          "date": "2023-11",
+          "type": "api_access_revoked",
+          "description": "Blocked all third-party API access to myQ, breaking working integrations on devices customers already owned. Home Assistant removed its myQ integration in the 2023.12 release. Chamberlain's stated reason was preventing 'unauthorized usage' of its ecosystem.",
+          "source": "https://tech.slashdot.org/story/23/11/08/001241/chamberlain-shuts-off-access-to-myqs-apis-breaking-smart-home-integrations",
+          "class": "B"
+        }
+      ],
+      "verdict": "Assume any myQ feature that depends on Chamberlain's servers can be withdrawn without notice, because it has been, three times. The openers themselves remain fine offline. If you want local control, plan on ratgdo from the start rather than hoping the app stays useful."
+    }
+  }
+}

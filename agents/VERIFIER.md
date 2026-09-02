@@ -47,6 +47,12 @@ produce a publishable record backed by qualifying evidence, or prove that you ca
    | Core function requires cloud, BUT a maintained local-control path is cited | **D3** |
    | Core function requires cloud with no cited path, or account mandatory at setup, or capability is subscription-gated | **REJECT** |
 
+   **The vendor's behaviour is not an input to this table.** A vendor that killed
+   third-party access, shut down a server, or paywalled a feature has earned a
+   `vendor_risk` of 3 — but the tier still describes what the hardware does with the
+   router off. Score them separately or you will publish a REJECT for a device that
+   works fine, and a reader who tries it will conclude you are unreliable.
+
    If two rows both seem to apply, you have a fact wrong. Go back to step 3.
 
    **The most common tier error is reading radios as cloud.** A device with Wi-Fi, an

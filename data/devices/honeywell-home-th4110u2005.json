@@ -1,0 +1,63 @@
+{
+  "model_id": "honeywell-home-th4110u2005",
+  "make": "Honeywell Home",
+  "model": "T4 Pro (TH4110U2005/U)",
+  "category": "climate",
+  "subcategory": "thermostat",
+
+  "tier": "D0",
+  "tier_rationale": "Manufacturer specification table states 'WiFi: No' and 'RedLINK: No', ruling out both the Wi-Fi and the proprietary 900 MHz radio, and Resideo holds no FCC grant for this model while holding grants for its connected thermostats.",
+
+  "the_unplug_test": "Nothing changes, ever. There is no radio, no app, no account, and no server that has to be running for your heat to come on. You set the schedule with buttons on the wall the way you would set a microwave clock. It runs on two AA batteries or the C-wire, so it does not even need your Wi-Fi router to exist.",
+
+  "status": "verified",
+  "rejection_reason": null,
+
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": ["none"],
+  "phones_home": "none",
+
+  "radios": ["none"],
+  "fcc_id": null,
+  "fcc_checked": true,
+
+  "liberation": null,
+
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Uses the standard UWP mounting system shared across the Honeywell Home line, so replacing the head without rewiring is straightforward. No user-serviceable parts inside."
+  },
+
+  "availability": "in_stock",
+  "price_band": "$40-70",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [{"name": "Honeywell Home (manufacturer)", "url": "https://www.honeywellhome.com/products/t4-pro-programmable-thermostat"}],
+  "affiliate": null,
+
+  "vendor_risk": 0,
+
+  "sources": [
+    {"url": "https://www.honeywellhome.com/products/t4-pro-programmable-thermostat",
+     "class": "A", "accessed": "2026-09-02",
+     "supports": "Manufacturer specification table states 'WiFi: No' and 'RedLINK: No'. Described as a standalone non-connected thermostat with push-button control, hardwired or battery operated, no app or cloud service.",
+     "archive_url": null},
+    {"url": "https://fccid.io/search.php?q=Resideo",
+     "class": "A", "accessed": "2026-09-02",
+     "supports": "Sibling control: Resideo holds thermostat radio grants for HS9-THX900WF01 (5855-5885 MHz) and HS9-THX1200WF01 (903-926.4 MHz), its connected models. No grant exists for the T4 Pro / TH4110U, so the absent grant is meaningful rather than an unfiled gap.",
+     "archive_url": null}
+  ],
+
+  "open_questions": [],
+  "conflicts_with": null,
+  "notes": "The obvious answer for anyone who wants a schedule and nothing else. Worth knowing that Honeywell Home / Resideo sells connected thermostats up the same product line, so the model number matters — a T5, T6, T9 or THX is a different device with a radio in it.",
+
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [{"date": "2026-09-02", "change": "First published at D0.", "source": null}],
+
+  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-02-phase0", "searches": 2}
+}
