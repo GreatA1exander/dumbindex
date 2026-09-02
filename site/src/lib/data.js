@@ -86,6 +86,15 @@ export function timeline() {
 const rank = (k) => (MATERIAL.has(k) ? 0 : k === "correction" || k === "availability" ? 1 : 2);
 export const downgrades = () => timeline().filter((c) => MATERIAL.has(c.kind));
 
+// Incidents that predate this catalog. They are real, dated and sourced, and they are
+// exactly what /downgrades is about — but we did not catch them, we recorded them. The
+// page keeps the two apart so the site never implies it was watching when it was not.
+export function priorIncidents() {
+  return vendors
+    .flatMap((v) => (v.incidents ?? []).map((i) => ({ ...i, vendor: v })))
+    .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+}
+
 export const KIND_LABEL = {
   listed: "new",
   tier_change: "got worse",

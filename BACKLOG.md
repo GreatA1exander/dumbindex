@@ -3,6 +3,32 @@
 Deliberately deferred, with the reason. Not a wishlist — things we decided to do later
 and want to be held to.
 
+## Launch gate
+
+Agreed 2026-09-02. The repo going public and the site launching are **separate events with
+different bars**, and conflating them delays the cheap one for the sake of the expensive one.
+
+**Repo public: now.** Unannounced. Nobody finds a GitHub URL by accident, so there is no
+first impression to spend. What it buys immediately is free CI on public repos — the
+validator and golden gate on every change, which does not currently run anywhere.
+
+**Launch (announcing it) waits for all of:**
+
+| Gate | Now | Target |
+|---|---|---|
+| No domain below 5 records | 8 of 14 below | 14 of 14 at 5+ |
+| High-traffic domains (kitchen, av, security, computing, climate) | 1-3 each | 10-15 each |
+| Total records | 21 | 120-150 |
+| `/downgrades` demonstrates the thesis | historical section only | at least one observed entry |
+
+Density per domain matters more than the total, because that is how people arrive: someone
+asking "is there a dumb dishwasher" who finds an empty subcategory concludes the site is
+abandoned, regardless of how good the rest of it is.
+
+Sequencing is what `OPERATIONS.md` already prescribes: finish Phase 0 by hand at 30-50
+records — enough to prove the procedure across more domain shapes — then turn on the
+automation and let it carry the catalogue to launch density.
+
 ## Deferred
 
 **RSS / Atom feed for `/updates`, and `sitemap.xml`.**

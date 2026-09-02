@@ -1,7 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
-import { downgrades, KIND_LABEL } from "../lib/data.js";
+import { downgrades, KIND_LABEL, priorIncidents } from "../lib/data.js";
 const rows = downgrades();
+const prior = priorIncidents();
 ---
 <Base title="Downgrades" current="downgrades"
       description="Devices that lost function after people had already bought them.">
@@ -16,10 +17,12 @@ const rows = downgrades();
     Routine additions to the catalog live on <a href="/updates/">Updates</a> so that
     anything appearing here is worth your attention.
   </p>
+  <h2>Since we started watching</h2>
   {rows.length === 0 ? (
     <p class="empty">
-      Nothing recorded. No device we list has lost function since we verified it —
-      which is the outcome we want, not an empty page waiting to be filled.
+      Nothing yet. No device we list has lost function since we verified it. That is the
+      outcome we want — but read it precisely: this catalogue is young, and an empty
+      section here means little has had time to change, not that we have proved nothing did.
     </p>
   ) : (
     <div class="tablewrap">
@@ -41,4 +44,33 @@ const rows = downgrades();
     </table>
     </div>
   )}
+
+  <h2>Before we started watching</h2>
+  <p class="lede">
+    These happened before this catalogue existed. We did not catch them — we recorded
+    them, from public reporting — and they are kept separate so nothing here implies we
+    were watching when we were not. They are on this page because they are precisely what
+    it is about, and because the pattern is the reason to care about the rest of the site.
+  </p>
+  <div class="tablewrap">
+  <table class="devices">
+    <tbody>
+      {prior.map((i) => (
+        <tr>
+          <td class="num">{i.date}</td>
+          <td><a href={`/vendors/#${i.vendor.slug}`}>{i.vendor.name}</a></td>
+          <td>
+            {i.description}
+            <br /><span class="evc">{i.class}</span> <a href={i.source} rel="nofollow">source</a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+  <p class="age">
+    Vendor conduct is scored in the <a href="/vendors/">ledger</a>, separately from any
+    device's tier. A company that has done this before can do it again, but it does not
+    change what the hardware in front of you does today.
+  </p>
 </Base>
