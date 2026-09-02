@@ -102,6 +102,24 @@
       "difficulty": "ambiguous",
       "result": "PASS",
       "detail": ""
+    },
+    {
+      "id": "reolink-rlc-810a",
+      "difficulty": "trap",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "vtech-dm221",
+      "difficulty": "ambiguous",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "ti-36x-pro",
+      "difficulty": "easy",
+      "result": "PASS",
+      "detail": ""
     }
   ]
 }

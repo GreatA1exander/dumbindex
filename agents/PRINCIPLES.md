@@ -26,10 +26,21 @@ by impression.
 | Tier | Name | Definition |
 |---|---|---|
 | **D0** | No Radio | Contains no intentional radiator. No Wi-Fi, Bluetooth, Zigbee, Z-Wave, Thread, cellular, LoRa. Controls are mechanical or local-electronic. It cannot phone home because it has no mouth. |
-| **D1** | Local Protocol Only | Has a radio or network port but speaks only protocols terminated by hardware *the owner controls*: Zigbee, Z-Wave, Thread/Matter to a local controller, BLE, Modbus, RS-485, wired Ethernet with a documented local API. No vendor cloud, or the device never contacts one. |
+| **D1** | Local Protocol Only | Has a radio or network port but speaks only protocols terminated by hardware *the owner controls*: Zigbee, Z-Wave, Thread/Matter to a local controller, BLE, Modbus, RS-485, wired Ethernet with a documented local API. **The vendor operates no cloud service for this device at all.** |
 | **D2** | Cloud-Optional | Ships with Wi-Fi, an app, and a vendor cloud, but **100% of core function works with the device never connected, or with its WAN traffic blocked**. No account required to complete setup. Losing the cloud costs only remote access and push notifications. |
 | **D3** | Liberatable | Cloud-dependent as sold, but a currently-maintained, documented path exists to local-only control (ESPHome, Tasmota, LocalTuya, Zigbee2MQTT re-pairing, rooting, third-party firmware). The path must be cited and must not require destroying the device. |
 | **REJECT** | — | Cloud or account required for **core function** with no liberation path, or a subscription gates a hardware capability. |
+
+**D1 vs D2 turns on whether a vendor cloud exists, not on whether you can avoid it.**
+The original wording of D1 said "no vendor cloud, *or the device never contacts one*",
+and that second clause is unusable: almost any networked device can be kept off the
+internet by a firewall rule, which would collapse most of D2 into D1 and make the tier
+describe the owner's network rather than the product. The rule is now simply: if the
+vendor runs a cloud service this device can use, it is at best D2, however thoroughly you
+block it. The VIOFO A139 is D1 because VIOFO operates no cloud for it. An ONVIF camera
+from a vendor with an app and a cloud is D2 even when you run it entirely on a LAN — and
+the record should say plainly that a local-only deployment is possible, because that is
+what the reader actually wants to know.
 
 **Tier describes the device. `vendor_risk` describes the vendor. Never mix them.**
 A vendor that has revoked features from units already sold does not, by that fact alone,
