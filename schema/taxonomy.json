@@ -28,7 +28,8 @@
         "garbage disposal",
         "ice maker",
         "water filter"
-      ]
+      ],
+      "problem": "Large kitchen appliances are the hardest category to shop honestly: manufacturers mix connected and non-connected versions inside one model line with no naming convention that tells them apart, so the model number is the only thing that answers the question. Small appliances are easier, and commercial food-service equipment is easier still \u2014 a kitchen cannot have staff learning a menu system."
     },
     {
       "slug": "laundry",
@@ -44,7 +45,8 @@
         "iron",
         "garment steamer",
         "sewing machine"
-      ]
+      ],
+      "problem": "Washers and dryers last long enough that a cloud dependency contracted today is a problem for the 2040s. The commercial-derived machines are the reliable answer here: laundromat operators will not buy equipment that stops working when a vendor's server does, and that requirement keeps mechanical controls in production."
     },
     {
       "slug": "climate",
@@ -85,7 +87,8 @@
         "UPS",
         "extension cord",
         "generator transfer switch"
-      ]
+      ],
+      "problem": "The cheapest, most reliable automation in this category is a clockwork dial that costs less than a smart bulb and cannot be discontinued. Where you do want addressable control, prefer a local protocol with a hub you own over anything that pairs to a manufacturer's account."
     },
     {
       "slug": "security",
@@ -223,7 +226,8 @@
         "massager",
         "TENS unit",
         "heating pad"
-      ]
+      ],
+      "problem": "Measurement is the product. A monitor that cannot show you a reading without a phone is a worse instrument, not a smarter one \u2014 so the test here is whether the number appears on the device and stays in its memory. Most reputable manufacturers still get this right; the risk is in the newer app-first entrants."
     },
     {
       "slug": "baby-pet",
@@ -242,7 +246,8 @@
         "pet tracker",
         "aquarium controller",
         "chicken coop door"
-      ]
+      ],
+      "problem": "The category where the cloud question stops being abstract. Wi-Fi video baby monitors have a long public history of being reached by people who should not have reached them. A DECT audio monitor removes the entire class of problem \u2014 no account to compromise, no server to breach, nothing leaving the building \u2014 at the cost of audio rather than video."
     },
     {
       "slug": "tools",
@@ -270,7 +275,8 @@
         "grill",
         "smoker",
         "thermometer probe"
-      ]
+      ],
+      "problem": "The cheap end of weather stations and yard equipment has gone almost entirely cloud-only, with several popular products shipping no display at all and existing purely as a feed into a vendor app. The instruments that keep a local console with the database on the device are the ones still worth buying."
     },
     {
       "slug": "wearables",
@@ -286,7 +292,8 @@
         "GPS watch",
         "dive computer",
         "hearing protection"
-      ]
+      ],
+      "problem": "A watch that needs charging nightly and an account to sync is a different product from a watch. The dumb end of this category is not a compromise \u2014 a quartz digital watch keeps better time than most smartwatches and runs for a decade on one cell."
     },
     {
       "slug": "office",
@@ -308,7 +315,8 @@
         "soldering station",
         "bench power supply",
         "oscilloscope"
-      ]
+      ],
+      "problem": "Mostly a benign category, and a useful source of the third-party-certification trick: exam boards prohibit devices capable of communication, so an SAT or AP approval is an enforceable certification that a device has no radio in it."
     }
   ]
 }
