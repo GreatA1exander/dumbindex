@@ -1,0 +1,93 @@
+{
+  "model_id": "rachio-3",
+  "make": "Rachio",
+  "model": "Rachio 3 Smart Sprinkler Controller",
+  "category": "tools",
+  "subcategory": "irrigation controller",
+  "tier": "REJECT",
+  "tier_rationale": "The manufacturer's own quick-start guide lists Wi-Fi and a mobile device as 'Required' and states step one of setup is to 'Create a Rachio user account to set up and manage your controller.' Account creation is mandatory to complete setup, which is an explicit REJECT condition in the decision table regardless of how well the device behaves once configured.",
+  "the_unplug_test": "Once a schedule is already programmed, the controller keeps running it from memory with no internet present — community reports and Rachio's own support material describe an offline mode that continues the last-known schedule. But you cannot get to that state without Wi-Fi, a smartphone, and a Rachio account: the quick-start guide's first step is account creation, and there is no documented path to program a schedule from the unit itself. If you skip the app, the controller never leaves the box's default state.",
+  "status": "rejected",
+  "rejection_reason": "Account creation is mandatory to complete initial setup and there is no way to configure zones or a watering schedule from the controller itself — only through the Rachio app after creating an account. This fails the decision table's REJECT trigger ('account mandatory at setup') even though the device can run a previously-configured schedule offline afterward.",
+  "account_required": "for_setup",
+  "works_offline": "partially",
+  "offline_losses": [
+    "initial setup and any schedule creation or editing (app + account required)",
+    "remote control and monitoring via the app",
+    "weather-based schedule adjustments (Rachio's 'Weather Intelligence' pulls from cloud weather data)",
+    "IFTTT and smart-home platform integrations",
+    "firmware updates, which require reconnecting to Wi-Fi"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "heavy",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$170-230",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Rachio (manufacturer)",
+      "url": "https://www.rachio.com/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": null,
+  "sources": [
+    {
+      "url": "https://d3gqasl9vmjfd8.cloudfront.net/8fcc1c3c-7318-4bd3-b9a2-9e24cdea08a8.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own Quick Start Guide: 'What you'll need' page lists Wi-Fi Access and a Mobile Device both as 'Required.' Step 1 of the 3-step setup is 'Download the Rachio app' and 'Create a Rachio user account to set up and manage your controller. You'll need to create a username and password to connect your controller.' No alternative, account-free setup path is described anywhere in the guide."
+    },
+    {
+      "url": "https://community.rachio.com/t/will-it-work/17994",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Community/support discussion corroborating that once a schedule is configured, the Rachio 3 continues running that last-known schedule without an active Wi-Fi connection, but that the app is required to create or change schedules and that remote control/monitoring and integrations (IFTTT, smart-home platforms) are unavailable offline."
+    }
+  ],
+  "open_questions": [
+    "Is there a hardware-level manual override (e.g. physical buttons to run a zone once, already documented in other sources) sufficient for a homeowner to hand-water without ever using the app, even though scheduled automation requires the account? This record treats manual per-zone activation as a lesser capability than the programmed schedule that is the device's actual selling point.",
+    "No fully local, no-account multi-zone irrigation controller has been verified in this catalog yet — the closest verified alternative below (Orbit 62061) is a single-zone hose-end timer, not a whole-yard multi-zone controller. Finding a true local multi-zone controller is an open discovery task.",
+    "Does Rachio operate any subscription tier that gates a previously-free capability? A 'Premium Software Features' support page exists but its contents could not be read within budget; this is unrelated to the REJECT reason above but worth checking for the vendor ledger."
+  ],
+  "conflicts_with": null,
+  "notes": "Included deliberately as the REJECT contrast case for the domain: irrigation controllers are one of the categories PRINCIPLES singles out as having gone almost entirely cloud-first at the consumer price point. The hardware itself is capable and the offline degradation is genuinely mild once configured, but the decision table is explicit that a mandatory account at setup is disqualifying on its own, separate from how good the device is afterward.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published as REJECT (account mandatory at setup).",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-tools-domain",
+    "run_id": "2026-09-02-tools",
+    "searches": 5
+  },
+  "alternatives": [
+    {
+      "model_id": "orbit-62061",
+      "why": "A single-zone hose-end timer that needs no account and no app at all — a real downgrade in scope (one zone, not a whole-yard controller) but a genuine no-cloud alternative for spot watering."
+    }
+  ],
+  "local_replacement": "unknown",
+  "local_replacement_note": "Rachio has a documented cloud API used by some Home Assistant integrations, but those integrations talk to Rachio's cloud rather than the controller directly, and no fully local protocol (e.g. a documented LAN API) was found within budget."
+}

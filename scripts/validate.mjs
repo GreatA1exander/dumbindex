@@ -54,6 +54,11 @@ for (const f of files) {
     if (!s.supports) E(`source ${s.url} does not say what it supports`);
     if (!s.accessed) E(`source ${s.url} has no access date`);
   }
+  // Two entries pointing at one page are one source, not two. Listing it twice
+  // overstates the evidence even when the record clears the bar on other grounds.
+  const seen = new Map();
+  for (const s of src) seen.set(s.url, (seen.get(s.url) ?? 0) + 1);
+  for (const [u, n] of seen) if (n > 1) E(`cites the same URL ${n} times as separate sources — ${u}`);
 
   // §11: staleness. 18 months invalidates evidence; 60 days is a nudge.
   if (d.last_verified) {

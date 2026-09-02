@@ -1,0 +1,80 @@
+{
+  "model_id": "thermoworks-smoke-x2",
+  "make": "ThermoWorks",
+  "model": "Smoke X2 Long-Range Remote BBQ Alarm Thermometer",
+  "category": "tools",
+  "subcategory": "thermometer probe",
+  "tier": "D1",
+  "tier_rationale": "Has a radio (FCC grants 2AI67-S2T transmitter and 2AI67-S2R receiver, 902.5-927 MHz proprietary spread-spectrum RF, not WiFi or Bluetooth) that speaks only point-to-point to a receiver the owner holds. ThermoWorks' own support documentation states no app, WiFi, or account exists for this model, and the same grantee separately files WiFi/Bluetooth grants for its connected line (Signals, BLUEDOT) \u2014 confirming Smoke X2 is deliberately the non-cloud product in the catalog, not an unfiled oversight.",
+  "the_unplug_test": "There is no cloud for this device to be cut off from. The probe transmitter talks directly to its own handheld receiver over a dedicated 915 MHz radio link rated to 1.24 miles line-of-sight \u2014 the same link whether your house has internet or not. ThermoWorks explicitly states no WiFi add-on exists for this model, unlike its Signals product line.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "proprietary_subghz"
+  ],
+  "fcc_id": "2AI67-S2T",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Replacement probes are sold individually by ThermoWorks; transmitter and receiver run on AA batteries or USB-C power, both user-replaceable/rechargeable."
+  },
+  "availability": "in_stock",
+  "price_band": "$99-140",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "ThermoWorks (manufacturer)",
+      "url": "https://www.thermoworks.com/smoke-x/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://help.thermoworks.com/knowledge-base/smoke-vs-smoke-x2/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer support article: Smoke X2 uses 'an all-new RF wireless technology,' states 'A Wi-Fi enabled add-on is not available for Smoke X2' (unlike the original Smoke, which can add a WiFi gateway accessory), and confirms no account or internet connection is required for Smoke X2 to function; range up to 6,562 ft (1.24 mi) line-of-sight; 915 MHz RF; splash-proof IP66; up to 330 hours on AA batteries or USB-C powered."
+    },
+    {
+      "url": "https://fccid.io/2AI67-S2T",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grant for ThermoWorks (grantee 2AI67) model S2T, the Smoke X2 transmitter: 902.5-927 MHz spread-spectrum Digital Transmission System under Part 15C, 1.4 mW output \u2014 a proprietary point-to-point RF link, not WiFi or Bluetooth. Sibling control: the same grantee (2AI67) separately holds WiFi/Bluetooth grants for its connected products (Signals, BLUEDOT 'Bluetooth thermometer'), confirming ThermoWorks files distinct grants when a product actually carries a cloud-capable radio, and Smoke X2's grant is for local-only RF instead."
+    }
+  ],
+  "open_questions": [
+    "Firmware update mechanism for the transmitter/receiver pair, and whether updates can be declined, was not established within budget.",
+    "Exact current retail price varies by color/bundle and frequent promotions; $99-140 reflects the range observed across the manufacturer's own past pricing and independent retailers, not a single verified list price captured today."
+  ],
+  "conflicts_with": null,
+  "notes": "A clean D1 case in a category (thermometer probe) that otherwise skews heavily toward Bluetooth/WiFi cloud products (Meater, Weber iGrill, ThermoWorks' own Signals). The same manufacturer sells both kinds side by side, which makes the FCC sibling-grant comparison unusually clean.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-tools-domain",
+    "run_id": "2026-09-02-tools",
+    "searches": 5
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

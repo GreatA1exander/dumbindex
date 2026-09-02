@@ -1,0 +1,75 @@
+{
+  "model_id": "jiffy-steamer-j-2000",
+  "make": "Jiffy Steamer",
+  "model": "J-2000",
+  "category": "laundry",
+  "subcategory": "garment steamer",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer's own product page describes a floor-standing steamer built around a 1300W brass heating element, a 3/4-gallon water tank, and a hose to a steam head — the page explicitly notes there is 'no need for a temperature setting like on an iron,' i.e. the only control is on/off. No WiFi, Bluetooth, app, or connectivity feature is mentioned. No FCC grantee record exists for Jiffy Steamer at all, consistent with a manufacturer whose entire product line (garment steamers essentially unchanged since the 1940s) has never included a radio.",
+  "the_unplug_test": "Nothing changes. Fill the tank, plug the unit into a wall outlet, and flip it on; steam flows continuously through the hose until you turn it off. There is no temperature dial, no app, and no account anywhere in the design — a Jiffy Steamer from decades ago works the same way as one bought today.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Steam heads, hoses, and casters are sold as separate configurable options and replacement parts directly by the manufacturer. 3-year limited warranty, UL/cUL/TUV listed."
+  },
+  "availability": "in_stock",
+  "price_band": "$250-300",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Jiffy Steamer (manufacturer)",
+      "url": "https://jiffysteamer.com/jiffy-clothing-steamer-J-2000/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://jiffysteamer.com/jiffy-clothing-steamer-J-2000/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer product page for the J-2000 (item #12315): 1300W solid brass heating element, 3/4-gallon reservoir (~1.5 hours continuous steam), 5.5-foot hose, 360-degree casters, $289.00, 3-year limited warranty, UL/cUL/TUV/GS/CE listed. States the steamer needs 'no temperature setting like on an iron' — i.e. its only control is on/off. No WiFi, app, or connectivity feature mentioned anywhere on the page.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Could not locate any FCC grantee record for Jiffy Steamer Co. at all, meaning there is no sibling grant to compare against (unlike the Speed Queen/Bissell/eufy records in this batch) — the absence is consistent with, but not independent confirmation of, no radio ever being present in any Jiffy product.",
+    "This record supports one Class A source only; a second independent source (a distributor spec sheet or a service manual) would strengthen it further."
+  ],
+  "conflicts_with": null,
+  "notes": "Jiffy Steamer has made continuous-flow garment steamers of essentially this same mechanical design since the 1940s and sells to dry cleaners, tailors, and costume/wardrobe departments as much as to home buyers — a light-commercial product line with no incentive to add connectivity.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-laundry-verifier",
+    "searches": 2
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

@@ -1,0 +1,82 @@
+{
+  "model_id": "proteam-super-coach-pro-10",
+  "make": "ProTeam",
+  "model": "Super Coach Pro 10 (Model 1073110)",
+  "category": "laundry",
+  "subcategory": "vacuum",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer owner's manual describes a corded 120V backpack vacuum whose only controls are a mechanical on/off switch on the waist belt and an internal thermal-overload cutoff. No wireless component, app, or connectivity feature is mentioned anywhere across the manual's setup, operation, or maintenance sections, and the design (a motor, a bag, a hose, a switch) has no function such a feature could serve.",
+  "the_unplug_test": "Nothing changes, because there was never anything to unplug except the vacuum itself. It is a corded commercial backpack vacuum: plug it into a wall outlet, flip the belt-mounted switch, and clean. There is no battery to charge, no app to pair, and no account of any kind. The only automatic behaviour is a thermal cutoff that stops the motor if airflow is blocked, which resets itself once the unit cools.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Sold through commercial janitorial-supply distributors with a published parts and filter reorder list (Intercept Micro Filter #107313, Micro Cloth Filter #834000, HEPA filter #107315). Filters are designed to be replaced by the owner on a weekly to monthly schedule per the manual."
+  },
+  "availability": "in_stock",
+  "price_band": "$400-500",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "CleanFreak (commercial janitorial supply)",
+      "url": "https://www.cleanfreak.com/products/proteam-super-coach-pro-10-hepa"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.appliancefactoryparts.com/content/pdfs/133371-12.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Official ProTeam owner's manual (copyright ProTeam, Inc.) covering Super Coach Pro 10 (model 1073110), Super Coach Pro 6, and ProVac FS 6. Describes a 120V/60Hz corded motor with a thermal-protection cutoff, a belt-mounted mechanical on/off switch, and bag/filter maintenance. No WiFi, Bluetooth, app, or any connectivity feature appears anywhere in the setup, operating, or maintenance instructions across all three languages the manual is printed in.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.cleanfreak.com/products/proteam-super-coach-pro-10-hepa",
+      "class": "C",
+      "accessed": "2026-09-02",
+      "supports": "Commercial janitorial-supply retailer listing corroborating current US availability of the Super Coach Pro 10 backpack vacuum and its price.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No FCC grant search turned up any ProTeam/Emerson grantee filing at all, which is weaker evidence than a true sibling control (Speed Queen/Chamberlain-style) because ProTeam's entire commercial vacuum catalogue appears to be corded with no connected product line to compare against — there is no sibling grant to confirm the vendor files when it has a radio.",
+    "Confirm whether ProTeam's parent Emerson sells any connected/IoT-enabled commercial vacuum under a different product line that would change this assessment."
+  ],
+  "conflicts_with": null,
+  "notes": "A commercial janitorial backpack vacuum — the kind bought by contract cleaning crews for schools, offices, and convention centers. This buyer will not tolerate a vacuum that needs an app or a server; the entire category stays corded and mechanical for that reason.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-laundry-verifier",
+    "searches": 8
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

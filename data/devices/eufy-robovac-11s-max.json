@@ -1,0 +1,82 @@
+{
+  "model_id": "eufy-robovac-11s-max",
+  "make": "eufy (Anker Innovations)",
+  "model": "RoboVac 11S MAX (T2126)",
+  "category": "laundry",
+  "subcategory": "robot vacuum",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer's own comparison chart marks this model 'Wi-Fi Connected: —' and 'Works with Amazon Alexa: —', and states control is via an included infrared remote only, with no companion app. Infrared is not an intentional RF radiator and needs no FCC grant. The sibling control confirms it: Anker Innovations (FCC grantee 2AOKB) files grants and EU declarations of conformity for its Wi-Fi-equipped sibling model, the RoboVac 15C MAX (T2128), but no FCC grant exists for this model (T2126) under the same grantee.",
+  "the_unplug_test": "Nothing changes, because the robot never had a network connection to lose. Press start on the unit or point the infrared remote at it and it cleans a room, then returns to its charging dock on its own. There is no app, no account, and no cloud step anywhere in normal operation — scheduling is done with the remote's own buttons, stored on the robot itself.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "ir"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Washable HEPA filter and replacement brushes/filters sold directly by eufy and third parties. No smart-home teardown ecosystem exists for this model since it has nothing for a hub to talk to."
+  },
+  "availability": "in_stock",
+  "price_band": "$150-280",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "eufy (manufacturer)",
+      "url": "https://www.eufy.com/products/t2126113"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 2,
+  "sources": [
+    {
+      "url": "https://www.eufy.com/products/t2126113",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer product page for the RoboVac 11S MAX (SKU T2126113): comparison chart explicitly shows 'Wi-Fi Connected: —' and 'Works with Amazon Alexa: —' for this model, versus 'Yes' for the sibling 15C MAX. Control is via an included infrared remote (2 AAA batteries) with automatic return-to-dock. $279.99 list price, currently sold with Buy Now / installment options.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2AOKB",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grantee search for Anker Innovations Limited (2AOKB, 714 filed grants) confirms this manufacturer files FCC grants routinely for its Wi-Fi-equipped and Bluetooth-equipped products (power banks, headphones, cameras, and other RoboVac models such as the T2107/T2104 lines). No grant under this grantee names model T2126 (RoboVac 11S MAX), establishing the sibling-control absence — the connected sibling T2128 (RoboVac 15C MAX) has a published EU Declaration of Conformity for its Wi-Fi module while T2126 does not.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No internal teardown/photo evidence found confirming the absence of a Wi-Fi chip on the board itself; the conclusion rests on the manufacturer's own comparison chart and the absence of a matching FCC/EU radio filing rather than a physical inspection.",
+    "Confirm current-year production hasn't quietly added Bluetooth for remote pairing only (some budget robot vacuums use BLE solely to bind a physical remote) — not mentioned in any source found, but worth checking a recent teardown if one surfaces."
+  ],
+  "conflicts_with": null,
+  "notes": "Vendor_risk reflects Anker Innovations' 2022-2023 eufy Security camera scandal, where cameras marketed as processing video 'locally' were found uploading unencrypted footage and face data to eufy's own servers without disclosure (Anker admitted this to The Verge in February 2023). That incident concerns the eufy Security camera division, not eufy Clean/RoboVac, and this specific robot vacuum has no FCC-registered radio to phone home with in the first place — but the same parent company having been caught misrepresenting 'local' claims elsewhere is relevant context for a reader trusting this record's D0 tier, so it is scored rather than ignored.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0, vendor_risk 2.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-laundry-verifier",
+    "searches": 4
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

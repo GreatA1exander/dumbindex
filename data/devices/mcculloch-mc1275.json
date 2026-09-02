@@ -1,0 +1,82 @@
+{
+  "model_id": "mcculloch-mc1275",
+  "make": "McCulloch",
+  "model": "MC1275 (Multi-Use Steam Canister)",
+  "category": "laundry",
+  "subcategory": "steam cleaner",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer owner's guide describes only mechanical controls (a lighted on/off switch, a steam-ready indicator light, a steam lock switch, and a trigger-style steam button) and lists no WiFi, Bluetooth, app, or connectivity of any kind. The manual's own FCC Consumer Advisement is a Part 15 unintentional-radiator disclosure ('this equipment may generate, use and/or radiate radio frequency energy') covering ordinary motor/heater electrical noise, not an intentional-radiator grant — this is the opposite of evidence for a radio and directly supports D0 per the FCC heuristic.",
+  "the_unplug_test": "Nothing changes. Fill the internal water reservoir, plug the unit into a wall outlet, and flip the lighted on/off switch. A light tells you when the water has heated enough to produce steam, and a trigger button releases it. There is no Wi-Fi, no app, and no account step anywhere between plugging it in and cleaning.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Accessories (mop head, microfiber pads, utility brushes, extension wands) are individually numbered parts sold through the manufacturer's own consumer service line, per the owner's guide's product-support page."
+  },
+  "availability": "in_stock",
+  "price_band": "$150-200",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "McCulloch Steam (manufacturer)",
+      "url": "https://mccullochsteam.com/products/mc1275-canister-steam-cleaner"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.mccullochsteam.com/wp-content/uploads/2018/06/MC1275.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own owner's guide, hosted on the manufacturer's own domain (mccullochsteam.com). Describes all controls as mechanical/electromechanical (lighted on/off switch, steam-ready light, steam lock switch, steam button) with no WiFi/Bluetooth/app/connectivity mentioned. Includes an FCC Consumer Advisement — a Part 15 unintentional-radiator disclosure, not an intentional-radiator grant — which is itself evidence against a radio being present. 120V/1500W/12.5A, 48 oz. reservoir, ~7-8 minute heat-up, ~45 minute continuous steam.",
+      "archive_url": null
+    },
+    {
+      "url": "https://mccullochsteam.com/products/mc1275-canister-steam-cleaner",
+      "class": "C",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own current storefront listing confirming the MC1275 is in stock at $169.99.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No FCC grantee search performed for the entity behind the McCulloch steam brand (the manual's FCC advisement directs interference complaints to 'Vornado Consumer Service,' suggesting Vornado licenses or distributes the McCulloch steam line) — a sibling-control search on that grantee was not run and would strengthen this record.",
+    "Owner's guide states intended use is household cleaning, not commercial/industrial — this is a consumer device, not the commercial-grade equivalent the domain hunting method usually favors, so it is more exposed to a future redesign than a dedicated commercial line would be."
+  ],
+  "conflicts_with": null,
+  "notes": "Unlike most of this batch, this is a boring consumer product rather than a commercial-derived one — but it clears the bar the same way: a manual that fully describes the product's controls and includes an unintentional-radiator disclosure with no radio grant anywhere in sight.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-laundry-verifier",
+    "searches": 3
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

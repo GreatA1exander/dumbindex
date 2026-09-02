@@ -1,0 +1,80 @@
+{
+  "model_id": "honda-eu2200i",
+  "make": "Honda",
+  "model": "EU2200i (base, non-Companion, AG/AN wiring type)",
+  "category": "tools",
+  "subcategory": "generator",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own shared owner's manual for the EU2200i / EU2200i Companion line prints two distinct wiring diagrams: the base 'AG, AN TYPE' diagram has no radio component at all, while the 'AG1, AN1 TYPE' diagram (the Companion variant) shows a discrete 'BLUETOOTH UNIT' wired into the control panel. The manual states the My Generator app works 'only with Honda generators equipped with Bluetooth technology' — the base EU2200i is not one of them.",
+  "the_unplug_test": "This generator has no network to lose. It is a pull-start (or optional electric-start) engine, an inverter, and a control panel with an oil-alert light and an eco-throttle switch. The base wiring diagram contains no Bluetooth module at all — only the EU2200i Companion variant has the radio soldered in — so there is no app, no pairing, and nothing that changes behavior whether or not any network exists nearby.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Widely serviced by Honda Power Equipment dealers; spark plug, oil, and air filter are user-serviceable per the manual's maintenance schedule."
+  },
+  "availability": "in_stock",
+  "price_band": "$900-1200",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Honda Power Equipment (manufacturer)",
+      "url": "https://powerequipment.honda.com/generators/models/eu2200i"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446140.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer owner's manual for EU2200i / EU2200i Companion: specifications table lists both models side by side (Generator 'Type' AG/AG3/AN/AN3 for base EU2200i vs AG1/AN1 for Companion); the wiring diagram section prints a separate 'AG, AN TYPE' schematic with no radio component, and an 'AG1, AN1 TYPE' schematic that adds a labeled 'BLUETOOTH UNIT' block. Text states the My Generator app functions (remote stop, monitoring, notifications) work 'only with Honda generators equipped with Bluetooth technology.'"
+    },
+    {
+      "url": "https://www.remodelormove.com/do-all-honda-eu2200i-generators-have-bluetooth/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Independent corroboration that standard EU2200i units do not have Bluetooth and that only the EU2200i Companion (EU2200iC) ships with the built-in Bluetooth radio for the My Generator app."
+    }
+  ],
+  "open_questions": [
+    "FCC grantee search for Honda Motor Co. (grantee prefixes including N43) was inconclusive within budget — did not turn up a specific grant for the Companion's Bluetooth unit to use as an explicit sibling-grant citation, though the manual's own wiring diagrams are direct manufacturer evidence and were treated as sufficient.",
+    "Honda's model-number suffixes (T, TAG1, TAN1, etc.) encode electric-start, parallel-ready, and Companion/Bluetooth options in ways that are easy to buy the wrong variant of — a buyer should check the generator 'Type' code (AG/AN = no radio, AG1/AN1 = Bluetooth) on the spec plate or box, not just the headline 'EU2200i' name."
+  ],
+  "conflicts_with": null,
+  "notes": "A clean within-model-line split: Honda sells the base EU2200i and the Bluetooth-equipped EU2200i Companion under nearly the same name and the same manual, distinguished only by a wiring-diagram-level 'Type' code. This is the model-number pattern SCOUT flags as highest-yield: the dumb option sits on the shelf next to its connected sibling.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-tools-domain",
+    "run_id": "2026-09-02-tools",
+    "searches": 6
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

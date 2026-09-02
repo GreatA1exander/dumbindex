@@ -1,0 +1,83 @@
+{
+  "model_id": "honeywell-hcm-350",
+  "make": "Honeywell (Kaz USA)",
+  "model": "HCM-350 Germ Free Cool Mist Humidifier",
+  "category": "climate",
+  "subcategory": "humidifier",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own 10-page manual documents the entire control surface as a single rotary fan-speed knob (High/Medium/Low) plus a power/UV-status indicator light, with no wifi, Bluetooth, app, or remote mentioned anywhere. Kaz USA Inc (FCC grantee 2ABRG), which makes this product under license from Honeywell, holds grants for other Bluetooth-equipped home-comfort products in the same catalog (e.g. the HPA250B HEPA console air purifier), so the vendor demonstrably files when a product has a radio, and no grant exists for any HCM-350 model.",
+  "the_unplug_test": "Nothing changes. This is an evaporative humidifier: a fan pulls air through a wet wick past a UV bulb that disinfects the water, and the only control is a three-position speed knob. It has no network connection of any kind to begin with, so there is nothing for a router being off to interrupt — you fill the tank, plug it in, and turn the dial.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Manufacturer sells replacement UV bulbs (HCM-350-UV), tanks, caps, and the HAC-504AW wicking filter directly, with a documented user-serviceable filter/bulb replacement procedure in the manual. Warranty explicitly forbids opening the sealed motor housing/interlock switch."
+  },
+  "availability": "in_stock",
+  "price_band": "$60-90",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Honeywell Store (Kaz USA)",
+      "url": "https://www.honeywellstore.com/store/products/germ-free-cool-mist-humidifier-hcm-350.htm"
+    },
+    {
+      "name": "Amazon",
+      "url": "https://www.amazon.com/Honeywell-HCM350B-Germ-Humidifier-Black/dp/B00FJTVHKO"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.honeywellstore.com/store/images/pdf/honeywell-hcm-350-humidifier-manual.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Official Honeywell/Kaz USA owner's manual for HCM-350, HCM-350B and HCM-350B-CST. Operation section shows the only controls are a fill cap, an off/on knob, and a 3-position fan-speed dial (High/Med/Low). No wifi, app, Bluetooth, or remote control mentioned in any of the 10 pages covering setup, filter changes, UV bulb replacement, cleaning, or troubleshooting. Electrical rating: 120V, 60Hz standard plug."
+    },
+    {
+      "url": "https://fccid.io/2ABRG",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Sibling control: Kaz USA Inc, grantee 2ABRG, manufactures Honeywell-branded home and health products and holds FCC grants for Bluetooth-equipped products in the same catalog, including 2ABRGHPA250B ('Hepa Console Bluetooth Air Purifier') and multiple BLE health devices. No grant of any kind exists for HCM-350, HCM-350B, or HCM-350B-CST, confirming the vendor files for its radio-equipped products and the absence here is meaningful."
+    }
+  ],
+  "open_questions": [
+    "Honeywell/Kaz sells other cool-mist humidifiers with digital displays and some with app control under similar-looking model families (e.g. certain HEV series) — worth confirming the exact model number on the box before buying, since the HCM-350 name has been reused across the -350, -350B, and -350B-CST hardware variants which this record treats as equivalent based on the shared manual."
+  ],
+  "conflicts_with": null,
+  "notes": "This product is sold under the Honeywell brand but manufactured by Kaz USA Inc (a Helen of Troy subsidiary) under license — a different corporate entity from Resideo/Honeywell International, which makes the connected thermostats. The FCC sibling control therefore correctly uses the Kaz USA grantee code, not Honeywell International's.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-climate-verifier",
+    "searches": 5
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

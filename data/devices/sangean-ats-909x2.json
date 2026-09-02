@@ -1,0 +1,80 @@
+{
+  "model_id": "sangean-ats-909x2",
+  "make": "Sangean",
+  "model": "ATS-909X2",
+  "category": "av",
+  "subcategory": "shortwave radio",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own specification table lists the device's entire connectivity as: Tuner (AM/FM/SW/LW/RDS/RBDS/Air Band), Media (AUX-In), and an I/O panel of AUX-In, DC-In, earphone jack, line-out, standby-out, and an external shortwave antenna jack. No Wi-Fi, Bluetooth, or app appears in that table. Sangean's own catalog is the sibling control: it separately lists and names 'Bluetooth' as a feature on other current products (DCR-90BT, DPR-42BT, MMR-99), which the ATS-909X2's own product page and spec sheet do not mention at all.",
+  "the_unplug_test": "Nothing to unplug \u2014 this radio receives broadcasts over the air (AM, FM, shortwave, longwave, and aircraft band) and has no network connection of any kind to lose. It runs on four AA batteries or the included AC adapter, tunes and stores its own presets locally, and has worked the same way since the original ATS-909X was released.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Runs on 4x AA batteries (user-replaceable) or the included AC adapter; no rechargeable pack to age out."
+  },
+  "availability": "in_stock",
+  "price_band": "$230-390",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Sangean (manufacturer)",
+      "url": "https://www.sangean.com/product/ats-909x2-graphite"
+    },
+    {
+      "name": "Amazon",
+      "url": "https://www.amazon.com/SANGEAN-Ultimate-Multi-Band-Radio-ATS-909X2/dp/B08MSXX6LH"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.sangean.com/product/ats-909x2-graphite",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer product page. The Specifications table gives the device's entire connectivity as Tuner (AM/FM/SW/LW/RDS/RBDS/Air Band) and Media (AUX-In), with an I/O panel of AUX-In, DC-In, earphone, line-out, standby-out and an external shortwave antenna jack \u2014 no Wi-Fi, Bluetooth or app anywhere in it. The same catalogue supplies the sibling control: Sangean names Bluetooth explicitly in the titles of its DCR-90BT, DPR-42BT and MMR-99, so its absence here is a product decision the vendor documents rather than an omission.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No FCC-grantee search was run for Sangean specifically; the manufacturer's own spec table and internal sibling-labeling convention (BT models are named 'BT' and list Bluetooth explicitly) were treated as sufficient given the absence of any wireless claim.",
+    "A firmware update path (via a memory-card or PC connection) was mentioned in enthusiast forum posts for the ATS-909X2 but not confirmed from a manufacturer source in this pass \u2014 worth checking whether updates are user-declinable if a source is found.",
+    "No FCC grantee search was recorded. A shortwave set is a receiver rather than an intentional radiator, so an absent grant is expected and proves little \u2014 but the grantee list should still be checked to confirm Sangean files for its Bluetooth models, which would make the catalogue sibling control concrete."
+  ],
+  "conflicts_with": null,
+  "notes": "The ATS-909X2 is a well-regarded shortwave portable within the ham radio and SWL (shortwave listening) community and is the direct successor to the ATS-909X. As of August 2026 there were forum reports of a possible 'ATS-909X2+/SE' successor in development, which is worth rechecking on the next verification pass.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-av-verifier",
+    "searches": 4
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

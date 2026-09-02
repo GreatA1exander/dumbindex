@@ -1,0 +1,89 @@
+{
+  "model_id": "milwaukee-2904-20",
+  "make": "Milwaukee Electric Tool Corporation",
+  "model": "M18 FUEL 2904-20 (1/2\" Hammer Drill/Driver, tool only)",
+  "category": "tools",
+  "subcategory": "drill",
+  "tier": "D0",
+  "tier_rationale": "No radio: the manufacturer's product page describes only motor, chuck, clutch and LED-light specs with no Bluetooth/ONE-KEY/app mention, and Milwaukee's FCC grantee record (P36) — which includes specific tool model numbers with radio grants (e.g. 2931, 2835) plus a dedicated ONE-KEY Bluetooth tracking tag line — has no entry for 2904 or 2904-20.",
+  "the_unplug_test": "This drill has nothing to unplug from. It runs on an M18 battery, has a mechanical clutch with 14 (comparable) settings, and an LED worklight wired straight to the motor circuit. There is no ONE-KEY chip in it, no app pairing step, and no account anywhere between opening the box and driving a screw.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Milwaukee runs authorized service centers and sells brushes, chucks and other wear parts; the tool is backed by a 5-year tool warranty per the product line's standard terms."
+  },
+  "availability": "in_stock",
+  "price_band": "$130-230",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Milwaukee Tool (manufacturer)",
+      "url": "https://www.milwaukeetool.com/Products/Power-Tools/Cordless/Drilling/2904-20"
+    },
+    {
+      "name": "The Home Depot",
+      "url": "https://www.homedepot.com/p/Milwaukee-M18-FUEL-18V-Lithium-Ion-Brushless-Cordless-1-2-in-Hammer-Drill-Driver-Tool-Only-2904-20/320326855"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.milwaukeetool.com/Products/Power-Tools/Cordless/Drilling/2904-20",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer product page: no Bluetooth, ONE-KEY, app, or cloud-account feature listed anywhere in the description; specs limited to torque (1,400 in-lb), speed (2,100 rpm), all-metal ratcheting chuck, POWERSTATE brushless motor, mechanical clutch, LED light."
+    },
+    {
+      "url": "https://fccid.io/P36",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grantee list for Milwaukee Electric Tool Corporation (grantee code P36), 23 entries: includes specific radio-equipped tool models (e.g. '2931', '2835' filed 2025-2026) and a dedicated 'ONE-KEY BLUETOOTH Tracking Tag' — establishing Milwaukee files grants for tools that do carry a radio. Neither '2904' nor '2904-20' appears anywhere in the list."
+    },
+    {
+      "url": "https://www.homedepot.com/p/Milwaukee-M18-FUEL-18V-Lithium-Ion-Brushless-Cordless-1-2-in-Hammer-Drill-Driver-Tool-Only-2904-20/320326855",
+      "class": "C",
+      "accessed": "2026-09-02",
+      "supports": "Retailer listing used only for current price ($229 tool-only) and in-stock status, not for any tier-relevant claim."
+    }
+  ],
+  "open_questions": [
+    "Milwaukee's ONE-KEY line reuses similar model-number families across drills, impact drivers and rotary hammers — a buyer should double-check they are not picking a ONE-KEY-suffixed variant of a superficially similar tool number."
+  ],
+  "conflicts_with": null,
+  "notes": "Cordless power tools are one of the cleanest D0 categories on this site: the base drill/driver line has no logic beyond a mechanical clutch and trigger, while the same manufacturer's ONE-KEY line (asset-tracking, remote lockout) sits right next to it in the catalog with its own FCC grants. The model number is the entire signal.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-tools-domain",
+    "run_id": "2026-09-02-tools",
+    "searches": 5
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

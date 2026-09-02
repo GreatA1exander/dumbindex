@@ -1,0 +1,85 @@
+{
+  "model_id": "audio-technica-at-lp60x",
+  "make": "Audio-Technica",
+  "model": "AT-LP60X",
+  "category": "av",
+  "subcategory": "turntable",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own user manual lists the complete part inventory and connection diagram — RCA stereo output terminals, a phono/line pre-amp selector switch, and a 12V DC power jack — with no Bluetooth, Wi-Fi, or USB interface of any kind. The only radio-adjacent text in the manual is a boilerplate Part 15B unintentional-radiator notice, which is the opposite of an intentional-radiator grant.",
+  "the_unplug_test": "There is no router to unplug and nothing here that would notice if there were. This is a belt-drive turntable with a built-in phono preamp; it connects to an amplifier or powered speakers over RCA cables and runs from a wall adapter. It has no app, no account, no Bluetooth, and no firmware to update. Pressing start spins the platter; nothing else has to happen first.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Audio-Technica sells the replacement stylus (ATN3600L) and an exclusive replacement drive belt directly, and both are named as separate line items in the manual's specification table, which suggests the vendor expects owners to service them."
+  },
+  "availability": "in_stock",
+  "price_band": "$150-180",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Amazon",
+      "url": "https://www.amazon.com/dp/B07N3XJ66N"
+    },
+    {
+      "name": "Best Buy",
+      "url": "https://www.bestbuy.com/product/audio-technica-audio-technica-at-lp60x-bk-turntable-black/CG9462VPPS"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://docs.audio-technica.com/us/at_lp60x_um_162501370_v2_en_web_190502.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Full user manual: part names/functions diagram, connection diagram and specification table show only RCA stereo output terminals, a PHONO/LINE pre-amp selector switch, and a 12V/2A AC adapter input — no Bluetooth, Wi-Fi, or USB port anywhere in the document. The USA FCC notice section contains only a Part 15 Class B (unintentional radiator) compliance statement, not an intentional-radiator grant.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/JFZLP60XBT/Letter/Declaration-of-authorization-4118750",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Sibling control: Audio-Technica's FCC grantee code is JFZ, and the company filed an intentional-radiator grant (FCC ID JFZLP60XBT) for the Bluetooth sibling model AT-LP60XBT. No equivalent grant exists for the plain AT-LP60X, which is consistent with it containing no radio.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Confirm the plain AT-LP60X (no BT, no USB suffix) is still the SKU sold at major retailers rather than having been quietly superseded by the BT or BT-USB variant on some shelves — the model names are close enough to mix up at checkout."
+  ],
+  "conflicts_with": null,
+  "notes": "Audio-Technica sells three near-identical model names side by side: AT-LP60X (analog only, this record), AT-LP60XBT (adds Bluetooth), and AT-LP60XBT-USB (adds Bluetooth and USB). Buyers should check the suffix carefully — this is the exact 'model number is the whole story' pattern the project watches for.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-av-verifier",
+    "searches": 4
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

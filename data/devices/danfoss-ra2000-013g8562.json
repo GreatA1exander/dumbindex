@@ -1,0 +1,93 @@
+{
+  "model_id": "danfoss-ra2000-013g8562",
+  "make": "Danfoss",
+  "model": "RA 2000 Thermostatic Radiator Valve Operator (013G8562, wall-mount remote sensor & dial)",
+  "category": "climate",
+  "subcategory": "radiator valve",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer datasheet describes the RA2000 operator as a sealed, gas-charged bellows that mechanically drives a valve pin against an adjustment spring — no battery, no electronics, no radio of any kind — and Danfoss A/S (FCC grantee code PGB) holds only two FCC equipment grants, both explicitly for a separate 'Wireless Floor Heating Control System' product, with nothing filed for the RA2000 line. The vendor demonstrably files when it has radios; the absence for this product is therefore meaningful, not an unfiled gap.",
+  "the_unplug_test": "Nothing changes, because nothing was ever connected. The operator is a sealed capsule of gas-charged bellows: as room air warms, the gas expands, the bellows pushes a pin into the valve, and flow through the radiator throttles down. As the room cools, the reverse happens. There is no router to unplug, no app, no firmware, and no account — this is the same mechanism hydronic heating systems have used for decades, sold today through HVAC supply houses rather than big-box retail.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Danfoss sells the packing gland and other wear parts separately, and the operator threads onto a standard M30 x 1.5 Danfoss RA/RAV/RAVL valve connection shared across the whole product line, so a failed operator can be swapped without replacing the valve body or repiping."
+  },
+  "availability": "limited",
+  "price_band": "$105-175",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "SupplyHouse.com",
+      "url": "https://www.supplyhouse.com/Danfoss-013G8562-Remote-Setpoint-Sensor-Wall-Mount"
+    },
+    {
+      "name": "Danfoss North America Product Store",
+      "url": "https://store.danfoss.com/us/en_US/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.kele.com/Catalog/04%20Control%20Valves/PDFs/RA2000%20Data%20Sheet.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer (Danfoss) RA2000 datasheet: 'The RA 2000 thermostatic operator consists of a saturated vapor charged bellows and a setting dial... The balanced pressures between the adjustment spring and the bellows ensure a smooth and modulating operation of the valve.' Confirms fully mechanical operation, adjustable range 45-86°F, max static pressure 145 psi, no electronic components mentioned anywhere in the spec table.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/PGB",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Sibling control: Danfoss A/S, grantee code PGB, holds exactly two FCC equipment grants (PGBTYPE-CFR, PGBTYPE-CFR15), both titled 'Wireless Floor Heating Control System.' No grant exists for RA2000, RAV, or RAVL thermostatic radiator valve hardware, confirming Danfoss files for its radio products and that the absence here is not an unfiled gap.",
+      "archive_url": null
+    },
+    {
+      "url": "https://store.danfoss.com/us/en_US/Heating-and-District-Energy/Thermostatic-Radiator-Valves/Thermostatic-Operators/Room-sensor-mTRV/RA-2000-Sensors,-RA-8250,-Gas,-Sensor-type:-Built-in-sensor,-7-%C2%B0C---30-%C2%B0C,-RA/p/013G8250",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own North America store listing for the sibling built-in-sensor operator (013G8250) states 'contains no batteries and includes no electronic or wireless components. The sensor operates passively using gas expansion technology,' and gives the same 45-86°F range as the 013G8562 remote-sensor variant covered by this record. Also the source for Danfoss having discontinued direct sale of several RA2000 operator SKUs while distributors retain stock.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "013G8562 is listed as discontinued by Danfoss's own product store but remains stocked in quantity at multiple current HVAC distributors (SupplyHouse, State Supply, Kele, NYRP) — worth re-checking distributor stock periodically since Danfoss could stop restocking at any time.",
+    "This operator requires a separately-purchased Danfoss RA/RAV/RAVL valve body (e.g. 013G8032) to form a complete working thermostatic radiator valve; a buyer replacing an existing Danfoss valve only needs the operator, but a new installation needs both."
+  ],
+  "conflicts_with": null,
+  "notes": "Sold through HVAC/hydronic supply houses rather than home-improvement retail, which is exactly the commercial-equivalent hunting ground: contractors and building operators will not tolerate a radiator valve that needs an app, so this style of purely mechanical TRV has stayed in continuous production for decades. Contrast with Danfoss's own Ally line, a Zigbee-based smart radiator thermostat sold alongside this one — same manufacturer, same valve thread standard, radically different product.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-climate-verifier",
+    "searches": 8
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

@@ -53,24 +53,17 @@
       "archive_url": null
     },
     {
-      "url": "https://tasmota.github.io/docs/Sonoff-DIY/",
-      "class": "B",
-      "accessed": "2026-09-02",
-      "supports": "Tasmota project documentation for Sonoff DIY mode, indicating an over-the-air path exists in addition to serial flashing.",
-      "archive_url": null
-    },
-    {
-      "url": "https://tasmota.github.io/docs/Sonoff-DIY/",
-      "class": "B",
-      "accessed": "2026-09-02",
-      "supports": "Tasmota project documentation states DIY mode is officially supported only on the Sonoff Basic R3, RF R3 and Mini \u2014 not the BASICR2 \u2014 and that the DIY procedure itself begins by pairing the device with the eWeLink app. Together these settle the decisive question: the BASICR2 requires eWeLink as sold, and its local path is serial flashing.",
-      "archive_url": null
-    },
-    {
       "url": "https://sonoff.tech/en-us/products/sonoff-basicr4-wi-fi-smart-switch",
       "class": "A",
       "accessed": "2026-09-02",
       "supports": "SONOFF's current lineup lists the BASICR4 as the shipping basic switch; the BASICR2 is superseded and no longer sold new.",
+      "archive_url": null
+    },
+    {
+      "url": "https://tasmota.github.io/docs/Sonoff-DIY/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Tasmota project documentation. Sonoff DIY mode is officially supported only on the Basic R3, RF R3 and Mini \u2014 not the BASICR2 \u2014 and the DIY procedure itself begins by pairing the device with the eWeLink app. Together these settle the decisive question: the BASICR2 requires eWeLink as sold, and its only local path is serial flashing. The same page documents that flashing path.",
       "archive_url": null
     }
   ],

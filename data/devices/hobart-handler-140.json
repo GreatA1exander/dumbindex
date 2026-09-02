@@ -1,0 +1,84 @@
+{
+  "model_id": "hobart-handler-140",
+  "make": "Hobart Welding Products",
+  "model": "Handler 140 MIG/Flux-Core Welder (500559 / 500582 EZ)",
+  "category": "tools",
+  "subcategory": "welder",
+  "tier": "D0",
+  "tier_rationale": "No radio: the manufacturer's owner's manual describes only mechanical/electrical controls (5-position voltage switch, wire-feed-speed dial, thermal overload) with no Bluetooth, WiFi, app, or remote-control feature anywhere in its 15 pages. Parent company Miller Electric Mfg. (ITW) files FCC grants under grantee 2ASZL for wireless welding accessories (a 2.4 GHz 'Wireless Hand Control' and an 'ArcReach' wireless heater cable) on its engine-driven welder/generator line, but neither that grantee nor a Hobart-specific one shows any filing for the Handler 140.",
+  "the_unplug_test": "This welder has no network stack to speak of. Input power goes in, welding current comes out, and the only 'settings' are a mechanical voltage-range switch and a wire-feed-speed dial. There is no app, no pairing, and no vendor system anywhere between the wall outlet and the weld.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Drive rolls, contact tips, liners and other wear parts are stocked as standard consumables across welding-supply retailers; Hobart's parent (Miller/ITW) maintains an authorized-service-center network."
+  },
+  "availability": "in_stock",
+  "price_band": "$500-750",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Hobart Welders (manufacturer)",
+      "url": "https://www.hobartwelders.com/equipment/welders/mig-gmaw/handler-140-mig-welder-m00169"
+    },
+    {
+      "name": "The Home Depot",
+      "url": "https://www.homedepot.com/p/HOBART-Handler-140-EZ-MIG-Flux-Core-welder-140-Amps-weld-output-120VAC-input-power-Includes-regulator-and-hose-assembly-500582/337507538"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://m.media-amazon.com/images/I/C1lnGg5sT-L.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer owner's manual for the Handler 140 (500559): no Bluetooth/WiFi/app/remote-control feature anywhere in the document; output range 25-140 A, 115/120V 20A single-phase input, five-position voltage control switch, wire feed speed 50-740 IPM, net weight ~26 kg (57 lb) — a purely electromechanical control set."
+    },
+    {
+      "url": "https://fccid.io/2ASZL",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grantee list for Miller Electric Mfg. LLC (grantee 2ASZL, part of the same ITW welding group as Hobart): 2 filings, both wireless welding accessories — 'Wireless Hand Control' (2.4 GHz remote for engine-driven welder/generators) and 'ArcReach Heater Extension Cable' (13.56 MHz). Neither 'Hobart' nor 'Handler 140' appears in the grantee's filing list, establishing the ITW welding group files grants when a product has a radio and has none for this model."
+    }
+  ],
+  "open_questions": [
+    "Hobart-branded products may file FCC grants under a grantee code distinct from Miller Electric Mfg's 2ASZL, which this search did not locate directly — the sibling control here is at the parent-company (ITW welding group) level rather than the Hobart brand itself.",
+    "Whether the standalone auto-darkening welding helmet sometimes bundled with this welder (which does contain a battery-powered electronic shade controller) has any wireless feature was not checked; it is a separate accessory from the welder itself."
+  ],
+  "conflicts_with": null,
+  "notes": "Welders are one of the most reliably radio-free categories in this domain at the consumer/prosumer price point: the electronics that exist are for arc control (inverter switching, thermal cutoff), not connectivity. Wireless remote controls do exist in this industry, but on a different product class entirely (engine-driven welder/generators used on job sites, where a technician needs to adjust output from yards away).",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-tools-domain",
+    "run_id": "2026-09-02-tools",
+    "searches": 6
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

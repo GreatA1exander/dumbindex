@@ -1,0 +1,79 @@
+{
+  "model_id": "yamaha-a-s301",
+  "make": "Yamaha",
+  "model": "A-S301",
+  "category": "av",
+  "subcategory": "amplifier",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own owner's manual diagrams every rear-panel connection — CD, phono (MM), tuner and line analog inputs, optical and coaxial digital inputs, speaker A/B terminals, subwoofer out, and a DC OUT jack that only powers a separate Yamaha AV accessory over a proprietary cable, not a network. No Wi-Fi, Bluetooth, Ethernet, or app is mentioned anywhere in the 40-page manual, and the USA FCC section is only a Part 15 Class B unintentional-radiator notice.",
+  "the_unplug_test": "Nothing changes, because there was never a router to begin with. This is a stereo integrated amplifier: phono, CD, tuner and line inputs on the back, a volume knob and input selector on the front, speaker terminals for one or two pairs. It has no network interface, no companion app, and no cloud account — it amplifies whatever is plugged into it, the same way it did the day it left the factory.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Conventional discrete stereo amplifier construction with a standard IEC-style AC inlet and no soldered-in battery; Yamaha authorized service centers handle repair, per the manual's service instructions."
+  },
+  "availability": "in_stock",
+  "price_band": "$350-430",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Yamaha USA (manufacturer)",
+      "url": "https://usa.yamaha.com/products/audio_visual/hifi_components/a-s301/index.html"
+    },
+    {
+      "name": "B&H Photo Video",
+      "url": "https://www.bhphotovideo.com/c/product/1079920-REG/yamaha_a_s301bl_integrated_amplifier_black.html"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://data.yamaha.com/files/download/other_assets/8/332208/web_VEX7880_A-S701_A-S501_A-S301_om_U_EnFr_A0.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Official Yamaha owner's manual covering the A-S701/A-S501/A-S301 family. The A-S501/A-S301 rear-panel diagram (page 4) shows CD, phono, tuner and line audio jacks, optical and coaxial digital inputs, a DC OUT jack described as powering a separate Yamaha AV accessory, speaker A/B terminals and subwoofer out — no wireless or network interface of any kind. The USA FCC section states compliance with Part 15 Class B for unintentional radiators, not an intentional-radiator grant.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No dedicated FCC intentional-radiator search was run for Yamaha's grantee code, since the manual's own connection diagram and FCC section already establish the device has no radio; a sibling-control search would only be needed if this conclusion were in doubt.",
+    "Confirm current US retail availability at the time of purchase — the A-S301 was showing as backordered at one retailer (Sweetwater) in September 2026 while in stock at others."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the plain analog A-S301, distinct from Yamaha's WXA and MusicCast-branded network amplifiers, which do add Wi-Fi and an app and would be a different tier. Yamaha still sells this fully analog stereo amplifier line (A-S301/A-S501/A-S701) alongside its networked models with no naming overlap, which makes it an easy one to buy correctly.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-av-verifier",
+    "searches": 4
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

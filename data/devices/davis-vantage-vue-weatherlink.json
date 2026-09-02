@@ -23,7 +23,7 @@
   "phones_home": "none",
   "radios": [
     "wifi",
-    "unknown"
+    "proprietary_subghz"
   ],
   "fcc_id": null,
   "fcc_checked": false,

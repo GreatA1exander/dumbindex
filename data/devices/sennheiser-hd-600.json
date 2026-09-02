@@ -1,0 +1,85 @@
+{
+  "model_id": "sennheiser-hd-600",
+  "make": "Sennheiser",
+  "model": "HD 600",
+  "category": "av",
+  "subcategory": "headphones",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own product page describes an open-back dynamic driver headphone with a detachable analog cable (3.5mm with 6.3mm adapter, or an optional balanced cable) as the only connection. There is no battery, no charging port, and no wireless variant of this model — Sennheiser sells Bluetooth headphones under entirely separate product lines (MOMENTUM, ACCENTUM).",
+  "the_unplug_test": "There is no router involved anywhere in this device's operation. The HD 600 is a passive, wired headphone: plug the cable into an amplifier or headphone jack and it produces sound. It has no battery to charge, no Bluetooth to pair, and no firmware — a pair bought in the 1990s and a pair bought today work identically.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Sennheiser sells the replacement cable (standard and 4.4mm balanced), replacement ear pads, and other spare parts directly through its own store — the HD 600 has one of the best parts-availability records in consumer audio, partly because the design has been in continuous production since 1997."
+  },
+  "availability": "in_stock",
+  "price_band": "$300-500",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Sennheiser (manufacturer)",
+      "url": "https://us.sennheiser-hearing.com/products/hd-600"
+    },
+    {
+      "name": "Amazon",
+      "url": "https://www.amazon.com/Sennheiser-004465-HD600-HI-Fi-Headphones/dp/B07JMC6VW5"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://us.sennheiser-hearing.com/products/hd-600",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer product page: open-back dynamic driver design, detachable 3m OFC copper cable with 3.5mm plug and 6.3mm adapter as the sole connection method. The page's own cross-sell data lists replacement cables (standard and 4.4mm balanced) as spare parts for this exact model. 'Bluetooth' and 'Wireless' strings on the page belong to unrelated product-line navigation (MOMENTUM, ACCENTUM) rather than to this product's own specification.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fullspecs.net/wired-headphone/sennheiser/hd-600-specifications/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Independent spec aggregation corroborating 300-ohm impedance, 12Hz-39kHz frequency response, and a 3m detachable dual-sided cable as the only connection, with no wireless capability listed.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No FCC search was run: a fully passive wired headphone with no battery and no active circuitry has no plausible radiator to certify, and the project's sibling-control heuristic does not apply to devices with no electronics at all."
+  ],
+  "conflicts_with": null,
+  "notes": "In continuous production since 1997, making this one of the longest-lived unchanged audio products still sold new. Sennheiser also sells a wired-only HD 6XX variant through Drop/Massdrop at a lower price with the same core driver, for readers price-comparing.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-av-verifier",
+    "searches": 3
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

@@ -1,0 +1,85 @@
+{
+  "model_id": "klipsch-r-50m",
+  "make": "Klipsch",
+  "model": "R-50M",
+  "category": "av",
+  "subcategory": "bookshelf speaker",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own spec sheet lists a single input: a pair of gold-plated binding posts. This is a fully passive loudspeaker with no internal power supply, no amplifier, and no electronics of any kind — it cannot contain a radio because it contains no active circuitry at all.",
+  "the_unplug_test": "There is nothing to unplug. This speaker has no power cord, no battery, and no electronics — it is a woofer, a tweeter, a crossover network, and a wooden box. Speaker wire from an amplifier or AV receiver is the only connection it has ever had, and that is also the only thing that can make it stop working.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "No electronics to fail; the only wear parts are the drivers and crossover, and Klipsch does not publish standalone replacement-driver part numbers for this model."
+  },
+  "availability": "in_stock",
+  "price_band": "$300-400",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Klipsch (manufacturer)",
+      "url": "https://www.klipsch.com/products/r-50m-bookshelf-speakers"
+    },
+    {
+      "name": "Best Buy",
+      "url": "https://www.bestbuy.com/site/klipsch-reference-series-5-1-4-340-watt-passive-2-way-bookshelf-speakers-pair-black/6501482.p?skuId=6501482"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://assets.klipsch.com/product-specsheets/Reference-R-50M-Spec-Sheet.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer spec sheet: 'INPUTS: Single Gold Plated Binding Posts' is the entire connectivity section. Full driver, crossover, enclosure and dimension specs given with no power supply, no amplifier stage, no Bluetooth or Wi-Fi anywhere in the document — consistent with a fully passive design that contains no active electronics.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.klipsch.com/products/r-50m-bookshelf-speakers",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer product page confirms this is the current, in-production model in the Reference line (successor to the discontinued R-51M) and that it requires an external receiver or amplifier and speaker wire — i.e. it is passive, not powered.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No FCC filing was searched for because a purely passive speaker with no power supply has no plausible intentional or unintentional radiator to certify — this is the case the project's sibling-control heuristic explicitly does not apply to."
+  ],
+  "conflicts_with": null,
+  "notes": "Passive bookshelf speakers are the cleanest D0 case in this domain: there is no vendor account, no app, and structurally no way for one to be added without turning the product into a different device (see Klipsch's own powered/Bluetooth 'R-51PM' line, sold alongside this one). This model replaced the R-51M in the Reference lineup; buyers should confirm they are looking at the current R-50M rather than clearance stock of the older R-51M, which is functionally identical on this question but a discontinued SKU.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-av-verifier",
+    "searches": 5
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

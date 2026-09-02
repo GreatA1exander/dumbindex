@@ -1,0 +1,79 @@
+{
+  "model_id": "dell-p2425h",
+  "make": "Dell",
+  "model": "P2425H",
+  "category": "av",
+  "subcategory": "monitor",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own datasheet gives a full port diagram and connectivity table: HDMI 1.4, DisplayPort 1.2, VGA, USB 3.2 Type-B upstream, three USB 3.2 Type-A downstream, and one USB-C downstream (data/power only). No Wi-Fi, Bluetooth, Ethernet, camera, or microphone appears anywhere in the specification. It is a passive display panel that only shows whatever is fed to it over a video cable.",
+  "the_unplug_test": "It just shows whatever is plugged into it. This monitor has no operating system, no smart platform, no camera, and no network interface of its own — the on-screen menu is navigated with a physical joystick and every setting lives in the monitor's own memory. 'Dell Display and Peripheral Manager' software and 'remote asset management' mentioned in Dell's materials run on the connected PC and reach the monitor over the same USB or video cable already plugged in, not over a network connection the monitor itself makes.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "VESA 100x100mm mount, replaceable stand, standard external power brick; Dell's 3-year Advanced Exchange and Premium Panel Exchange programs cover the panel during warranty."
+  },
+  "availability": "in_stock",
+  "price_band": "$150-300",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Dell (manufacturer)",
+      "url": "https://www.dell.com/en-us/shop/dell-pro-24-plus-monitor-p2425h/apd/210-bmgh/monitors-monitor-accessories"
+    },
+    {
+      "name": "Best Buy",
+      "url": "https://www.bestbuy.com/product/dell-p2425h-24-full-hd-1920x1080-pc-display-100hz-ips-5ms-99-srgb-usb-c-displayport-hdmi-black/J33HRW6R6F"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.delltechnologies.com/assetlink/doc/en-us/dell-24-monitor-p2425h-datasheet-en-dl119o4a-original.pdf.external",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer datasheet 'Ports & Slots' diagram and 'Technical Specification' table: connectivity limited to HDMI 1.4, DisplayPort 1.2, VGA, USB 3.2 Gen1 Type-B upstream, 3x USB 3.2 Type-A downstream, and USB-C downstream (data only, 15W PD) — no Wi-Fi, Bluetooth, Ethernet, camera, or microphone listed anywhere in the 10-page document. Audio output is via an optional sold-separately soundbar accessory, not a built-in speaker or radio.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Dell's datasheet lists 'Remote Asset Management: Yes' and 'Dell Display and Peripheral Manager Compatibility: Yes' without describing the transport. Given the monitor has no network port of its own, this almost certainly works over DDC/CI through the connected video cable or the USB upstream link to the host PC, not a connection the monitor makes independently — but this was not confirmed from a source that spells out the mechanism, so it is recorded as an open question rather than assumed.",
+      "No FCC-grantee search was run given the manufacturer's own complete port list shows no radio; a search would only add value if that list were in doubt."
+  ],
+  "conflicts_with": null,
+  "notes": "The predecessor model (P2422H) appears to be discontinued from Dell's own store as of September 2026 with the P2425H as its direct successor in the Pro/P-series line; buyers should check Dell's current P-series naming, which has churned (P2422H to P2425H to 'Dell Pro 24 Plus Monitor') without changing the fundamental fact that these office monitors carry no network stack.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-av-verifier",
+    "searches": 5
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

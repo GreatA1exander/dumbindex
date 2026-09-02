@@ -1,0 +1,84 @@
+{
+  "model_id": "pioneer-wys012amfi22rl-16",
+  "make": "Pioneer",
+  "model": "WYS012AMFI22RL-16 (WYS Series, 12,000 BTU / 1 Ton Ductless Mini Split Heat Pump)",
+  "category": "climate",
+  "subcategory": "mini split",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's owner's manual states plainly that 'Wi-Fi integration modules can be easily added to this unit by the owner anytime after purchase' and labels Wi-Fi access as an 'Optional Accessory Needed' — the indoor/outdoor unit as sold is controlled only by an included infrared remote or an on-unit manual-control button. The Wi-Fi module (OSK102) is a physically separate plug-in dongle manufactured by Midea and carries its own independent FCC grant (2ADQOMDNA15); no radio grant of any kind exists for the mini split hardware itself. As purchased and installed without that add-on dongle, the unit contains no intentional radiator.",
+  "the_unplug_test": "Nothing changes, because the unit as sold has no network connection to begin with. The compressor and indoor fan coil are controlled entirely by the included infrared remote (or the manual-control button behind the front panel for emergencies); there is no built-in radio, app, or account. Pioneer sells a separate plug-in Wi-Fi dongle for owners who want phone control, but it is not included and installing it is what turns this into a networked device — buy the mini split alone and it stays exactly as described here indefinitely.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Sold and serviced through HVAC/contractor supply channels (Home Depot, Pioneer's own store, and wholesale distributors) with standard refrigerant-line servicing; a licensed HVAC contractor is explicitly required for installation per the manual's safety section."
+  },
+  "availability": "in_stock",
+  "price_band": "$700-1050",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Pioneer Mini Split (manufacturer)",
+      "url": "https://www.pioneerminisplit.com/products/12-000-btu-ductless-dc-inverter-mini-split-air-conditioner-heat-pump-115-vac"
+    },
+    {
+      "name": "Home Depot",
+      "url": "https://www.homedepot.com/p/Pioneer-12-000-BTU-1-Ton-22-7-SEER2-Ductless-Mini-Split-ENERGY-STAR-Inverter-Wall-Mounted-Air-Conditioner-Heat-Pump-110-120V-WYS012AMFI22RL-16/311759954"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://inspectapedia.com/aircond/Pioneer-Mini-Split-1200-Users-Manual.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own WAS/WYS Series owner's manual (mirrored copy). Page 8, 'Note on Wi-Fi Worldwide Remote Access Capabilities': 'This system is equipped with special electronics for integration with the proprietary Wi-Fi Remote Monitoring and Control Device (Sold Separately)... Wi-Fi integration modules can be easily added to this unit by the owner anytime after purchase. To purchase this optional device, simply contact your dealer or installer.' Wi-Fi Access is listed under 'Other Features' as '(Optional Accessory Needed)'. Chapter 2 documents an on-unit manual-control button and an infrared remote as the base control methods."
+    },
+    {
+      "url": "https://fccid.io/2ADQOMDNA15",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "The Pioneer-branded Wi-Fi module for WYS-series systems (retail part number OSK102) is manufactured by Midea and filed under its own FCC ID 2ADQOMDNA15 as a standalone 'Smart Kit Wi-Fi Adaptor' (802.11b/g/n, external antenna) — confirming the radio hardware is entirely contained in a separate, optionally-purchased accessory rather than the mini split's own control board."
+    }
+  ],
+  "open_questions": [
+    "Pioneer sells a separate 'WYT' series that is marketed as 'Wi-Fi Ductless Mini Split' and appears to ship with the module pre-installed or bundled — verify this before buying if avoiding all Wi-Fi hardware is the goal; this record covers the WYS/WAS series only, which ships without it.",
+    "No FCC search was performed for the outdoor condenser unit specifically (only the indoor coil and the module were checked); no separate grant is expected since the outdoor unit has no display or remote receiver, but this was not independently confirmed."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the clearest 'radio in a separate accessory' case found in the climate domain: the vendor's own manual states the base unit has no wireless hardware and that Wi-Fi requires buying and installing a third-party (Midea-made) dongle after the fact. A buyer who never purchases that dongle owns a mini split with nothing to phone home, ever. Sold through contractor/HVAC channels as well as big-box retail, which is the commercial-equivalent pattern this domain rewards.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "source": null,
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-climate-verifier",
+    "searches": 6
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}
