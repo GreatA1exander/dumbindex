@@ -3,8 +3,16 @@
 // The site is dumb too: no third-party requests, no client JS, every page under 60 KB.
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path";
 
-const DIST = "site/dist";
+// Resolve everything from the repo root so these run correctly from any cwd —
+// `npm --prefix site run check` executes with cwd=site/.
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const R = (...p) => resolve(ROOT, ...p);
+
+
+const DIST = R("site/dist");
 const LIMIT = 60 * 1024;
 if (!existsSync(DIST)) { console.error("no build output — run npm --prefix site run build"); process.exit(1); }
 

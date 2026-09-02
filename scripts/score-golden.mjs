@@ -4,13 +4,21 @@
 // merged — see OPERATIONS.md §6. Writes a dated result so the trend is visible.
 import { readFileSync, existsSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path";
 
-const golden = JSON.parse(readFileSync("data/eval/golden.json", "utf8"));
+// Resolve everything from the repo root so these run correctly from any cwd —
+// `npm --prefix site run check` executes with cwd=site/.
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const R = (...p) => resolve(ROOT, ...p);
+
+
+const golden = JSON.parse(readFileSync(R("data/eval/golden.json"), "utf8"));
 const today = new Date().toISOString().slice(0, 10);
 const rows = [];
 
 for (const c of golden.cases) {
-  const p = join("data/devices", `${c.id}.json`);
+  const p = R("data/devices", `${c.id}.json`);
   if (!existsSync(p)) { rows.push({ ...c, result: "MISSING", detail: "no record produced" }); continue; }
   const d = JSON.parse(readFileSync(p, "utf8"));
   const fails = [];
@@ -52,8 +60,8 @@ const overall = pct(rows);
 console.log(`\noverall ${overall}%  ·  easy ${pct(by("easy"))}%  ambiguous ${pct(by("ambiguous"))}%  trap ${pct(by("trap"))}%`);
 console.log(`${rows.filter((r) => r.result === "PASS").length}/${rows.length} cases`);
 
-mkdirSync("data/eval/results", { recursive: true });
-writeFileSync(join("data/eval/results", `${today}.json`), JSON.stringify({
+mkdirSync(R("data/eval/results"), { recursive: true });
+writeFileSync(R("data/eval/results", `${today}.json`), JSON.stringify({
   date: today, overall,
   by_difficulty: { easy: pct(by("easy")), ambiguous: pct(by("ambiguous")), trap: pct(by("trap")) },
   cases: rows.map(({ id, difficulty, result, detail }) => ({ id, difficulty, result, detail })),

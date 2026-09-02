@@ -3,9 +3,17 @@
 // Schema conformance + the project rules a schema cannot express.
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path";
 
-const DEVICES = "data/devices";
-const TAX = JSON.parse(readFileSync("schema/taxonomy.json", "utf8"));
+// Resolve everything from the repo root so these run correctly from any cwd —
+// `npm --prefix site run check` executes with cwd=site/.
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const R = (...p) => resolve(ROOT, ...p);
+
+
+const DEVICES = R("data/devices");
+const TAX = JSON.parse(readFileSync(R("schema/taxonomy.json"), "utf8"));
 const DOMAINS = new Map(TAX.domains.map(d => [d.slug, new Set(d.subcategories)]));
 const today = new Date().toISOString().slice(0, 10);
 const errors = [];
