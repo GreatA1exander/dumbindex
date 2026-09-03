@@ -1,0 +1,91 @@
+{
+  "model_id": "uniden-r8",
+  "make": "Uniden",
+  "model": "R8",
+  "category": "automotive",
+  "subcategory": "radar detector",
+  "tier": "D1",
+  "tier_rationale": "The R8 has built-in Bluetooth for its optional R/Tach companion app, but Uniden operates no cloud service the detector depends on: radar/laser detection and GPS-based red-light/speed-camera alerts run entirely on the device using its own onboard database, the app connects directly to the detector over Bluetooth with no account or sign-in, and database updates are applied locally through a USB cable and a computer, not a subscription service.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "Nothing changes. The R8 detects radar and laser and issues GPS-based alerts for known red-light and speed cameras entirely on its own, using a database stored on the device. The R/Tach phone app is an optional way to change settings from your phone over a direct Bluetooth link — Uniden's own product page confirms GPS-based alerting keeps working 'requiring no pairing or smartphone connection' at all. Database and firmware updates are free and applied by connecting the detector to a computer with a USB cable and Uniden's own software; there is no subscription and no vendor server in the alerting path.",
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": "AMWUA2102",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Uniden (manufacturer)",
+      "url": "https://www.uniden.com/products/r8/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.uniden.com/products/r8/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: 'The Uniden R8 does include built-in Bluetooth and R/Tach app connectivity'; GPS-based red-light/speed-camera alerts described as working with 'no pairing or smartphone connection' required; updates 'handled through your computer using Uniden's official software tools' with 'free updates to the radar detector firmware' — no subscription language anywhere on the page.",
+      "archive_url": null
+    },
+    {
+      "url": "https://apps.apple.com/us/app/uniden-r-tach/id6702027198",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Official R/Tach app store listing describes the app connecting directly to the detector over Bluetooth ('Seamlessly connect to your Uniden R/TACH radar/laser detectors... and effortlessly customize and fine-tune your detector settings') with no mention of account creation, sign-in, or an online service anywhere in the listing.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/AMWUA2102",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grant AMWUA2102, model UA2102, Uniden America Corporation, granted 2022-01-25, classified as a Part 15 Radar Detector covering 10.5-10.55GHz, 23.9-24.25GHz and 33.4-35.7GHz radar/laser detection bands. Confirms the device's core detection hardware and grantee identity; the grant does not cover a 2.4GHz Bluetooth radio, consistent with the Bluetooth module likely being certified separately or under a pre-certified module grant not surfaced by this search.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether the Bluetooth radio has its own separate FCC grant (not found via grantee search for 'Uniden R8') or operates under a pre-certified module's existing grant was not resolved.",
+    "Whether the R/Tach app makes any background network calls (analytics/telemetry) once installed was not tested — phones_home left unknown rather than asserted as none.",
+    "Current US price band was not confirmed.",
+    "The related Uniden R8W (Wi-Fi variant) and R7 were not verified in this run; do not assume this record applies to those SKUs."
+  ],
+  "conflicts_with": null,
+  "notes": "Chosen over the R7 because Uniden's own R7 page did not clearly state whether Bluetooth is built in (no mention of Bluetooth or WiFi found on that page, only a generically-described 'R/TACH app' connection), while the R8 page explicitly confirms built-in Bluetooth. Uniden also sells an R8W with WiFi 'for wireless updates or remote control' — a genuinely different, more connected SKU under a related but distinct model number; this record covers the R8 only, not the R8W.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "automotive-wave",
+    "run_id": "2026-09-03-automotive",
+    "searches": 26
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

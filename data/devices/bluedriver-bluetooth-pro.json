@@ -1,0 +1,94 @@
+{
+  "model_id": "bluedriver-bluetooth-pro",
+  "make": "BlueDriver",
+  "model": "Bluetooth Pro OBDII Scan Tool",
+  "category": "automotive",
+  "subcategory": "OBD-II scanner",
+  "tier": "REJECT",
+  "tier_rationale": "The scan tool only functions through BlueDriver's own app, and BlueDriver's own product page lists 'Create an account or log in with your existing credentials' as a required setup step before the app will scan a vehicle — an account mandatory at setup with no local-only path, which is a REJECT trigger regardless of whether the account is free. The rejection rests on that documented requirement alone. Whether the adapter also refuses third-party OBD apps was not established: the only indication found was an unanswered customer review on BlueDriver's own product page, and support declining to correct a reviewer is not evidence that the reviewer was right. It is recorded as an open question, not as a reason.",
+  "status": "rejected",
+  "rejection_reason": "Core function — reading and clearing codes — requires the BlueDriver app, and BlueDriver's own setup instructions make creating a BlueDriver account (or logging into an existing one) a required step before the app will scan a vehicle. An account mandatory at setup is a REJECT trigger in the decision table, and no documented local-only path around it exists. That single documented requirement is the whole basis for this verdict; the separate question of third-party app compatibility is treated as unresolved rather than as a second ground.",
+  "the_unplug_test": "The adapter itself just relays OBD-II data over Bluetooth, but that is not the whole product: BlueDriver's own setup flow requires downloading the BlueDriver app and creating or logging into a BlueDriver account before you can scan a car, and the hardware is not built to pair with other apps. If BlueDriver's account service ever goes away, the reader is left holding a Bluetooth dongle with no supported app to talk to it.",
+  "account_required": "for_setup",
+  "works_offline": "unknown",
+  "offline_losses": [
+    "Cannot begin a scan without first creating or logging into a BlueDriver account, per BlueDriver's own setup instructions."
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://us.bluedriver.com/products/bluedriver-scan-tool",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own product page setup instructions: 'Download the BlueDriver App from the App Store (iOS) or Google Play (Android)' then 'Create an account or log in with your existing credentials' — listed as required steps before scanning. Also emphasizes 'Zero Subscription Fees' (no recurring cost) but does not remove the account requirement. A customer review on the same page reports the device is 'Unable to support aftermarket apps like Dr Prius', with BlueDriver support directing the customer to email support rather than naming a compatible alternative.",
+      "archive_url": null
+    },
+    {
+      "url": "https://support.bluedriver.com/support/home",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "BlueDriver's own support center lists 'How do I create a \"BlueDriver Account\"?' among its most-viewed articles, corroborating that account creation is a routine, expected part of using the product rather than an optional extra.",
+      "archive_url": null
+    },
+    {
+      "url": "https://us.bluedriver.com/pages/bluedriver-pro-compatibility",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "BlueDriver's own vehicle-compatibility page describes compatibility only in terms of vehicle year/make/model and BlueDriver's own product line (Pro, MAX); no third-party app or software is named anywhere on the page.",
+      "archive_url": null
+    }
+  ],
+  "alternatives": [
+    {
+      "model_id": "obdlink-mx-plus",
+      "why": "Same OBD-II Bluetooth scan-tool job, but the adapter is openly documented as compatible with 17 named third-party apps (Torque, Car Scanner, OBD Fusion and others) and its own app describes no mandatory account step — D1 rather than REJECT."
+    }
+  ],
+  "open_questions": [
+    "Whether the MX+-style third-party app compatibility exists here at all is unresolved. BlueDriver names no third-party-compatible app on its own site, but absence of a marketing claim is not a documented restriction, and the one customer report suggesting incompatibility is Class C at best. Settling this would strengthen the alternative recommendation, though it would not change the verdict.",
+    "Whether the BlueDriver account can be bypassed entirely (e.g. a guest mode) was not found in any manufacturer documentation reached in this run — only the setup instructions and support-article title were confirmed, not a live app install.",
+    "Whether BlueDriver's app functions fully with the phone's own network connection blocked once an account exists (i.e. whether the account gate is a one-time setup cost or a persistent per-session requirement) is unresolved.",
+    "No FCC search was performed for this device; not load-bearing for the REJECT verdict, which turns on the account requirement rather than the radio."
+  ],
+  "conflicts_with": null,
+  "notes": "Distinguish from OBDLink MX+ (obdlink-mx-plus, D1) in the same subcategory: same job, opposite design. BlueDriver is made by Repairify; Repairify/BlueDriver has no entry in data/vendors.json and no incident was found in this run — the REJECT here is about the as-sold account requirement, not a post-purchase change in behavior, so it is not a vendor_risk ledger case.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published as REJECT: mandatory BlueDriver account at setup, closed to third-party apps.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "automotive-wave",
+    "run_id": "2026-09-03-automotive",
+    "searches": 20
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No documented way to use this specific adapter with a non-BlueDriver app or without a BlueDriver account; a reader wanting a locally-usable OBD-II Bluetooth adapter should buy one built for third-party apps instead (see alternatives)."
+}

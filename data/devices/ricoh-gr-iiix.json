@@ -1,0 +1,89 @@
+{
+  "model_id": "ricoh-gr-iiix",
+  "make": "Ricoh",
+  "model": "GR IIIx",
+  "category": "photo",
+  "subcategory": "digital camera",
+  "tier": "D1",
+  "tier_rationale": "Wi-Fi and Bluetooth are real (confirmed by FCC grant 2ACZS-R05010, DTS/Bluetooth-band module, matching the model number 'R05010' printed on the manual's title page and packing-list page), but the manufacturer's own operating manual documents no Ricoh-operated cloud service for this camera at all. The full 'Sharing Images' chapter covers exactly two paths: USB transfer to a computer, and Bluetooth/Wi-Fi pairing to Ricoh's 'Image Sync' companion app, which pairs directly to the camera's own radio (camera generates its own SSID/password; the app connects to that) with no sign-in step described anywhere in the pairing procedure. A full-text search of the manual for 'cloud', 'account', 'sign-in' and 'login' returns nothing tied to camera operation — the only web step in the entire manual is a one-time, explicitly optional customer-support registration page for firmware-update emails. No vendor cloud endpoint exists to name, which is the D1 test: radio and app present, no cloud to be optional about.",
+  "the_unplug_test": "Nothing changes. Getting Started in Ricoh's own manual is battery, SD card, power on, set language and date, format the card, shoot — no app step, no activation, no account, at any point. Turn the camera's Wi-Fi and Bluetooth off entirely (both ship off by default and must be manually enabled) and you lose exactly one thing: pushing images to a phone through the Image Sync app for wireless transfer or remote control. There is no Ricoh cloud behind any of this to lose — the manual documents no cloud service for the camera at all, unlike Fujifilm's Timeline or GoPro's Cloud subscription.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "wireless image transfer to a phone via the Image Sync app (Bluetooth/Wi-Fi)",
+    "remote camera operation from the Image Sync app"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble",
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": "2ACZSR05010",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Not researched within budget."
+  },
+  "availability": "unknown",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Ricoh Imaging (manufacturer, global site)",
+      "url": "https://www.ricoh-imaging.com"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://fccid.io/2ACZS-R05010/User-Manual/05-User-Manual-5437024",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own RICOH GR IIIx Operating Manual (filed as the FCC user-manual exhibit for grant 2ACZS-R05010, model R05010, matching the camera's printed model code). Getting Started (pp.37-46) covers only battery/SD-card insertion, power-on, language/date, and card formatting — no app, account, or activation step. 'Sharing Images' (pp.110-116) documents only USB-to-computer transfer and direct Bluetooth/Wi-Fi pairing to the 'Image Sync' app with no sign-in step in the pairing procedure. A full-text search of the extracted manual for 'cloud', 'account', 'sign-in' and 'login' found no camera-operation step gated behind any of them; the only web step in the manual is an optional customer-support registration for firmware-update emails (p.2).",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2ACZSR05010",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grant summary for grantee RICOH IMAGING COMPANY, LTD. (grantee code 2ACZS): model R05010, digital camera, 2402-2480 MHz Bluetooth/Wi-Fi band radio module, confirming the Wi-Fi and Bluetooth radios present in the device and that Ricoh files real equipment grants for its camera line (sibling-control context: grantee also holds R02010, R03010 and R09010 digital-camera grants).",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether the GR IIIx remains a current, in-production SKU as of this record's date, or has been superseded in Ricoh's lineup by a newer GR-series model, was not confirmed — Ricoh's own product pages could not be fetched (returned 404 on every guessed URL), so availability is left unknown rather than guessed.",
+    "Current US price could not be confirmed from a fetchable manufacturer or retailer page within budget.",
+    "Whether firmware updates can be declined, and what telemetry (if any) the camera or Image Sync app sends to Ricoh, are unconfirmed.",
+    "Whether Ricoh operates any cloud service for other camera lines (e.g. a newer GR model or the Pentax DSLR line) that might later apply to a GR IIIx firmware update was not checked — nothing in the current manual suggests one exists for this model."
+  ],
+  "conflicts_with": null,
+  "notes": "A clean control case for the D1/D2 boundary this project cares about: unlike the Fujifilm X100VI (D2, because Fujifilm operates a real 'network service' cloud behind its Timeline feature) and the GoPro HERO13 Black (D2, because GoPro Cloud is a real paid backend), Ricoh's GR IIIx manual describes no cloud endpoint anywhere — the Image Sync app is peer-to-peer only. That absence, not just the radios, is what keeps this at D1 rather than D2.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-photo-domain",
+    "run_id": "2026-09-03-photo",
+    "searches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

@@ -1,0 +1,91 @@
+{
+  "model_id": "obdlink-mx-plus",
+  "make": "OBDLink",
+  "model": "MX+",
+  "category": "automotive",
+  "subcategory": "OBD-II scanner",
+  "tier": "D1",
+  "tier_rationale": "The MX+ has a Bluetooth radio (Class 2, v3.0) and pairs with an app, but OBDLink/ScanTool operates no cloud service that the adapter depends on: it is a Bluetooth-to-OBD interface built on the standard ELM327-compatible command set that any compatible app talks to directly over the local Bluetooth link, with no vendor server in the path.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "Nothing changes. The MX+ is a Bluetooth adapter that plugs into the car's OBD-II port and talks directly to whatever app is paired with it over a local Bluetooth link — there is no vendor server between the adapter and the phone. OBDLink's own compatible-apps list names 17 third-party scan tools (Torque, Car Scanner ELM OBD2, OBD Fusion, DashCommand, FORScan and others) that work with the hardware, so the reader is not locked into OBDLink's own app to use the device. The OBDLink app itself works with logged data offline (CSV export, an offline 'where did I park' feature) and treats uploading a log to Dropbox as an optional extra, not a step in normal use.",
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "OBDLink (manufacturer)",
+      "url": "https://www.obdlink.com/products/obdlink-mxp/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.obdlink.com/products/obdlink-mxp/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: radio is 'Class 2 Bluetooth v3.0' (no Wi-Fi mentioned); states the device is 'Supported by dozens of 3rd party apps' and offers 'Free unlimited OEM-specific data add-ons' and 'Free firmware updates' with no cloud/account language.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.obdlink.com/compatible-apps/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own compatible-apps list names 17 third-party applications that work with OBDLink hardware, including Torque, Car Scanner ELM OBD2, OBD Fusion, DashCommand, FORScan, Carista and AlfaOBD — direct evidence the adapter is not locked to a single vendor app.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.obdlink.com/obd-apps/obdlink-app/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own OBDLink app page describes offline-capable features (CSV log export usable offline, an offline 'find where you parked' feature) and lists uploading logs to Dropbox as an optional convenience rather than a required step; no account-creation requirement is described anywhere on the page.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No FCC grant was located under grantee searches for 'OBDLink', 'ScanTool', or 'OBD Solutions' on fccid.io — the Bluetooth module may be certified under a chip vendor's own modular grant rather than a device-specific one, which is common for small Bluetooth SPP adapters. Not established either way.",
+    "Whether the OBDLink app itself ever prompts for account creation during first-run setup was not directly observed (only the marketing/feature page was read, not a live app installation).",
+    "Whether firmware updates can be declined, or are ever pushed without user action, was not established.",
+    "Current US price band was not confirmed."
+  ],
+  "conflicts_with": null,
+  "notes": "Useful contrast case for the OBD-II scanner subcategory: this device is built around openness to third-party software (17 named compatible apps) rather than a closed vendor app, which is the deciding fact against BlueDriver's closed-app design in the same subcategory.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "automotive-wave",
+    "run_id": "2026-09-03-automotive",
+    "searches": 14
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

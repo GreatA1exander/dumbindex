@@ -1,0 +1,82 @@
+{
+  "model_id": "omron-ne-c801",
+  "make": "OMRON",
+  "model": "CompAir Compressor Tabletop Nebulizer System (NE-C801)",
+  "category": "health",
+  "subcategory": "nebulizer",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer's own product page lists no Bluetooth, WiFi, or app capability for this compressor nebulizer, and no FCC intentional-radiator grant exists for the NE-C801 despite OMRON Healthcare holding 27 grants for other radio-equipped models (its Bluetooth blood pressure monitors), which establishes the vendor files when it has a radio to declare.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "There is no radio to unplug from anything but the wall. It is an AC-powered air compressor that pushes medication through a nebulizer cup and mouthpiece; you switch it on, breathe, switch it off. No app, no pairing, no account, and nothing about a treatment is recorded anywhere but your own memory.",
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Sold with 4 replacement air filters included and a standard nebulizer kit/mouthpiece/air tube that are consumable, vendor-replaceable parts. No teardown checked."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "OMRON Healthcare (manufacturer)",
+      "url": "https://omronhealthcare.com/products/compair-compressor-tabletop-nebulizer-system-ne-c801"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://omronhealthcare.com/products/compair-compressor-tabletop-nebulizer-system-ne-c801",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: no Bluetooth, WiFi, or app integration mentioned; unit is AC-adapter powered (no battery), ships with a nebulizer kit, mouthpiece, air tube, 4 air filters and instruction manual. A standard tabletop compressor nebulizer with no connectivity of any kind.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/search.php?q=OMRON+HEALTHCARE",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC ID search for grantee OMRON HEALTHCARE Co., Ltd. (grantee code Q6Z) lists 27 grants, all Bluetooth/BLE blood pressure monitors. No grant exists for the NE-C801 or any OMRON nebulizer model, and the vendor demonstrably files grants for its own radio-equipped products, making the absence for this model meaningful.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Current US price band not established.",
+    "OMRON also sells a portable battery-operated MicroAir NE-U100 nebulizer and a kids' CompAir RE-C800KD; neither was checked and both are presumed similarly unconnected but unverified."
+  ],
+  "conflicts_with": null,
+  "notes": "Fills an empty subcategory (nebulizer) in the health domain with a mainstream, easy-to-buy device rather than a niche one.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-03-health",
+    "searches": 5
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

@@ -1,0 +1,36 @@
+{
+  "run_id": "2026-09-03-discover-wave5",
+  "job": "discover",
+  "prompt_version": "tier-quota-v1",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "First wave run under a tier quota instead of a record quota: five records per domain of which at least three must be D1/D2/D3, with an explicit instruction to return fewer rather than pad with easy records. Domains chosen for where the contested cases live — automotive, health, photo.",
+
+  "outcome": "Partial. All three agents were killed by a session limit early in research. Because the briefs required writing each record to disk as it was finished, 8 of roughly 15 survived — where wave 3, whose agents batched their writes, lost everything.",
+
+  "devices_added": 8,
+  "domains": {"automotive": 3, "health": 3, "photo": 2},
+  "tier_split": {"D0": 2, "D1": 3, "D2": 2, "REJECT": 1},
+
+  "findings": [
+    "The tier quota worked immediately and decisively. Six of eight records are above D0, against fourteen of seventeen BELOW it in the previous wave. Same orchestrator, same model, same domains-are-hard problem — the only change was what the agents were told they would be measured on.",
+    "Seeding each brief with a ranked candidate list, forced by the exhausted search budget, turned out to serve the tier goal directly. Contested devices are ones that can be named in advance; agents left to discover their own candidates find the easy ones first. Verification-from-a-seed-list may be the better shape for this work regardless of search budget.",
+    "The automotive agent produced the cleanest pairing the catalog has: obdlink-mx-plus at D1 (an ELM327-compatible adapter that talks to seventeen named third-party apps, no vendor cloud) and bluedriver-bluetooth-pro at REJECT (same job, locked to its own app, account mandatory at setup). Written in that order, so the rejection had its alternative before it existed. Two devices, same shelf, same price bracket, opposite answers — this is the comparison the site exists to make.",
+    "ricoh-gr-iiix is the domain's cleanest D1: Wi-Fi and Bluetooth confirmed by FCC grant, and Ricoh's own manual documents no Ricoh-operated cloud for the camera at all. sony-a6700 is the matching D2, and names its endpoint (Creators' Cloud, sony.net/cc) as VERIFIER requires.",
+    "Both D0 records (a nebulizer and a TENS unit) sit in previously-empty subcategories, which is the case the new rule still permits."
+  ],
+
+  "system_gaps_found": [
+    {"gap": "The BlueDriver rejection's stated reasoning leaned partly on inference from silence — a customer review reporting third-party app incompatibility that BlueDriver support answered with a troubleshooting contact rather than a correction. Support declining to correct a reviewer is not evidence the reviewer was right.",
+     "fix": "Rejection narrowed to the documented account-at-setup requirement, which is Class A from the vendor's own setup instructions and sufficient on its own. The third-party compatibility question moved to open_questions as unresolved. Same class of error as the Fi rejection in wave 2: a verdict resting on more than its sources carry."}
+  ],
+
+  "honest_limitations": [
+    "Roughly seven records were lost with the agents that died mid-research, including a Nikon Z fc the photo agent was actively reading the manual for.",
+    "The session's WebSearch budget was already exhausted before this wave began, so all three agents ran WebFetch-only against seeded candidates. This constrains what a wave can find to what the orchestrator already knows exists — fine for contested devices, useless for genuine discovery.",
+    "ihealth-air-po3's D2 carries an honest hedge on whether the MyVitals app itself demands an account. It does not undercut the tier — core function is the device's own LED display and the app is optional either way — but a reader who wants the app should know the question is open.",
+    "Records were reviewed for schema, source class, tier-table consistency and hedged deciding facts. None of the eight was re-derived from primary sources by the orchestrator."
+  ],
+
+  "wall_clock_min": 15,
+  "surprises": "Changing what agents are measured on changed what they found, in one wave, with no other intervention. The tier skew had been recorded as a research-priority note for four waves and drifted the whole time; it moved the moment the quota stopped counting records."
+}

@@ -1,0 +1,91 @@
+{
+  "model_id": "sony-a6700",
+  "make": "Sony",
+  "model": "Alpha 6700 (ILCE-6700)",
+  "category": "photo",
+  "subcategory": "digital camera",
+  "tier": "D2",
+  "tier_rationale": "Sony's own Help Guide for this camera names a real cloud endpoint: 'Creators' Cloud' (sony.net/cc), a distinct, optional service requiring 'Creating an account for Creators' Cloud and linking your camera' and firmware Ver. 2.00 or later. That is separate from the Creators' App, which pairs to the camera directly over Bluetooth with no Sony account anywhere in the pairing steps. The camera's own initial-setup procedure completes fully through the on-camera menu (language, area/date/time) with no smartphone or account required; the guide states plainly that skipping smartphone connection just leads straight to the date/time screen. Because a vendor-operated cloud exists (Creators' Cloud) and every core function — shooting, menus, app pairing — works with no account and no connection, this is D2, not D1.",
+  "the_unplug_test": "It works exactly the same. First-time setup on the camera itself is language, then area/date/time — connecting a smartphone during setup is explicitly optional and skipping it just moves you to the date/time screen. With Wi-Fi and Bluetooth off, you lose the Creators' App's remote control and image transfer (which itself needs no Sony account to pair) and Sony's separate Creators' Cloud service, which does need an account and is off by default until you deliberately link one. Nothing about taking a photo, changing a setting, or reviewing images on the camera depends on either.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Creators' App remote control and Bluetooth/Wi-Fi image transfer to a paired phone (pairing itself needs no Sony account)",
+    "Creators' Cloud upload/sync, a separate opt-in service requiring a Sony account and firmware Ver. 2.00+",
+    "reading GPS location from a paired smartphone"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble",
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Not researched within budget."
+  },
+  "availability": "unknown",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/202h_register_smartphone.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Sony's own online Help Guide for the ILCE-6700 (Alpha 6700): the smartphone-pairing procedure (MENU > Network > Cnct./PC Remote > Smartphone Connection, enable Bluetooth, open Creators' App, 'follow the instructions on the screen to pair') contains no Sony account, PlayMemories sign-in, or registration step — direct Bluetooth device pairing only.",
+      "archive_url": null
+    },
+    {
+      "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/221h_about_creators_cloud.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Same Help Guide: describes 'Creators' Cloud' as a distinct cloud solution ('integrates production applications and services... provides services and applications to creators') gated behind camera firmware Ver. 2.00+ and a separate account-linking step, referencing sony.net/cc for details — establishing a real, named Sony-operated cloud endpoint for this camera, separate from local app pairing.",
+      "archive_url": null
+    },
+    {
+      "url": "https://helpguide.sony.net/ilc/2320/v1/en/contents/211h_initial_settings.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Same Help Guide: initial setup is language then area/date/time, performed on the camera itself; smartphone connection during setup is optional and skipping it 'the area/date/time setting screen will appear' — confirming setup completes with no account and no network connection.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "FCC grant for this specific camera's Wi-Fi/Bluetooth module was not located within budget — Sony's FCC grantee code AK8 (Sony Group Corporation) was confirmed and files radio equipment grants generally, but the exact grant covering the a6700's internal module was not pinned down. Not required for this D2 tier claim (which rests on the manual, not the FCC check), but worth completing on a later pass.",
+    "Whether firmware updates can be declined, and what telemetry the camera sends to Sony with Wi-Fi/Bluetooth on but no Cloud account linked, are unconfirmed.",
+    "Current US availability and price were not confirmed from a fetchable manufacturer or retailer page within budget (sony.com blocked automated fetch)."
+  ],
+  "conflicts_with": null,
+  "notes": "Same D1/D2 shape as the Fujifilm X100VI and GoPro HERO13 Black already in this catalog: real Wi-Fi/Bluetooth, a real optional app, and a real named vendor cloud (Creators' Cloud) that core photography never touches. The distinguishing fact from a D1 camera like the Ricoh GR IIIx is simply that Sony names and documents an actual cloud backend for this model; Ricoh's manual names none.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-photo-domain",
+    "run_id": "2026-09-03-photo",
+    "searches": 0
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "Images and video are standard files on a plain SD card; any computer or NAS handles storage and backup with no vendor software required. Creators' Cloud's function (off-camera backup/sync) has no first-party local equivalent, but nothing about it is required to use the camera."
+}
