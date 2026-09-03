@@ -1,0 +1,77 @@
+{
+  "model_id": "sureflap-microchip-pet-door",
+  "make": "SureFlap",
+  "model": "Microchip Pet Door",
+  "category": "baby-pet",
+  "subcategory": "pet door",
+  "tier": "D1",
+  "tier_rationale": "The FCC grants filed by the manufacturer (SureFlap Ltd) split cleanly along the product line: the WiFi Hub used by the 'Connect' models holds its own grant for 2.4 GHz WiFi (XO9IHB002), while the cat-flap/pet-door body itself holds a separate grant (XO9DSCF003) covering only 0.126-0.133 MHz, the low-frequency band used to read a passive pet microchip at close range — not a network radio. This base model ships with no Hub and no app: it has a radio (the microchip reader), but the vendor operates no cloud for it and it speaks to nothing but the chip in the animal's neck.",
+  "the_unplug_test": "Nothing changes. The door reads the microchip already implanted in your pet (or a supplied RFID collar tag) as they approach and unlocks only for chips you have taught it, entirely on battery power with no home network involved at all. There is no app, no account, no Hub, and no vendor server in this model's path — that infrastructure only exists for the separate 'Connect' product line, which this is not.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "rfid_lf"
+  ],
+  "fcc_id": "XO9DSCF003",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Runs on 4 C-cell batteries with a claimed 12-month life and a low-battery indicator; manufacturer states a 3-year warranty."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://fccid.io/search.php?q=Sure+Petcare",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Establishes the sibling control: SureFlap Ltd holds grant XO9IHB002 for the Sure Petcare Hub covering 2425-2480 MHz WiFi, and a separate grant XO9DSCF003 for the 'Cat Flap with Integrated RFID Reader' covering only 0.126-0.133 MHz — confirming the door body itself carries only a low-frequency microchip reader, no network radio, and that WiFi exists solely in the optional Hub used by the Connect line.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.surepetcare.com/en-us/pet-doors/microchip-pet-door",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own product page for the base 'Microchip Pet Door': no WiFi, Bluetooth, or app/account requirement; battery-powered (4 x C cell, up to 12 months); reads implanted microchips or a supplied RFID collar tag; stores up to 32 pet identities; curfew mode and manual lock built into the unit. Explicitly distinguishes this model from the separate app-connected 'Connect' upgrade.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Current US price band not confirmed — the manufacturer's own product page does not display a price and retailer fetches (Chewy) were rate-limited during research. Worth a follow-up check on Chewy, Amazon, or Petco."
+  ],
+  "conflicts_with": null,
+  "notes": "A clean textbook case of the FCC sibling-control heuristic in Principles §3: the same vendor files a WiFi grant for its Hub and a separate, distinct low-frequency RFID grant for the door body, which makes the absence of any WiFi/BLE grant on the door itself meaningful rather than just an unproven gap. The 'Connect' version of this same product line, which adds the Hub and an app, would be a D2 record worth writing separately.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-baby-pet",
+    "searches": 1,
+    "failed_fetches": 2
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

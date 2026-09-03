@@ -1,0 +1,98 @@
+{
+  "model_id": "moultrie-edge-3",
+  "make": "Moultrie",
+  "model": "Edge 3 Cellular Trail Camera",
+  "category": "photo",
+  "subcategory": "trail camera",
+  "tier": "REJECT",
+  "tier_rationale": "The camera has no SD card slot — Moultrie's own product page and support FAQ state it uses built-in memory only and 'automatically uploads all photos and videos to the cloud... No SD card needed.' Moultrie's own plans page states plainly that 'ALL CELLULAR CONNECTED DEVICES REQUIRE A PAID SUBSCRIPTION,' with no free tier. Core function — getting the photo the camera captured — is entirely gated behind a mandatory Moultrie Mobile account and a paid monthly plan, with no local retrieval path of any kind.",
+  "the_unplug_test": "It stops functioning as a camera you own. There is no SD card to pull and no USB port to download from — the Edge 3 stores to built-in memory only and depends on cellular upload to Moultrie's cloud to ever show you a photo. Moultrie's own pricing page states every cellular-connected camera requires a paid monthly plan, with no free tier; if the subscription lapses, there is no documented way to retrieve what the camera captured. Setup itself requires creating a Moultrie Mobile account and scanning a QR code to add the camera to it before it will do anything.",
+  "status": "rejected",
+  "rejection_reason": "Core function (retrieving captured images) is subscription-gated with no local storage or offline retrieval path: no SD card slot, no free plan, and account creation is mandatory before the camera can be used at all.",
+  "account_required": "for_core",
+  "works_offline": "no",
+  "offline_losses": [
+    "everything — there is no SD card or local output; photos exist only in Moultrie's cloud, reached only through a paid Moultrie Mobile plan"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "heavy",
+  "radios": [
+    "cellular"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Sealed body with built-in memory and no removable storage; no teardown or parts source found within budget."
+  },
+  "availability": "in_stock",
+  "price_band": "$80-100",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Moultrie (manufacturer)",
+      "url": "https://www.moultrie.com/edge-3-cellular-trail-camera"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": null,
+  "sources": [
+    {
+      "url": "https://www.moultrie.com/blog/top-5-edge-questions-answered/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer FAQ, verbatim: 'Edge has built-in memory and automatically uploads all photos and videos to the cloud where they can be viewed and downloaded anytime via the Moultrie Mobile app. No SD card needed.' Setup instructions require the user to 'Set up your account' in the Moultrie Mobile app and 'Scan the QR code to add the camera to your account' before the camera captures anything meaningful to the owner.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.moultrie.com/plans",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's plans page states, verbatim, 'ALL CELLULAR CONNECTED DEVICES REQUIRE A PAID SUBSCRIPTION,' lists three paid tiers (Standard $8.99/mo, Unlimited $12.99/mo, Pro Series $22.99/mo, each per camera) and offers no free plan for cellular cameras.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.moultrie.com/edge-3-cellular-trail-camera",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Current product page confirms 'built-in memory (no SD card required)' and lists the model's price at $79.99 (sale) / $99.99 (regular).",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Exact FCC grant for the Edge 3's cellular module was not located within budget — Moultrie Feeders' listed FCC grantee (T2V) covers only Bluetooth feeder accessories, not this camera's cellular radio, so the module is likely certified separately (e.g. under a modular cellular chipset maker) and was not tracked down.",
+    "Whether photos already uploaded to the cloud before a subscription lapses remain retrievable, or are deleted/inaccessible, is not stated on the manufacturer's plans page.",
+    "Whether Moultrie has ever discontinued cloud access for a still-owned camera generation (vendor ledger candidate) was not researched within budget."
+  ],
+  "conflicts_with": null,
+  "notes": "Illustrates the trail-camera split the domain problem statement describes: this line has no SD card at all, unlike Moultrie's own older SD-card cellular models and unlike the non-cellular SD-card cameras that dominate the rest of the market (see the Browning Strike Force Pro X 1080, D0, in this catalog).",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published, rejected.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-photo-domain",
+    "run_id": "2026-09-02-photo",
+    "searches": 3
+  },
+  "local_replacement": "none",
+  "local_replacement_note": null,
+  "alternatives": [
+    {
+      "model_id": "browning-strike-force-pro-x-1080",
+      "why": "SD-card-only trail camera with no cellular radio, no subscription, and no account — writes directly to a card you walk out and collect, verified D0 in this catalog."
+    }
+  ]
+}

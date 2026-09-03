@@ -1,0 +1,90 @@
+{
+  "model_id": "dji-neo",
+  "make": "DJI",
+  "model": "Neo",
+  "category": "photo",
+  "subcategory": "drone",
+  "tier": "REJECT",
+  "tier_rationale": "DJI's own user manual states, without qualification: 'The product must be activated using the DJI Fly app before being used for the first time. An internet connection is required for activation.' There is no documented way to fly the aircraft at all — even once, even in a restricted mode — before this one-time internet-gated app activation completes, and no local-only setup path is cited. That fails D2's 'no account required to complete setup' condition and matches the REJECT row for a mandatory activation gate with no cited path around it.",
+  "the_unplug_test": "It will not take off out of the box. DJI's manual requires activating the drone through the DJI Fly app with an internet connection before the very first flight — there is no offline first-run path. The nuance worth knowing: once that one-time activation is done, DJI's own manual states flight is still possible without being 'connected or logged into the app during flight,' just capped to 98.4 ft (30 m) altitude and 164 ft (50 m) range as a safety limit. So the ongoing dependency is milder than the setup gate suggests — but the setup gate itself is absolute, and that is what determines the tier here.",
+  "status": "rejected",
+  "rejection_reason": "Mandatory, internet-required app activation before first use, stated as an absolute requirement in the manufacturer's own manual, with no offline or account-free path around it.",
+  "account_required": "for_setup",
+  "works_offline": "partially",
+  "offline_losses": [
+    "first-time activation cannot be completed at all without an internet connection through the DJI Fly app",
+    "flight altitude is capped to 30 m and range to 50 m when the aircraft is not connected/logged into the app during flight, per the manual's own footnote",
+    "firmware updates, which the app prompts for, require an internet connection"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Not researched within budget."
+  },
+  "availability": "limited",
+  "price_band": "$170-200",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "DJI Store (manufacturer)",
+      "url": "https://store.dji.com/product/dji-neo"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": null,
+  "sources": [
+    {
+      "url": "https://dl.djicdn.com/downloads/neo/20241106/DJI_Neo_User_Manual_v1.2_en_us.pdf",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own current user manual (v1.2), verbatim: 'Activation — The product must be activated using the DJI Fly app before being used for the first time. An internet connection is required for activation.' Also carries footnote 1: 'For increased safety, flight is restricted to a height of 98.4 ft (30 m) and a range of 164 ft (50 m) when not connected or logged into the app during flight' — establishing that flight is possible but capped without an ongoing connection, distinct from the absolute gate on first-time activation. Confirms WiFi and Bluetooth radios (2.4/5.8 GHz WiFi links, Bluetooth pairing to accessories) and that DJI Assistant 2 desktop firmware tool requires logging in with a DJI account.",
+      "archive_url": null
+    },
+    {
+      "url": "https://store.dji.com/product/dji-neo",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own store listing: DJI Neo (no remote controller) priced at $169, Fly More Combo at $374; both showed as out of stock on the manufacturer's store at the time of this check even though the product line remains current and sold through other retailers.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether the DJI Fly app's activation/'Connection Guide' flow specifically requires creating or logging into a DJI account (as opposed to merely an internet connection) was not confirmed — the manual is explicit about the internet requirement but silent on account creation specifically for this step.",
+    "No verified dumb/liberated drone alternative exists yet in this catalog. A drone or camera-equipped RC aircraft that completes setup with no mandatory internet-gated activation would be a valuable addition — this is a discovery task, not yet resolved.",
+    "Whether current retail stock (Amazon, B&H, etc.) reflects the same $169/$374 pricing as the manufacturer's own store, which showed out-of-stock at time of check, is unconfirmed.",
+    "Whether any documented liberation path (custom firmware, offline activation bypass) exists for DJI Neo was not researched within budget."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the case the domain brief specifically asked to check: DJI's mandatory activation gate is real and is stated in DJI's own current manual in absolute terms, not vendor spin from a third party. The interesting complication — that flight without an ongoing connection is still possible post-activation, just range/altitude capped — is worth keeping in the record so this doesn't read as harsher than the evidence supports; the tier rests specifically on the unconditional first-use gate, not on ongoing cloud dependence.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published, rejected.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-photo-domain",
+    "run_id": "2026-09-02-photo",
+    "searches": 1
+  },
+  "local_replacement": "none",
+  "local_replacement_note": null,
+  "alternatives": []
+}

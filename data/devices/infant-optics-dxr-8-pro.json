@@ -1,0 +1,84 @@
+{
+  "model_id": "infant-optics-dxr-8-pro",
+  "make": "Infant Optics",
+  "model": "DXR-8 PRO",
+  "category": "baby-pet",
+  "subcategory": "baby monitor",
+  "tier": "D1",
+  "tier_rationale": "The FCC grant for the parent/camera pair covers only 2410-2477 MHz under Part 15.247 as a spread-spectrum (FHSS) point-to-point transmitter, not an 802.11 Wi-Fi module (tagged proprietary_24ghz), and the vendor operates no cloud service for the product at all — there is no app, no account, and no remote-viewing feature to be optional. The camera and 5-inch parent monitor talk directly to each other on a closed link the owner holds both ends of.",
+  "the_unplug_test": "Nothing changes, because there is nothing to unplug from. The camera and the handheld parent monitor form a direct 2.4 GHz link to each other, not to your router — there is no home Wi-Fi pairing step at all. You get local video and two-way talk on the 5-inch screen with a claimed range up to 1,000 feet. What you permanently do not get, with or without internet, is viewing from outside the house: this model has no app and no remote access, which some buyers consider the whole point and others consider the dealbreaker.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "proprietary_24ghz"
+  ],
+  "fcc_id": "2AAAM-DXR8PPZ-APU",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Infant Optics sells standalone replacement cameras and parent units separately, which extends the life of a kit when one half fails or is lost."
+  },
+  "availability": "in_stock",
+  "price_band": "$180-220",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://fccid.io/2AAAM-DXR8PPZ-APU",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grant for the DXR-8 PRO (grantee Standard Merit Industrial Limited) covers 2410-2477 MHz as a Part 15 spread-spectrum transmitter only — no separate Wi-Fi or Bluetooth module appears in the filing, and the frequency plan is a proprietary FHSS video link rather than the 2.4 GHz band used for 802.11 Wi-Fi.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.reviewed.com/parenting/content/infant-optics-dxr-8-pro-baby-monitor-review",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Independent review confirming the monitor uses a closed-loop '2nd Gen FHAA 2.4GHz' local wireless link with no app and no phone-based remote viewing — the reviewer names this the product's main drawback, which corroborates that there is no vendor cloud or companion app of any kind.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.target.com/p/infant-optics-digital-video-monitor-dxr-8-pro/-/A-80641472",
+      "class": "C",
+      "accessed": "2026-09-02",
+      "supports": "Current US retail listing at $199.99, used only for the price band, not for tier evidence.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Confirm from the printed manual (fccid.io hosts it but blocked automated extraction) whether firmware is field-updatable at all; if there is no update mechanism, that is worth stating explicitly."
+  ],
+  "conflicts_with": null,
+  "notes": "The natural counterpoint to a Wi-Fi video monitor in this same subcategory: this one physically cannot be reached from outside the house because it never joins your network in the first place. The tradeoff is real — no remote viewing, ever, by design — and some parents will prefer a Wi-Fi model for that reason. This record makes no claim about which is better, only what each one requires.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-baby-pet",
+    "searches": 4,
+    "failed_fetches": 4
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

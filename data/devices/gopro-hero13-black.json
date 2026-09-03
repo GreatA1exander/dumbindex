@@ -1,0 +1,90 @@
+{
+  "model_id": "gopro-hero13-black",
+  "make": "GoPro",
+  "model": "HERO13 Black",
+  "category": "photo",
+  "subcategory": "action camera",
+  "tier": "D2",
+  "tier_rationale": "Ships with WiFi 6, Bluetooth, the Quik app, and GoPro's own cloud storage/auto-upload subscription, but the camera's own buttons and on-screen menu record video and photo, select resolution/frame rate, and adjust advanced settings like Protune with no app, no account and no network at all. GoPro Cloud is explicitly an optional subscription add-on, not a requirement to operate the camera, so this lands D2 rather than D1 or REJECT.",
+  "the_unplug_test": "It keeps shooting. Every core control — record, mode, resolution, frame rate, Protune — lives on the camera's own touchscreen and buttons, and footage writes straight to the microSD card with no phone or network involved at any point. What you lose without WiFi is the Quik app's live preview and remote control, GoPro's optional cloud auto-upload/backup subscription, and automatic highlight-reel generation. None of those touch the act of capturing video.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Quik app live preview and remote control from a phone",
+    "GoPro Cloud auto-upload and unlimited cloud backup (subscription feature)",
+    "automatic highlight-video generation, which runs on uploaded footage",
+    "live streaming to Facebook Live/YouTube via the app"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble",
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Removable battery (Enduro 1900mAh) and microSD card; lens mods are user-swappable, but GoPro does not sell most internal spare parts and iFixit has not scored this model."
+  },
+  "availability": "in_stock",
+  "price_band": "$350-400",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "GoPro (manufacturer)",
+      "url": "https://gopro.com/en/us/shop/cameras/buy/hero13black/CHDHX-131-master.html"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://gopro.com/en/us/shop/subscriptions",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own subscription page: GoPro Cloud (Premium/Premium+ tiers) provides unlimited cloud storage for GoPro-captured footage, WiFi auto-upload while charging, auto-generated highlight videos, camera replacement and accessory discounts — framed throughout as a paid add-on to camera ownership, not a requirement to operate the camera. Confirms grantee GoPro Inc. (FCC grantee code CNF) files WiFi/Bluetooth module grants (e.g. CNFSTMD1, 'WiFi/BT Module') across its camera line, establishing the radios present.",
+      "archive_url": null
+    },
+    {
+      "url": "https://actioncameraexpert.com/using-gopro-without-the-app-a-comprehensive-guide/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Independent guide confirming GoPro cameras record photo/video and adjust resolution, frame rate, field of view and advanced Protune settings entirely through the camera's own power button, mode button and on-screen menu, with no app, account or phone required. Notes editing and large-screen review are the parts that need a separate device.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether first-boot activation ever forces a QR-code app pairing before the camera will record (some GoPro models have prompted this in the out-of-box flow) was not confirmed from a source that could be fetched — gopro.com's own Getting Started and Out-of-Box-Experience pages returned server errors to automated fetch during this check.",
+    "Whether firmware updates can be declined, or are pushed automatically once the camera is on WiFi, is unconfirmed.",
+    "What telemetry, if any, the camera or app sends to GoPro when connected but before any cloud subscription is active (phones_home) is unconfirmed."
+  ],
+  "conflicts_with": null,
+  "notes": "Action cameras are a useful control case: the radios and app are real, but GoPro's business model depends on the camera working as a standalone capture device (that is what it is bought to do outdoors), so the cloud stays genuinely optional rather than creeping into core function the way it has for some doorbell and trail-camera categories.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-photo-domain",
+    "run_id": "2026-09-02-photo",
+    "searches": 8
+  },
+  "local_replacement": "partial",
+  "local_replacement_note": "Footage is a plain microSD card of standard MP4/HEVC files — copy it to any NAS or computer and it needs no vendor software to view or edit. What is not locally replaceable is GoPro's own AI-generated highlight-reel feature, which runs server-side on uploaded footage."
+}

@@ -1,0 +1,79 @@
+{
+  "model_id": "taylor-75064192",
+  "make": "Taylor Precision Products",
+  "model": "Digital Glass Chrome Bathroom Scale (75064192)",
+  "category": "health",
+  "subcategory": "bathroom scale",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer's own product page lists no Bluetooth, WiFi, or app capability of any kind, and no FCC intentional-radiator grant exists for this model despite Taylor Precision Products holding several grants for other radio-equipped products (wireless weather sensors), which establishes the vendor files when it has a radio to declare.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "There is no router to unplug. You step on it, an LCD shows a number in a couple of seconds, and that is the entire transaction. No pairing, no app, no account, nothing to sync, nothing that can be revoked later because nothing was ever granted.",
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Single user-replaceable CR2032 lithium coin cell; the rest is a sealed glass-and-electronics assembly with no other serviceable parts."
+  },
+  "availability": "in_stock",
+  "price_band": "$30-40",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Taylor USA (manufacturer)",
+      "url": "https://www.taylorusa.com/products/digital-glass-chrome-bathroom-scale"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.taylorusa.com/products/digital-glass-chrome-bathroom-scale",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer product page: 'No Bluetooth, WiFi, or app capabilities.' Confirms model/SKU 75064192, CR2032 battery power, 400 lb capacity, tempered-glass platform with instant-read step-on operation, and current price of $34.99.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/search.php?q=Taylor+Precision",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC ID search for grantee Taylor Precision Products, LLC (code RMW) shows grants only for wireless weather-station accessories (wind sensor, wireless thermometer, rain gauge, all 433 MHz). No grant exists for this scale model, and the vendor demonstrably files for other radio-equipped products, making the absence meaningful rather than just an unsearched gap.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [],
+  "conflicts_with": null,
+  "notes": "Published primarily as the in-catalog alternative for withings-body-smart: a bathroom scale that answers the one question this category exists to answer (what is my weight) with nothing between the reader and the number. Gives up body-composition estimation entirely — it is a weight scale, not a body-composition scale — which is the tradeoff for the D0 tier here.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-health",
+    "searches": 2
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

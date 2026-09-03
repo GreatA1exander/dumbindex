@@ -55,6 +55,19 @@ produce a publishable record backed by qualifying evidence, or prove that you ca
 
    If two rows both seem to apply, you have a fact wrong. Go back to step 3.
 
+   **Never reject on a fact your own sources disagree about.** If one source says the
+   device is inert without a subscription and another says it merely loses a feature,
+   you do not yet know which is true, and REJECT is the most damaging verdict to get
+   wrong — it tells a reader not to buy something that may be fine. Reject on the
+   narrower claim both sources support, say in `tier_rationale` that the stronger claim
+   was not established, and put the disagreement in `open_questions`. A narrower
+   rejection that holds up beats a broad one a reader can falsify in five minutes.
+
+   **A REJECT is a claim about a purchase, so check how the thing is sold.** Retail
+   listings that name a bundled subscription term in the product title are independent,
+   easily-verified evidence that hardware is not available standalone — worth more than
+   another cost-breakdown blog repeating the vendor's pricing page.
+
    **The most common tier error is reading radios as cloud.** A device with Wi-Fi, an
    app, and Bluetooth is D1 — not D2 — when the vendor operates no cloud at all and the
    app talks peer-to-peer to the device's own access point. D2 means a vendor cloud

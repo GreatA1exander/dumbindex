@@ -1,0 +1,103 @@
+{
+  "model_id": "withings-body-smart",
+  "make": "Withings",
+  "model": "Body Smart",
+  "category": "health",
+  "subcategory": "bathroom scale",
+  "tier": "REJECT",
+  "tier_rationale": "Withings' own support documentation states plainly that creating a Withings account is required, and its own privacy FAQ explains the scale cannot correctly recognize a user's weight on first use without a starting value entered through the app during account setup. An account mandatory at setup is a REJECT condition on the decision table regardless of how the device behaves afterward.",
+  "status": "rejected",
+  "rejection_reason": "No documented way to finish setting up a new Body Smart without installing the Withings/Health Mate app and creating a Withings account. Multiple independent setup guides (Withings' own developer documentation, and third-party reviews of the Body+/Body Comp/Body Smart line) describe the same required sequence: install app, create account, pair scale, enter your starting weight. There is no in-box or on-device path that skips account creation.",
+  "the_unplug_test": "A brand-new, still-boxed Body Smart cannot be put into service at all without first connecting a phone to the internet, installing the Withings app, and creating an account — the scale needs that initial profile before it will show you a correct number. Once that one-time setup is done, day-to-day weighing does work without a live connection: the scale weighs you, shows the number on its own e-inkscreen, and a community-reported local buffer holds a couple of weeks of readings to sync later. That buffered independence is not guaranteed, though — Withings has required existing owners to accept new data-sharing terms in-app to keep using devices they already owned, so the offline grace period is a courtesy the vendor controls, not a right of the hardware.",
+  "account_required": "for_setup",
+  "works_offline": "partially",
+  "offline_losses": [
+    "initial device setup itself — cannot be completed without app + account + internet connection",
+    "sync of weight history and body-composition metrics to the Withings app/Withings+ dashboard",
+    "continued function if Withings requires re-acceptance of updated account/data-sharing terms, per user reports"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "analytics",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": "XNAWBS13",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Sealed body with a coin-cell or AAA battery compartment (not confirmed which); no teardown checked."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 2,
+  "sources": [
+    {
+      "url": "https://support.withings.com/hc/en-us/articles/4404719917457-Privacy-FAQ",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Withings' own support FAQ: 'Why do I need to create an account? Creating an account is required, so your data can be safely kept.' Also states that indicating a starting weight in the app while creating an account is necessary so the scale can recognize the user on first use, tying core first-use function to the account-creation step.",
+      "archive_url": null
+    },
+    {
+      "url": "https://support.withings.com/hc/en-us/articles/14490718200465-Body-Smart-Using-Weight-Only-Mode",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Confirms the Body Smart's advanced features (BIA-based body composition, ECG-adjacent sensing) are configured and toggled entirely through the Withings app, corroborating that the app/account is the control plane for the device rather than an optional add-on.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/XNAWBS13",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grant XNAWBS13, filed by Withings (grantee code XNA), covers 'WITHINGS BODY COMP, WITHINGS BODY SMART' under Part 15C: 2.4 GHz WiFi and Bluetooth LE radios, granted 2023-04-04.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.reddit.com/r/withings/comments/1owttod/whats_happening_at_withings_an_open_letter_to_the/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "r/withings community thread (357 upvotes, 150+ comments) documenting retroactive feature removal on other Withings devices in the same account/app ecosystem (BPM Connect losing sync capability, ScanWatch losing SpO2/heart features) and multiple independent commenters reporting they were locked out of using their own already-purchased Withings devices until they accepted new in-app data-sharing terms. Used to support vendor_risk, not the tier.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Exact retail price could not be confirmed via a direct fetch of a manufacturer or retailer page within budget (withings.com blocks automated fetches; Amazon/Best Buy fetches failed). Recent listings put it in the $100-140 range.",
+    "How many days of readings the scale actually buffers offline, and what exactly happens on-screen when that buffer is full and no sync has occurred, was not confirmed against a primary Withings source.",
+    "Whether the account-creation step can be satisfied with a throwaway/local-only account (no real email, no data-sharing consent) was not tested."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the exact case the health domain brief asked to look for: a scale that cannot show you your own weight, on a device you already paid for, without first handing an account to the manufacturer. The rejection is about the mandatory account gate at setup, which is a bright-line rule on this site regardless of how well the scale behaves once that gate is past. The Reddit thread cited for vendor_risk also documents Withings requiring existing owners to re-consent to new data-sharing terms to keep using already-owned devices — record this as a vendor_ledger_proposal for data/vendors.json: vendor 'withings', suggested vendor_risk 2, incident type 'feature_removal_and_forced_reconsent', dated ~2025-11 to 2025-12, sourced to the r/withings open-letter thread (Class B) and worth a human corroborating with an independent press source (The Verge covered a related Withings data-sharing controversy around Dec 2025 per search results, not independently fetched here) before finalizing the ledger score.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "Published as REJECT.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-health",
+    "searches": 9
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No self-hosted replacement was found for the account-creation gate itself. Once past setup, day-to-day weighing is locally buffered, but nothing replaces the mandatory initial handshake with Withings' cloud.",
+  "alternatives": [
+    {
+      "model_id": "taylor-75064192",
+      "why": "A basic digital bathroom scale with no radio, no app, and no account of any kind — turns on when you step on it and shows the number. Gives up body-composition estimates entirely, but answers the question 'what is my weight' with nothing standing between you and the number."
+    }
+  ]
+}

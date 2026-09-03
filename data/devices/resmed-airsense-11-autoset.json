@@ -1,0 +1,103 @@
+{
+  "model_id": "resmed-airsense-11-autoset",
+  "make": "ResMed",
+  "model": "AirSense 11 AutoSet",
+  "category": "health",
+  "subcategory": "CPAP",
+  "tier": "D2",
+  "tier_rationale": "The machine ships with a built-in cellular modem and Bluetooth that reach ResMed's myAir and AirView cloud, but setup explicitly offers a path 'with or without the myAir app', and ResMed's own support documentation states therapy delivery does not depend on any connection. Losing connectivity costs remote monitoring, provider-side remote titration, and app-based coaching, not the treatment itself.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "It still blows air and treats you all night. Therapy pressure, the AutoSet algorithm, the humidifier and the mask fit alarm all run on the machine itself and do not care whether the cellular modem has signal. What you lose is the parts that involve someone else: your provider's AirView dashboard stops updating, myAir's coaching screens and streak tracking stop, and your provider can no longer push a pressure change to the machine remotely. Every night's detailed data still records internally and, on the AutoSet, to an SD card you can read yourself.",
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "myAir app coaching, sleep score and progress tracking",
+    "AirView remote monitoring by your clinician",
+    "remote pressure/setting changes pushed by your provider over cellular",
+    "automatic same-day data upload (data still records on-device and on the SD card, and uploads later if a connection returns)"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "analytics",
+  "radios": [
+    "cellular",
+    "ble"
+  ],
+  "fcc_id": "2ACHL-AIR11M1",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Sold and serviced almost exclusively through durable-medical-equipment (DME) suppliers rather than direct retail repair channels; no teardown or parts-availability source checked."
+  },
+  "availability": "in_stock",
+  "price_band": "$900-1150",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "ResMed (manufacturer eshop)",
+      "url": "https://eshop.resmed.com/collections/airsense-11"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://ap.resmed.com/knowledge/does-my-airsense-machine-use-wifi-to-transmit-data",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "ResMed's own support knowledge base: an internet connection is not required for the machine to deliver therapy; connectivity (cellular, not WiFi, on the AirSense 11) exists to transmit data to myAir/AirView and for remote updates. If no connection is available, the machine still records data internally and uploads later.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.resmed.com.au/blog/a-guide-to-resmed-airsense-11-setup",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "ResMed's own setup guide: during first-time setup the user is 'invited to continue your set up with or without the myAir app', confirming a myAir account is optional rather than required to finish setup or operate the device.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2ACHL-AIR11M1",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grant 2ACHL-AIR11M1 (grantee ResMed Pty Ltd, granted 2021-11-18) for the AirSense 11's integrated cellular+Bluetooth module: covers LTE cellular bands and 2.4 GHz Bluetooth. No separate WiFi radio grant exists for this model, consistent with the AirSense 11 using cellular rather than WiFi for connectivity.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.vivarespire.com/en/page/57-oscar-cpap-software-guide",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "OSCAR (open-source CPAP data analysis software) compatibility list: 'Full support since OSCAR 1.6.0' for the AirSense 11 AutoSet reading its SD card, showing residual AHI, leak rate, and second-by-second pressure curves. Notes that the entry-level model named plainly 'AirSense 11 CPAP' (no AutoSet/Elite) only reports a daily summary and is not recommended for detailed local analysis — the AutoSet variant is the one that supports full local data.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Can the AirSense 11's cellular firmware/software updates be declined by the patient, or are they pushed unconditionally over the cellular link? ResMed documentation confirms the machine is 'hardware enabled' for over-the-air updates but does not state whether they are optional.",
+    "Does the base internal memory (365 days of summary data, no SD card) expose any on-device screen for reviewing your own history, or is a phone/app/SD card required to see anything beyond the current session?",
+    "Parts availability and independent repairability were not checked; ResMed CPAP service is normally routed through DME suppliers rather than open retail repair."
+  ],
+  "conflicts_with": null,
+  "notes": "CPAP is a strong example of the D2/local-replacement distinction the site exists to draw: the cloud (myAir/AirView) is real and the machine is built to prefer it, but therapy delivery is untouched by connectivity and the SD card plus OSCAR gives an owner detailed clinical data ResMed's own app does not show as completely. Chose the AutoSet variant specifically because the plain 'AirSense 11 CPAP' base model is documented as giving up detailed local data — the model name within this line is not cosmetic.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-health",
+    "searches": 8
+  },
+  "local_replacement": "partial",
+  "local_replacement_note": "OSCAR (open-source, reads the machine's SD card) reproduces and exceeds myAir's own data view — nightly AHI, leak, and full pressure waveforms — entirely on hardware the owner controls. It does not replace AirView's remote monitoring by a clinician or a provider's ability to push a pressure change over cellular; those remain cloud-only."
+}

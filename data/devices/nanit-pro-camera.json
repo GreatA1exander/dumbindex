@@ -1,0 +1,94 @@
+{
+  "model_id": "nanit-pro-camera",
+  "make": "Nanit",
+  "model": "Pro Camera",
+  "category": "baby-pet",
+  "subcategory": "baby monitor",
+  "tier": "REJECT",
+  "tier_rationale": "A video baby monitor's core function is showing you the baby. Nanit's own product page states the monitor is viewed 'via your Nanit App and an Internet connection' with no local-network-only viewing path described anywhere, and repeated checks of Nanit's support site and third-party sources within budget found no documented way to view video without the cloud. Core function requires the cloud with no cited liberation path.",
+  "status": "rejected",
+  "rejection_reason": "Live video, the entire purpose of the device, is routed through Nanit's app and servers with no local-only viewing mode documented by the vendor. Basic live streaming and motion/sound notifications are free (no Insights subscription required), but the internet dependency itself is not optional — the vendor's own language ties viewing to 'an Internet connection,' not to a home network.",
+  "the_unplug_test": "The camera stops showing you your baby. Live view, notifications, and two-way audio all route through the Nanit app and Nanit's servers, and the vendor's own product description ties viewing to having an internet connection, not merely a home network — there is no documented local/LAN-only fallback. The paid Insights plan governs sleep analytics and smart-speaker integration, not basic viewing, so cost is not the issue here; connectivity is.",
+  "account_required": "for_core",
+  "works_offline": "no",
+  "offline_losses": [
+    "live video view",
+    "motion and sound notifications",
+    "two-way audio",
+    "all app functionality"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "heavy",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": "2AIWVN302",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$250-350",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": null,
+  "sources": [
+    {
+      "url": "https://www.nanit.com/products/nanit-pro-camera",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own product page: video is viewed 'via your Nanit App and an Internet connection'; live stream, motion/sound notifications, and two-way audio are free without a subscription; the paid Insights plan covers sleep analytics and Alexa/Google Home integration, not basic viewing; no local-network-only viewing mode is described. Price observed at $289.99 (sale) against a higher list price.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2AIWVN302",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grants 2AIWVN302 and 2AIWVN301 (grantee Udisense Inc. DBA Nanit) confirm dual-band 2.4/5 GHz WiFi radios in the Nanit Pro camera.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Three attempts to reach Nanit's own support site (support.nanit.com and nanit.com/pages/faq) for an explicit 'does Nanit work without internet' statement returned 404s to automated fetch; a human check of that page would strengthen this record.",
+    "No documented, maintained third-party local-access path (ESPHome, Home Assistant community project, RTSP extraction) was found within budget. If one exists this should become a D3 record instead.",
+    "Exact current list price (pre-sale) not confirmed; $289.99 was an active discounted price at time of check."
+  ],
+  "conflicts_with": null,
+  "notes": "Direct contrast case for this domain: the Infant Optics DXR-8 PRO (also in this catalog) is a video baby monitor solving the same problem with a closed point-to-point link and no cloud at all. This record is not a claim that Nanit's video quality or features are bad — only that the core capability requires an internet connection to Nanit's servers by the vendor's own description, with no opt-out.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published as REJECT.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-baby-pet",
+    "searches": 0,
+    "failed_fetches": 6
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No documented local-only viewing path. Video is described by the vendor as requiring an internet connection rather than merely a home network.",
+  "alternatives": [
+    {
+      "model_id": "infant-optics-dxr-8-pro",
+      "why": "A video baby monitor that solves the same core problem (seeing the baby) over a closed point-to-point link with no app, no account, and no vendor cloud at any point. The tradeoff is no remote/away-from-home viewing, which Nanit offers and this does not."
+    },
+    {
+      "model_id": "vtech-dm221",
+      "why": "Not a video alternative, but the DECT audio monitor already in this catalog for readers who decide audio-only local monitoring is an acceptable tradeoff for removing the cloud entirely."
+    }
+  ]
+}

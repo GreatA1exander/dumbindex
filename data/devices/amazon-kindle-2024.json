@@ -1,0 +1,86 @@
+{
+  "model_id": "amazon-kindle-2024",
+  "make": "Amazon",
+  "model": "Kindle (2024 release, 16GB)",
+  "category": "office",
+  "subcategory": "e-reader",
+  "tier": "D2",
+  "status": "insufficient_evidence",
+  "rejection_reason": null,
+  "tier_rationale": "Tentative only. Amazon operates a real cloud (Kindle Store, Send-to-Kindle, whispersync) and the device has Wi-Fi and Bluetooth. Whether setup can be completed without an Amazon account on current firmware could not be confirmed from a qualifying source, which is the deciding fact between D2 and REJECT.",
+  "the_unplug_test": "Not written. This record does not clear the evidence bar for a tier claim; publishing a confident unplug-test paragraph on unverified account-requirement facts would be exactly the guessed-field defect the project exists to avoid.",
+  "account_required": "unknown",
+  "works_offline": "unknown",
+  "offline_losses": [],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$100-115",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Amazon (manufacturer)",
+      "url": "https://www.amazon.com/kindle/s?k=kindle"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": null,
+  "sources": [
+    {
+      "url": "https://www.aboutamazon.com/news/devices/which-kindle-to-buy",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Amazon's own devices blog confirms the current entry-level Kindle at $109.99 with 16GB storage as a shipping model in the active lineup, alongside Paperwhite, Scribe and Colorsoft. Does not address account or registration requirements.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.answeroverflow.com/m/1420541103979102259",
+      "class": "C",
+      "accessed": "2026-09-02",
+      "supports": "A user support thread describing an inability to find a way to bypass the Wi-Fi/registration screen on a recently purchased Kindle, suggesting no visible skip option in current firmware — but this is a single undated community post, not corroborated by a second independent source, and does not meet the evidence bar on its own.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Does the current out-of-box setup wizard (2024/2025 firmware) offer any way to finish setup and reach the home/library screen without connecting to Wi-Fi and signing into an Amazon account? Older Kindle software (pre-2021 by most accounts) had a documented skip; it is unclear whether this still exists.",
+    "If registration can be skipped, does the device then function as a reader for personal, non-DRM documents transferred by USB/MTP with no account ever created — i.e. is the account requirement about the Kindle Store specifically, or about the device as a whole?",
+    "Amazon discontinued 'Download & Transfer via USB' for Kindle Store purchases in February 2025 (widely reported by TechRadar, Slickdeals and others) — does this same restriction affect personal-document sideloading, or only DRM store content?",
+    "Amazon's own support domain (amazon.com/gp/help/...) returned HTTP 503 to every automated fetch attempt during this research pass, which blocked direct confirmation from the highest-value primary source (the official Kindle setup guide). A researcher with browser access to amazon.com should check the setup guide and the Kindle Device Terms of Use directly.",
+    "This record intentionally has no tier claim confirmed. If setup is in fact account-mandatory on current hardware, this device should be republished as REJECT with a local-only-reading alternative cited (Kobo Clara Colour, already in this catalog, is the natural comparison point)."
+  ],
+  "conflicts_with": null,
+  "notes": "Published despite inconclusive evidence because this is the single most-searched question in the e-reader category and a reader deserves an honest 'we don't know yet' over silence. The contrast case, Kobo Clara Colour (kobo-clara-colour), is fully verified at D2 with a documented account-free Sideloaded Mode shipped by Kobo itself — that record is the one to trust for a definitive account-free e-reader today. Amazon's help-center domain blocking automated access is itself notable: it made this the only device in this run where the manufacturer's own primary documentation could not be reached at all.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "Published as insufficient_evidence: could not confirm from a qualifying source whether current Kindle setup can complete without an Amazon account.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-office-domain",
+    "run_id": "2026-09-02-office",
+    "searches": 14
+  },
+  "local_replacement": "unknown",
+  "local_replacement_note": null
+}

@@ -1,0 +1,78 @@
+{
+  "model_id": "chickenguard-all-in-one",
+  "make": "ChickenGuard",
+  "model": "All in One",
+  "category": "baby-pet",
+  "subcategory": "chicken coop door",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own product page describes a fully standalone automatic coop door: battery, solar, or 9V DC power, controlled entirely through buttons and a display on the unit itself, with a programmable timer or dawn/dusk light sensor. No app, WiFi, or Bluetooth is mentioned anywhere in the product page or FAQ, and no FCC grant for a radio was found under the brand name. It contains no intentional radiator.",
+  "the_unplug_test": "There is no router to unplug from in the first place. The door opens and closes on its own schedule or by ambient light level, set with buttons on the unit itself, running off 4 AA batteries, a solar panel, or 9V DC power. Nothing about it connects to your home network, a phone, or a vendor server, so there is nothing a vendor outage or a lost internet connection could take away.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Manufacturer offers a 3-year warranty with free repair or replacement, and a 30% discount toward a new unit if an out-of-warranty unit cannot be repaired — unusually explicit repair policy for this price tier."
+  },
+  "availability": "in_stock",
+  "price_band": "$150-175",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.chickenguard.com/product/automatic-chicken-coop-door-opener/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own product page for the 'All in One' door opener: no WiFi, app, or Bluetooth mentioned; operation is via physical buttons on the unit with a programmable timer or a light sensor mode ('opens at dawn, closes at dusk'); powered by 4 AA batteries, an optional solar panel, or optional 9V DC. In-stock gray model at $159.98.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.chickenguard.com/pages/faq",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer FAQ confirming all programming (time, light-sensor threshold/LUX, open/close times) happens through a 'Setup Wizard' on the unit's own display and buttons, with no mention of an app or WiFi anywhere on the page, plus battery guidance and a 3-year warranty policy.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "FCC search for 'ChickenGuard' returned no genuine matching grant (one unrelated 1982 grant surfaced under a coincidentally similar grantee code). No sibling Wi-Fi ChickenGuard product exists to use as a control, so the absence is weak evidence on its own — it is corroborated here mainly by the manufacturer's own spec page rather than by the FCC heuristic.",
+      "Confirm current US retail stock across colors — several color variants show out of stock directly on chickenguard.com; only gray was confirmed in stock at time of check. Worth re-checking closer to publish."
+  ],
+  "conflicts_with": null,
+  "notes": "Automatic coop doors are a good hunting ground for D0 in this domain: predator protection at dawn/dusk is a use case that predates any smart-home framing, and this vendor never introduced a connected tier to compare against.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-baby-pet",
+    "searches": 1,
+    "failed_fetches": 2
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

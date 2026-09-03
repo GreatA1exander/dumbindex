@@ -1,0 +1,93 @@
+{
+  "model_id": "casio-wv-58a-1av",
+  "make": "Casio",
+  "model": "WV-58A-1AV",
+  "category": "wearables",
+  "subcategory": "wristwatch",
+  "record_type": "device",
+  "tier": "D0",
+  "tier_rationale": "Wave Ceptor \"Multi-Band Atomic Timekeeping\" is a receive-only longwave function: the watch periodically listens for a 60 kHz WWVB (Fort Collins, CO) or MSF (UK) time-code broadcast from a government station and corrects its own quartz movement. It never transmits. Casio's grantee code (BBQ) files FCC grants for its Bluetooth watches (e.g. BBQW001, BBQS01W-BBQS04W, all listed as \"Bluetooth Watch\") but has no filing for the WV-58 series, which is the expected pattern for a device with no intentional radiator, not a filing gap — Casio demonstrably files when a model actually carries a transmitter.",
+  "the_unplug_test": "It keeps time on its own quartz movement whether or not it ever hears a radio signal. Up to six times a day it listens passively for a WWVB or MSF longwave time broadcast and nudges its own clock to match — this has nothing to do with the internet or a router, and nothing changes if reception never succeeds; the watch just runs at ordinary quartz accuracy instead of atomic accuracy. There is no app, no account, no Bluetooth, and no pairing of any kind.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "CR1620 coin cell, user-replaceable behind four caseback screws; straps and modules are standard Casio parts."
+  },
+  "availability": "in_stock",
+  "price_band": "$40-65",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Casio (manufacturer)",
+      "url": "https://www.casio.com/us/watches/casio/product.WV-58A-1AV/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://fccid.io/BBQ",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Full FCC filing list for Casio Computer Co. grantee code BBQ. No filing exists for any WV-58 model. The same grantee lists multiple explicit \"Bluetooth Watch\" grants (BBQW001, BBQW004, BBQW005, BBQS01W, BBQS02W, BBQS03W, BBQS04W) — the sibling control showing Casio files an intentional-radiator grant whenever a watch actually contains one, which makes the absence for WV-58 meaningful rather than a search miss."
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Casio_Wave_Ceptor",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Describes Wave Ceptor as receive-only: watches synchronize to longwave time-code broadcasts from government stations (WWVB 60kHz US, MSF 60kHz / DCF77 77.5kHz Europe, JJY Japan, BPC China) and do not transmit. Also notes that separate, newer Casio models add Bluetooth to get time from a paired phone instead of long-distance radio reception — confirming Bluetooth is a distinct, differently-named product line rather than a feature of the plain Wave Ceptor family that includes WV-58A."
+    },
+    {
+      "url": "https://www.manua.ls/casio/wv58da-1av/manual",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Official Casio owner's manual for WV-58DA-1AV, the closely related digital-analog sibling in the same WV-58 module family as WV-58A-1AV: confirms 60.0 kHz reception from the US (Fort Collins, CO) and UK stations, 50m water resistance, and contains no mention of Bluetooth, an app, or any smartphone pairing anywhere in the manual."
+    },
+    {
+      "url": "https://www.nywatchstore.com/wv58a1av.html",
+      "class": "C",
+      "accessed": "2026-09-02",
+      "supports": "Model-specific (WV-58A-1AV) retailer listing: price $41.26 (36% off $64.95 MSRP), in stock, CR1620 battery with roughly 2-year life, 42mm case, and no Bluetooth capability listed among specs."
+    }
+  ],
+  "open_questions": [
+    "Exact battery life is quoted inconsistently across retailers (2-year and 3-year figures both appear for the WV-58 family) — not resolved to a single authoritative number within budget.",
+    "Could not fetch casio.com/us directly (blocks automated fetches with 403); the manufacturer's own spec page would upgrade the sibling-model manual source to an exact-model Class A source."
+  ],
+  "conflicts_with": null,
+  "notes": "Chosen deliberately as the receiver-only case: Casio sells Bluetooth-equipped watches (including some also called \"Wave Ceptor\"-adjacent lines) under separate model families, so the model number, not the marketing name, determines whether a given Casio watch has a transmitter. WV-58A-1AV is the plain radio-receive-only version.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-wearables-domain",
+    "run_id": "2026-09-02-wearables",
+    "searches": 6
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

@@ -1,0 +1,98 @@
+{
+  "model_id": "fujifilm-x100vi",
+  "make": "Fujifilm",
+  "model": "X100VI",
+  "category": "photo",
+  "subcategory": "digital camera",
+  "tier": "D2",
+  "tier_rationale": "The camera shoots, adjusts every setting, and writes to its SD card with no phone, app, or network involved at all. Fujifilm's own XApp page states wireless image transfer, remote control, and settings backup/restore work directly between camera and phone with no account — but its Timeline/Activity features require signing in to 'Fujifilm network service' via Facebook/Apple/Google, and the camera separately supports Frame.io Camera to Cloud natively. Because a vendor-reachable cloud exists for this device (Fujifilm's own network service, plus native Frame.io), this is D2 rather than D1, even though core photography never touches it.",
+  "the_unplug_test": "Nothing changes. The X100VI is a physical camera first: shutter, dials, and the SD card slot do everything a photographer needs, with no pairing step required. Turn off WiFi and Bluetooth entirely and you lose exactly two things — pushing images to a phone over the XApp, and the optional Timeline/Activity log, which is the one feature that needs a Fujifilm account (signed in via Facebook, Apple, or Google). The camera also natively supports Frame.io Camera to Cloud for instant delivery, which is a third-party service you opt into separately and never touches the camera unless you set it up.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "wireless image transfer to a phone via the FUJIFILM XApp",
+    "remote camera control/live view from the app",
+    "Timeline and Activity tracking, which requires signing in to Fujifilm's network service",
+    "Frame.io Camera to Cloud delivery, if the owner has opted into it"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble",
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Not researched within budget."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Fujifilm X (manufacturer)",
+      "url": "http://www.fujifilm-x.com/en-us/products/cameras/x100vi/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "http://www.fujifilm-x.com/en-us/products/software/xapp/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own XApp product page: wireless image transfer (with resizing), remote camera control/live view, and camera settings backup/restore work as direct device-to-app functions. Timeline and Activity tracking is the one feature gated behind sign-in: 'users need to sign-in to Fujifilm network service with social media authentication (Facebook, Apple, Google)' — establishing that a Fujifilm-operated cloud service exists for this camera line, even though it is not required for transfer, control, or settings.",
+      "archive_url": null
+    },
+    {
+      "url": "http://www.fujifilm-x.com/en-us/products/cameras/x100vi/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's product page confirms native, no-accessory Frame.io Camera to Cloud support ('X100VI supports Frame.io Camera to Cloud natively... can deliver photos or video straight to the cloud the moment after they are created'), a third-party opt-in cloud path separate from core capture.",
+      "archive_url": null
+    },
+    {
+      "url": "http://www.fujifilm-x.com/en-us/products/cameras/x100vi/specifications/",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer specification sheet: WiFi IEEE802.11a/b/g/n/ac with WPA3, Bluetooth Ver. 4.2 (BLE) at 2402-2480 MHz.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Current US price could not be confirmed from a fetchable manufacturer or retailer page within budget; this camera has also seen extended availability shortages and above-MSRP retailer pricing since launch, so a band was not recorded rather than guessed.",
+    "Whether basic Bluetooth/WiFi pairing to the XApp itself (as opposed to the Timeline/Activity feature specifically) ever prompts for Fujifilm account sign-in was not fully confirmed — the manufacturer's page reads as though only Timeline/Activity requires it, but this should be verified against the app's actual pairing flow.",
+    "Whether firmware updates can be declined, and what telemetry the camera or app sends to Fujifilm, are unconfirmed.",
+    "FCC check not performed — not required for a D2 tier claim, but would be worth doing if this record is later reconsidered."
+  ],
+  "conflicts_with": null,
+  "notes": "A clean illustration of the D1-vs-D2 distinction the project cares about: this camera has no forced cloud dependency for anything a photographer does, but a real Fujifilm-operated backend exists behind the optional Timeline/Activity feature, so it cannot be called D1 under the current rule that any vendor cloud at all caps the tier at D2.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-photo-domain",
+    "run_id": "2026-09-02-photo",
+    "searches": 0
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "Images are standard RAW/JPEG on SD card — any computer or NAS handles storage and backup with no vendor software required. The only unreplaceable pieces are Fujifilm's own Timeline/Activity log and Frame.io delivery, neither of which is core photography."
+}

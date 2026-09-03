@@ -1,0 +1,99 @@
+{
+  "model_id": "fi-series-3-plus",
+  "make": "Fi",
+  "model": "Series 3+",
+  "category": "baby-pet",
+  "subcategory": "pet tracker",
+  "tier": "REJECT",
+  "tier_rationale": "A GPS pet tracker whose purpose is finding a dog that is out of range, with tracking away from home Wi-Fi gated behind a paid membership sold in prepaid 6/12/24-month blocks plus a $20 activation fee. The bundle-only retail model is independently visible on Costco and Amazon listings, which name the included membership term in the product title. Sources disagree on how total the gating is — one reports the current-generation collar will not enable at all without an active membership, another describes it as losing out-of-range GPS specifically — so this record rejects on the narrower, better-supported claim: the paid plan is unavoidable for the function people buy the device for. The stronger claim is left as an open question rather than asserted.",
+  "status": "rejected",
+  "rejection_reason": "Subscription-gated core function, sold bundle-only. Locating the dog when it is away from a known Wi-Fi network — the entire reason to buy a GPS collar — requires an active paid Fi membership plus a one-time activation fee; there is no free tier and no local-only mode. Fi does not sell the hardware standalone: major retailers list the collar only as a bundle with a prepaid plan (Costco '14-Month Membership', Amazon '[12 Month Membership Included]'), so there is no purchase path that yields working hardware without buying service.",
+  "the_unplug_test": "Nothing to unplug — this device only matters when your dog leaves the house, and that is exactly when it needs a live cellular data connection to Fi's servers, not your home network. Inside Wi-Fi range it can still log steps and sleep and alert you to a geofence breach. The moment the dog is out of Wi-Fi range without an active membership, the collar cannot tell you where it is, which is the one job you bought it to do.",
+  "account_required": "for_core",
+  "works_offline": "partially",
+  "offline_losses": [
+    "live GPS location outside home Wi-Fi range without an active paid membership",
+    "Lost Dog Mode / live tracking",
+    "possibly all collar function on newer units without an active membership, per one source"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "heavy",
+  "radios": [
+    "cellular",
+    "ble",
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$99-339 per membership term (6/12/24-month prepay) plus a $20 activation fee; collar is bundled with the plan, not sold separately",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": null,
+  "sources": [
+    {
+      "url": "https://lifewithkleekai.com/how-much-does-fi-series-3-dog-collar-cost/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "States 'You will need a membership to enable Fi Series 3+ dog collars,' a change from the prior Series 2 which allowed some use without a subscription. Lists a $20 one-time activation fee and prepaid membership pricing of $99/6mo, $189/12mo, $339/24mo with no month-to-month option.",
+      "archive_url": null
+    },
+    {
+      "url": "https://staceyoniot.com/the-fi-collar-is-what-you-get-the-dog-who-has-everything/",
+      "class": "B",
+      "accessed": "2026-09-02",
+      "supports": "Independent hands-on review confirming live location tracking outside home Wi-Fi range requires the paid annual subscription; without it the collar still logs steps, sleep, and geofence alerts inside Wi-Fi range but cannot perform live tracking, which the reviewer identifies as the product's core purpose.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.costco.com/p/-/fi-series-3-smart-dog-collar-gps-tracker-and-activity-health-monitor-14-month-membership/4000375586",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "Retail listing sells the Series 3+ only as 'Fi Series 3+ Smart Dog Collar - GPS Tracker and Activity & Health Monitor, 14-Month Membership'. Corroborates that the hardware is not sold standalone: the membership term is part of the SKU. Independent of the two cost-breakdown sources; a second such listing appears on Amazon with a '[12 Month Membership Included]' title.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No verified local-only or subscription-free pet tracker exists yet in this catalog to list as an alternative. Finding one (or confirming none exists at acceptable evidence) is a discovery task.",
+    "Whether the newer Series 3+ truly refuses to function at all without any membership (as one source claims) versus only losing out-of-range GPS (as another source describes for the collar generally) is unresolved between the two sources and should be confirmed against Fi's own support documentation, which returned 403 to automated fetch.",
+    "FCC grant not located under 'Fi Series 3' search; a grantee-level search (the company operates as Fi, formerly Fi Technology) was not completed within budget.",
+    "Current US price/availability directly from fi.com was not confirmed; figures here come from a third-party cost breakdown."
+  ],
+  "conflicts_with": null,
+  "notes": "Listed because pet GPS trackers with mandatory cellular plans are one of the clearest subscription traps in this domain, and Fi is the market leader by visibility. This is not a claim that Fi's hardware is poorly made — only that the specific capability a buyer purchases this collar for does not work without an ongoing payment, which meets the REJECT bar in the principles ('a subscription gates a hardware capability') independent of build quality.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published as REJECT.",
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-03",
+      "change": "Rejection narrowed to the claim the sources actually establish (paid plan unavoidable for out-of-range tracking; hardware sold bundle-only) after two cited sources were found to disagree on whether the collar functions at all without a membership. Retail listing added as independent corroboration of bundle-only sale.",
+      "kind": "correction",
+      "source": "https://www.costco.com/p/-/fi-series-3-smart-dog-collar-gps-tracker-and-activity-health-monitor-14-month-membership/4000375586"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-baby-pet",
+    "searches": 2,
+    "failed_fetches": 2
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No documented local-only mode. Location data outside home Wi-Fi is inherently cellular and vendor-relayed; there is no self-hosted or LAN alternative for the GPS function."
+}

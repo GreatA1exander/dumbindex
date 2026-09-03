@@ -1,0 +1,86 @@
+{
+  "model_id": "petlibro-granary-camera-feeder",
+  "make": "PETLIBRO",
+  "model": "Granary Smart Camera Feeder",
+  "category": "baby-pet",
+  "subcategory": "pet feeder",
+  "tier": "REJECT",
+  "tier_rationale": "The manufacturer's own product page lists 'Create an account in the Petlibro app' as a step in setting up the feeder, and presents app-based scheduling ('use the app to easily set custom meal portions and times') as the way to configure it. An account mandatory at setup is one of the decision table's REJECT triggers on its own, independent of how well the device behaves afterward.",
+  "status": "rejected",
+  "rejection_reason": "Account creation in the Petlibro app is part of the manufacturer's own documented setup process, which the decision table treats as disqualifying regardless of subsequent offline behavior. This is despite the device otherwise being unusually well-behaved offline: PETLIBRO's own page states meal schedules 'will be carried out normally' when the unit is running on battery power alone with WiFi, camera, and buttons disabled — a genuinely better offline story than most connected feeders. It is the mandatory account at initial setup, not day-to-day dependence, that fails the bar.",
+  "the_unplug_test": "Once it has been programmed, the feeder keeps dispensing on its stored schedule with no WiFi and no power beyond its batteries — PETLIBRO's own documentation confirms this explicitly. What you cannot do is reach that state in the first place without creating a Petlibro account in their app during setup, and you lose the camera, video recording, and remote feeding controls entirely without WiFi. Camera footage itself does not require a paid subscription to view live, but cloud video history does ($47.99-$95.99/year); a local microSD card is offered as a subscription-free alternative for recordings.",
+  "account_required": "for_setup",
+  "works_offline": "partially",
+  "offline_losses": [
+    "camera and video recording (disabled entirely on battery power per manufacturer)",
+    "remote/app-based feeding and schedule changes",
+    "record and reset buttons (disabled on battery power)",
+    "cloud video history without a paid plan"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": "2A3DE-PLAF203U",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$130-145",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": null,
+  "sources": [
+    {
+      "url": "https://petlibro.com/products/petlibro-granary-automatic-pet-feeder-with-camera",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Manufacturer's own product page: setup instructions include 'Create an account in the Petlibro app'; schedule is set via the app; on battery-only power WiFi, camera, record, and reset functions are disabled but 'meal schedules will be carried out normally'; camera works without a subscription but cloud video history costs $47.99/yr (7-day) or $95.99/yr (30-day), with a microSD card offered as a non-cloud local storage option; price $139.99.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2A3DE-PLAF203U",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grant 2A3DE-PLAF203U for the 'GRANARY Smart Camera Feeder' (grantee Shenzhen Libro Technology Co., Ltd.) confirms WiFi and Bluetooth radios (2402-2480 MHz and 5180-5825 MHz).",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether the touch control panel on the camera model (AF203/PLAF203) can set a feeding schedule with no app and no account was checked against the PLAF203 manual and left unresolved: the manual's control section says only 'Download and install the PETLIBRO app' and 'Follow the instructions to configure the network', and documents no on-unit scheduling procedure. PETLIBRO's own support article for the NON-camera Granary (AF005/AF006) does document a full on-unit schedule procedure using the Setting and +/- buttons — so the capability exists in the product line and its absence from the camera model's manual may be an omission rather than a limitation. Settling this needs the printed manual or the device in hand.",
+    "The non-camera Granary (AF005/AF006) is a strong candidate record in its own right and would be the natural alternative to list here: PETLIBRO documents on-unit schedule programming for it. It has not been researched or verified yet — until it is, this rejection has no alternative to point at.",
+    "No verified non-connected or account-free automatic pet feeder exists yet in this catalog to list as an alternative. Finding one is a discovery task.",
+    "Whether firmware updates can be declined is unconfirmed."
+  ],
+  "conflicts_with": null,
+  "notes": "The interesting finding here is not that this feeder is badly behaved offline — by its own documentation it keeps a schedule running on batteries alone, which is better than many competitors — but that the project's own bar for D2 requires account-free setup, and this device's manufacturer-documented setup path does not offer that. Worth revisiting if PETLIBRO's manual turns out to describe a genuine app-free path via the touch panel.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published as REJECT.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-baby-pet",
+    "searches": 0,
+    "failed_fetches": 5
+  },
+  "local_replacement": "partial",
+  "local_replacement_note": "Video can be kept off the cloud entirely by recording to a local microSD card instead of subscribing to Video Cloud storage. There is no way to avoid the app/account for the initial schedule setup or for remote feeding, so the replacement is partial rather than full."
+}

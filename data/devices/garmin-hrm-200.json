@@ -1,0 +1,97 @@
+{
+  "model_id": "garmin-hrm-200",
+  "make": "Garmin",
+  "model": "HRM 200",
+  "category": "wearables",
+  "subcategory": "heart rate monitor",
+  "record_type": "device",
+  "tier": "D2",
+  "tier_rationale": "Garmin operates the Garmin Connect cloud, and the HRM 200's own manual documents a distinct, optional pairing path to it ('Pairing the HRM 200 with the Garmin Connect App') used only to customize settings and push firmware. Core function — broadcasting live heart rate over ANT+ or open Bluetooth to any compatible watch, bike computer, or third-party fitness app — is a separate pairing path ('Pairing the HRM 200 with Your Garmin Device' / 'Connection Types and LED Behavior') that needs no app and no account: you press the module's button and select it from the receiving device's own sensor or Bluetooth menu. Vendor cloud exists, setup for core function requires no account, and core function works fully unconnected — the D2 row.",
+  "the_unplug_test": "The strap keeps broadcasting your heart rate over ANT+ and open Bluetooth to anything listening — a Garmin watch, a bike computer, Zwift, gym equipment — with the router off, no phone nearby, and no Garmin account ever created. Pairing to a receiving device is done entirely with the module's own button and the receiving device's own sensor menu; nothing in that path touches Garmin's servers. The only thing gated behind Garmin Connect is a separate, optional app pairing that lets you customize settings and receive firmware updates — skip it and the strap works exactly the same.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "renaming the sensor and customizing its connection-type default via the Garmin Connect app",
+    "firmware updates, which the manual ties to the Garmin Connect app pairing path"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": "IPH-04896",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "User-replaceable CR2032 coin cell in the detachable sensor module; the fabric strap is sold separately and is machine washable, so the wear part and the electronics are decoupled."
+  },
+  "availability": "in_stock",
+  "price_band": "$75-85",
+  "price_observed": "2026-09-02",
+  "where_to_buy": [
+    {
+      "name": "Garmin (manufacturer)",
+      "url": "https://www.garmin.com/en-US/p/1530957/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-0051374C-9A59-48A9-9E6F-ED99E5B0EF39/EN-US/GUID-F3038D0B-4C93-4D16-A964-4247C2338F4D.html",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Official Garmin HRM 200 owner's manual, 'Pairing and Setup' section. Documents two connection types (secure Bluetooth, and open ANT+/Bluetooth recommended for third-party smartwatches, tablets and fitness equipment), both paired directly from the module's button and the receiving device's own menu with no app involved. Separately documents 'Pairing the HRM 200 with the Garmin Connect App' as an additional, distinct step whose stated purpose is to 'customize settings and receive software updates' — i.e. optional, not required for the sensor to transmit heart rate."
+    },
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-0051374C-9A59-48A9-9E6F-ED99E5B0EF39/EN-US/GUID-6CD12A23-4E0A-4B6B-9CB0-6578AB5FFCF1.html",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "Official specifications page: user-replaceable CR2032 3V battery, up to 1 year life at 1 hr/day, 3 ATM (30 m) water resistance, 2.4 GHz wireless."
+    },
+    {
+      "url": "https://fccid.io/IPH-04896",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "FCC grant for Garmin International Inc (grantee IPH), product 04896, filed under the HRM 200's own model designation: Digital Transmission System transceiver, Part 15C, 2402-2480 MHz — the Bluetooth/ANT+ ISM band, confirming the intentional radiator and its certification. Application dated 2024-12-27, granted 2025-01-24, user manual exhibit titled 'HRM 200 Quick Start Manual'."
+    },
+    {
+      "url": "https://www.rei.com/product/hrm-200-heart-rate-monitor",
+      "class": "C",
+      "accessed": "2026-09-02",
+      "supports": "Current US retail listing: $80, in stock — corroborates price and availability alongside Garmin's own $79.99 MSRP and matching listings at Walmart, Best Buy and evo.com."
+    }
+  ],
+  "open_questions": [
+    "Whether a pending firmware update can be declined once the module has been paired to the Garmin Connect app was not established within budget — the manual describes receiving updates via the app but not an opt-out.",
+    "The HRM 200 directly replaces the discontinued Garmin HRM-Dual (010-12883-00), which multiple Garmin Forums threads describe as having no Garmin Connect app pairing path at all — i.e. arguably a genuine D1 with zero vendor-cloud touchpoint. HRM-Dual appears to be sold out / retired at Garmin and major retailers as of this check and was not re-verified as a live record; if secondhand or old-stock units are confirmed still buyable new, it may be worth a separate discontinued-availability record contrasting with this one.",
+    "No vendors.json entry exists for Garmin. A 2020 ransomware attack caused a multi-day Garmin Connect outage (widely reported) but is a security incident, not a documented case of Garmin removing function from an already-sold device, so it was not treated as grounds for a nonzero vendor_risk here. A fuller search for deliberate feature removals or forced-subscription incidents was not done within this device's budget and is worth a dedicated pass."
+  ],
+  "conflicts_with": null,
+  "notes": "The interesting fact here is generational: the HRM-Dual this replaces had, per user reports, no Garmin Connect app pairing at all and would have been a strong D1 candidate (radio present, no vendor cloud touches it). The current HRM 200 adds an optional Garmin Connect pairing for settings and firmware, which is enough under this project's rule ('if the vendor runs a cloud service this device can use, it is at best D2') to move the whole product down a tier even though the moment-to-moment behavior — a chest strap broadcasting BLE/ANT+ heart rate to whatever is listening — is functionally identical to its D1 predecessor.",
+  "first_published": "2026-09-02",
+  "last_verified": "2026-09-02",
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-wearables-domain",
+    "run_id": "2026-09-02-wearables",
+    "searches": 10
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No self-hosted substitute found for Garmin Connect's settings-customization and firmware-update path. This does not affect core function, which never depended on the cloud in the first place."
+}
