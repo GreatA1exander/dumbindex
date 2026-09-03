@@ -15,6 +15,13 @@ const R = (...p) => resolve(ROOT, ...p);
 const DEVICES = R("data/devices");
 const TAX = JSON.parse(readFileSync(R("schema/taxonomy.json"), "utf8"));
 const DOMAINS = new Map(TAX.domains.map(d => [d.slug, new Set(d.subcategories)]));
+const SCHEMA = JSON.parse(readFileSync(R("schema/device.schema.json"), "utf8")).properties;
+// Driven off the schema itself so the two cannot drift apart. A hand-maintained copy of
+// the allowed values here would be wrong within a month — the radios enum alone has been
+// extended twice by agents who found something it had no honest tag for.
+const ENUMS = Object.entries(SCHEMA)
+  .map(([k, v]) => [k, v.enum ?? v.items?.enum])
+  .filter(([, allowed]) => allowed);
 const LEDGER = JSON.parse(readFileSync(R("data/vendors.json"), "utf8")).vendors;
 // Same match rule the site uses, so a record that validates also renders a vendor link.
 const ledgerFor = make => Object.values(LEDGER).find(v =>
@@ -68,6 +75,15 @@ for (const f of files) {
   // dated, sourced incident behind it is exactly the vibes-based judgement the ladder
   // exists to prevent — and it is invisible on the site, since /vendors renders the
   // ledger rather than the record.
+  // The schema declares enums; nothing was checking them. An out-of-enum value is not a
+  // cosmetic slip — it silently drops the field out of every site filter that switches on
+  // it, so the record renders looking complete while answering nothing.
+  for (const [k, allowed] of ENUMS) {
+    if (d[k] === undefined || d[k] === null) continue;
+    for (const v of Array.isArray(d[k]) ? d[k] : [d[k]])
+      if (!allowed.includes(v)) E(`${k} = ${JSON.stringify(v)} is not one of: ${allowed.join(", ")}`);
+  }
+
   if (d.vendor_risk > 0) {
     const v = ledgerFor(d.make);
     if (!v) E(`vendor_risk ${d.vendor_risk} but no entry for "${d.make}" in data/vendors.json — score it from a dated incident or drop it to 0`);

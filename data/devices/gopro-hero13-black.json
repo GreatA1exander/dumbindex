@@ -5,17 +5,18 @@
   "category": "photo",
   "subcategory": "action camera",
   "tier": "D2",
-  "tier_rationale": "Ships with WiFi 6, Bluetooth, the Quik app, and GoPro's own cloud storage/auto-upload subscription, but the camera's own buttons and on-screen menu record video and photo, select resolution/frame rate, and adjust advanced settings like Protune with no app, no account and no network at all. GoPro Cloud is explicitly an optional subscription add-on, not a requirement to operate the camera, so this lands D2 rather than D1 or REJECT.",
-  "the_unplug_test": "It keeps shooting. Every core control — record, mode, resolution, frame rate, Protune — lives on the camera's own touchscreen and buttons, and footage writes straight to the microSD card with no phone or network involved at any point. What you lose without WiFi is the Quik app's live preview and remote control, GoPro's optional cloud auto-upload/backup subscription, and automatic highlight-reel generation. None of those touch the act of capturing video.",
+  "tier_rationale": "Ships with WiFi 6, Bluetooth, the Quik app, and GoPro's own cloud storage subscription, but the camera's own buttons and touchscreen record video and photo, select resolution and frame rate, and adjust Protune with no app, no account and no network. The HERO13 Black manual settles the deciding question directly: 'Getting Started' is SD card, battery, charge — there is no app step, no activation step and no GoPro account anywhere in it, and the Quik app appears throughout the manual only as a 'PRO TIP: you can also' alternative to on-camera controls. GoPro Cloud is a paid subscription for backup and highlight generation, not a path the footage has to travel. Vendor cloud exists and is genuinely optional: D2. One real caveat, from the vendor's own manual: 'You must update your camera before you can use it.' The update is mandatory on a new camera, but it is not account-gated and there are two documented paths — the Quik app, or a manual download from gopro.com/update applied without the app. So the camera needs a firmware file from GoPro once, at unboxing, before it will work; it does not need an account, and it never needs one again.",
+  "the_unplug_test": "It keeps shooting. Every core control — record, mode, resolution, frame rate, Protune — lives on the camera's own touchscreen and buttons, and footage writes straight to the microSD card with no phone or network involved. The one thing a brand-new camera does need from GoPro is the mandatory first firmware update, which can be fetched on a computer from gopro.com/update rather than through the app or an account. After that the camera is self-sufficient. What you lose without WiFi is the Quik app's live preview and remote control, the optional cloud auto-upload subscription, and automatic highlight reels. None of those touch the act of capturing video.",
   "status": "verified",
   "rejection_reason": null,
-  "account_required": "app_only",
+  "account_required": "none",
   "works_offline": "fully",
   "offline_losses": [
     "Quik app live preview and remote control from a phone",
     "GoPro Cloud auto-upload and unlimited cloud backup (subscription feature)",
     "automatic highlight-video generation, which runs on uploaded footage",
-    "live streaming to Facebook Live/YouTube via the app"
+    "live streaming to Facebook Live/YouTube via the app",
+    "the mandatory first-use firmware update, which needs an internet-connected phone or computer once — though not an account, and not the camera itself"
   ],
   "firmware_ota_forced": "unknown",
   "local_api": [
@@ -60,11 +61,17 @@
       "accessed": "2026-09-02",
       "supports": "Independent guide confirming GoPro cameras record photo/video and adjust resolution, frame rate, field of view and advanced Protune settings entirely through the camera's own power button, mode button and on-screen menu, with no app, account or phone required. Notes editing and large-screen review are the parts that need a separate device.",
       "archive_url": null
+    },
+    {
+      "url": "https://www.adorama.com/col/productManuals/GPHERO13A.pdf",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "GoPro's own HERO13 Black user manual (retailer-hosted PDF; gopro.com returned server errors to automated fetch). 'Getting Started' covers only SD card, battery and charging — no app, account or activation step appears in it, and 'POWERING ON' is 'Press the Mode button to turn on your camera.' The Quik app is introduced later and appears throughout as an optional alternative ('PRO TIP: You can also use the GoPro Quik app to change your camera settings'). The manual also states 'You must update your camera before you can use it', and documents two paths: 'Updating With the GoPro Quik App' and 'Updating Manually' via gopro.com/update. Neither mentions a GoPro account.",
+      "archive_url": null
     }
   ],
   "open_questions": [
-    "Whether first-boot activation ever forces a QR-code app pairing before the camera will record (some GoPro models have prompted this in the out-of-box flow) was not confirmed from a source that could be fetched — gopro.com's own Getting Started and Out-of-Box-Experience pages returned server errors to automated fetch during this check.",
-    "Whether firmware updates can be declined, or are pushed automatically once the camera is on WiFi, is unconfirmed.",
+    "The mandatory first update can be applied without the app, but whether SUBSEQUENT updates can be declined indefinitely once the camera has been paired to Quik is not stated in the manual — the manual says only that the app checks for new software every time it connects. Worth settling, since it is the difference between a stable D2 and one that drifts.",
     "What telemetry, if any, the camera or app sends to GoPro when connected but before any cloud subscription is active (phones_home) is unconfirmed."
   ],
   "conflicts_with": null,
@@ -77,6 +84,12 @@
       "change": "First published at D2.",
       "kind": "listed",
       "source": null
+    },
+    {
+      "date": "2026-09-03",
+      "change": "Deciding fact resolved from the manufacturer's manual: no app or account step exists in first-use setup, so account_required moves app_only -> no and the D2 holds on primary evidence rather than a hedge. The same source turned up a caveat the record had missed — GoPro states the camera must be updated before it can be used at all — now recorded, with the manual (non-app, non-account) update path noted.",
+      "kind": "correction",
+      "source": "https://www.adorama.com/col/productManuals/GPHERO13A.pdf"
     }
   ],
   "agent_meta": {
