@@ -1,0 +1,90 @@
+{
+  "model_id": "midland-mxt275",
+  "make": "Midland",
+  "model": "MXT275 15W MicroMobile GMRS Two-Way Radio",
+  "category": "automotive",
+  "subcategory": "CB radio",
+  "tier": "D0",
+  "tier_rationale": "Midland's own full user guide documents every control on the unit (channel/volume knob, wired RJ45 microphone, menu button, PTT) and every function (GMRS channels, NOAA weather, repeater channels, privacy codes, squelch) with no mention anywhere of Wi-Fi, Bluetooth, an app, or an account. The only FCC grant found for this model (MMAMXT275, 'MOBILE GMRS TRANSCEIVER') covers only the licensed GMRS/repeater frequencies (462.55-462.725 MHz and 467.55-467.725 MHz) used for the radio's actual transmissions, not a Wi-Fi/Bluetooth band. Per the FCC heuristic, a licensed-service transceiver grant is expected for a radio and is not itself evidence of a cloud connection; there is no cloud connection here at all.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "There is nothing to unplug. The MXT275 is a vehicle-mounted GMRS two-way radio: turn the knob, pick a channel, press the microphone's push-to-talk button. It has a wired control microphone (RJ45 connector, not wireless), no Wi-Fi, no Bluetooth, no app, and no account of any kind. Every function documented in Midland's own user guide — channel scan, NOAA weather alerts, repeater channels, privacy codes — runs entirely inside the radio. Nothing about it can be revoked, updated against your will, or tied to a vendor server, because it was never connected to one.",
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "two_way_radio"
+  ],
+  "fcc_id": "MMAMXT275",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$180-220",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Midland Radio (manufacturer)",
+      "url": "https://midlandusa.com/products/mxt275-micromobile-gmrs-two-way-radio"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://support.midlandusa.com/hc/en-us/articles/32485623350935-Midland-MXT275-MicroMobile-GMRS-Radio-Full-User-Guide",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own full user guide: documents every control, menu function and specification of the radio (channels, privacy codes, squelch, repeater use, weather alerts, wired RJ45 microphone) with zero mention of Wi-Fi, Bluetooth, an app, or any account anywhere in the document, including the dedicated Specifications section.",
+      "archive_url": null
+    },
+    {
+      "url": "https://midlandusa.com/products/mxt275-micromobile-gmrs-two-way-radio",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own product page: describes a 'Fully-Integrated Control Microphone' (wired, not the wireless Bluetooth mic Midland sells on its newer MXT295 PRO) and lists price as $199.99 USD; no app or connectivity feature is described.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/search?q=Midland+MXT275",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grant MMAMXT275 (Midland Radio Corporation, 'MOBILE GMRS TRANSCEIVER'), covering only 462.55-462.725 MHz and 467.55-467.725 MHz — the licensed GMRS/repeater transmit frequencies described in the user guide. No Part 15 Wi-Fi/Bluetooth grant exists for this model; the only radio in the device is the GMRS transceiver itself.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "The schema's `radios` enum (wifi, ble, zigbee, zwave, thread, cellular, lora, nfc, rfid_lf, dect, proprietary_subghz, proprietary_24ghz, ir, unknown) has no value for a licensed-service two-way radio (CB/GMRS/FRS transceiver at 27 MHz or 462-467 MHz). This device's entire function IS its radio transceiver, so tagging `radios: [\"unknown\"]` understates what is known; a human should consider adding a value such as `gmrs_cb` or `licensed_2way` to the schema. This is a taxonomy gap, not missing evidence — the FCC grant (MMAMXT275) fully documents the actual radio.",
+    "Whether the MXT275 requires the owner to hold an FCC GMRS license to legally transmit (it does, per Midland's own FCC Notice in the manual) was confirmed, but this is a legal/regulatory requirement rather than a vendor/account dependency and does not affect the tier.",
+    "Current exact street price beyond the manufacturer's listed $199.99 was not cross-checked against retailers."
+  ],
+  "conflicts_with": null,
+  "notes": "First CB/GMRS radio record in the catalog. A clean illustration of the FCC sibling heuristic worked as intended: Midland sells this wired-mic model alongside the MXT295 PRO, which explicitly adds a 'Fully-Integrated Wireless Bluetooth Microphone' as its headline feature — the vendor's own marketing draws the exact line this record needed, and the absence of any Bluetooth/Wi-Fi grant for the MXT275 is meaningful because Midland demonstrably would have filed one if the radio had it.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "automotive-wave-2",
+    "run_id": "2026-09-03-automotive-2",
+    "searches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

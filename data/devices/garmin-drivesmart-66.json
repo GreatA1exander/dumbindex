@@ -1,0 +1,112 @@
+{
+  "model_id": "garmin-drivesmart-66",
+  "make": "Garmin",
+  "model": "DriveSmart 66",
+  "category": "automotive",
+  "subcategory": "GPS navigation",
+  "tier": "D2",
+  "tier_rationale": "Garmin operates a real cloud (Garmin Drive app services for live traffic/weather/notifications, plus Garmin Express for updates), but the device ships with maps preloaded and Garmin's own manual states setup (mount, acquire GPS, adjust volume/brightness, start a route) requires no account or phone pairing at all — pairing with the Garmin Drive app and signing into a Garmin account is a separate, explicitly optional step described only in the 'Live Services, Traffic, and Smartphone Features' section for live traffic, weather, smart notifications, hands-free calling and Alexa. Turn-by-turn navigation with preloaded maps is core function and works fully unconnected.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "Nothing changes for driving directions. The DriveSmart 66 has maps for the whole country loaded on the device at purchase, and Garmin's own Getting Started sequence — mount it, let it get a GPS fix, start a route — never mentions Wi-Fi, an app, or an account. Leave it disconnected forever and turn-by-turn navigation, search, and rerouting all work. What you lose is live traffic and weather overlays, smart notifications relayed from a paired phone, hands-free calling, Alexa voice features, and the convenience of over-the-air map updates (map updates are still possible offline via Garmin Express on a computer instead of Wi-Fi).",
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Live traffic incident and delay data (requires Garmin Drive app pairing)",
+    "Real-time weather forecasts and radar overlays (requires Garmin Drive app pairing)",
+    "Smart notifications and hands-free calling relayed from a paired phone",
+    "Amazon Alexa voice skills",
+    "Convenience of in-place Wi-Fi map/software updates (an alternate offline path exists via Garmin Express on a computer)"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": "IPH-04159",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Garmin (manufacturer)",
+      "url": "https://www.garmin.com/en-US/p/779951"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-6E5DFD2E-EEE4-4EF3-89BC-AACD1B4936C7/EN-US/GUID-4361FE17-E8A8-4262-9D4F-F53C8AE93E45.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own 'Getting Started' manual page: the entire out-of-box sequence (update maps/software, mount, connect power, acquire GPS, adjust volume/brightness, navigate to a destination) contains no account-creation or app-pairing step."
+    },
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-6E5DFD2E-EEE4-4EF3-89BC-AACD1B4936C7/EN-US/GUID-9983ED7E-888E-4AD6-A449-CBD17B7838C5.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer manual 'Pairing with Your Smartphone': explicitly frames Garmin Drive app pairing and Garmin account sign-in as an action taken 'to enable additional features and access live information (Live Services, Traffic, and Smartphone Features)', not as a required setup step."
+    },
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-6E5DFD2E-EEE4-4EF3-89BC-AACD1B4936C7/EN-US/GUID-36CFBF17-D731-4AEE-BB6C-1F4EA35E4F26.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer manual 'Live Services, Traffic, and Smartphone Features' page enumerates every cloud/phone-dependent feature (voice navigation extras, Alexa, live traffic, live weather, hands-free calling, notification relay) as features of the paired-phone connection, confirming these — not turn-by-turn navigation itself — are what the vendor cloud/app provides."
+    },
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-6E5DFD2E-EEE4-4EF3-89BC-AACD1B4936C7/EN-US/GUID-5CCAA7C1-737A-4414-BA2B-BB5AB2E23869.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer manual 'Map and Software Updates' page: device ships with maps that work without updating; updates are offered via Wi-Fi 'or' via a computer using the Garmin Express application, so Wi-Fi is not the only path and updates are not described as mandatory for the device to function."
+    },
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-6E5DFD2E-EEE4-4EF3-89BC-AACD1B4936C7/EN-US/GUID-9C6B3F87-E9E1-4F18-B26A-1DA22ECE4A76.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer manual Specifications page: radio frequency spec for the DriveSmart 66 lists 2.4 GHz, 5.1 GHz and 5.2 GHz bands (Wi-Fi); Bluetooth pairing is documented separately for the smartphone-pairing feature."
+    },
+    {
+      "url": "https://fccid.io/IPH04159",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grant IPH-04159 (Garmin International Inc, 'Digital Transmission System Transceiver'), original equipment authorization dated 2021-09-10, covering 2402-2480 MHz, 2412-2462 MHz, 5180-5240 MHz and 5745-5825 MHz — matching the Wi-Fi/Bluetooth bands listed in the DriveSmart 66/76/86 manual's own specifications page. Confirms the radio module is FCC-authorized."
+    }
+  ],
+  "open_questions": [
+    "Whether firmware/software updates can be permanently declined, or are ever pushed without user action once Wi-Fi is connected, was not established from the manual.",
+    "Exact telemetry/analytics traffic sent to Garmin's servers once the device is Wi-Fi-connected or app-paired (phones_home) was not documented in the manual.",
+    "Current US price band was not confirmed; Garmin sells several DriveSmart trims (66, 76, 86) at different prices and the exact current street price was not checked to conserve search budget."
+  ],
+  "conflicts_with": null,
+  "notes": "First GPS navigation record in the catalog. Distinguishes the core product (offline turn-by-turn on preloaded maps, no account) from the optional Garmin Drive/Garmin Connect cloud layer (live traffic, weather, notifications, Alexa) — a clean case of the D1-vs-D2 line landing on D2 because a real named vendor cloud exists and is documented as optional rather than absent.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "automotive-wave-2",
+    "run_id": "2026-09-03-automotive-2",
+    "searches": 0
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No documented way to self-host Garmin's live traffic/weather feed or the Garmin Drive notification relay; a reader who wants those specific features has no local substitute, but they are not required for the device's core navigation function."
+}

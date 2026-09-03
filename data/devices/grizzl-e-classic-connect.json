@@ -1,0 +1,114 @@
+{
+  "model_id": "grizzl-e-classic-connect",
+  "make": "United Chargers",
+  "model": "Grizzl-E Classic Connect 40A",
+  "category": "automotive",
+  "subcategory": "EV charger",
+  "tier": "D2",
+  "tier_rationale": "The manufacturer's own support article states plainly: 'The Grizzl-E Smart will still charge the vehicle without a Wi-Fi connection. The charger will act as a dumb charger and follow the instructions from the vehicle. The app and smart feature will not be usable' — core charging is unaffected by connectivity, and only scheduling, usage tracking, remote control and demand-response participation require the Grizzl-E Connect app and its account. Wi-Fi setup is a separate, skippable step from installation (plug in, charge), so this is cloud-optional with core function intact offline: D2.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "The car still charges. United Chargers' own support documentation for this charger platform states it will keep charging with no Wi-Fi connection at all, falling back to being a 'dumb charger' that just follows the vehicle's own charging request. What is lost without Wi-Fi and the Grizzl-E Connect app is the charging schedule, usage/cost tracking, remote start/stop, and enrollment in utility demand-response programs — conveniences layered on top of a charger that works the same as the wired-only Classic when disconnected. A minority of owner reports online describe charging stopping after a Wi-Fi drop, which conflicts with the vendor's own statement; this is noted rather than resolved (see open_questions).",
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Charging schedule set via the Grizzl-E Connect app",
+    "Real-time charging monitoring and usage/cost history",
+    "Remote start/stop and remote disable-to-prevent-unauthorized-use",
+    "Participation in utility Demand/Response programs"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$330-370",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Grizzl-E (manufacturer, United Chargers Inc.)",
+      "url": "https://grizzl-e.com/products/grizzl-e-classic-connect"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://autochargers.zendesk.com/hc/en-ca/articles/23410060971035-Can-the-Grizzl-E-Smart-Be-Used-Without-Wi-Fi",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "United Chargers' own support-center article, written by staff (Keith Newman), states directly that the Grizzl-E Smart platform 'will still charge the vehicle without a Wi-Fi connection', acting as a 'dumb charger' following the vehicle's own request, with only 'the app and smart feature' (scheduling, usage tracking) unavailable offline.",
+      "archive_url": null
+    },
+    {
+      "url": "https://grizzl-e.com/products/grizzl-e-classic-connect",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own product page and spec table: 'Smart function: Wi-Fi (2.4 GHz); Mobile Application'; marketing copy states the app lets you 'view charging statistics, set a charging schedule, participate in Demand/Response Utility programs, control your charger remotely' — confirming these (not basic charging) are what the Wi-Fi/app layer adds. Price observed as $349.99 USD.",
+      "archive_url": null
+    },
+    {
+      "url": "https://grizzl-e.com/connection-guide",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own Grizzl-E Connect setup guide: connecting to Wi-Fi and 'Create an account and sign in' are steps to use the Grizzl-E Connect app, described as a separate, subsequent action taken after the charger is already installed and wired — not a prerequisite the charger enforces before it will operate.",
+      "archive_url": null
+    },
+    {
+      "url": "https://grizzl-e.com/faq/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "United Chargers' own FAQ, naming this SKU explicitly rather than a sibling: 'Grizzl-E Wi-Fi connected chargers including Grizzl-E Classic Connect, Ultimate, Mini, and Duo Connect can connect to Wi-Fi and use the Grizzl-E Connect app for iOS or Android. These chargers can also operate in \"dumb\" mode and do not need to be connected.' Closes the gap left by the support article, which described the Grizzl-E Smart. No account is named as a requirement for charging.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "A minority of user reports (Reddit r/evcharging, a SaskEV Facebook post) describe charging stopping when Wi-Fi was previously connected and then dropped, which conflicts with United Chargers' own support-article claim of full offline function. These are Class C, uncorroborated, and may reflect a specific charging-schedule configuration rather than a hard Wi-Fi dependency, but the contradiction is not resolved here. If independently confirmed, this would not change the D2 tier (which rests on the vendor's own documented default behavior) but would be a candidate for the vendor ledger.",
+    "No FCC grant was found for United Chargers Inc. (grantee 2BOBH) covering this model's Wi-Fi module; it may be certified under a third-party module maker's own FCC ID rather than United Chargers' grantee code. Not load-bearing for the tier, which does not depend on the radio's certification status.",
+    "Whether firmware updates can be declined was not established."
+  ],
+  "conflicts_with": null,
+  "notes": "Pairs with grizzl-e-classic (D0) — same manufacturer, same charger body and current rating, $50 more for Wi-Fi/app/demand-response. A clean test of the D2 decision-table row: vendor cloud exists and is named (Grizzl-E Connect app + account), but the vendor's own support documentation states core charging survives disconnection, matching the D2 definition exactly.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-03",
+      "change": "Deciding fact re-sourced to a page naming the Classic Connect itself. The record previously rested on a support article about the Grizzl-E Smart and said so; United Chargers' FAQ states the Classic Connect 'can also operate in dumb mode and does not need to be connected'. Cross-link to the radio-free sibling made explicit.",
+      "kind": "correction",
+      "source": "https://grizzl-e.com/faq/"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "automotive-wave-2",
+    "run_id": "2026-09-03-automotive-2",
+    "searches": 0
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No documented local API, MQTT, or self-hosted alternative to the Grizzl-E Connect app's scheduling/monitoring was found; a reader who wants those features locally has no substitute, though they are not required for the charger to function.",
+  "alternatives": [
+    {
+      "model_id": "grizzl-e-classic",
+      "why": "The same charger body without the radio. If you do not want scheduling or usage tracking, the plain Classic sets its current with a physical DIP switch, has no Wi-Fi at all, and costs about $50 less — a D0 rather than a D2, from the same manufacturer, on the same shelf."
+    }
+  ]
+}

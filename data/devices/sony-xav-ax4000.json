@@ -1,0 +1,93 @@
+{
+  "model_id": "sony-xav-ax4000",
+  "make": "Sony",
+  "model": "XAV-AX4000",
+  "category": "automotive",
+  "subcategory": "head unit",
+  "tier": "D1",
+  "tier_rationale": "The unit has Wi-Fi and Bluetooth radios (FCC grant AK8XAVAX4000, 2402-2480 MHz and 5745-5825 MHz), but Sony's own Help Guide shows both are used only to pair directly with the driver's own phone for wireless Apple CarPlay/Android Auto and Bluetooth audio/calling — the wireless-CarPlay pairing instructions have the owner turn on Wi-Fi and Bluetooth 'of your iPhone' and select the head unit's name on the phone's own settings screen, a device-to-device pairing with no Sony server named anywhere in the setup flow. No Sony account, app, or cloud service is referenced in the manual for any function of this unit. No vendor cloud exists for this device, so per the decision table this is D1, not D2.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "Nothing about this head unit depends on the internet. It plays FM/AM radio and USB/Bluetooth audio with no phone connected at all. When you plug in an iPhone or Android phone (by USB or by pairing its own Wi-Fi/Bluetooth directly to the unit), you get Apple CarPlay or Android Auto — navigation, messaging and music are then supplied by apps running on the phone itself, not by Sony. Sony operates no cloud service this unit talks to and no Sony account exists to lose; unplugging the router at home has no effect on it because it was never connected to a home network in the first place.",
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Apple CarPlay / Android Auto features are supplied by the connected phone's own apps and connectivity, not by this unit, so they are unavailable without a phone present — this is phone dependency, not a Sony cloud dependency."
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": "AK8XAVAX4000",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Sony (manufacturer support page)",
+      "url": "https://www.sony.com/electronics/support/xav-series-navigation-receivers/xav-ax4000"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.sony.com/electronics/support/xav-series-navigation-receivers/xav-ax4000/specifications",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own specifications page: 'Connectivity' section lists only 'BLUETOOTH: Yes'; no Sony cloud service, subscription, or account feature appears anywhere in the full specifications table (Bluetooth profiles, tuner, monitor, USB, panel, etc).",
+      "archive_url": null
+    },
+    {
+      "url": "https://helpguide.sony.net/ev/xav-ax40/v1/en/contents/TP1000661350.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own Help Guide, 'Using Apple CarPlay Wirelessly': setup has the owner turn on Bluetooth, Wi-Fi and Apple CarPlay 'of your iPhone' and select the head unit's name on the iPhone's own settings screen to pair directly — a device-to-device pairing with no Sony account or server named in the flow. The page also warns about passkey-interception fraud during local pairing, confirming the connection is a direct radio link between the two devices.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/AK8XAVAX4000",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grant AK8XAVAX4000 (Sony Group Corporation, 'AV Receiver'), original equipment authorization dated 2022-01-13, covering 2402-2480 MHz (Bluetooth/2.4 GHz Wi-Fi range) and 5745-5825 MHz (5 GHz Wi-Fi range) — confirms both radios are present and FCC-authorized, consistent with the wireless CarPlay/Bluetooth pairing described in the manual.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether firmware updates can be declined, and whether they are ever pushed automatically rather than applied manually via USB, was not established from the manual sections reached in this run.",
+    "Current US price band was not confirmed to conserve search budget.",
+    "Whether the included GPS antenna feeds only CarPlay/Android Auto positioning or also drives any Sony-side feature (e.g. dead-reckoning for the built-in parking-assist display) was not fully traced; no Sony cloud or account use was found either way."
+  ],
+  "conflicts_with": null,
+  "notes": "First head unit record in the catalog, and a direct test of the D1/D2 line the VERIFIER guard warns about: this unit has both Wi-Fi and Bluetooth radios and looks cloud-capable at a glance, but Sony operates no cloud service for it at all — the radios exist solely to pair peer-to-peer with the driver's own phone for CarPlay/Android Auto mirroring. Reading this as D2 would be exactly the 'radios read as cloud' error the project has made before.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "automotive-wave-2",
+    "run_id": "2026-09-03-automotive-2",
+    "searches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}
