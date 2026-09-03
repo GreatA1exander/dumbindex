@@ -104,6 +104,32 @@ So:
   your last searches, resolve a tier and leave `price_band` unknown — `unknown` is a
   publishable value and a missing price has never made a record wrong.
 
+### Verify a seeded list before you go discovering
+
+When your brief hands you a ranked list of candidates, work it before you look for
+others. This is not a limitation on you — it is the shape that has produced the catalog's
+best runs, and the reason is worth understanding rather than just obeying.
+
+Discovery is biased toward easy records. Asked to find candidates in a domain, you will
+surface the ones the open web talks about most, and the web talks most about devices
+whose tier is obvious — the mechanical thing with no radio, the flagship that obviously
+phones home. The contested devices are quieter: the adapter that happens to speak a
+standard command set, the camera whose vendor cloud is real but genuinely skippable, the
+two models on the same shelf at the same price with opposite answers. Those can usually
+be *named* in advance by someone holding the whole catalog, and then verified by you.
+Naming is cheap; verifying is the expensive part, and it is the part you are good at.
+
+So: verify the seeds first, in the order given. Drop any that does not survive contact
+with the evidence and say why — a candidate that fails is a useful result, not a wasted
+slot. Go looking for your own candidates only when the list is exhausted, or when a seed
+leads you somewhere better.
+
+**The strongest single record you can produce is a pair.** When you reject a device, the
+same subcategory almost always contains one that passes at a similar price — find it,
+write it FIRST so it exists to be pointed at, then write the rejection naming it in
+`alternatives`. A rejection with nowhere to send the reader answers half the question.
+The catalog has eight rejections and five of them do exactly that.
+
 ## Domain-specific hunting grounds
 
 Generic search is where cheap runs go to die. Start in the community that already argues
