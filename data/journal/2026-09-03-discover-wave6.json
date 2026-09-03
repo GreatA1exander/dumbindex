@@ -1,0 +1,40 @@
+{
+  "run_id": "2026-09-03-discover-wave6",
+  "job": "discover",
+  "prompt_version": "tier-quota-v1 + seeded-candidates",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "Three agents on wearables, office and automotive, under the tier quota, each seeded with a ranked candidate list of contested devices and the specific tier error most likely in that domain.",
+
+  "outcome": "All three completed — the first wave since wave 1 where no agent was killed.",
+  "devices_added": 15,
+  "domains": {"automotive": 5, "office": 5, "wearables": 5},
+  "tier_split": {"D0": 5, "D1": 3, "D2": 7},
+
+  "findings": [
+    "The tier quota held across a full wave: 10 of 15 records above D0, against 3 of 17 two waves ago. It is not a one-run effect.",
+    "Two pairs were produced deliberately, which is now what SCOUT asks for. grizzl-e-classic (D0) and grizzl-e-classic-connect (D2) are the same EV charger body about $50 apart, differing only in whether there is a radio inside. prusa-mk4s and bambu-lab-a1 both land at D2 by different routes, which is a useful answer for a reader who assumed one of them was disqualifying.",
+    "Agents declined records for the right reasons and said so. Office dropped the Rigol DP832 because its LAN interface is a $140 add-on rather than standard, making the base SKU a D0 restating a fact the catalog already had, and dropped a second audio recorder with the same optional-Bluetooth story as the Zoom. That is the tier quota working without those specific devices being named.",
+    "The Bambu record is the clearest case yet of judging documentation over reputation. There is a great deal of coverage of the January 2025 authorisation-control firmware dispute and comparatively little documentation; the agent went to Bambu's current wiki, found SD-card printing bypasses the cloud and LAN Only plus Developer Mode still opens local MQTT/FTP with no account, and filed D2."
+  ],
+
+  "system_gaps_found": [
+    {"gap": "siglent-spd3303x was filed D1 with its own radios field reading ['none']. D1 means a radio exists and still has nowhere to phone home; no radio and no vendor cloud is D0. An Ethernet port is not a radio.",
+     "fix": "Corrected to D0, and validate.mjs now fails any D1 without a radio. This matters beyond one record: a tier quota gives agents a standing incentive to classify upward, and this is what that drift looks like when it is honest rather than dishonest — a defensible-sounding reason to call something more contested than it was. The incentive the quota creates is now checked mechanically."},
+    {"gap": "The ladder's D0 test ('no intentional radiator') is a proxy for 'cannot reach its maker', and two device classes break the proxy in opposite directions — a GMRS transceiver that transmits by design with no vendor behind it at all, and a PoE camera or Ethernet UPS that holds no radio grant and talks to its maker all day.",
+     "fix": "Both written into PRINCIPLES as explicit carve-outs, with the note that the sibling-control heuristic does not apply to Part 95/80 voice radios because a grant is expected there. The new D1 validator rule deliberately does not check D2/D3 for this reason."},
+    {"gap": "Two wearables records cited a DuckDuckGo results page routed through a text-extraction proxy as a source, while working around the exhausted search budget. A results page has no stable content and a proxied one has weaker provenance still.",
+     "fix": "Both replaced or removed; Polar's own support page carries the firmware claim verbatim. validate.mjs now rejects search engines and extraction proxies as source URLs, deliberately allowing fccid.io/search.php?q=... because for an absence-of-grant finding the search IS the evidence. The first version of that rule broke nine legitimate records before being narrowed."},
+    {"gap": "Fourth radios enum gap. ANT+ was being carried as 'unknown' or folded into ble, though it is an open published standard any compatible watch can receive with no vendor pairing — a different fact about who can read your data than Bluetooth.",
+     "fix": "Added ant_plus; tagged two new records and backfilled garmin-hrm-200. Also added two_way_radio for licensed voice transceivers in the same wave."}
+  ],
+
+  "honest_limitations": [
+    "The Cressi Leonardo was abandoned after roughly ten fetch attempts — cressi.com serves a broken TLS certificate and every retailer mirror tried returned 403, 404 or a DNS failure. It would have been the D0 contrast to the Shearwater D2 and is still worth having.",
+    "The session's WebSearch budget was exhausted before this wave began, and it shaped the output: one agent lost a record to fetch failures alone, and another produced the proxy citations described above. Seeded candidate lists mitigate this but do not replace search.",
+    "Bambu Lab is a live vendor-ledger candidate that all of this leaves unscored. The January 2025 dispute is dated and well covered; the agent correctly declined to score the vendor itself and left the record at 0.",
+    "Records were reviewed for schema, source class, tier/radio consistency, hedged deciding facts and citation quality. Two deciding facts were independently re-verified by the orchestrator (Grizzl-E Classic Connect, Polar H10); the other thirteen were not re-derived from primary sources."
+  ],
+
+  "wall_clock_min": 45,
+  "surprises": "The tier quota's own failure mode showed up in the same wave that proved the quota works. Told to produce contested records, an agent found a defensible reason to call a radio-free bench supply D1. Nothing about that was dishonest — the reasoning was written out plainly enough for a reviewer to catch it — but it is a reminder that every incentive this project adds to the briefs needs a corresponding check in the validator, or it will quietly bend the catalog."
+}
