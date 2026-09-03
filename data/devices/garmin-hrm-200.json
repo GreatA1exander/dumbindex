@@ -22,7 +22,8 @@
   ],
   "phones_home": "none",
   "radios": [
-    "ble"
+    "ble",
+    "ant_plus"
   ],
   "fcc_id": "IPH-04896",
   "fcc_checked": true,

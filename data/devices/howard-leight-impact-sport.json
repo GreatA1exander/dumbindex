@@ -1,0 +1,93 @@
+{
+  "model_id": "howard-leight-impact-sport",
+  "make": "Howard Leight (Honeywell)",
+  "model": "Impact Sport R-01526",
+  "category": "wearables",
+  "subcategory": "hearing protection",
+  "record_type": "device",
+  "tier": "D0",
+  "tier_rationale": "The Impact Sport R-01526 is an analog electronic earmuff: built-in directional microphones amplify ambient sound up to 4x and compress it back down once it hits 82dB, entirely as a local audio circuit with no data radio of any kind. Honeywell's own grantee (2AJKI) files FCC intentional-radiator grants for its Bluetooth-equipped hearing protection -- 'Impact Sport Bluetooth' (2AJKI-ISEMBT) and two in-ear Bluetooth models (2AJKI-ISINBT, 2AJKI-ISINHTBT) -- but the plain, non-Bluetooth Impact Sport R-01526 has no FCC filing under that grantee at all. That is the sibling-control pattern: this vendor demonstrably files when a model has a radio, and the absence for this model is meaningful rather than a search miss.",
+  "the_unplug_test": "Nothing changes, because nothing was ever connected. The earmuffs run on two AAA batteries and use a local amplify-and-compress circuit to let range commands and conversation through while clamping down hard, sudden noise -- the same behavior on day one and after ten years, with or without a phone, an app, or an internet connection anywhere nearby. There is no pairing, no account, and no firmware to update.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "User-replaceable 2x AAA batteries behind a snap-on compartment lid, per the manufacturer's own product description."
+  },
+  "availability": "in_stock",
+  "price_band": "$25-45",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Honeywell Store (manufacturer-affiliated retailer)",
+      "url": "https://www.honeywellstore.com/store/products/honeywell-howard-leight-impact-sport-electronic-earmuffs-5-pack-1030942.htm"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://fccid.io/2AJKI",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Full grant list for grantee Honeywell Safety Products USA, Inc. (2AJKI): five grants total, all for named Bluetooth or telemetry products (Impact Sport Bluetooth, two in-ear Bluetooth hearing-protection models, a firefighter telemetry system, and 'Sync Wireless'). No grant exists for a plain/non-Bluetooth Impact Sport model -- the sibling control establishing that the vendor files when a model has a radio, making the absence for R-01526 meaningful."
+    },
+    {
+      "url": "https://fccid.io/search.php?q=Howard+Leight+Impact+Sport+Bluetooth",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Confirms FCC ID 2AJKI-ISEMBT, 'Impact Sport Bluetooth', 2402-2480 MHz, filed by Honeywell Safety Products USA in 2021 -- the Bluetooth sibling model whose existence makes the plain model's lack of a grant meaningful rather than a search gap."
+    },
+    {
+      "url": "https://www.honeywellstore.com/store/products/honeywell-howard-leight-impact-sport-electronic-earmuffs-5-pack-1030942.htm",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer-affiliated retail listing for the plain (non-Bluetooth) Impact Sport Electronic Earmuffs: describes built-in directional microphones amplifying ambient sound to a safe 82dB, amplification up to 4x, automatic compression above 82dB, 22dB passive NRR, 4-hour auto shut-off, and no mention of Bluetooth or wireless features anywhere in the product description -- distinct listing from the separately-sold 'Bluetooth Impact Sport' model."
+    }
+  ],
+  "open_questions": [
+    "Exact current US retail price per single unit (as opposed to the 5-pack case price seen) was not independently confirmed within budget; price_band is estimated from typical single-unit listings seen across retailers, not a single authoritative figure.",
+    "Model number, NRR rating and battery type were originally corroborated from an aggregated search page, which has been removed as not being a source. These details are not load-bearing for the D0 — that rests on the FCC sibling-control absence — but they are now carried by the Honeywell store listing alone and would benefit from the printed manual."
+  ],
+  "conflicts_with": null,
+  "notes": "Chosen deliberately as the receiver-and-amplifier-only case, parallel to the Casio Wave Ceptor records already in the catalog: 'electronic hearing protection' sounds high-tech but the amplification is a local analog audio circuit, not a radio, and this exact product line demonstrates the point by selling a nearly identical Bluetooth sibling under a clearly different model name. First record in the empty 'hearing protection' subcategory.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-03",
+      "change": "Removed a citation pointing at a DuckDuckGo results page routed through a text-extraction proxy. It supported product details rather than the tier, and the D0 is unaffected: it rests on grantee 2AJKI filing for the Bluetooth Impact Sport variants and not for this one.",
+      "kind": "correction",
+      "source": "https://fccid.io/2AJKI"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-wearables-domain",
+    "run_id": "2026-09-03-wearables",
+    "searches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

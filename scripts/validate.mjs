@@ -71,6 +71,22 @@ for (const f of files) {
   for (const s of src) seen.set(s.url, (seen.get(s.url) ?? 0) + 1);
   for (const [u, n] of seen) if (n > 1) E(`cites the same URL ${n} times as separate sources — ${u}`);
 
+  // A search query is not a source. An agent working around an exhausted search budget
+  // cited a DuckDuckGo results page routed through a text-extraction proxy, as evidence,
+  // twice. Results pages have no stable content, cannot be checked by a reader a month
+  // later, and a proxied one has weaker provenance still — the claim arrives through an
+  // intermediary that could have altered it. Cite the page the search FOUND.
+  for (const s of src) {
+    const u = s.url.toLowerCase();
+    // Only web SEARCH ENGINES. fccid.io/search.php?q=... is deliberately allowed: for an
+    // absence-of-grant finding the search IS the evidence, and there is no other way to
+    // cite "no such grant exists".
+    if (/\/\/(www\.)?(duckduckgo|google|bing|startpage|ecosia|yandex|baidu)\.[a-z.]+\//.test(u))
+      E(`cites a search query as a source — cite the page the search found, not the search: ${s.url.slice(0, 90)}`);
+    if (/r\.jina\.ai|\/\/jina\.ai|corsproxy|allorigins|12ft\.io|textance/.test(u))
+      E(`cites a page through a text-extraction proxy — cite the original URL so a reader can check it directly: ${s.url.slice(0, 90)}`);
+  }
+
   // D1 means: a radio exists, and it still has nowhere to phone home. A device with no
   // radio and no vendor cloud is D0. Filing it as D1 overstates how contested it was —
   // and a tier quota gives agents a standing incentive to classify upward, so this is

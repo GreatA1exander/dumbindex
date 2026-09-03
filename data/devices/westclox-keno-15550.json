@@ -1,0 +1,81 @@
+{
+  "model_id": "westclox-keno-15550",
+  "make": "Westclox",
+  "model": "Keno 15550",
+  "category": "wearables",
+  "subcategory": "alarm clock",
+  "record_type": "device",
+  "tier": "D0",
+  "tier_rationale": "A traditional key-wound mechanical alarm clock: the movement and the bell alarm are both driven entirely by a wound spring. The manufacturer's own instruction manual states plainly, 'Your clock does not require batteries or electricity to operate,' and documents only mechanical controls -- a time winding key, an alarm winding key, an alarm on/off slide switch, and a mechanical +/- regulator lever -- with no battery compartment, cord, or electronic component anywhere. A device with no electrical power source at all cannot contain an intentional radiator, so this is the clearest possible D0: no radio because there is no electronics to hold one.",
+  "the_unplug_test": "There is no router to unplug and nothing to notice its absence. The clock keeps time and rings its bell alarm purely from a wound mainspring; you rewind it by hand every day or two. It has worked exactly the same way, with no changes possible, since the day it was made.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Purely mechanical movement; no batteries to replace. Clock and watch repair shops service key-wound movements, though this is not a manufacturer-documented user repair."
+  },
+  "availability": "limited",
+  "price_band": "$15-30",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "McCoy's Building Supply",
+      "url": "https://www.mccoys.com/shop/p/7198559-052303-19/westclox-15550-loud-bell-alarm-clock-plastic-case-white-case"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0791/5356/1815/files/User_Manual_MODEL_15550.pdf?v=1768840363",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Official Westclox 'Instructions & Warranty' manual for Model# 15550 / 15550CN, warranty administered by NYL Holdings LLC (the current owner of the Westclox brand). States directly under Time Wind-Up: 'Your clock does not require batteries or electricity to operate.' Documents the fully mechanical operation: a wound time spring runs the movement for at least 24 hours, a separate alarm winding key powers the bell alarm, and a mechanical +/- regulator lever adjusts timekeeping accuracy -- no battery compartment, cord, or electronic component described anywhere in the instructions."
+    },
+    {
+      "url": "https://www.mccoys.com/shop/p/7198559-052303-19/westclox-15550-loud-bell-alarm-clock-plastic-case-white-case",
+      "class": "C",
+      "accessed": "2026-09-03",
+      "supports": "Independent hardware-store retail listing for the same model 15550, corroborating: 'it requires no batteries or electric power to keep time,' key-wound mechanism, independent alarm indicator, luminous hands, priced $17.44 with no sold-out notice."
+    }
+  ],
+  "open_questions": [
+    "Real-time stock status varies by retailer (sold out at the Westclox-authorized store, apparently available at McCoy's at time of check) -- worth re-checking before publishing to confirm current purchasability.",
+    "No FCC search was run for this model since a device with no battery compartment or power source cannot contain an intentional radiator; this is treated as self-evident rather than requiring a grantee search."
+  ],
+  "conflicts_with": null,
+  "notes": "First record in the empty 'alarm clock' subcategory. Chosen over a quartz/electronic alarm clock because it is unambiguous: no power source at all, not merely no radio.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-wearables-domain",
+    "run_id": "2026-09-03-wearables",
+    "searches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

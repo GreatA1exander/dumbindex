@@ -1,0 +1,102 @@
+{
+  "model_id": "garmin-instinct-2-solar",
+  "make": "Garmin",
+  "model": "Instinct 2 Solar",
+  "category": "wearables",
+  "subcategory": "GPS watch",
+  "record_type": "device",
+  "tier": "D2",
+  "tier_rationale": "Garmin operates a real, named cloud service for this watch (Garmin Connect), so D1 (no vendor cloud at all) does not apply. But the watch's own Owner's Manual states initial setup does not require pairing: 'During the initial setup, you can pair your smartphone with your watch to receive notifications, sync your activities, and more' -- 'can', not 'must'. The manual's Phone Connectivity Features section describes pairing as something that additionally 'unlocks' notifications, Connect IQ apps, Glances, and safety/tracking features, without stating that GPS tracking, activity recording, or the watch's core timekeeping/navigation functions require it. Core function (GPS satellite navigation, activity recording, on-watch stats, solar-assisted battery) runs entirely on the watch. Vendor cloud exists, setup completes with no account, and core function works unconnected -- the D2 row.",
+  "the_unplug_test": "The Instinct 2 Solar tracks GPS activities, records your runs and hikes, shows heart rate and stats on its own screen, and charges itself from sunlight with no phone, no Wi-Fi, and no Garmin Connect account ever created -- the owner's manual explicitly describes phone pairing during setup as something you 'can' do, not something required. Skip the app entirely and the watch still tells time, navigates, and logs activities to its own memory. What you lose without Garmin Connect is smartphone notifications, Connect IQ apps and watch faces, syncing activity history off the watch for long-term storage and analysis, and features that depend on a paired phone like LiveTrack safety tracking.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "smartphone notifications on the watch face",
+    "downloading Connect IQ apps, watch faces, and data fields",
+    "syncing activity history to Garmin Connect for long-term storage, trends, and cross-device access",
+    "LiveTrack and other features that require a paired phone",
+    "downloading structured workouts or PacePro plans created in Garmin Connect"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble",
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "ble",
+    "ant_plus"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$375-400",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Garmin (manufacturer)",
+      "url": "https://www.garmin.com/en-US/p/775697/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-31D23DBB-57C2-4DF7-A0C9-8D1A00AB4BE7/EN-US/GUID-8E59FFB5-8C89-49A0-B2F0-8B0A5921042C.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Instinct 2 Series Owner's Manual, 'Getting Started' section: 'During the initial setup, you can pair your smartphone with your watch to receive notifications, sync your activities, and more' -- pairing described as optional, not a setup requirement."
+    },
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-31D23DBB-57C2-4DF7-A0C9-8D1A00AB4BE7/EN-US/GUID-6078F0D7-ECF8-45AF-8D3A-A3825C6AB474.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Instinct 2 Series Owner's Manual, 'Phone Connectivity Features' section: 'Phone connectivity features are available for your Instinct watch when you pair it using the Garmin Connect app' -- lists what pairing unlocks (app features, Glances, controls menu, safety/tracking, notifications) as additive capabilities layered on top of the base watch."
+    },
+    {
+      "url": "https://static.garmin.com/pumac/instinct2solaronepiece_OM_EN-PH.pdf",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Full Instinct 2 Solar One Piece Owner's Manual (confirms this manual covers model M/N: A04094, A04095, i.e. Instinct 2 Solar specifically). Legal/trademark page confirms Bluetooth and ANT+ certification; last page shows ANT+, Bluetooth, and MCMC (Malaysia) regulatory logos. Table of contents confirms full activity tracking, training, history, and navigation feature set is documented as on-watch functionality, separate from the later 'Connect IQ' / phone-linked sections."
+    },
+    {
+      "url": "https://fccid.io/IPH04348",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Confirms Garmin International Inc (grantee IPH) files FCC intentional-radiator grants for its watches (this particular grant, filed 2022-10-04, covers a Garmin 'Hybrid Smartwatch' with BLE 2402-2480 MHz and 13.56 MHz NFC) -- establishes IPH is a grantee that files for radio-equipped watches, though the exact grant ID matching Instinct 2 Solar specifically was not pinned down within budget."
+    }
+  ],
+  "open_questions": [
+    "The exact FCC ID covering the Instinct 2 Solar (M/N A04094/A04095) was not found within budget -- searches for the model numbers directly returned no match on fccid.io, and the two grants found under Garmin's IPH grantee code that mention 'smartwatch' correspond to other models (Instinct Crossover, and an unspecified 2020 filing). radios and local_api are left including 'unknown' pending a firmer FCC identification, though the manual independently confirms Bluetooth and ANT+ via trademark/certification pages.",
+    "Whether firmware updates can be declined, and whether they are pushed automatically once paired, was not established within budget.",
+    "phones_home and repairability were not directly documented within budget."
+  ],
+  "conflicts_with": null,
+  "notes": "Companion record to garmin-hrm-200 (also D2, same vendor) -- the pattern across Garmin's line is consistent: a real Garmin Connect cloud exists, but it layers on top of watch/sensor functions that are designed to work fully standalone, and setup does not force an account. Chosen per the domain brief as the strong D2 anchor for GPS watches, ahead of weaker candidates like Amazfit/Fitbit models that likely require a mandatory account.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-wearables-domain",
+    "run_id": "2026-09-03-wearables",
+    "searches": 0
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No documented open-source tool reads Garmin Connect data or replaces its long-term activity storage/analysis for this watch. Does not affect core function (GPS tracking, on-watch history), which never depends on the cloud."
+}

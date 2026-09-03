@@ -1,0 +1,97 @@
+{
+  "model_id": "shearwater-peregrine",
+  "make": "Shearwater",
+  "model": "Peregrine",
+  "category": "wearables",
+  "subcategory": "dive computer",
+  "record_type": "device",
+  "tier": "D2",
+  "tier_rationale": "Shearwater operates a real vendor cloud (Shearwater Cloud, with an optional online account that syncs dive logs across devices), so this is not the no-cloud-at-all case required for D1. But the decompression computer itself is fully standalone from the moment it is turned on underwater: it auto-powers on by pressure, calculates decompression on-device with the Buhlmann ZHL-16C model, and stores up to 2000 dives / 200 hours of detailed log in onboard memory with no phone, app, or account involved. Bluetooth Low Energy exists solely for two optional post-dive tasks -- downloading logs to Shearwater Cloud Desktop/Mobile and receiving firmware updates -- and the manual's own walkthrough of both procedures never shows an account-creation or sign-in step; the app itself supports an 'offline Shearwater account' mode in which, per Shearwater's own FAQ, 'none of your information will be saved to the cloud.' Setup and core function require no account and work fully unconnected -- the D2 row.",
+  "the_unplug_test": "The Peregrine keeps diving exactly the same with no phone, no Wi-Fi, and no Shearwater account ever created. It turns itself on when submerged, runs its own decompression model, displays depth/time/NDL/deco stops on its own screen, and logs roughly 2000 dives in onboard memory -- none of that touches a network. Bluetooth only matters after you surface, and only if you want to pull dive logs onto a computer or phone or push a firmware update; both of those can be done through Shearwater's desktop or mobile app without ever signing into an online account. Skip Bluetooth entirely and the dive computer never notices.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "syncing dive logs to Shearwater's cloud and across multiple devices, which needs the optional 'online' Shearwater account",
+    "pulling dive logs onto a phone or computer for external analysis (the logs still exist onboard, up to ~2000 dives, but reading them off the watch needs the Shearwater Cloud app)",
+    "receiving firmware updates, which are delivered only via Shearwater Cloud Desktop or Mobile over Bluetooth"
+  ],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": "2AA9B05",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "no",
+    "ifixit_score": null,
+    "notes": "Manual states there are no user-serviceable parts inside and service must be done by Shearwater or an authorized center; battery is a sealed rechargeable Li-ion, not user-replaceable, charged via a proprietary wireless dock."
+  },
+  "availability": "in_stock",
+  "price_band": "$550-600",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Shearwater Research (manufacturer)",
+      "url": "https://www.shearwater.com/products/peregrine/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0838/3732/1530/files/Peregrine_Manual-metric_2021.pdf?v=1710186733",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Official Peregrine Operating Instructions. Section 10 (Firmware Update and Log Download) shows the full Bluetooth-connect walkthrough for both Shearwater Cloud Desktop and Mobile -- scan, connect, download dives, update firmware -- with no account-creation or sign-in step shown at any point. Section 15 (Specifications) confirms Communications: 'Bluetooth Low Energy' as the only radio, dive log capacity of ~2000 dives / 200 hours detailed, sealed rechargeable Li-ion battery with no user-serviceable parts (Section 13). Section 16 (Regulatory Information) states 'Peregrine Dive Computer Contains TX FCC ID: 2AA9B05.'"
+    },
+    {
+      "url": "https://fccid.io/2AA9B05",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grant for the BMD-350 module (u-blox AG), a Bluetooth Low Energy modular radio operating 2402-2480 MHz under Part 15C -- confirms the Peregrine's only radio is BLE, no Wi-Fi or cellular."
+    },
+    {
+      "url": "https://fccid.io/2AO24",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Full grant list for grantee Shearwater Research Inc. (code 2AO24), showing the vendor files its own FCC grants for wireless-charging accessories (Peregrine Charger Pad, Peregrine Charger Pad USB-C, Teric Charger Dock-IT) and for the earlier Teric computer's own radio, establishing this is a vendor that files when a product has a transmitter."
+    },
+    {
+      "url": "https://www.shearwater.com/pages/shearwater-cloud",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Shearwater Cloud FAQ distinguishes an 'online Shearwater account' (data 'saved to the cloud automatically' and synced across devices) from an 'offline Shearwater account' in which 'none of your information will be saved to the cloud' -- confirms the app has a no-cloud-account mode of use, not a mandatory vendor account."
+    }
+  ],
+  "open_questions": [
+    "Whether the app's 'offline Shearwater account' is truly a local-only profile with no server registration at all, or a lightweight registration that simply opts out of sync, was not fully resolved within budget -- worth a direct account-creation test.",
+    "Whether Shearwater Cloud Desktop or Mobile can be installed and used to download logs/update firmware with zero account of any kind (not even the 'offline' one) was not directly confirmed from the manual, which shows the workflow but does not document a first-run account prompt either way."
+  ],
+  "conflicts_with": null,
+  "notes": "Chosen as the strong-case dive computer: a life-safety instrument that must work standalone by design, sold at a premium price point specifically because Shearwater's userbase (technical and rebreather divers) is intolerant of anything that could fail underwater. The empty 'dive computer' subcategory made this a priority record.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-wearables-domain",
+    "run_id": "2026-09-03-wearables",
+    "searches": 0
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No documented third-party or open-source tool reads Shearwater's BLE protocol for log download or firmware push; the Shearwater Cloud app is the only path, though it can be used without an online account. Does not affect core function, which never depends on the app."
+}
