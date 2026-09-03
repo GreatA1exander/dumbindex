@@ -1,0 +1,82 @@
+{
+  "model_id": "sentrysafe-fpw082hsb",
+  "make": "SentrySafe",
+  "model": "FPW082HSB",
+  "category": "security",
+  "subcategory": "safe",
+  "tier": "D0",
+  "tier_rationale": "A battery-powered digital keypad safe with a motor-driven bolt lock and a physical override key. The manufacturer's own product page states no WiFi, Bluetooth, or app functionality exists for this model, and a grantee search for 'SentrySafe' on fccid.io returns no matches for the safe manufacturer (the only 'Sentry' hits are an unrelated Bluetooth-audio company, 'Sentry Industries limited'). No intentional radiator is present, so D0 applies even though the lock itself is electronic.",
+  "the_unplug_test": "There is nothing to unplug — this safe was never connected to anything. Punch the 5-digit code into the backlit keypad and the motor-driven bolts retract, exactly the same whether your internet, power grid, or SentrySafe itself is running. The lithium battery (rated 5+ years) runs the keypad and motor; if it dies, the physical override key opens the door. No app, no pairing, no account, ever.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Battery is user-replaceable (external 9V terminal typical of this SentrySafe line for a dead-battery jump-start); no teardown or spare-parts source found for the keypad/motor lock assembly itself."
+  },
+  "availability": "in_stock",
+  "price_band": "$200-400",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "SentrySafe (manufacturer)",
+      "url": "https://www.sentrysafe.com/product/FPW082HSB"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.sentrysafe.com/product/FPW082HSB",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: confirms no WiFi/Bluetooth/app connectivity; digital backlit keypad with programmable 5-digit code, motor-driven lock, physical override key, UL Classified 1-hour/1700F fire rating, ETL-verified 24-hour/5-inch water protection, and current pricing.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2ACP4CBT960",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Sibling-control check: the grantee search for 'Sentry' on fccid.io surfaces only Bluetooth audio products from an unrelated company, 'Sentry Industries limited' — not SentrySafe the safe manufacturer — supporting that SentrySafe holds no radio-equipment grants at all for this or related keypad-safe models.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No teardown found confirming the keypad/motor assembly contains no radio component beyond the manufacturer's own marketing claim; a physical inspection would strengthen this further.",
+    "Exact current price at time of any given sale varies with SentrySafe/retailer promotions; band reflects the manufacturer's own listed range."
+  ],
+  "conflicts_with": null,
+  "notes": "Recorded as the dial/keypad-safe answer for the security domain. SentrySafe's whole consumer line, at the time of research, appears to be keypad-or-dial with no connected variant — unlike locks and doorbells, there is no obvious 'smart safe' sibling on the same shelf, which makes the FCC absence check less load-bearing here than for a vendor that sells both.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-1-security",
+    "run_id": "2026-09-03-security",
+    "searches": 2
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

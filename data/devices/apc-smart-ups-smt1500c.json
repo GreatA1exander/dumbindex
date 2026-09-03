@@ -1,0 +1,103 @@
+{
+  "model_id": "apc-smart-ups-smt1500c",
+  "make": "APC",
+  "model": "SMT1500C",
+  "category": "lighting",
+  "subcategory": "UPS",
+  "tier": "D2",
+  "tier_rationale": "Ships with a built-in SmartConnect Ethernet port and a genuine APC/Schneider Electric cloud service (a web portal that needs account registration), but registration is optional: the manufacturer's own product page and marketing collateral describe SmartConnect purely as a remote-monitoring add-on, and the LCD panel, AVR, battery backup, and surge protection are standard line-interactive UPS functions that do not depend on that port being connected to anything. Local graceful shutdown is available over USB via APC's own PowerChute Serial Shutdown software with no cloud involved. This is the vendor-cloud-exists-but-core-function-is-fully-local row of the decision table.",
+  "the_unplug_test": "Unplug the router and this UPS does not notice, because its job has nothing to do with your network. It keeps converting battery power to AC for whatever is plugged into its eight outlets, regulates voltage, and shows status on its own LCD panel exactly as before. What you lose is the SmartConnect web portal: no remote status page, no push alert to your phone if a fault happens while you're away, and no one-click cloud firmware push. Plug a computer into the USB port and run APC's own PowerChute software, or point Network UPS Tools at it, and you get local monitoring and automatic shutdown with nobody's server involved at all.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "SmartConnect remote web-portal status view and push notifications",
+    "remote one-click firmware upgrade via the cloud portal",
+    "proactive warranty-expiration and health alerts"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "APC sells official replacement battery cartridges for the Smart-UPS 1500 line (e.g. APCRBC132/RBC7 depending on generation) as a user-swappable part; the datasheet lists a dedicated replacement-battery model number, which is a strong repairability signal for a UPS."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Schneider Electric / APC (manufacturer)",
+      "url": "https://www.se.com/us/en/product/SMT1500C/apc-smartups-line-interactive-1500va-tower-120v-8x-nema-515r-outlets-smartconnect-port+smartslot-avr-lcd/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.se.com/us/en/product/SMT1500C/apc-smartups-line-interactive-1500va-tower-120v-8x-nema-515r-outlets-smartconnect-port+smartslot-avr-lcd/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: 1440VA/1000W line-interactive tower UPS, 8x NEMA 5-15R outlets, ports are a SmartConnect Ethernet port (cloud remote monitoring), a SmartSlot expansion bay, and serial/USB for 'PowerChute Serial Shutdown' — APC's own local shutdown software. No Wi-Fi or wireless mentioned; SmartConnect is described as an optional cloud monitoring feature layered on top of standard UPS function.",
+      "archive_url": null
+    },
+    {
+      "url": "https://download.se.com/files?p_Doc_Ref=SPD_VYOG-8WLK6U_EN&p_File_Name=VYOG-8WLK6U_R4_EN.pdf&p_enDocType=Catalog",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer Smart-UPS with SmartConnect catalog: describes SmartConnect as 'no special software or gateway required... simple account login and registration' for remote status viewing, distinct from the base unit's own alpha-numeric LCD, LED status indicators, and locally-run PowerChute Business Edition / Network Shutdown software for graceful shutdown — confirming the cloud feature is additive, not required for core operation.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.smartconnect-support.apc.com/help/EN/EcoStruxure%20Ready%20Smart-UPS%20Help%20Center/MN03.4.55.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "APC's own SmartConnect support documentation: when a SmartConnect plan lapses (e.g. after the warranty period), the device drops to 'Basic Monitoring' — the dashboard status view still works but event notifications, remote diagnostic tests, and remote firmware upgrades stop. This confirms the cloud tier degrades independently of the UPS's physical function, which is unaffected.",
+      "archive_url": null
+    },
+    {
+      "url": "https://networkupstools.org/ddl/APC/Smart-UPS_1500.html",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "Network UPS Tools hardware compatibility list: the Smart-UPS 1500 is reported working with NUT's usbhid-ups driver over a local USB connection, supporting the claim that SmartConnect's monitoring function can be replaced entirely with self-hosted, vendor-independent software.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "The source cited for SmartConnect's plan-lapse behaviour (smartconnect-support.apc.com) could not be reached from here and has no Wayback snapshot, so that specific claim — that a lapsed plan costs you event notifications, remote diagnostics and remote firmware upgrades you had at purchase — is currently uncheckable by a reader. It does not affect the tier, which rests on three other sources: battery backup, AVR and surge protection are untouched by any subscription. But it is why APC is not in the vendor ledger despite looking like a candidate. Re-source it from a page that resolves, then reconsider.",
+    "Confirm current retail price band from a live manufacturer or major-retailer listing page; dynamic JavaScript pricing could not be captured during this pass.",
+    "Confirm whether the SMT1500C's USB/serial protocol is identical to the older 'Smart-UPS 1500' NUT reports it against, or whether it uses the newer Modbus-based protocol some owners report causing incomplete data (e.g. missing line-voltage readings) with apcupsd — this affects how complete a 'full' NUT-based local replacement really is.",
+    "Confirm whether declining a SmartConnect firmware update is possible, and whether any firmware ever pushes automatically without user action.",
+    "Confirm default phones_home behavior: does an unregistered but Ethernet-connected unit send any telemetry to APC before a SmartConnect account is created?"
+  ],
+  "conflicts_with": null,
+  "notes": "APC/Schneider Electric also sells a plain SMT1500 (no 'C' suffix, no SmartConnect port) as a separate current SKU — a reader who wants the cloud port removed entirely, rather than merely unused, should look for that model number instead. Schneider Electric's move to gate SmartConnect's notification/firmware features behind a paid plan after warranty expiry (documented in its own support pages) is worth tracking in the vendor ledger even though it does not touch this device's tier.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-03-lighting",
+    "searches": 8
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "APC's own PowerChute Serial Shutdown software, run on a computer connected via USB, provides local monitoring and graceful automatic shutdown with no cloud involved. Network UPS Tools (NUT) separately lists the Smart-UPS 1500 as working with its usbhid-ups driver over USB, so a NAS or Linux host can poll status and trigger shutdown entirely locally as an open-source alternative to SmartConnect."
+}

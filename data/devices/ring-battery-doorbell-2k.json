@@ -7,8 +7,8 @@
   "tier": "REJECT",
   "tier_rationale": "A video doorbell's core function includes showing you who came to the door. Ring provides no local storage of any kind and requires a paid subscription to review any recorded video, so a hardware capability the device physically has is gated behind a recurring payment.",
   "status": "rejected",
-  "rejection_reason": "Subscription-gated core function with no local storage alternative. Without an active Ring plan the device records nothing \u2014 you may watch a live stream if you happen to be holding your phone at that moment, which is not what a doorbell camera is for. There is no offline or local-only mode to fall back on, and no documented path to one.",
-  "the_unplug_test": "It stops being a camera. With the internet down there is no live view, no notification, and nothing recorded to look at afterwards \u2014 every frame this device captures travels to Amazon's servers and comes back, or it does not exist. Even with the internet up, cancel the subscription and it still records nothing: you get a live view if you are already looking at your phone, and no history at all. The chime hardware is the only part that survives.",
+  "rejection_reason": "Subscription-gated core function with no local storage alternative. Without an active Ring plan the device records nothing — you may watch a live stream if you happen to be holding your phone at that moment, which is not what a doorbell camera is for. There is no offline or local-only mode to fall back on, and no documented path to one.",
+  "the_unplug_test": "It stops being a camera. With the internet down there is no live view, no notification, and nothing recorded to look at afterwards — every frame this device captures travels to Amazon's servers and comes back, or it does not exist. Even with the internet up, cancel the subscription and it still records nothing: you get a live view if you are already looking at your phone, and no history at all. The chime hardware is the only part that survives.",
   "account_required": "for_core",
   "works_offline": "no",
   "offline_losses": [
@@ -68,7 +68,7 @@
     "Find and verify a doorbell-form-factor camera with local recording (ONVIF/RTSP or onboard SD) so the alternative is a like-for-like swap rather than a different product category."
   ],
   "conflicts_with": null,
-  "notes": "Listed as a rejection rather than omitted, because people search for this specifically and deserve to find a clear answer rather than silence. The rejection is not about Ring being a bad camera \u2014 it is that the hardware in your hand cannot record to anything you own, at any price, ever. Contrast with an ONVIF camera writing to a recorder in your own house, which costs less per year and keeps working when Amazon has an outage.",
+  "notes": "Listed as a rejection rather than omitted, because people search for this specifically and deserve to find a clear answer rather than silence. The rejection is not about Ring being a bad camera — it is that the hardware in your hand cannot record to anything you own, at any price, ever. Contrast with an ONVIF camera writing to a recorder in your own house, which costs less per year and keeps working when Amazon has an outage.",
   "first_published": "2026-09-02",
   "last_verified": "2026-09-02",
   "changelog": [
@@ -77,6 +77,12 @@
       "change": "Published as REJECT.",
       "source": null,
       "kind": "listed"
+    },
+    {
+      "date": "2026-09-03",
+      "change": "Alternative added: reolink-d340w, a doorbell that records locally. This rejection had stood since the catalog began with only a box camera to point at, which answered the underlying question but was not a like-for-like swap.",
+      "kind": "correction",
+      "source": "https://reolink.com/product/d340w/"
     }
   ],
   "agent_meta": {
@@ -86,11 +92,15 @@
     "searches": 3
   },
   "local_replacement": "none",
-  "local_replacement_note": "This is the whole objection. There is no local storage, no RTSP or ONVIF output, and no documented way to record to hardware you own \u2014 at any price.",
+  "local_replacement_note": "This is the whole objection. There is no local storage, no RTSP or ONVIF output, and no documented way to record to hardware you own — at any price.",
   "alternatives": [
     {
+      "model_id": "reolink-d340w",
+      "why": "A doorbell, not a workaround. Press the button and a chime rings over its own short-range radio; the camera records to a microSD card on motion, and detection keeps running with the internet down. It speaks standard RTSP and ONVIF, so the footage can land in Frigate, Blue Iris or Synology Surveillance Station on hardware you own. Reolink runs a cloud and it is genuinely optional — setup creates a password on the camera, not an account with Reolink, and there is no subscription between you and your own recordings."
+    },
+    {
       "model_id": "reolink-rlc-810a",
-      "why": "A PoE camera speaking standard ONVIF and RTSP into a recorder you own, with person and vehicle detection running on the camera and no subscription. Not a doorbell \u2014 you would pair it with a conventional wired chime \u2014 but it answers the actual question of seeing who came to the door, and the footage lands on your hardware."
+      "why": "A PoE camera speaking standard ONVIF and RTSP into a recorder you own, with person and vehicle detection running on the camera and no subscription. Not a doorbell — you would pair it with a conventional wired chime — but it answers the actual question of seeing who came to the door, and the footage lands on your hardware."
     }
   ]
 }

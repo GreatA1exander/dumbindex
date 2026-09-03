@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-09-03-discover-wave4",
+  "job": "discover",
+  "prompt_version": "phase-0-manual",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "Deliberately smaller wave after two consecutive waves were killed by session limits: three agents instead of six, on security, kitchen and lighting. Briefs changed to require writing each record as it is finished rather than researching everything and writing at the end.",
+
+  "scope": "Three domains. 75 records to 92.",
+  "devices_added": 17,
+  "domains": {"security": 5, "kitchen": 6, "lighting": 6},
+
+  "findings": [
+    "All three agents completed. The write-as-you-go instruction was the change that mattered — wave 3 lost five agents' entire output because they batched their writes, and no agent this wave was at risk of that.",
+    "The catalog finally has a doorbell that records locally (reolink-d340w, D2, six sources including the FCC grant). The Ring rejection had stood since the beginning with only a PoE box camera to point at, which answered the underlying question but was not a like-for-like swap. That rejection now names a doorbell.",
+    "The security agent abandoned two candidates for good reasons and said so: the Amcrest AD410 because forum evidence suggested a mandatory Amcrest account it could not cleanly resolve, and the Reolink D340P because its FCC filing is shared with the WiFi model while the product page claims no radio. Both are the judgement the principles ask for — declining to assert what could not be settled.",
+    "The lighting agent found a vendor-ledger candidate (APC SmartConnect plan lapse costing features present at purchase) and escalated it rather than scoring the vendor itself, exactly as briefed."
+  ],
+
+  "system_gaps_found": [
+    {"gap": "The catalog had no way to survive its own citations rotting. Every source in every record had archive_url null, and check-links.mjs could report a dead link but nothing could act on it. Three load-bearing source URLs were failing at the start of this run.",
+     "fix": "Added scripts/archive-sources.mjs, which asks the Wayback Machine for existing snapshots of sources that no longer resolve and records them. It does not create snapshots — it reports sources with no snapshot so a human can decide whether to re-source or withdraw. Archived three; three had no snapshot, of which two turned out to be alive and one is genuinely uncheckable."},
+    {"gap": "The APC ledger candidate rests on a support URL that does not resolve and has no snapshot. An incident a reader cannot check is not one that can be published.",
+     "fix": "APC left out of the ledger, the record's open_questions say why, and BACKLOG records it as a candidate pending a source that resolves. The record's D2 is unaffected — it rests on three other sources and core UPS function is untouched by any subscription."}
+  ],
+
+  "honest_limitations": [
+    "Fourteen of the seventeen new records are D0. The tier skew this project already flagged as a problem got measurably worse in the same run that flagged it — the catalog is now roughly three quarters devices where the answer was never in doubt. Every one of the fourteen is in a subcategory that was previously empty, which is the case where a D0 record does earn its place, but the pattern is structural: a per-domain record quota is filled fastest with easy records.",
+    "tripp-lite-ps615 rests on a single manufacturer source. It clears the bar and it is a power strip, but it is the thinnest record in the batch.",
+    "All three agents exhausted the session's shared WebSearch budget (200 calls). Two records were abandoned for want of a price band and a retail listing while their tier evidence was already established — a poor trade, and a sign the budget is being spent on verification of things that do not decide anything.",
+    "Records were reviewed by the orchestrator for schema, source class, tier-table consistency and link health. The doorbell's deciding fact was independently re-verified against Reolink's own setup documentation; the other sixteen were not re-derived from primary sources."
+  ],
+
+  "wall_clock_min": 40,
+  "surprises": "The most interesting failure was not a bad record but an unverifiable true one. The APC subscription-lapse finding is probably correct and is exactly what the ledger exists to catch — and it cannot be published, because the only page documenting it does not resolve and was never archived. A catalog that judges vendors on documented incidents inherits the durability problem of the documents."
+}

@@ -85,6 +85,25 @@ Two candidate fixes, neither tried yet:
 someone searching "dumb light bulb" needs to find one. The problem is the fiftieth, not
 the first.
 
+**APC / Schneider Electric: ledger candidate, evidence not checkable.**
+The lighting run found that when an APC SmartConnect plan lapses the UPS drops to "Basic
+Monitoring" and loses event notifications, remote diagnostics and remote firmware
+upgrades — features that worked at purchase. That is exactly the pattern the ledger
+tracks. It is not in the ledger, because the only source for it
+(smartconnect-support.apc.com) does not resolve from here and has no Wayback snapshot,
+and an incident a reader cannot check is not one we can publish. Re-source it, then score
+it. The agent that found it correctly escalated rather than scoring the vendor itself.
+
+**Two records left unwritten for want of purchasability evidence, not technical evidence.**
+Both have their tier evidence already in hand and only need a price band and a current
+retail listing:
+- A GRI 100/110-series wired door contact. Class A datasheet confirms a passive two-wire
+  reed switch with no electronics at all — about as clean a D0 as exists — but GRI sells
+  through trade distributors rather than consumer retail.
+- A non-smart LED bulb. The obvious record that "dumb light bulb" searchers want, blocked
+  because Feit, GE, Sylvania and Signify all serve JS-rendered pages that WebFetch cannot
+  read and the search budget was exhausted.
+
 **QNAP needs a ledger decision.**
 qnap-ts-233-us is published at vendor_risk 0. QNAP has a history of NAS-targeting
 ransomware and of force-pushing firmware to shipped devices in response to it. Whether a

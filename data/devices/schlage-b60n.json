@@ -1,0 +1,86 @@
+{
+  "model_id": "schlage-b60n",
+  "make": "Schlage",
+  "model": "B60N (B-Series single-cylinder deadbolt, various finishes)",
+  "category": "security",
+  "subcategory": "deadbolt",
+  "tier": "D0",
+  "tier_rationale": "Purely mechanical single-cylinder deadbolt: key outside, thumbturn inside, no battery, no electronics, no app, no connectivity of any kind, confirmed by the manufacturer's own product page and its complete installation instructions, whose parts list (key, housings, latch/strike screws, bolt, UL cup, reinforcement strike) contains nothing electronic. No intentional radiator exists to grant, so it cannot phone home because it has no mouth.",
+  "the_unplug_test": "There is no router to unplug that this lock has ever heard of. It is a spring-and-tumbler mechanism: a key turns the cylinder, the cylinder throws a solid metal bolt. It works exactly the same during a power outage, an internet outage, or after the manufacturer stops existing, because none of those things were ever part of the circuit. There is no app, no firmware, and no account to lose.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "All-metal chassis. Replacement cylinders, strike plates and keys are stocked by any hardware store or locksmith; the cylinder can be re-keyed by a locksmith without replacing the lock body."
+  },
+  "availability": "in_stock",
+  "price_band": "$30-45",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Schlage (manufacturer)",
+      "url": "https://www.schlage.com/en/home/products/B60FFF.html"
+    },
+    {
+      "name": "The Home Depot",
+      "url": "https://www.homedepot.com/p/Schlage-Satin-Nickel-Single-Cylinder-Deadbolt-2-Pack-B60N-619/307274213"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.schlage.com/en/home/products/B60FFF.html",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: confirms purely mechanical operation (key outside, thumbturn inside) with no battery, electronics, app, or connectivity; ANSI/BHMA A156.40-2015 Grade AAA and A156.36-2010 Grade 1 certification; UL-listed fire-rated versions available; current price $32.99.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/b60-b62-deadbolt-installation-download.pdf",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own installation instructions for the B60/B62 series: the full parts and steps list (key, outside/inside housing, latch/strike screws, bolt, UL fire cup, reinforcement strike, screws) contains no electronic or battery component anywhere in the mechanism.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Exact current price varies by finish (satin nickel vs. bright brass vs. matte black) and by single vs. 2-pack retail bundling; band reflects the manufacturer's own listed price plus observed retail range.",
+    "No FCC search was run given the manufacturer's own documentation shows no electronic component of any kind to certify; flagging in case a future finish or 'smart' co-branded SKU under the same B60N number were to add electronics."
+  ],
+  "conflicts_with": null,
+  "notes": "Listed because Schlage sells this exact mechanical deadbolt on the same site, often in the same collection trim lines, as its Wi-Fi and Bluetooth smart locks (Encode, Sense) — so the B60N is the plain answer sitting one click away from the connected version, worth naming precisely rather than gesturing at 'any mechanical deadbolt.'",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-1-security",
+    "run_id": "2026-09-03-security",
+    "searches": 6
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

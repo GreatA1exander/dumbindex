@@ -1,0 +1,74 @@
+{
+  "model_id": "tripp-lite-ps615",
+  "make": "Tripp Lite",
+  "model": "PS615",
+  "category": "lighting",
+  "subcategory": "power strip",
+  "tier": "D0",
+  "tier_rationale": "A plain 6-outlet power strip: a lighted mechanical on/off switch, a 15A resettable circuit breaker, and a 15-foot cord. The manufacturer's own datasheet lists every component and feature on the unit, and unlike Tripp Lite's own Isobar surge-protector line, this model has no suppression electronics of any kind, let alone a radio or app.",
+  "the_unplug_test": "This is six outlets and a cord with a breaker and a light-up switch in between. It has no logic board and nothing that could be described as 'smart' even loosely, so there is nothing for the internet going away to affect. It will do exactly the same thing the day your router dies as it did the day you bought it.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Sealed plastic housing with no published component-level repair guide. Given the lack of any suppression electronics to wear out, the circuit breaker and switch are the only likely failure points."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Tripp Lite / Eaton (manufacturer)",
+      "url": "https://www.eaton.com/us/en-us/skuPage.PS615.html"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://assets.tripplite.com/product-pdfs/en/ps615.pdf",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Full manufacturer datasheet for the PS615: 6 NEMA 5-15R outlets, 15A/120V, 15-ft cord, lighted 2-position mechanical switch, 15A resettable circuit breaker, plastic housing, UL 1363 listed. No surge-suppression components, electronics, or connectivity feature of any kind appear in the spec table — in contrast to Tripp Lite's own Isobar line, which lists MOVs, chokes and diagnostic LEDs.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Confirm current retail price band from a live major-retailer listing page (this pass relied on the manufacturer spec sheet and a redirect-confirmed current SKU page rather than a fetched price)."
+  ],
+  "conflicts_with": null,
+  "notes": "Not to be confused with Tripp Lite's own Isobar surge-protector line (see tripp-lite-isobar6ultra), which looks similar on a shelf but adds real suppression electronics and a much higher price. The PS615 is pure outlet multiplication with a breaker, nothing more.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-03-lighting",
+    "searches": 1
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

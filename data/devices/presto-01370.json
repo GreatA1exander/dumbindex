@@ -1,0 +1,63 @@
+{
+  "model_id": "presto-01370",
+  "make": "Presto",
+  "model": "01370 (8-Quart Stainless Steel Pressure Cooker)",
+  "category": "kitchen",
+  "subcategory": "pressure cooker",
+  "tier": "D0",
+  "tier_rationale": "This is a stovetop pressure cooker with no power cord and no electrical components of any kind: pressure is controlled entirely by a weighted pressure regulator/steam release valve sitting on a vent pipe, and a mechanical air vent/cover lock. The manufacturer's own instruction manual describes every part in purely mechanical terms across 38 pages and lists a UL safety listing, not an FCC grant, because there is nothing electrical to certify.",
+  "the_unplug_test": "There is nothing to unplug. You put it on a gas, electric, or induction burner; a weighted regulator on top rocks and hisses steam once pressure builds, and you turn the stove down to hold a slow steady hiss. Pressure drops when you take it off heat and let it cool, or run water over it. No company, no account, and no radio are involved at any point.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": ["none"],
+  "phones_home": "none",
+  "radios": ["none"],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Manual documents user-replaceable sealing ring and overpressure plug as routine maintenance items (recommended replacement every two years), and Presto sells both as stocked parts. Stainless body and tri-clad base have no wear components."
+  },
+  "availability": "in_stock",
+  "price_band": "$100-135",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {"name": "Walmart", "url": "https://www.walmart.com/ip/Presto-8-Qt-Stainless-Steel-Pressure-Cooker-01370PRESTO/10771203"},
+    {"name": "Amazon", "url": "https://www.amazon.com/Presto-8-Quart-Stainless-Pressure-Cooker/dp/B0000Z6JIW"}
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.pressurecooker-outlet.com/Manuals/Presto/01370-8qt-stainless-steel.pdf",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "National Presto Industries' own Instructions and Recipes manual for the 01370: 'Getting Acquainted' diagram (Fig. A) identifies the entire control surface as a Pressure Regulator/Steam Release Valve (a weighted valve on the vent pipe) and an Air Vent/Cover Lock, both purely mechanical; page 1 shows a UL Listed mark; no electrical rating, cord, plug, or electronic component appears anywhere in the document, consistent with a stovetop (non-electric) design.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.walmart.com/ip/Presto-8-Qt-Stainless-Steel-Pressure-Cooker-01370PRESTO/10771203",
+      "class": "C",
+      "accessed": "2026-09-03",
+      "supports": "Retailer listing corroborating current in-stock availability and price for the 01370 model.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [],
+  "conflicts_with": null,
+  "notes": "Non-electric stovetop pressure cooker; the manual copy this record cites is dated 2007 but the model remains in current production and sale at major retailers as of the access date, with an unchanged mechanical design. Presto also sells an electric pressure cooker line under a similar naming scheme (e.g. 0216001) that is a separate, unrelated product not covered by this record.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {"date": "2026-09-03", "change": "First published at D0.", "kind": "listed", "source": null}
+  ],
+  "agent_meta": {"model": "claude-opus-5", "prompt_version": "kitchen-domain-wave", "run_id": "2026-09-03-kitchen", "searches": 3},
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

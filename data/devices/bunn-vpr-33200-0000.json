@@ -1,0 +1,65 @@
+{
+  "model_id": "bunn-vpr-33200-0000",
+  "make": "BUNN",
+  "model": "VPR 33200.0000 (12-Cup Pourover Coffee Brewer, 2 Warmers, 120V)",
+  "category": "kitchen",
+  "subcategory": "coffee maker",
+  "tier": "D0",
+  "tier_rationale": "BUNN's own Installation & Operating Guide for the VPR-VPS series describes a manually-filled pour-over brewer: the operator pours water in by pitcher, a control thermostat holds tank temperature, and warmers are switched on/off by front-mounted toggle switches. There is no brew-start button, no digital timer, and no programming step in the entire operating procedure -- brewing begins the instant water is poured in. No app, WiFi, or network feature is mentioned anywhere in the manual.",
+  "the_unplug_test": "You pour a pitcher of water in the top, and hot water sprays over the grounds in the funnel below within seconds -- there is no 'start' step to configure. A toggle switch turns each warmer plate on or off. Unplugging it stops the internal tank heater and the warmers; plugging it back in returns it to exactly the same manual, thermostat-controlled behavior, with nothing to reconfigure and no vendor involved.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": ["none"],
+  "phones_home": "none",
+  "radios": ["none"],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "WebstaurantStore and BUNN's own parts channel stock individual replacement parts for this model line (funnel/basket, brew-chamber pouch-pack funnel, foot kit, lighted warmer switch, tank weldment, sprayhead), and the manual documents a user-run deliming procedure for the sprayhead."
+  },
+  "availability": "in_stock",
+  "price_band": "$440-500",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {"name": "WebstaurantStore", "url": "https://www.webstaurantstore.com/bunn-33200-0000-vpr-12-cup-pourover-coffee-brewer-with-2-warmers-120v/234332000000.html"},
+    {"name": "BUNN Commercial (manufacturer)", "url": "https://commercial.bunn.com/33200.0000"}
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://ep-shopify.s3.amazonaws.com/related-documents/bunn/332000010/bunn-vpr-aps-pour-over-brewer-manual.pdf",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Bunn-O-Matic Corporation's own VPR-VPS Series Installation & Operating Guide: Electrical Requirements section specifies an attached cordset, 120V/15A/60Hz; Coffee Brewing procedure is entirely manual (insert filter, pour grounds, slide funnel in, turn on warmer switch, pour water) with no start button, timer, or digital control referenced anywhere in the 5-page manual; Initial Set-Up references a 'control thermostat' as the only temperature-regulating component.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.webstaurantstore.com/bunn-33200-0000-vpr-12-cup-pourover-coffee-brewer-with-2-warmers-120v/234332000000.html",
+      "class": "C",
+      "accessed": "2026-09-03",
+      "supports": "Retailer listing confirming current availability and price (~$471) for the exact 33200.0000 model.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "BUNN also sells digital/programmable brewer lines (e.g. ICB, Trifecta with BrewLOGIC); confirm this VPR-VPS manual and part number apply specifically to the analogue-thermostat pourover models and not a digital sibling before treating other BUNN model numbers as equivalent."
+  ],
+  "conflicts_with": null,
+  "notes": "Classic commercial diner/office pourover brewer: no reservoir plumbing required, water added by hand each brew, thermostat-controlled holding tank. A strong example of the commercial-equivalent seam for the coffee maker subcategory -- BUNN's home countertop line includes programmable/digital models, but this pourover commercial line remains purely manual.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {"date": "2026-09-03", "change": "First published at D0.", "kind": "listed", "source": null}
+  ],
+  "agent_meta": {"model": "claude-opus-5", "prompt_version": "kitchen-domain-wave", "run_id": "2026-09-03-kitchen", "searches": 4},
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

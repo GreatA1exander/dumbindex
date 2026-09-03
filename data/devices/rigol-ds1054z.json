@@ -52,12 +52,12 @@
       "class": "B",
       "accessed": "2026-09-02",
       "supports": "sigrok's open-source hardware-support wiki lists the DS1054Z's full connectivity as 'USB host/device, Ethernet, trigger out, pass/fail out' — no WiFi or Bluetooth entry exists in the connectivity field, and the device page documents local SCPI-over-LAN control (sigrok-cli connecting directly to the instrument's own IP) rather than any cloud or vendor-server path.",
-      "archive_url": null
+      "archive_url": "https://web.archive.org/web/20260211202109/https://sigrok.org/wiki/Rigol_DS1054Z"
     }
   ],
   "open_questions": [
     "fccid.io search for grantee 'Rigol' returned no company match at all (only an unrelated 'Marigold Enterprises'), so this is an absence-of-grant finding with no sibling grant to contrast against — weaker by the letter of the FCC heuristic than a case where the same vendor is shown filing for other radio-equipped products. Treat as corroborating, not primary, evidence.",
-      "Whether the LAN/SCPI interface exposes any interface beyond raw SCPI (e.g. a web control panel) was not confirmed; noted as local_api: unknown pending a look at the programming manual."
+    "Whether the LAN/SCPI interface exposes any interface beyond raw SCPI (e.g. a web control panel) was not confirmed; noted as local_api: unknown pending a look at the programming manual."
   ],
   "conflicts_with": null,
   "notes": "Representative of the bench-instrument category generally: oscilloscopes at this price point are built for engineers who need the instrument to still work the same way in ten years, and Rigol's entire 1000Z line ships with no wireless option to disable in the first place. A 2016 EEVblog forum thread (search snippet only, not independently re-fetched, so not cited as a formal source) has a Rigol-experienced user stating plainly that 'Rigol doesn't support WiFi in any way' on this model — consistent with, but not required to support, the tier already established by the two cited sources.",

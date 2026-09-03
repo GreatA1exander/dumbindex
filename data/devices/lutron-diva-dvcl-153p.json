@@ -1,0 +1,86 @@
+{
+  "model_id": "lutron-diva-dvcl-153p",
+  "make": "Lutron",
+  "model": "DVCL-153P",
+  "category": "lighting",
+  "subcategory": "dimmer",
+  "tier": "D0",
+  "tier_rationale": "A TRIAC-based in-wall paddle dimmer wired directly into the lighting circuit, with a mechanical slide for level and a mechanical paddle for on/off. No radio, no app, no account, no FCC grant on record. Lutron's own wireless dimmers (the Caseta line) are filed under the same grantee code and are easy to find on fccid.io, so the absence of any grant for this model is meaningful rather than a search failure.",
+  "the_unplug_test": "There is no router for this device to notice. It sits inline with the wiring in the wall box and the light responds to the slide and paddle whether or not anything else in the house has power. The only way this dimmer stops working is a burned-out TRIAC or a bulb it doesn't like the dimming curve of, and either is fixed by hand, not by a server somewhere.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Sold as a sealed wallplate module; Lutron does not publish a component-level repair path. Failure typically means replacing the $15-25 unit rather than repairing it."
+  },
+  "availability": "in_stock",
+  "price_band": "$15-25",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Lutron (manufacturer)",
+      "url": "https://www.lutron.com/us/en/control/dimmers-switches/diva-dimmers?sku=dvcl-153p-wh"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.lutron.com/us/en/control/dimmers-switches/diva-dimmers?sku=dvcl-153p-wh",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: 120V~50/60Hz, 150W dimmable LED/CFL or 600W incandescent/halogen, single-pole or 3-way, no neutral wire required. No app, Wi-Fi, Bluetooth, or wireless connectivity mentioned anywhere in the listing.",
+      "archive_url": null
+    },
+    {
+      "url": "https://support.lutron.com/us/en/instructions/diva-dvcl-153p",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer installation instructions describe a hardwired paddle/slide dimmer installed in an existing wall box per electrical code, with no setup app, account, or pairing step anywhere in the procedure.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/JPZ",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Lutron's FCC grantee code JPZ lists numerous wireless dimmer/switch grants (e.g. JPZ0111, a Caseta wireless in-wall dimmer) — establishing that Lutron reliably files grants for its radio-equipped models. A direct search of fccid.io for DVCL-153P returns no grant, which is therefore meaningful rather than a search gap.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [],
+  "conflicts_with": null,
+  "notes": "Lutron sells a visually similar Caseta wireless dimmer line (e.g. PD-6WCL) alongside this plain Diva line; the model number, not the paddle style, is what separates them. Buyers should check for 'Wireless' or 'Caseta' branding on the box.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-03-lighting",
+    "searches": 5
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

@@ -1,19 +1,19 @@
 {
   "prompt_version": "phase-0-manual",
-  "last_run": "2026-09-03-discover-wave3-partial",
+  "last_run": "2026-09-03-discover-wave4",
   "domain_rotation_pos": 0,
   "next_domain": "photo",
   "shard_index": 0,
   "shard_count": 4,
   "unfinished": [
-    "Wave 3 died to a session limit (resets 5:10am PT 2026-09-03). Only the computing agent got records to disk. RELAUNCH kitchen, lighting, security, automotive, wearables — none of them wrote a single file.",
-    "The five dead agents' research is lost, but their briefs are reconstructable from this journal entry. Security's brief carried the highest-value single target in the backlog: a doorbell-form-factor camera with local recording, to give the Ring rejection an alternative.",
-    "Domains still short of 8 published records: kitchen 6, lighting 6, security 6, automotive 6, photo 5, health 5, wearables 5, office 4, baby-pet 3, computing 1, climate 1, tools 1.",
-    "QNAP owed a dedicated ledger audit. It has a history of NAS-targeting ransomware and of force-pushing firmware in response; whether any of that constitutes removing function from shipped devices under the ledger scale is unresolved. Scored 0 in the meantime.",
-    "dell-p2425h is published D0 while its own open question notes Dell's datasheet advertises 'Remote Asset Management' without describing the transport. Almost certainly DDC/CI over the video cable rather than a radio, but it is an unresolved hedge on the deciding fact for a D0.",
+    "Domains still short of 8 published records: automotive 6, photo 5, health 5, wearables 5, office 4, baby-pet 3, climate 1, tools 1. Kitchen, lighting and security cleared this wave.",
+    "TIER SKEW is the main open problem, not density. 63 of 83 published records are D0. A per-domain record quota is filled fastest with easy records, and the ratio has worsened every wave. Two candidate fixes in BACKLOG: quota by tier rather than record count, and treating a D0 in an already-covered subcategory as near-zero marginal value. Neither tried.",
+    "APC/Schneider is a ledger candidate whose only source does not resolve and has no Wayback snapshot. Re-source before scoring.",
+    "QNAP owed a ledger decision: does a forced security patch count as removing function from shipped devices? The answer applies to more vendors than QNAP.",
+    "Two records blocked on purchasability rather than tier evidence: a GRI 100/110 wired door contact and a non-smart LED bulb. Both have their technical evidence in hand.",
+    "The shared WebSearch budget (200/session) was exhausted by three agents. Wave sizing should account for it, and briefs should discourage spending searches on price bands, which decide nothing.",
     "petlibro-granary-camera-feeder rejection has no alternative; the non-camera Granary (AF005/AF006) is the natural candidate and is unresearched.",
-    "Five rejections across baby-pet, photo and automotive have no alternative to point at. Discovery task, not a filing error.",
-    "Withings ledger entry sits at 1 (alleged, not established). Recheck for independent reporting of a dated feature removal on the next refresh."
+    "Withings ledger entry sits at 1 (alleged, not established). Recheck for independent reporting of a dated feature removal."
   ],
   "_note": "Strict rotation through schema/taxonomy.json domains. The agent never chooses; it reads domain_rotation_pos and advances it. Discovery is currently running as parallel domain-scoped waves rather than the one-device-per-subagent shape in ORCHESTRATOR.md — see journal entries 2026-09-02-discover-wave1 onward for why, and update ORCHESTRATOR.md if this holds."
 }

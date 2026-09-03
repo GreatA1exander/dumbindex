@@ -1,0 +1,100 @@
+{
+  "model_id": "reolink-rln8-410",
+  "make": "Reolink",
+  "model": "RLN8-410",
+  "category": "security",
+  "subcategory": "NVR",
+  "tier": "D2",
+  "tier_rationale": "An 8-channel PoE NVR with a pre-installed 2TB HDD that records locally and can be viewed on a directly connected monitor with no app and no account at all. Reolink operates a cloud and app for optional remote viewing, which places this above D1, but the setup wizard runs on the connected monitor, the only credential created is a local admin account stored on the NVR itself (1 admin plus up to 19 local users), and 24/7 recording, local live view, and ONVIF/RTSP camera ingestion all run with no internet connection.",
+  "the_unplug_test": "Recording does not stop. The NVR keeps writing every connected PoE camera to its internal hard drive and you can still watch any of them on a monitor plugged straight into it, because that path never left the box. What you lose without internet is viewing from outside the house through the Reolink app and any 'My Cloud' backup. The admin account you set up during first boot lives on the NVR's own storage, not with Reolink, so nothing about local recording or local viewing depends on the company staying in business.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "remote viewing from outside the local network via the Reolink app",
+    "push notifications to the phone app",
+    "Reolink's optional cloud ('My Cloud') backup"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "rest",
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Standard SATA/eSATA drive bay is user-accessible for HDD replacement or capacity expansion up to 16TB; no teardown or spare-parts source found for the board itself."
+  },
+  "availability": "in_stock",
+  "price_band": "$280-320",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Reolink (manufacturer)",
+      "url": "https://reolink.com/product/rln8-410/"
+    },
+    {
+      "name": "Amazon",
+      "url": "https://www.amazon.com/Reolink-Channel-Security-Recorder-RLN8-410/dp/B01D2TQXJW"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://reolink.com/product/rln8-410/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: single Ethernet WAN/LAN port plus 8 PoE ports (no WiFi/Bluetooth mentioned), ONVIF listed among supported protocols, pre-installed 2TB HDD expandable to 16TB via SATA/eSATA, local and remote access described separately, with remote access requiring the Reolink App/Client and local monitor viewing requiring neither.",
+      "archive_url": null
+    },
+    {
+      "url": "https://support.reolink.review/hc/en-us/articles/16390979380249-Getting-Started-with-RLN8-410/",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "Setup walkthrough confirming the NVR runs its own on-screen setup wizard and creates a local admin account (of 20 total local user slots) rather than requiring a Reolink cloud account, and that it 'can make an independently running system itself' for local live view and recording with or without internet.",
+      "archive_url": null
+    },
+    {
+      "url": "https://surveillanceguides.com/how-to-add-3rd-party-camera-to-reolink-nvr/",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "Independent guide confirming the RLN8-410 accepts third-party ONVIF Profile S/G cameras via Device Management > Add Device > Add by IP Address, not only Reolink-branded cameras, despite some retail listing titles implying Reolink-only compatibility.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Some retail listings (e.g. an Amazon title reading 'Only Work with REOLINK... PoE IP Camera') conflict with the ONVIF-ingestion guides found; both may be true in different senses (guaranteed smart-detection features vs. basic third-party ONVIF video) and the manufacturer's own documentation on this specific point was not read directly.",
+    "Can firmware updates be declined? Not established.",
+    "What does the NVR transmit to Reolink when it has internet (phones_home)? No traffic analysis found.",
+    "No FCC grant found under a targeted search for this NVR model; Reolink is a vendor that demonstrably files grants for its radio-equipped products (see the RLC-810A and D340W doorbell records' FCC entries), which supports reading the absence here as the NVR containing no radio rather than a search failure — but the search was not exhaustive."
+  ],
+  "conflicts_with": null,
+  "notes": "The standalone-NVR answer for the security domain: a recorder the owner plugs cameras into directly, with local admin credentials and no vendor account gating core recording or local viewing. Complements the RLC-810A and D340W doorbell records, which name this NVR (and third-party alternatives) as one place their RTSP/ONVIF streams can land.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-1-security",
+    "run_id": "2026-09-03-security",
+    "searches": 6
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "The NVR already is the owned local storage. Remote access without Reolink's app/cloud can be self-hosted with a VPN (WireGuard, Tailscale) back to the LAN and the NVR's own local web/HDMI interface; it also accepts third-party ONVIF cameras directly rather than requiring Reolink hardware throughout."
+}

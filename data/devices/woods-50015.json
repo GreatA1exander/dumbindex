@@ -1,0 +1,88 @@
+{
+  "model_id": "woods-50015",
+  "make": "Woods",
+  "model": "50015",
+  "category": "lighting",
+  "subcategory": "outlet timer",
+  "tier": "D0",
+  "tier_rationale": "A plug-in, weatherproof outdoor timer programmed entirely from its own keypad, with a self-charging internal battery that holds the schedule through a power outage. The manufacturer's own catalog documents the whole Woods timer line, including this model, with no app, Wi-Fi, or wireless feature of any kind, and Southwire (Woods' parent) demonstrably files FCC grants for its wireless remote-control products under a separate line, so the absence of any grant for the 50015 is meaningful.",
+  "the_unplug_test": "This is a plug-in box between the wall outlet and whatever you connect to it, with its own keypad and a small rechargeable cell that keeps the clock running through a blackout. It has no idea the internet exists. Programming it, changing the schedule, and everything it does happens by pressing its own buttons, and none of that changes if your router is off or gone forever.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Sealed weatherproof enclosure sold as a unit; no manufacturer component repair path found. The internal battery is not user-replaceable per the instructions."
+  },
+  "availability": "in_stock",
+  "price_band": "$15-25",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Southwire / Woods (manufacturer catalog)",
+      "url": "https://www.southwire.com/medias/2404-Woods-Catalog-WEB.pdf"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.southwire.com/medias/2404-Woods-Catalog-WEB.pdf",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer (Southwire, which owns the Woods brand) catalog listing the full Woods outdoor timer line, including digital keypad-programmed timers like the 50015. No Wi-Fi, Bluetooth, app, or wireless connectivity feature appears anywhere in the catalog for any Woods timer product.",
+      "archive_url": null
+    },
+    {
+      "url": "https://florafelt.com/woods-outdoor-digital-timer-instructions",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "Reproduction of the Woods 50015 outdoor digital timer's own instruction manual: programming is done entirely via physical buttons on the unit, the internal battery is charged by plugging the unit in for 10 minutes, and there is no mention of an app, account, or internet connection anywhere in the setup procedure.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2AENI-50126R",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Southwire holds an FCC grant (2AENI-50126R) for a Woods-branded wireless remote control product, and Woods Wire Products Inc separately holds grantee code IAQ for remote-control transmitters — establishing that Woods/Southwire reliably files FCC grants for its radio-equipped timer and remote products. No such grant exists for the 50015, which supports its no-radio determination.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Confirm the exact amperage/wattage rating (retailer listings agree on 15A/125V/1875W/3-4HP but this was not independently verified against a manufacturer spec sheet with a per-model number)."
+  ],
+  "conflicts_with": null,
+  "notes": "Woods also sells wireless remote-control outdoor outlet systems (e.g. the 50126R line) that look similar on a shelf but carry an FCC grant and a handheld transmitter; the 50015 has neither. Check for a remote control in the box as the tell.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-03-lighting",
+    "searches": 6
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

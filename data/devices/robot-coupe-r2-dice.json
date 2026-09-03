@@ -1,0 +1,62 @@
+{
+  "model_id": "robot-coupe-r2-dice",
+  "make": "Robot Coupe",
+  "model": "R 2 Dice (120V/60/1)",
+  "category": "kitchen",
+  "subcategory": "food processor",
+  "tier": "D0",
+  "tier_rationale": "Robot Coupe USA's own specification sheet describes the entire control surface as 'built in on / off / pulse buttons' on a direct-drive induction motor with 'no belt', lists only electrical ratings (120V/60/1, 7A, NEMA 5-15P, delivered with cord and plug), and shows ETL electrical/sanitation and cETL certification marks. No app, WiFi, digital display, or programmable feature appears anywhere in the two-page document.",
+  "the_unplug_test": "You press the physical On button, the induction motor spins at its fixed 1725 rpm, and Off or the safety interlock (opening the bowl lid or feed lead) stops it instantly. Pulse gives short bursts for precision cuts. There is no clock, no memory, and no vendor server anywhere in the loop — cutting or dicing a batch requires nothing but the machine, an outlet, and the disc you loaded.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": ["none"],
+  "phones_home": "none",
+  "radios": ["none"],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Robot Coupe publishes a large catalog of interchangeable discs, blades, and cleaning tools as standalone SKUs (26+ disc options for slicing/grating/julienne/dicing, a fine-serrated herb blade, a dedicated dicing-grid cleaning kit), and the direct-drive motor design avoids belt wear parts. Commercial foodservice parts channel."
+  },
+  "availability": "in_stock",
+  "price_band": "$2000-2300",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {"name": "WebstaurantStore", "url": "https://www.webstaurantstore.com/robot-coupe-r2-dice-combination-continuous-feed-food-processor-dicer-with-3-qt-gray-polycarbonate-bowl-2-hp/649R2DICE.html"}
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0529/4931/9878/files/Robot-Coupe-R2-DICE-Spec-Sheet.pdf",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Robot Coupe USA specification sheet (branded robotcoupeusa.com, address and phone on every page): motor base described as direct-drive induction with 'built in on / off / pulse buttons' and 'safety and motor brake'; Technical Data table lists 120V/60/1, 7 Amp, 1725 rpm, NEMA 5-15P, delivered with cord and plug; Standards section shows ETL electrical/sanitation listing and cETL (Canada). No connectivity or digital-control feature anywhere in the document.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.webstaurantstore.com/robot-coupe-r2-dice-combination-continuous-feed-food-processor-dicer-with-3-qt-gray-polycarbonate-bowl-2-hp/649R2DICE.html",
+      "class": "C",
+      "accessed": "2026-09-03",
+      "supports": "Retailer listing corroborating current in-stock availability and price (~$2,159) for the R2 Dice.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [],
+  "conflicts_with": null,
+  "notes": "Commercial combination bowl-cutter/vegetable-prep processor rated for 10-30 meals per service; a step up in capability and price from a countertop food processor, but the mechanical-controls-only design is representative of Robot Coupe's whole commercial line, which is a strong seam for this category per PRINCIPLES' commercial-equivalent heuristic.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {"date": "2026-09-03", "change": "First published at D0.", "kind": "listed", "source": null}
+  ],
+  "agent_meta": {"model": "claude-opus-5", "prompt_version": "kitchen-domain-wave", "run_id": "2026-09-03-kitchen", "searches": 3},
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

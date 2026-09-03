@@ -6,7 +6,7 @@
   "subcategory": "washing machine",
   "tier": "D0",
   "tier_rationale": "Manufacturer product page lists no connectivity, app or smart feature of any kind, and the machine is sold specifically on its mechanical dial controls and absence of an electronic control panel.",
-  "the_unplug_test": "Nothing changes. You turn a dial to a cycle and pull the knob. There is no Wi-Fi, no app, no account, and no cycle that needs to check in with anyone. There is also no lid lock, so you can open it mid-cycle to add the sock you missed \u2014 a small thing that tells you most of what you need to know about the design philosophy.",
+  "the_unplug_test": "Nothing changes. You turn a dial to a cycle and pull the knob. There is no Wi-Fi, no app, no account, and no cycle that needs to check in with anyone. There is also no lid lock, so you can open it mid-cycle to add the sock you missed — a small thing that tells you most of what you need to know about the design philosophy.",
   "status": "verified",
   "rejection_reason": null,
   "account_required": "none",
@@ -26,7 +26,7 @@
   "repairability": {
     "parts_available": "yes",
     "ifixit_score": null,
-    "notes": "Commercial-derived mechanical platform \u2014 solid metal transmission, steel base, stainless tub. Serviced through a dealer network rather than by board swaps, and parts are stocked because the same components go into laundromat machines. Five-year full parts and labour warranty."
+    "notes": "Commercial-derived mechanical platform — solid metal transmission, steel base, stainless tub. Serviced through a dealer network rather than by board swaps, and parts are stocked because the same components go into laundromat machines. Five-year full parts and labour warranty."
   },
   "availability": "in_stock",
   "price_band": "$1400-1700",
@@ -44,7 +44,7 @@
       "url": "https://speedqueen.com/products/top-load-washers/tc5003wn/",
       "class": "A",
       "accessed": "2026-09-02",
-      "supports": "Manufacturer product page shows a mechanical dial control panel and lists no WiFi, connectivity, app or smart feature. Explicitly no lid lock. MSRP $1,649 with 5-year parts and labour warranty. No connected diagnostics \u2014 service is via dealer locator and phone.",
+      "supports": "Manufacturer product page shows a mechanical dial control panel and lists no WiFi, connectivity, app or smart feature. Explicitly no lid lock. MSRP $1,649 with 5-year parts and labour warranty. No connected diagnostics — service is via dealer locator and phone.",
       "archive_url": null
     },
     {
@@ -52,11 +52,11 @@
       "class": "C",
       "accessed": "2026-09-02",
       "supports": "Major retailer listing corroborating current US availability of the TC5003WN.",
-      "archive_url": null
+      "archive_url": "https://web.archive.org/web/20260115022826/https://www.bestbuy.com/product/speed-queen-tc5-classic-top-load-washer-white/J3GWCHL7JL"
     }
   ],
   "open_questions": [
-    "Confirm from the service manual whether the timer is a true electromechanical cam timer or an electronic timer behind a dial \u2014 the distinction does not change the tier, since neither has a radio, but it matters for repairability.",
+    "Confirm from the service manual whether the timer is a true electromechanical cam timer or an electronic timer behind a dial — the distinction does not change the tier, since neither has a radio, but it matters for repairability.",
     "Speed Queen's TR-series models use electronic controls; confirm none of the TR line has added connectivity, since buyers cross-shop these."
   ],
   "conflicts_with": null,

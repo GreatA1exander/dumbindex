@@ -1,0 +1,129 @@
+{
+  "model_id": "reolink-d340w",
+  "make": "Reolink",
+  "model": "D340W (Video Doorbell WiFi)",
+  "category": "security",
+  "subcategory": "doorbell",
+  "tier": "D2",
+  "tier_rationale": "Reolink operates a cloud and app for this doorbell (My Cloud backup, push notifications, remote live view), so it is not D1 — but Reolink's own setup guide for WiFi cameras with no LAN port shows initial configuration completing with only a local camera password and a device name, no cloud account login step. That guide's ten steps were re-read end to end for this record: scan the UID, choose 'Wi-Fi Not Configured', enter the network password, let the camera scan a QR code, then 'Create the password for your camera' and name it. There is no registration or sign-in step anywhere in the flow, and the one credential it does create is a password stored on the camera — a local credential, not a Reolink account, by the test in PRINCIPLES. The D340W is a Wi-Fi camera with no LAN port, which is exactly the population that article covers. Core function — detecting a visitor, ringing the chime, and recording video — is confirmed by Reolink's own FAQ to keep working with no internet connection at all, and the camera exposes standard RTSP and ONVIF over the LAN for a recorder the owner controls.",
+  "the_unplug_test": "Unplug the router and the doorbell keeps doing its job: press the button and the chime still rings, because that pairing runs on its own short-range radio, not your internet connection. Motion and person detection keep running on the camera itself, and video keeps recording to a microSD card if one is installed — Reolink's own support documentation confirms both continue with no internet connection. On the local network you can still pull the live RTSP stream and the ONVIF feed into your own NVR software — Frigate, Blue Iris, Synology Surveillance Station. What you lose is anything that has to leave the house: push notifications to your phone, live view from outside your network, and Reolink's optional cloud backup.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "partially",
+  "offline_losses": [
+    "push notifications to the phone app",
+    "live view or access from outside the local network",
+    "Reolink's optional cloud (My Cloud) backup"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "rest",
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "proprietary_subghz"
+  ],
+  "fcc_id": "2AYHE-2310B",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "No teardown or third-party parts source found."
+  },
+  "availability": "in_stock",
+  "price_band": "$100-140",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Reolink (manufacturer)",
+      "url": "https://reolink.com/product/d340w/"
+    },
+    {
+      "name": "Amazon",
+      "url": "https://www.amazon.com/REOLINK-Doorbell-Detection-Storage-Assistant/dp/B0B7S3JSG7"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://reolink.com/product/d340w/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product/spec page: 2.4/5GHz dual-band WiFi radio, ONVIF/RTSP/RTMP protocol support, microSD (up to 256GB) and NVR local storage, and marketing copy stating '24/7 Recording, No Monthly Fees'.",
+      "archive_url": null
+    },
+    {
+      "url": "https://support.reolink.com/articles/12704251320345-FAQs-Video-Doorbell-WiFi/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Reolink's own FAQ for this model: 'Without the Internet connection, the doorbell camera can still detect motion/person and record videos on the SD card' and the chime rings on a button press 'regardless of the Internet connection'; without internet it cannot send mobile alerts or be viewed remotely.",
+      "archive_url": null
+    },
+    {
+      "url": "https://support.reolink.com/articles/360020094714-How-to-Initially-Set-up-Reolink-WiFi-Cameras-without-LAN-Port-via-Reolink-App/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Reolink's own setup guide for WiFi cameras with no LAN port (the doorbell's exact setup path): the 10-step flow creates a local camera password and device name, with no cloud account creation or login step shown.",
+      "archive_url": null
+    },
+    {
+      "url": "https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Reolink's own compatibility list confirms the Video Doorbell WiFi (D340W) supports CGI, RTSP and ONVIF, standalone or via a Home Hub/NVR.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2AYHE-2310B",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grant 2AYHE-2310B for 'Video Doorbell', Reolink Innovation Limited, covering 2.4GHz WiFi (2412-2462MHz), 5GHz WiFi (5180-5825MHz) and a 915MHz Part 15C link; the grant's own quick-start-guide filename identifies item numbers D340P/D340W as sharing this filing, and the 915MHz band corresponds to the wireless plug-in chime pairing.",
+      "archive_url": null
+    },
+    {
+      "url": "https://jpk.io/home-automation/reolink-doorbell-home-assistant-setup/",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "Independent write-up confirming RTSP streams (h264Preview_01_main/sub) work fully on the LAN without going through Reolink's cloud, and that the Reolink account used during app setup can be logged out afterward with 'everything from here local'.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Reolink's own no-LAN-port setup guide has no account step in any of its ten steps, and the D340W is squarely in that guide's scope, but the flow was not walked on the doorbell's own current app screens. What would change the tier is a My Cloud sign-in prompt that is mandatory rather than offered — nothing in Reolink's documentation suggests one, and this is recorded as a residual doubt rather than an open fact.",
+    "Whether the 915MHz radio identified in the shared FCC filing is used on every D340W unit for the chime pairing, or only on the chime accessory itself — the grant covers the whole family (D340P/D340W) rather than isolating which item number uses which radio.",
+    "Can firmware updates be declined? Not established.",
+    "What does the doorbell transmit to Reolink when it has internet (phones_home)? No traffic analysis found.",
+    "Exact current US price not confirmed on a manufacturer or single major-retailer page with a visible number; band is derived from multiple retail listings observed on the access date."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the doorbell answer the site needed: the existing Reolink outdoor camera record (RLC-810A) and the Ring doorbell rejection both point at ONVIF/RTSP cameras that are not doorbells. The D340W is a doorbell, wired to existing chime wiring or paired to a plug-in chime, that records locally and exposes RTSP/ONVIF like Reolink's cameras. Distinguish from the D340P (PoE) sibling, which Reolink's own product page describes as having no WiFi/Bluetooth radio at all, even though its quick-start guide is filed under the same FCC grant as this WiFi model — that PoE variant was not chosen for this record because of that unresolved radio ambiguity.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-03",
+      "change": "Deciding fact for the D2 firmed up. Reolink's own setup documentation was re-read step by step: no account registration or sign-in appears anywhere in the ten-step flow, and the sole credential created is a camera password, which is a local credential rather than a vendor account. The open question is narrowed from 'unconfirmed' to a residual doubt.",
+      "kind": "correction",
+      "source": "https://support.reolink.com/hc/en-us/articles/360020094714-How-to-Initially-Set-up-Reolink-WiFi-Cameras-without-a-LAN-port-via-Reolink-App/"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-1-security",
+    "run_id": "2026-09-03-security",
+    "searches": 14
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "RTSP and ONVIF feed directly into Frigate, Blue Iris, Synology Surveillance Station or ZoneMinder on hardware the owner runs, same as Reolink's other cameras. As with the RLC-810A, Reolink's on-device person/package detections are exposed through Reolink's own software rather than guaranteed over ONVIF, so a third-party recorder reliably gets the video but not necessarily the AI event tags."
+}
