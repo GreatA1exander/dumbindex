@@ -1,15 +1,18 @@
 {
   "prompt_version": "phase-0-manual",
-  "last_run": "2026-09-03-discover-wave2",
+  "last_run": "2026-09-03-discover-wave3-partial",
   "domain_rotation_pos": 0,
   "next_domain": "photo",
   "shard_index": 0,
   "shard_count": 4,
   "unfinished": [
-    "Domains still short of 8 published records after wave 2: kitchen 6, lighting 6, security 6, automotive 6, computing 5, photo 5, health 5, wearables 5, office 5, baby-pet 3, climate 1, tools 1.",
+    "Wave 3 died to a session limit (resets 5:10am PT 2026-09-03). Only the computing agent got records to disk. RELAUNCH kitchen, lighting, security, automotive, wearables — none of them wrote a single file.",
+    "The five dead agents' research is lost, but their briefs are reconstructable from this journal entry. Security's brief carried the highest-value single target in the backlog: a doorbell-form-factor camera with local recording, to give the Ring rejection an alternative.",
+    "Domains still short of 8 published records: kitchen 6, lighting 6, security 6, automotive 6, photo 5, health 5, wearables 5, office 4, baby-pet 3, computing 1, climate 1, tools 1.",
+    "QNAP owed a dedicated ledger audit. It has a history of NAS-targeting ransomware and of force-pushing firmware in response; whether any of that constitutes removing function from shipped devices under the ledger scale is unresolved. Scored 0 in the meantime.",
+    "dell-p2425h is published D0 while its own open question notes Dell's datasheet advertises 'Remote Asset Management' without describing the transport. Almost certainly DDC/CI over the video cable rather than a radio, but it is an unresolved hedge on the deciding fact for a D0.",
     "petlibro-granary-camera-feeder rejection has no alternative; the non-camera Granary (AF005/AF006) is the natural candidate and is unresearched.",
     "Five rejections across baby-pet, photo and automotive have no alternative to point at. Discovery task, not a filing error.",
-    "CRITIC pass owed: scan every published record for a rejection or tier claim that its own open_questions contradicts. One such case (fi-series-3-plus) was found by hand in wave 2.",
     "Withings ledger entry sits at 1 (alleged, not established). Recheck for independent reporting of a dated feature removal on the next refresh."
   ],
   "_note": "Strict rotation through schema/taxonomy.json domains. The agent never chooses; it reads domain_rotation_pos and advances it. Discovery is currently running as parallel domain-scoped waves rather than the one-device-per-subagent shape in ORCHESTRATOR.md — see journal entries 2026-09-02-discover-wave1 onward for why, and update ORCHESTRATOR.md if this holds."

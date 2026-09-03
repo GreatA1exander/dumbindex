@@ -1,0 +1,33 @@
+{
+  "run_id": "2026-09-03-discover-wave3",
+  "job": "discover",
+  "prompt_version": "phase-0-manual",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "Third discovery wave: six domain agents on the six largest per-domain shortfalls (kitchen, lighting, security, automotive, computing, wearables), at 7 records each.",
+
+  "outcome": "Partial. All six agents were terminated by the same session limit that killed wave 2, roughly 25 minutes in. Only the computing agent had finished writing; it produced all seven of its records. The other five died during research with nothing on disk.",
+
+  "devices_added": 7,
+  "domains": {"computing": 7},
+
+  "findings": [
+    "Peripherals were the right call. Five of the seven are D0 records in subcategories that had nothing at all — KVM, webcam, mouse, docking station, keyboard, switch — and they are the kind of record the catalog was missing: not arguments about whether a device can be liberated, just hardware that was never connected in the first place.",
+    "The two agents that reported before dying had both just confirmed FCC sibling-control cleanly (TP-Link, IOGEAR, and separately Schlage B60 documentation for security). The heuristic is holding up as the workhorse of D0 claims."
+  ],
+
+  "system_gaps_found": [
+    {"gap": "qnap-ts-233-us was filed D2 with account_required 'for_setup', which is a REJECT trigger — the field contradicted the tier it was filed under. The cause was a genuine ambiguity, not carelessness: QTS setup does make you create an administrator account, but it is a credential stored on the NAS, not a QNAP account. The record's own rationale said as much while the field said otherwise.",
+     "fix": "Corrected to 'none'. Added a PRINCIPLES rule distinguishing a local credential from a vendor account, with the test 'if the vendor went out of business tonight, could you still get in tomorrow?', and a validator rule failing any D0/D1/D2 record that claims a mandatory vendor account. D3 is exempt, since D3 means core function does need the cloud and a local path exists anyway. Audited the catalog: qnap was the only false positive, and sonoff-basicr2's for_core at D3 is correct."},
+    {"gap": "All seven records arrived with vendor_risk null. The agents had searched the ledger, found no entry, and declined to write a number — but 'no documented incident' is what 0 means on the scale, and null left them inconsistent with every other verified record in the catalog.",
+     "fix": "Normalised to 0 across all verified records. The agents' caveat that no dedicated vendor audit was performed stays where it belongs, in open_questions."}
+  ],
+
+  "honest_limitations": [
+    "plugable-ud-3900 rests on a single manufacturer page. It clears the bar (one Class A) but it is the thinnest record in the batch and the agent flagged it as such.",
+    "The five dead agents produced nothing recoverable. Unlike wave 2, where partial output was salvageable from disk, this wave lost its research entirely — the agents were still gathering when they were killed.",
+    "Two waves in a row have now been killed by the same limit. The waves are sized for a budget that is not there. Wave 4 should run fewer agents, not more."
+  ],
+
+  "wall_clock_min": 25,
+  "surprises": "The most useful record of the wave was the one that was wrong. The QNAP account-field error is a false positive the catalog would generate over and over — every NAS, every router, every network camera makes you set an admin password at setup — and it would have rejected most of the good hardware in two domains. It surfaced only because a tier and a field disagreed, which is a thing a validator can check and a human reading the page never would."
+}

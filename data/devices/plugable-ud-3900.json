@@ -1,0 +1,78 @@
+{
+  "model_id": "plugable-ud-3900",
+  "make": "Plugable",
+  "model": "UD-3900",
+  "category": "computing",
+  "subcategory": "docking station",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer's own product page describes a USB-A/USB-C hybrid dock that passes through Ethernet, USB, audio, and dual video with no wireless radio, no vendor account, and no cloud service of any kind. Video output on Windows and macOS requires the DisplayLink driver, but that is a one-time local software install, not a network dependency, an account, or a subscription.",
+  "the_unplug_test": "Nothing changes; the dock has no network identity of its own beyond passing your laptop's own Ethernet and USB traffic through it. On Windows and macOS the video outputs need Plugable's DisplayLink driver installed once, but that driver runs entirely on your machine — there is no account, cloud service, or app tied to the dock afterward. ChromeOS 100+ needs no driver at all.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Video output on Windows/macOS specifically requires the DisplayLink driver to have been installed at least once; without it the display ports pass no signal. USB, audio, and Ethernet passthrough are unaffected either way."
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$70-110",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Plugable (manufacturer)",
+      "url": "https://plugable.com/products/ud-3900"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://plugable.com/products/ud-3900",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: wired-only USB-A/USB-C hybrid connection, no vendor account or cloud service required, DisplayLink driver install process for Windows/macOS is local, no driver needed on ChromeOS 100+, full spec table and price.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Only one qualifying independent source was used (manufacturer's own page); a second corroborating source (e.g. a teardown or the DisplayLink chipset datasheet) would strengthen the no-radio claim, though nothing in any retailer listing or review suggests wireless capability.",
+    "No FCC ID was located for this specific model; Plugable's docks are DisplayLink-chipset designs and typically self-certify as unintentional radiators (Part 15B) rather than filing a discrete grant, but this was not independently confirmed.",
+    "Plugable has no entry in data/vendors.json; no incident was found in this search."
+  ],
+  "conflicts_with": null,
+  "notes": "A conventional USB dock rather than Thunderbolt; the DisplayLink dependency for video is a real local-software requirement worth knowing about even though it carries no cloud or account cost.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-1-computing",
+    "run_id": "2026-09-03-computing",
+    "searches": 3
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

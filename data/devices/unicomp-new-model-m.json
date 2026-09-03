@@ -1,0 +1,82 @@
+{
+  "model_id": "unicomp-new-model-m",
+  "make": "Unicomp",
+  "model": "New Model M (USB)",
+  "category": "computing",
+  "subcategory": "keyboard",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer's own product page lists a pressure-locking USB Type-A port (PS/2 also offered on a separate SKU) as the sole connection method and describes plug-and-play operation with no drivers required for basic function. No wireless option is offered on this line at all. Unicomp's FCC grantee code (M58) is used for Part 15B unintentional-radiator verifications on its keyboards, not intentional-radiator grants, consistent with a device that contains no radio.",
+  "the_unplug_test": "Nothing changes, because this keyboard was never connected to anything but the computer it's plugged into. It converts buckling-spring keypresses into USB HID reports and does nothing else. There is no companion app, no account, no firmware update path over a network, and no vendor server it could phone home to even if it wanted one.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Detachable USB cable, socketed buckling-spring switches, and a manufacturer that still stocks its own spare parts decades after the original IBM design; Unicomp manufactures in Lexington, Kentucky."
+  },
+  "availability": "in_stock",
+  "price_band": "$125-180",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Unicomp / PCKeyboard (manufacturer)",
+      "url": "https://www.pckeyboard.com/page/product/NEW_M"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.pckeyboard.com/page/product/NEW_M",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: USB Type-A (or PS/2 variant) is the only connection method, no wireless option offered, plug-and-play with no drivers required, price and specs.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/M58",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grantee index for Unicomp Inc (code M58): filings are unintentional-radiator (Part 15B) verifications for keyboards, not intentional-radiator grants, consistent with a device that has no radio.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Units made after ~March 2023 use the 'Aristides' controller (a Raspberry Pi Pico HAT) instead of the earlier 'Ruffian' board, opening the door to QMK-Vial firmware remapping. No source found describing any wireless variant of this controller (e.g. Pico W) being used, so 'none' for radios is treated as the default rather than something explicitly ruled out per-unit.",
+    "Unicomp has no entry in data/vendors.json; no incident was found in this search, but a dedicated audit was not performed."
+  ],
+  "conflicts_with": null,
+  "notes": "A modern continuation of the IBM Model M buckling-spring keyboard, built by the company that holds the original tooling. Sold in USB and PS/2 versions with no wireless option in the line at all.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-1-computing",
+    "run_id": "2026-09-03-computing",
+    "searches": 3
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

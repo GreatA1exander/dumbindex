@@ -58,6 +58,17 @@ reader served "D2 · vendor risk 3/3 · liberatable" learns strictly more than o
 "REJECT", because those are three separate facts and each one changes a different
 decision. This rule cost us a wrong tier once already; see the Chamberlain record.
 
+**An account on the device is not an account with the vendor.** Setting an admin
+username and password during setup of a NAS, a router, or a network camera creates a
+credential stored on hardware you own. Nothing is registered with anyone, nothing can be
+revoked, and the device does not care whether the vendor still exists. That is
+`account_required: none`. Reserve `for_setup` for a vendor account — one you register
+with the company, that they can suspend, and that ties the device to their servers. The
+distinction matters because a mandatory vendor account at setup is a REJECT trigger, and
+filing a local admin password under it would reject most of the good hardware in
+networking and storage. The test: if the vendor went out of business tonight, could you
+still get in tomorrow? If yes, it was a local credential.
+
 **"Core function" is the thing the appliance exists to do.** A refrigerator's core
 function is refrigeration, not the door screen. A video doorbell's core function includes
 showing you who is there — so a doorbell that needs the cloud for video is not D2 no

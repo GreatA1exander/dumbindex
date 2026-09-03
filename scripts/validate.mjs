@@ -71,6 +71,14 @@ for (const f of files) {
   for (const s of src) seen.set(s.url, (seen.get(s.url) ?? 0) + 1);
   for (const [u, n] of seen) if (n > 1) E(`cites the same URL ${n} times as separate sources — ${u}`);
 
+  // The decision table makes a mandatory VENDOR account at setup a REJECT trigger, so a
+  // record below REJECT cannot also claim one. D3 is the deliberate exception: it means
+  // core function does need the cloud, and a maintained local path exists anyway.
+  // The usual cause of a false positive here is a local admin credential — the password
+  // you set on your own NAS or router — being filed as if it were a vendor account.
+  if (["D0", "D1", "D2"].includes(d.tier) && ["for_setup", "for_core"].includes(d.account_required))
+    E(`tier ${d.tier} with account_required "${d.account_required}" — a mandatory vendor account is a REJECT trigger. If the account is a local credential on the device itself, that is account_required "none"`);
+
   // §5: vendor_risk is computed from the ledger, never from reputation. A score with no
   // dated, sourced incident behind it is exactly the vibes-based judgement the ladder
   // exists to prevent — and it is invisible on the site, since /vendors renders the

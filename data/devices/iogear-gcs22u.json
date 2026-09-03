@@ -1,0 +1,82 @@
+{
+  "model_id": "iogear-gcs22u",
+  "make": "IOGEAR",
+  "model": "GCS22U",
+  "category": "computing",
+  "subcategory": "KVM",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer's own product page and datasheet describe a USB-bus-powered, cable-based 2-port KVM switch: 'No software drivers required — simply connect the cables to the computers,' no power adapter needed, and switching is done with a physical remote button on a wired cable. IOGEAR's parent, ATEN Technology (FCC grantee code QLE), files intentional-radiator grants for the Wi-Fi and Bluetooth adapters it sells under the IOGEAR brand, and no such grant exists for the GCS22U, consistent with a device that contains no radio.",
+  "the_unplug_test": "Nothing changes. The switch has no network connection to lose — it only ever speaks USB and VGA to the two computers plugged into it. Pressing the physical button, or the one on the 6-foot remote cable, toggles which machine gets the shared keyboard, mouse, and monitor. There is no app, no account, and no firmware update path of any kind.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Cables are molded into the unit rather than replaceable; no teardown or spare-parts source was found."
+  },
+  "availability": "in_stock",
+  "price_band": "$50-80",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "IOGEAR (manufacturer)",
+      "url": "https://iogear.com/products/gcs22u"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://iogear.com/products/gcs22u",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: no software/drivers required, USB bus powered (no power adapter), physical remote-cable switching, OS compatibility list.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/QLE",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "FCC grantee index for ATEN Technology, Inc. dba IOGEAR (code QLE): filings are intentional-radiator grants for WiFi modules, Bluetooth dongles, and WLAN adapters sold under the IOGEAR brand. No grant exists for the GCS22U KVM switch, consistent with a device that has no radio.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Current retail price varies significantly by seller (IOGEAR's own site lists $79.95; third-party marketplace listings vary); no single authoritative current price was pinned down beyond a band.",
+    "IOGEAR/ATEN Technology has no entry in data/vendors.json; no incident was found in this search, but a dedicated audit was not performed."
+  ],
+  "conflicts_with": null,
+  "notes": "A manual, mechanical alternative to software-based KVM switching: no drivers of any kind on either connected computer, and the failure mode of unplugging is simply 'pick which cable is live.'",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-1-computing",
+    "run_id": "2026-09-03-computing",
+    "searches": 3
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}
