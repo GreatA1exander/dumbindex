@@ -1,0 +1,90 @@
+{
+  "model_id": "pine64-pinecil-v2",
+  "make": "Pine64 (Pine Store Sdn Bhd)",
+  "model": "Pinecil V2",
+  "category": "office",
+  "subcategory": "soldering station",
+  "tier": "D1",
+  "tier_rationale": "The Pinecil V2's Bouffalo BL706 chip includes Bluetooth Low Energy hardware, and IronOS -- the open-source firmware it ships with as the stock, out-of-box experience -- lists BLE as a supported feature on Pinecil V2 in its current stable release. PINE64 operates no account system, app store, or cloud service of any kind for the iron: BLE is used only for local, in-room communication with a phone or PC, so the radio's presence puts this at D1 rather than D0, with no vendor cloud in the picture to make it D2.",
+  "the_unplug_test": "There is nothing to unplug from. The Pinecil is a USB-C/barrel-jack powered soldering iron, configured and used entirely from its own on-device menu and OLED screen; the only thing on the network is your own room, if you choose to pair the BLE radio to a phone at all. Every setting -- temperature, sleep behavior, power source negotiation -- lives in the iron itself and in the open-source IronOS firmware you flash onto it over USB, not in any account.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "PINE64 sells individual replacement parts directly (shell halves, DC jack, breakout board, tips) and the hardware schematics are published openly."
+  },
+  "availability": "in_stock",
+  "price_band": "$26-36",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "PINE64 Store (manufacturer)",
+      "url": "https://pine64.com/product/pinecil-smart-mini-portable-soldering-iron/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://pine64.com/product/pinecil-smart-mini-portable-soldering-iron/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer's own store listing for the Pinecil V2: community price $25.99 / retail $35.99, chipset Bouffalo BL-706, OS listed as 'Ralim's IronOS build,' certifications FCC/CE RED/ROHS, and no account, app, or cloud service named anywhere in setup or use.",
+      "archive_url": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Ralim/IronOS/master/README.md",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "The official IronOS firmware repository's supported-hardware table lists Pinecil V2 with BLE marked as supported in the current stable release (v2.23), and states the firmware is installed by flashing over USB from a downloaded release -- confirming both the radio's functional presence and that firmware updates are a manual, ownership-controlled action rather than a forced over-the-air push.",
+      "archive_url": null
+    },
+    {
+      "url": "https://wiki.pine64.org/wiki/Pinecil",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "PINE64's own wiki: 'The v2 model allows BLE Bluetooth control because of the switch to the Bouffalo BL706 MCU... The BL706 features Bluetooth Low Energy (BLE / Zigbee); future IronOS firmware releases will expose features over BLE,' and separately states the Pinecil running 'the newest official GitHub IronOS firmware' is the authentic, stock configuration -- i.e. open firmware is not a liberation step here, it is what ships.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "PINE64's own filed FCC compliance document for the Pinecil V2 (https://files.pine64.org/doc/cert/Pinecilv2%20FCC%20Certificate%20LCSA070722057E.pdf, dated 22 July 2022, at Pinecil V2's original launch) covers only FCC Part 15 Subpart B (unintentional-radiator emissions, Class B SDoC) and lists no FCC ID or Part 15C intentional-radiator grant for the BLE radio. This is genuinely inconsistent with the chip-level and firmware-level BLE documentation cited above; it may mean BLE was not yet enabled in shipped firmware at the time of that filing (IronOS's own wiki text calls BLE a 'future' firmware feature as of the V2 launch) and a fuller radiator certification was filed later but not located, or it may be a real compliance gap. Flagged rather than resolved: it does not change what the hardware does, but a maintainer may want to note it.",
+      "Exactly what functions IronOS currently exposes over BLE (read-only telemetry vs. settings changes) and whether any third-party companion app exists were not confirmed beyond the firmware repo's support-table checkmark.",
+    "PINE64 as a company/vendor is not in data/vendors.json; a light search turned up no incident of a PINE64 device losing function post-purchase, but the check was not exhaustive."
+  ],
+  "conflicts_with": null,
+  "notes": "The soldering-station answer to the brief's question 'does open-by-default make this D0 with a liberation story, or something else': it's something else. Because the V2 hardware includes a working BLE radio, D0 ('no radio') does not literally apply even though the device is about as vendor-independent as hardware gets -- PINE64 sells the iron, publishes the schematics, and the stock firmware is the same open-source project (Ralim's IronOS) that a liberation effort would install on a closed competitor. D3's liberation field was left null because D3 only applies to devices that are cloud-dependent as sold; this one was never cloud-dependent, so there is nothing to liberate it from.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-office-domain",
+    "run_id": "2026-09-03-office",
+    "searches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

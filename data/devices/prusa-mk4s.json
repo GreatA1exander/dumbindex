@@ -1,0 +1,88 @@
+{
+  "model_id": "prusa-mk4s",
+  "make": "Prusa Research",
+  "model": "Original Prusa MK4S",
+  "category": "office",
+  "subcategory": "3D printer",
+  "tier": "D2",
+  "tier_rationale": "Prusa operates a real vendor cloud (Prusa Connect) and sells an optional Wi-Fi/NFC-equipped printer, but Prusa's own documentation states the MK4S is designed for native offline use, completes setup and prints with no account of any kind, and reaches 100% of core function (slicing on a computer, printing from a USB drive, monitoring over the local network via the built-in PrusaLink web interface) with the printer never touching Prusa's servers.",
+  "the_unplug_test": "Block internet at the router and the MK4S keeps printing exactly as before: slice a model in PrusaStudio/PrusaSlicer on your own computer, copy the G-code to a USB drive, and print from the printer's own screen. The built-in PrusaLink web server still serves a local control and monitoring page over your LAN with no internet required. The only things that stop working are Prusa Connect's remote (over-the-internet) monitoring and the Prusa mobile app, both of which are opt-in extras layered on top of a printer Prusa explicitly documents as usable with 'no drawbacks or limitations' offline. The Wi-Fi module itself is a physically removable ESP add-on, not a soldered-in requirement.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Prusa Connect remote (over-internet) monitoring and control",
+    "Prusa mobile app",
+    "cloud print-queue / multi-printer fleet dashboard"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "rest"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "nfc"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Sold as an open-hardware kit with a full parts catalogue and service manuals published by Prusa; the assembled version uses the same field-replaceable parts."
+  },
+  "availability": "in_stock",
+  "price_band": "$620-770",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Prusa Research (manufacturer)",
+      "url": "https://www.prusa3d.com/product/original-prusa-mk4s-3d-printer-2/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.prusa3d.com/product/original-prusa-mk4s-3d-printer-2/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: states the MK4S 'has been designed for native offline use, so if you don't want to use the network services, you don't have to,' lists connectivity as Ethernet, NFC receiver and a removable ESP Wi-Fi module delivered with the printer, USB drive printing, and kit/assembled pricing of $620.84/$765.92.",
+      "archive_url": null
+    },
+    {
+      "url": "https://help.prusa3d.com/article/prusa-connect-and-prusalink-explained_302608",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Prusa's own help center distinguishes cloud-based Prusa Connect from locally-hosted PrusaLink (built into the MK4S, accessed by entering the printer's own IP address in a browser), states neither service is required for basic printing via USB or the onboard controls, and that PrusaLink provides monitoring, file upload and print control without any internet access or cloud account.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "No FCC ID was located for the ESP Wi-Fi add-on module in the time available; Prusa's FCC grantee code was not confirmed, so this is an unresolved lookup rather than a meaningful absence.",
+    "Whether firmware updates can be declined, or are ever pushed automatically over Prusa Connect, was not confirmed from documentation reviewed.",
+    "Whether the standard setup wizard offers an explicit 'skip network setup' option on first boot, versus simply not forcing one, was not directly observed (based on documentation, not a hands-on unboxing)."
+  ],
+  "conflicts_with": null,
+  "notes": "Written first, ahead of verifying Bambu Lab, specifically so a Bambu rejection or downgrade has a same-price-class alternative to point at (see bambu-lab-a1 record and its alternatives field).",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-office-domain",
+    "run_id": "2026-09-03-office",
+    "searches": 0
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "PrusaLink, built into the printer's own firmware, already reproduces Prusa Connect's monitoring, file-upload and print-control functions entirely on the local network with no cloud account; OctoPrint is also compatible for owners who want a Raspberry Pi-hosted alternative."
+}

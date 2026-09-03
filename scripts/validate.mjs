@@ -71,6 +71,18 @@ for (const f of files) {
   for (const s of src) seen.set(s.url, (seen.get(s.url) ?? 0) + 1);
   for (const [u, n] of seen) if (n > 1) E(`cites the same URL ${n} times as separate sources — ${u}`);
 
+  // D1 means: a radio exists, and it still has nowhere to phone home. A device with no
+  // radio and no vendor cloud is D0. Filing it as D1 overstates how contested it was —
+  // and a tier quota gives agents a standing incentive to classify upward, so this is
+  // checked rather than trusted. D2/D3 are deliberately NOT checked: a PoE camera, an
+  // NVR, a NAS or an Ethernet UPS reaches its vendor over a wire, and several correct
+  // D2 records carry radios ["none"].
+  if (d.tier === "D1") {
+    const r = d.radios ?? [];
+    if (r.length === 0 || (r.length === 1 && r[0] === "none"))
+      E(`tier D1 with no radio — D1 means a radio exists and has nowhere to phone home. No radio and no vendor cloud is D0`);
+  }
+
   // The decision table makes a mandatory VENDOR account at setup a REJECT trigger, so a
   // record below REJECT cannot also claim one. D3 is the deliberate exception: it means
   // core function does need the cloud, and a maintained local path exists anyway.

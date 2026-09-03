@@ -58,6 +58,26 @@ reader served "D2 · vendor risk 3/3 · liberatable" learns strictly more than o
 "REJECT", because those are three separate facts and each one changes a different
 decision. This rule cost us a wrong tier once already; see the Chamberlain record.
 
+**A radio is not automatically a way home, and D0's test is really "is there anyone on
+the other end".** D0 is written as "no intentional radiator", because for almost every
+consumer device an absent FCC grant is a reliable proxy for "cannot reach its maker". Two
+kinds of device break the proxy, in opposite directions, and both are scored on the
+substance rather than the proxy:
+
+- *A radio with categorically no vendor behind it.* A CB, FRS, GMRS or marine VHF
+  transceiver holds a Part 95 or Part 80 grant and transmits by design — the radio is the
+  entire product — and yet there is no service, no account and nobody to switch it off.
+  That is **D0**. It also means the sibling-control heuristic simply does not apply to
+  these: a grant is expected, and its presence proves nothing about a cloud.
+- *A vendor cloud reached over a wire.* A PoE camera, an NVR, a NAS or an Ethernet UPS
+  may hold no radio grant at all and still talk to its maker all day. Tier those on the
+  cloud, exactly as you would a Wi-Fi device — several D2 records in this catalog
+  correctly carry `radios: ["none"]`.
+
+The corollary is a rule the validator now enforces: **D1 requires an actual radio.** D1
+means a radio exists and still has nowhere to phone home. A device with no radio and no
+vendor cloud is D0, and filing it as D1 quietly overstates how contested it was.
+
 **An account on the device is not an account with the vendor.** Setting an admin
 username and password during setup of a NAS, a router, or a network camera creates a
 credential stored on hardware you own. Nothing is registered with anyone, nothing can be

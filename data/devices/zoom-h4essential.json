@@ -1,0 +1,75 @@
+{
+  "model_id": "zoom-h4essential",
+  "make": "Zoom",
+  "model": "H4essential",
+  "category": "office",
+  "subcategory": "digital audio recorder",
+  "tier": "D0",
+  "tier_rationale": "The H4essential records to a microSD card and connects to a computer only by USB-C; Zoom's own product page states wireless remote control 'is possible with the optional BTA-1 Bluetooth Adapter (sold separately)' -- meaning the recorder as sold contains no radio of any kind, and Bluetooth exists only as an add-on module rather than a built-in capability. No app, account, or vendor cloud is mentioned anywhere in its operation.",
+  "the_unplug_test": "The H4essential was never connected to anything to unplug. It is a battery-or-USB-powered field recorder that writes 32-bit float audio straight to a microSD card; when tethered to a computer over USB-C it acts as a plain 4-in/2-out audio interface. Firmware updates are downloaded manually from Zoom's site and installed from the SD card, not pushed over a network the device does not have.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Zoom (manufacturer)",
+      "url": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h4essential/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h4essential/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: 'Pair With Your iOS Device: Use the BTA-1* Bluetooth Adapter to pair with your iOS device... *BTA-1 Bluetooth Adapter not included' (i.e. no radio in the base unit); records 32-bit float to a microSD card; functions as a USB audio interface over USB-C when connected to a computer; firmware updates are a manual download from Zoom's site, not an automatic network push; no account, login, or cloud service named anywhere on the page."
+    }
+  ],
+  "open_questions": [
+    "Price was not confirmed: Zoom's own store page renders pricing via client-side JavaScript not visible in a static fetch, and third-party retailers (B&H, Sweetwater) returned bot-protection challenges rather than content.",
+    "Whether the H4essential itself holds an FCC ID (as an unintentional-radiator digital device, not a radio) was not checked; fccid.io returned a bot-protection challenge during this run.",
+    "Repairability (parts availability, iFixit teardown) was not researched."
+  ],
+  "conflicts_with": null,
+  "notes": "Fills a previously empty office subcategory. Notable because it follows the same pattern as its closest competitor, the Tascam Portacapture X6 (also researched this run but not published, to avoid spending two of five records on the same fact): both vendors ship Bluetooth as a physically separate, optional adapter rather than a built-in radio, which is a deliberate design choice that keeps the base recorder D0 rather than D1.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-office-domain",
+    "run_id": "2026-09-03-office",
+    "searches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

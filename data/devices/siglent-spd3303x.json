@@ -1,0 +1,97 @@
+{
+  "model_id": "siglent-spd3303x",
+  "make": "Siglent Technologies",
+  "model": "SPD3303X",
+  "category": "office",
+  "subcategory": "bench power supply",
+  "tier": "D0",
+  "tier_rationale": "The SPD3303X ships with no wireless radio of any kind. Its LAN port speaks SCPI — an instrumentation control protocol terminated entirely by the owner's own PC on the owner's own network — and Siglent operates no cloud service the instrument can reach. No radio and no vendor cloud is D0, not D1: D1 exists to describe a device that HAS a radio and still has nowhere to phone home, and this instrument does not have one. An Ethernet port is not a radio, and a wired local control protocol is not a network dependency; the supply does exactly nothing you did not cable it to.",
+  "the_unplug_test": "There is no cloud connection to lose in the first place. The SPD3303X is a three-channel bench power supply operated from its own front panel; its LAN and USB ports exist only to let SCPI commands reach it from a PC on the same bench or network, over the owner's own software (PyVISA, LabVIEW, or one of several independent open-source Python libraries). Unplugging the router changes nothing: the instrument was never talking to anything outside the room.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$600-650",
+  "price_observed": "2026-09-03",
+  "where_to_buy": [
+    {
+      "name": "Siglent Technologies North America (manufacturer)",
+      "url": "https://siglentna.com/power-supplies/spd3303x-spd3303x-e-series-programmable-dc-power-supply/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://siglentna.com/power-supplies/spd3303x-spd3303x-e-series-programmable-dc-power-supply/",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Manufacturer product page: SPD3303X priced at $631, standard accessories are a USB cable and quick start guide only (no app, account, or wireless adapter of any kind mentioned), and its own application notes describe remote control 'using a standard communications bus like USB or LAN.'",
+      "archive_url": null
+    },
+    {
+      "url": "https://github.com/geissdoerfer/python-spd3303x",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "Independent open-source Python driver whose README documents connecting to the SPD3303X specifically 'via Ethernet/USB' by IP address (SPD3303X.ethernet_device(\"192.168.0.4\")), confirming the model has a working built-in LAN interface for local SCPI control distinct from the USB path.",
+      "archive_url": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Swallowtail-Electronics/SPD3303X-Python-API/main/README.md",
+      "class": "B",
+      "accessed": "2026-09-03",
+      "supports": "A second, independently authored open-source Python interface whose README states plainly: 'This power supply can be controlled over LAN by sending SCPI commands... All you need is the IP address of your power supply,' corroborating the LAN capability from a different project not derived from the first.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether the LAN interface exposes anything beyond raw SCPI (e.g. a browser-based LXI web page) was not confirmed, so local_api is left as 'unknown' rather than asserting a specific protocol from the schema's enum, none of which cleanly names SCPI-over-LXI.",
+    "No FCC check was run: the device has no wireless radio by any source found, making an intentional-radiator grant inapplicable, but this was not independently confirmed via a teardown or FCC filing search.",
+    "Whether the cheaper SPD3303X-E variant (sold alongside this one) omits the LAN port was not directly confirmed in this pass -- do not assume the -E model shares this tier without separately checking it.",
+    "Firmware update mechanism and whether updates can be declined were not established from the sources reviewed."
+  ],
+  "conflicts_with": null,
+  "notes": "A clean D1 in a subcategory (bench power supply) that was previously empty. Chosen over the Rigol DP832 -- also researched for this run -- because the DP832's LAN/RS-232 capability is a $140 add-on card (INTERFACE-DP800) not included on the base unit as sold, which left the base SKU with USB only and made D0 the honest call for that specific product; the DP832 record was not published this run because writing both would have spent two of five records establishing the same fact from two vendors. The SPD3303X ships with LAN built in.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-03",
+      "change": "Tier corrected D1 -> D0. The record's own radios field was ['none'] while D1 is defined as a radio being present with no vendor cloud behind it. The LAN/SCPI interface is wired local control, not a radio and not a dependency.",
+      "kind": "correction",
+      "source": "https://www.siglenteu.com/power-supplies/spd3303x-x-e-series-programmable-dc-power-supply/"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-office-domain",
+    "run_id": "2026-09-03-office",
+    "searches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

@@ -1,0 +1,113 @@
+{
+  "model_id": "bambu-lab-a1",
+  "make": "Bambu Lab",
+  "model": "A1",
+  "category": "office",
+  "subcategory": "3D printer",
+  "tier": "D2",
+  "tier_rationale": "Bambu Lab operates a real vendor cloud (Bambu Handy app, MakerWorld, cloud slicing/print queue) and the A1 ships Wi-Fi-connected by default, but Bambu's own wiki documents that account login is a separate, skippable step from Wi-Fi setup, and states plainly for this model: 'When the printer is not networked, you can export files to the SD card and initiate print jobs from there' -- i.e. core printing works with the printer never touching Bambu's servers and no account of any kind.",
+  "the_unplug_test": "Block the router or never connect the A1 to a network at all, and it still prints: slice the model in Bambu Studio on your own computer (a local, free application; no login is needed to slice or export), copy the resulting file to the printer's micro SD card, and start the print from the touchscreen. Bambu's own documentation describes this SD-card path explicitly for an unnetworked printer. What you lose offline is remote monitoring and control through the Bambu Handy app, cloud print notifications, MakerWorld's cloud slicing, and multi-printer fleet management -- all of it optional layered on top of a printer that prints the same way with or without it. A January 2025 firmware change briefly threatened to gate more of this behind cloud authentication and caused a public dispute with the third-party slicer community; Bambu's current wiki documents a 'Developer Mode' that, together with LAN Only mode, still opens the printer's local MQTT/FTP channel for full third-party control with no cloud account, which is what this record is based on.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Bambu Handy app remote monitoring and control",
+    "MakerWorld cloud slicing",
+    "cloud print-job notifications",
+    "multi-printer cloud fleet management",
+    "AI-model-based spaghetti/failure detection updates (falls back to the last on-device model)"
+  ],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "mqtt",
+    "rest"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Bambu Lab's own wiki publishes a full maintenance section for the A1 with individual replacement guides for the mainboard, AC board, heatbed, belts, motors and touchscreen, and sells the parts directly."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Bambu Lab (manufacturer)",
+      "url": "https://us.store.bambulab.com/products/a1"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://wiki.bambulab.com/en/a1/manual/how-to-print-from-sd-card",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Bambu Lab's own A1-specific manual: 'When the printer is not networked, you can export files to the SD card and initiate print jobs from there,' with a full walkthrough of slicing in Bambu Studio and printing from the A1's Micro SD card slot with no network or cloud step involved.",
+      "archive_url": null
+    },
+    {
+      "url": "https://wiki.bambulab.com/en/knowledge-sharing/enable-developer-mode",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Documents that enabling LAN Only mode plus Developer Mode 'will open the MQTT channel, live stream, and FTP, giving you full control over your printer' for third-party software, entirely on the local network, and is available on all current printer series including the A series.",
+      "archive_url": null
+    },
+    {
+      "url": "https://wiki.bambulab.com/en/knowledge-sharing/printer-account-binding-guide",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Shows that connecting to Wi-Fi and logging in to a Bambu account are two distinct, sequential steps in the printer's own settings menu -- account binding ('Login') is described as a separate action taken after network setup, not a precondition of it.",
+      "archive_url": null
+    },
+    {
+      "url": "https://wiki.bambulab.com/en/general/bbl-security",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "Bambu's security documentation states 'LAN mode can also be used on Bambu Lab printers to allow the printer to function without the need for Cloud communication,' with control handled by a local MQTT broker running inside the printer itself.",
+      "archive_url": null
+    },
+    {
+      "url": "https://wiki.bambulab.com/en/general/micro-sd-faq",
+      "class": "A",
+      "accessed": "2026-09-03",
+      "supports": "General SD-card FAQ, applicable across the printer line including A1: printing via Micro SD card 'bypasses the cloud server' entirely and generates no cloud notification, confirming SD-card printing is a fully local code path rather than a cloud print routed back down.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether the A1 includes Bluetooth Low Energy hardware (Bambu's security page attributes BLE account-binding specifically to the P1 series; the A1 uses the same ESP32 SoC family per Bambu's open-source-software page, but BLE presence on A1 specifically was not independently confirmed).",
+    "Current retail price could not be confirmed: the manufacturer's US store is a JavaScript-rendered page that did not expose price in static HTML, and third-party retailer pages (Micro Center, fccid.io) returned bot-protection challenges rather than content.",
+    "fccid.io grantee search for Bambu Lab / its Chinese legal entity returned a bot-protection challenge rather than results, so fcc_id and a sibling-grant comparison could not be established in this pass.",
+    "Whether the January 2025 authorization-control dispute (Bambu Lab announced mandatory authentication for firmware upgrades, print-job initiation and remote video, alarming the OrcaSlicer/third-party community) constitutes a ledger-worthy vendor incident is flagged to the maintainer separately; the record's own tier is based on the currently-documented state of LAN Only + Developer Mode, not on the vendor's past conduct.",
+    "Whether the standard out-of-box setup wizard presents an explicit 'skip Wi-Fi / skip account' option versus simply not enforcing one at any step was not directly observed (based on documentation review, not a hands-on unboxing)."
+  ],
+  "conflicts_with": null,
+  "notes": "The sharper, better-sourced half of this domain's contested case. Bambu Lab's January 2025 firmware update, which threatened to require cloud authentication for functions including local print-job initiation, caused a genuine public dispute with the OrcaSlicer/third-party-slicer community (Hackaday, Tom's Hardware, All3DP, 3D Printing Industry all covered it) and is real, dated, and worth a maintainer decision on the vendor ledger. It is not treated as a tier input here per project rules. What settles the tier is Bambu's own *current* wiki documentation (accessed today, 19+ months after the dispute): SD-card printing bypasses the cloud outright and is documented per-model for the A1, and LAN Only + Developer Mode still exposes a full local MQTT/FTP control channel with no account. See bambu-lab-a1's pairing with prusa-mk4s in alternatives on any future record that rejects a Bambu model, and prusa-mk4s.json's own notes for the reverse pointer.",
+  "first_published": "2026-09-03",
+  "last_verified": "2026-09-03",
+  "changelog": [
+    {
+      "date": "2026-09-03",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "verifier-office-domain",
+    "run_id": "2026-09-03-office",
+    "searches": 0
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "OrcaSlicer (open-source fork of Bambu Studio) plus LAN Only + Developer Mode reproduces slicing and printer control entirely on hardware the owner runs; Home Assistant's community Bambu Lab integration uses the same local MQTT channel to rebuild the Handy app's monitoring and notifications without any cloud account."
+}
