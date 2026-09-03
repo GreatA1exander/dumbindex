@@ -76,6 +76,34 @@ A JSON array. One object per candidate, nothing else:
 - Do not propose a device already in `{{KNOWN_MODELS}}`, including obvious variants of
   the same model line unless the variant differs in connectivity.
 
+### Your quota is by tier, not by record count
+
+**A run is measured on how many D1/D2/D3 records it produces, not how many records.**
+Six easy records is a worse run than three hard ones. Return fewer rather than pad.
+
+This rule exists because the catalog measured itself and did not like the answer. As of
+2026-09-03 it held 63 D0 records against 5 D1, 14 D2 and 1 D3 — three quarters of it
+devices where the answer was never in doubt — and the ratio worsened in every wave,
+because a per-domain record quota is filled fastest with whatever is cheapest to
+research. Nobody agonises over whether a keyed padlock phones home.
+
+So:
+
+- **A D0 in a subcategory that already has one is worth close to nothing.** The fifth
+  mechanical timer teaches a reader nothing the first four did not. Check the existing
+  records for your domain before you spend a search.
+- **A D0 in an empty subcategory is still worth writing.** Someone searching "dumb light
+  bulb" has to find one. The problem is the fiftieth, not the first.
+- **The contested cases are the product.** The device that works locally until you open
+  the app. The one sold in two configurations under one model number. The one whose
+  vendor cloud is real but genuinely optional. These are D2 and D3, they are where the
+  ladder earns its keep, and they are the reason someone visits at all.
+- **Spend searches on facts that decide something.** A tier hangs on whether setup
+  demands a vendor account, whether core function survives the router being off, and
+  whether a local path is maintained. It does not hang on the price. If you are down to
+  your last searches, resolve a tier and leave `price_band` unknown — `unknown` is a
+  publishable value and a missing price has never made a record wrong.
+
 ## Domain-specific hunting grounds
 
 Generic search is where cheap runs go to die. Start in the community that already argues

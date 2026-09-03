@@ -75,11 +75,12 @@ until a firmware update, the appliance sold in two configurations under one mode
 Those are D2 and D3, they are where the ladder earns its keep, and there are twelve of
 them.
 
-Two candidate fixes, neither tried yet:
-- Give agents a tier quota rather than a record quota — "six records, at least three
-  above D0" — and let them return fewer records rather than pad with easy ones.
-- Treat D0 records in already-covered subcategories as having near-zero marginal value.
-  The fifth mechanical timer teaches a reader nothing the first four did not.
+**Fix adopted 2026-09-03** and written into `agents/SCOUT.md` under "Your quota is by
+tier, not by record count": a run is measured on how many D1/D2/D3 records it produces,
+not how many records; a D0 in an already-covered subcategory is worth close to nothing;
+searches are spent on facts that decide a tier, never on price. Watch whether the ratio
+actually moves — the previous note said this was a research-priority item and it drifted
+for four waves without anyone acting on it.
 
 **A single D0 record is still worth writing when its subcategory is empty**, because
 someone searching "dumb light bulb" needs to find one. The problem is the fiftieth, not
