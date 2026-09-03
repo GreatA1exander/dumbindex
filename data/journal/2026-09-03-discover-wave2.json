@@ -1,0 +1,38 @@
+{
+  "run_id": "2026-09-03-discover-wave2",
+  "job": "discover",
+  "prompt_version": "phase-0-manual",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "Second discovery wave across five domains, at a raised target of 8-10 records per domain rather than 5.",
+
+  "scope": "Five domains: photo, health, baby-pet, wearables, office. 49 records to 68.",
+
+  "devices_added": 19,
+  "domains": {"photo": 3, "health": 2, "baby-pet": 6, "wearables": 1, "office": 3, "_note": "counts are of files written; several are rejections, which do not publish to a domain page"},
+
+  "incident": "All five agents were terminated mid-run by a session usage limit. Each had written records to disk before dying. No file was truncated mid-write and no agent had touched anything outside data/devices/, so the partial output was recoverable in full. The wave was reviewed and committed from disk rather than re-run.",
+
+  "findings": [
+    "Six of nineteen records are rejections and five of those six have no alternative to offer. The gap is real rather than a filing error: verified subscription-free pet trackers, pet feeders, drones and cellular trail cameras are not known to exist. Recorded as open questions on the rejections rather than papered over.",
+    "Two agents independently hit the same class of problem — the radios enum had no honest tag for what they were looking at — and both used the nearest wrong value while flagging it in open_questions rather than silently fudging. That is the behaviour the principles ask for and it worked without prompting."
+  ],
+
+  "system_gaps_found": [
+    {"gap": "fi-series-3-plus was rejected on a fact its own two cited sources contradicted each other about: one said the collar will not enable at all without a membership, the other that it loses out-of-range GPS specifically. A REJECT is the most damaging verdict to get wrong.",
+     "fix": "Narrowed the rejection to the claim both sources support and that retail listings independently corroborate — the hardware is sold only bundled with a prepaid membership term. Added two VERIFIER rules: never reject on a fact your own sources disagree about, and check how the thing is sold, because a REJECT is a claim about a purchase."},
+    {"gap": "radios enum still had no tag for a 2.4 GHz proprietary FHSS point-to-point link (not 802.11) or for a 125-134 kHz ISO 11785 pet-microchip reader (not 13.56 MHz NFC).",
+     "fix": "Added proprietary_24ghz and rfid_lf; retagged infant-optics-dxr-8-pro and sureflap-microchip-pet-door."},
+    {"gap": "Two records cited fccid.io search-results pages while naming specific grant IDs in the supports text.",
+     "fix": "Repointed at the grant pages. Search URLs remain correct where the finding IS an absence of grant — there the search is the evidence."},
+    {"gap": "Three published records carried vendor_risk above 0 with no backing entry in data/vendors.json, meaning the score came from the model's impression of the company. Found during this review, fixed in a separate commit.",
+     "fix": "Researched and added eufy, Ring and Withings to the ledger; Withings did not survive at 2 and was corrected to 1. validate.mjs now fails any nonzero vendor_risk without a matching ledger entry."}
+  ],
+
+  "honest_limitations": [
+    "Two rejections were spot-checked against primary sources (fi-series-3-plus, petlibro-granary-camera-feeder); the other seventeen records were reviewed for schema, source class, and tier-table consistency but not re-derived.",
+    "petlibro-granary-camera-feeder is rejected on a documented account-at-setup step while its own open question concedes the deciding fact — whether the unit's touch panel can schedule feeds with no app — is unresolved. PETLIBRO documents exactly that capability for the non-camera sibling (AF005/AF006) and not for the camera model. The rejection stands on the vendor's published setup process, but the sibling is the better catalog candidate and is not yet researched."
+  ],
+
+  "wall_clock_min": 70,
+  "surprises": "The most useful thing this wave produced was not a record but a discovered failure mode. Agents are good at finding sources and bad at noticing when two of their own sources disagree — the contradiction sat in plain sight inside a single record's own open_questions field while the rejection_reason asserted the stronger claim anyway. Worth a CRITIC pass on whether any other published record does the same."
+}

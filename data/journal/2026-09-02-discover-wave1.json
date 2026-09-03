@@ -1,0 +1,32 @@
+{
+  "run_id": "2026-09-02-discover-wave1",
+  "job": "discover",
+  "prompt_version": "phase-0-manual",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "First parallel discovery wave. Four domain agents run concurrently rather than one device per subagent, to find out whether a domain-scoped brief holds evidence discipline as well as a device-scoped one.",
+
+  "scope": "Four domains: laundry, climate, av, tools. 21 records to 49.",
+
+  "devices_added": 28,
+  "domains": {"laundry": 8, "climate": 7, "av": 9, "tools": 8},
+
+  "findings": [
+    "A domain-scoped agent brief produces records of the same quality as a device-scoped one, at roughly a quarter of the orchestration overhead. The ORCHESTRATOR's 'never give a subagent more than one device' rule was written to stop an agent spreading a fixed research budget thin across a list; a domain brief with an explicit per-record evidence bar does not have that failure mode.",
+    "Agents given a hunting-grounds table find the commercial-equivalent product first and work outward, which is what SCOUT step 1 now instructs. The domains where this worked best (tools, laundry) are the ones with a real commercial product line to anchor on."
+  ],
+
+  "system_gaps_found": [
+    {"gap": "The radios enum had no value for DECT or for proprietary sub-GHz links, so three records carried radios:['unknown'] for radios that were precisely known from their FCC grants.",
+     "fix": "Added dect, proprietary_subghz and ir; backfilled vtech-dm221, thermoworks-smoke-x2 and davis-vantage-vue-weatherlink."},
+    {"gap": "Two records cited the same URL twice as two separate sources, overstating the evidence. One of the two was written by the orchestrator, not by an agent.",
+     "fix": "Merged both into single correctly-scoped citations and added a validator rule rejecting duplicate source URLs."}
+  ],
+
+  "honest_limitations": [
+    "Records were reviewed by the orchestrator before commit, not by an independent verifier. The review checked schema, source classes, tier calls against the decision table, and that nothing outside data/devices/ was touched — it did not re-derive every claim from primary sources.",
+    "Four domains is not a representative sample of fourteen. Laundry, climate, av and tools all have strong dumb options on the shelf today; the wave says nothing about how the brief performs in a domain where almost everything rejects."
+  ],
+
+  "wall_clock_min": 55,
+  "surprises": "Nothing in this wave forced a change to the ladder. After Chamberlain forced a redesign in phase 0, four domains of new records fitting the existing table without argument is the first evidence the tier definitions are stable."
+}

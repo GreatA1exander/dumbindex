@@ -1,10 +1,16 @@
 {
-  "prompt_version": null,
-  "last_run": null,
+  "prompt_version": "phase-0-manual",
+  "last_run": "2026-09-03-discover-wave2",
   "domain_rotation_pos": 0,
-  "next_domain": "automotive",
+  "next_domain": "photo",
   "shard_index": 0,
   "shard_count": 4,
-  "unfinished": [],
-  "_note": "Strict rotation through schema/taxonomy.json domains. The agent never chooses; it reads domain_rotation_pos and advances it. Starting on automotive deliberately — dashcams are the highest-yield domain to prove the pipeline on."
+  "unfinished": [
+    "Domains still short of 8 published records after wave 2: kitchen 6, lighting 6, security 6, automotive 6, computing 5, photo 5, health 5, wearables 5, office 5, baby-pet 3, climate 1, tools 1.",
+    "petlibro-granary-camera-feeder rejection has no alternative; the non-camera Granary (AF005/AF006) is the natural candidate and is unresearched.",
+    "Five rejections across baby-pet, photo and automotive have no alternative to point at. Discovery task, not a filing error.",
+    "CRITIC pass owed: scan every published record for a rejection or tier claim that its own open_questions contradicts. One such case (fi-series-3-plus) was found by hand in wave 2.",
+    "Withings ledger entry sits at 1 (alleged, not established). Recheck for independent reporting of a dated feature removal on the next refresh."
+  ],
+  "_note": "Strict rotation through schema/taxonomy.json domains. The agent never chooses; it reads domain_rotation_pos and advances it. Discovery is currently running as parallel domain-scoped waves rather than the one-device-per-subagent shape in ORCHESTRATOR.md — see journal entries 2026-09-02-discover-wave1 onward for why, and update ORCHESTRATOR.md if this holds."
 }
