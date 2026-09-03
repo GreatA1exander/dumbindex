@@ -38,7 +38,7 @@
   "price_observed": null,
   "where_to_buy": [],
   "affiliate": null,
-  "vendor_risk": 2,
+  "vendor_risk": 1,
   "sources": [
     {
       "url": "https://support.withings.com/hc/en-us/articles/4404719917457-Privacy-FAQ",
@@ -65,7 +65,7 @@
       "url": "https://www.reddit.com/r/withings/comments/1owttod/whats_happening_at_withings_an_open_letter_to_the/",
       "class": "B",
       "accessed": "2026-09-02",
-      "supports": "r/withings community thread (357 upvotes, 150+ comments) documenting retroactive feature removal on other Withings devices in the same account/app ecosystem (BPM Connect losing sync capability, ScanWatch losing SpO2/heart features) and multiple independent commenters reporting they were locked out of using their own already-purchased Withings devices until they accepted new in-app data-sharing terms. Used to support vendor_risk, not the tier.",
+      "supports": "r/withings community thread (357 upvotes, 150+ comments) documenting retroactive feature removal on other Withings devices in the same account/app ecosystem (BPM Connect losing sync capability, ScanWatch losing SpO2/heart features) and multiple independent commenters reporting they were locked out of using their own already-purchased Withings devices until they accepted new in-app data-sharing terms. Used to support vendor_risk, not the tier. A targeted search for independent reporting of a specific dated removal found none, so the ledger scores this 1 (alleged, not established) rather than 2.",
       "archive_url": null
     }
   ],
@@ -84,6 +84,12 @@
       "change": "Published as REJECT.",
       "kind": "listed",
       "source": null
+    },
+    {
+      "date": "2026-09-03",
+      "change": "vendor_risk lowered 2 -> 1. The score had no backing entry in data/vendors.json, and a search for independent corroboration of the community-reported feature removals found none. Withings added to the ledger at 1 (alleged but not established) with a note to recheck.",
+      "kind": "correction",
+      "source": "https://www.reddit.com/r/withings/comments/1owttod/whats_happening_at_withings_an_open_letter_to_the/"
     }
   ],
   "agent_meta": {

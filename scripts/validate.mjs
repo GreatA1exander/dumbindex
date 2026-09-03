@@ -15,6 +15,10 @@ const R = (...p) => resolve(ROOT, ...p);
 const DEVICES = R("data/devices");
 const TAX = JSON.parse(readFileSync(R("schema/taxonomy.json"), "utf8"));
 const DOMAINS = new Map(TAX.domains.map(d => [d.slug, new Set(d.subcategories)]));
+const LEDGER = JSON.parse(readFileSync(R("data/vendors.json"), "utf8")).vendors;
+// Same match rule the site uses, so a record that validates also renders a vendor link.
+const ledgerFor = make => Object.values(LEDGER).find(v =>
+  v.name.toLowerCase().startsWith(String(make).toLowerCase().split(" ")[0]));
 const today = new Date().toISOString().slice(0, 10);
 const errors = [];
 const warn = [];
@@ -59,6 +63,16 @@ for (const f of files) {
   const seen = new Map();
   for (const s of src) seen.set(s.url, (seen.get(s.url) ?? 0) + 1);
   for (const [u, n] of seen) if (n > 1) E(`cites the same URL ${n} times as separate sources — ${u}`);
+
+  // §5: vendor_risk is computed from the ledger, never from reputation. A score with no
+  // dated, sourced incident behind it is exactly the vibes-based judgement the ladder
+  // exists to prevent — and it is invisible on the site, since /vendors renders the
+  // ledger rather than the record.
+  if (d.vendor_risk > 0) {
+    const v = ledgerFor(d.make);
+    if (!v) E(`vendor_risk ${d.vendor_risk} but no entry for "${d.make}" in data/vendors.json — score it from a dated incident or drop it to 0`);
+    else if (v.vendor_risk !== d.vendor_risk) E(`vendor_risk ${d.vendor_risk} disagrees with the ledger's ${v.vendor_risk} for ${v.name}`);
+  }
 
   // §11: staleness. 18 months invalidates evidence; 60 days is a nudge.
   if (d.last_verified) {

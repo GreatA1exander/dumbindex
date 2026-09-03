@@ -4,7 +4,8 @@
     "0": "No documented incident of a shipped device losing function after purchase.",
     "1": "One disputed or narrow incident, or a pattern alleged but not established.",
     "2": "At least one established incident of shipped devices losing function.",
-    "3": "Repeated, established, cross-jurisdiction pattern of removing function from devices already sold."
+    "3": "Repeated, established, cross-jurisdiction pattern of removing function from devices already sold.",
+    "_note_on_misrepresentation": "Loss of function is the primary axis, but it is not the only one that matters to this catalog. A vendor caught misrepresenting whether its device operates locally has attacked the exact claim this site exists to check, and scores here on the same scale — a device that was never doing what the box said is not meaningfully different, to a reader, from one that stopped."
   },
   "vendors": {
     "hp": {
@@ -56,7 +57,7 @@
           "class": "B"
         }
       ],
-      "verdict": "Prefer Brother models with no network interface, where the dispute is structurally moot \u2014 the printer cannot fetch an update on its own. On networked Brother models, decline firmware updates unless you need a specific fix."
+      "verdict": "Prefer Brother models with no network interface, where the dispute is structurally moot — the printer cannot fetch an update on its own. On networked Brother models, decline firmware updates unless you need a specific fix."
     },
     "viofo": {
       "name": "VIOFO",
@@ -93,6 +94,72 @@
         }
       ],
       "verdict": "Assume any myQ feature that depends on Chamberlain's servers can be withdrawn without notice, because it has been, three times. The openers themselves remain fine offline. If you want local control, plan on ratgdo from the start rather than hoping the app stays useful."
+    },
+    "eufy": {
+      "name": "eufy (Anker Innovations)",
+      "vendor_risk": 2,
+      "summary": "Marketed cameras as local-storage-only, then was shown to upload identifiable thumbnail images to its cloud with cloud storage disabled, and to serve camera streams that could be opened in VLC without encryption or authentication. Anker denied, then admitted, then re-architected.",
+      "incidents": [
+        {
+          "date": "2022-11",
+          "type": "misrepresented_local_operation",
+          "description": "Security researcher Paul Moore showed a eufy Doorbell Dual uploading face thumbnails and user information to eufy's cloud while the device was configured for local storage only. Anker initially denied the behaviour, then conceded images were uploaded 'for notification purposes'.",
+          "source": "https://www.macrumors.com/2022/11/29/eufy-camera-cloud-uploads-no-user-consent/",
+          "class": "B"
+        },
+        {
+          "date": "2022-12",
+          "type": "security_misrepresentation",
+          "description": "Camera streams were shown to be retrievable in VLC with no encryption and no authentication, contradicting eufy's marketing. Anker admitted the streams were not encrypted as claimed and committed to moving all cameras to WebRTC with AES/RSA encryption.",
+          "source": "https://9to5google.com/2022/12/01/eufy-camera-cloud-security-leak/",
+          "class": "B"
+        },
+        {
+          "date": "2023",
+          "type": "litigation",
+          "description": "Class action filed alleging eufy security cameras secretly uploaded user images and live footage to the cloud contrary to its local-storage marketing.",
+          "source": "https://www.classaction.org/news/class-action-says-eufy-security-cameras-secretly-upload-user-images-live-footage-to-cloud",
+          "class": "B"
+        }
+      ],
+      "verdict": "Treat any eufy local-storage claim as unverified until confirmed by packet capture rather than by the vendor's own description. The hardware may be fine; the vendor's account of it has been wrong before on precisely this point."
+    },
+    "ring": {
+      "name": "Ring (Amazon)",
+      "vendor_risk": 2,
+      "summary": "Moved features that shipped free onto already-sold doorbells and cameras behind the paid Ring Protect plan, and raised the plan price sharply in the same period.",
+      "incidents": [
+        {
+          "date": "2024-03",
+          "type": "paywalled_shipped_function",
+          "description": "From 29 March 2024, Home and Away modes — and the Live View customisation tied to them — required a Ring Protect subscription on video doorbells and cameras, for existing owners as well as new buyers. Ring Alarm owners who bought before that date were grandfathered; doorbell and camera owners were not.",
+          "source": "https://www.digitaltrends.com/home/ring-protect-required-previously-free-features/",
+          "class": "B"
+        },
+        {
+          "date": "2024",
+          "type": "price_increase",
+          "description": "The entry Ring plan rose to $4.99/month or $49.99/year, reported as a 43% increase over the pre-March-2024 price.",
+          "source": "https://www.techradar.com/home/smart-home/do-i-need-a-ring-subscription-heres-what-to-consider",
+          "class": "B"
+        }
+      ],
+      "verdict": "Assume any Ring feature that is free today may require a subscription later, on hardware you already own. The March 2024 change did not grandfather camera and doorbell owners."
+    },
+    "withings": {
+      "name": "Withings",
+      "vendor_risk": 1,
+      "summary": "Community reports of features disappearing from already-owned devices and of in-app lockouts pending acceptance of new terms. Not corroborated by independent reporting at the time of writing; scored as alleged-but-not-established.",
+      "incidents": [
+        {
+          "date": "2025-11",
+          "type": "alleged_feature_removal",
+          "description": "An r/withings open letter (357 upvotes, 150+ comments) collects owner reports of a BPM Connect losing sync capability and a ScanWatch losing SpO2/heart features, and of users locked out of already-purchased devices until new in-app data-sharing terms were accepted. A targeted search for independent reporting of a specific, dated removal found none — coverage in the same period describes features being ADDED by firmware update. The allegation is consistent and multi-user but rests on one community source.",
+          "source": "https://www.reddit.com/r/withings/comments/1owttod/whats_happening_at_withings_an_open_letter_to_the/",
+          "class": "B"
+        }
+      ],
+      "verdict": "Watch, do not yet condemn. If a dated, independently-reported removal surfaces, this becomes a 2. Recheck on the next refresh pass."
     }
   }
 }
