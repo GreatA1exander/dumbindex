@@ -6,17 +6,36 @@
   "shard_index": 0,
   "shard_count": 4,
   "unfinished": [
-    "Domains still short of 8 published records: photo 3, baby-pet 3, health 2, climate 1, tools 1, security 1, wearables 0 (met), office 0 (met), automotive 0 (met).",
-    "TIER SKEW: much improved and holding. Wave 6 ran 10 of 15 above D0; catalog now 70 D0 against 33 above it, from 63/20 three waves ago. Keep the quota and keep checking it — wave 6 also produced the first upward-drift error (a radio-free bench supply filed D1), now caught by a validator rule.",
-    "BAMBU LAB is the strongest unscored ledger candidate: the January 2025 mandatory-authorisation firmware dispute is dated and covered by Hackaday, Tom's Hardware, All3DP and 3D Printing Industry. The bambu-lab-a1 record sits at vendor_risk 0 pending research. Probably a 1 (disputed/narrow) given Developer Mode still provides local control, but decide it on sources.",
-    "Cressi Leonardo (dive computer, D0) was abandoned after ~10 failed fetches — cressi.com has a broken TLS cert and retailer mirrors all blocked. It is the natural D0 contrast to shearwater-peregrine at D2.",
-    "APC/Schneider is a ledger candidate whose only source does not resolve and has no Wayback snapshot. Re-source before scoring.",
-    "QNAP owed a ledger decision: does a forced security patch count as removing function from shipped devices?",
-    "Grizzl-E: Class C community reports say chargers stop charging after a Wi-Fi drop, contradicting United Chargers' own documentation. Uncorroborated; a ledger candidate only if independently confirmed.",
-    "Two records blocked on purchasability rather than tier evidence: a GRI 100/110 wired door contact and a non-smart LED bulb.",
-    "petlibro-granary-camera-feeder rejection has no alternative; the non-camera Granary (AF005/AF006) is unresearched.",
-    "Withings ledger entry sits at 1 (alleged, not established). Recheck for independent reporting of a dated feature removal.",
-    "WebSearch budget (200/session) has been exhausted for three waves running and is now shaping output — it caused the proxy-citation failure. Raising CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION is the fix if genuine discovery is wanted."
+    "NEXT WAVE: three agents, tier quota, seeded candidate lists, write-as-you-go. Best targets are photo (needs 3) and baby-pet (needs 3), then health (2). climate, security and tools need 1 each and could be swept by a single agent between them.",
+    "photo seeds not yet used, from the wave-5 brief that died: Nikon Z 50II or Z fc (does SnapBridge pairing need a Nikon ID, or only the cloud service?), Canon EOS R50/R8 (image.canon is the named endpoint), Panasonic Lumix S5II (thinner cloud story — possible D1), Insta360 X4 or DJI Osmo Action 5 (activation-before-first-use is the REJECT trigger that sank dji-neo, and gopro-hero13-black already exists as the alternative, which makes such a rejection worth writing). A film or instant camera is a legitimate D0 in an empty subcategory — one, not three.",
+    "health seeds not yet used: A&D Medical UA-651BLE or Beurer BM-series BP monitor (counterpart to the Omron already held at D2); Wellue/Contec pulse oximeter; a conventional glucose meter with no radio, which would be the alternative a CGM rejection currently lacks.",
+    "BAMBU LAB is the strongest unscored ledger candidate. The January 2025 mandatory-authorisation firmware dispute is dated and covered by Hackaday, Tom's Hardware, All3DP and 3D Printing Industry. bambu-lab-a1 sits at vendor_risk 0 pending research. Probably a 1 (disputed/narrow) since Developer Mode still gives local control — but decide it on sources, and note the tier is NOT affected either way.",
+    "APC/Schneider ledger candidate: a lapsed SmartConnect plan reportedly costs event notifications, remote diagnostics and remote firmware upgrades that worked at purchase. The only source (smartconnect-support.apc.com) does not resolve and has no Wayback snapshot. Re-source before scoring; an incident a reader cannot check cannot be published.",
+    "QNAP owed a ledger DECISION, not research: does a forced security patch count as removing function from shipped devices? The scale does not say, and the answer applies to more vendors than QNAP.",
+    "Grizzl-E: Class C community reports say chargers stop charging after a Wi-Fi drop, contradicting United Chargers' own documentation. Uncorroborated. A ledger candidate only if independently confirmed; recorded in grizzl-e-classic-connect open_questions.",
+    "Withings sits at ledger 1 (alleged, not established). Recheck for independent reporting of a dated feature removal; promote to 2 only if found.",
+    "Cressi Leonardo (dive computer, D0) abandoned after ~10 failed fetches — cressi.com serves a broken TLS cert and retailer mirrors all blocked. It is the natural D0 contrast to shearwater-peregrine at D2.",
+    "Two records blocked on purchasability, not tier evidence — both have their technical evidence in hand: a GRI 100/110 wired door contact (passive two-wire reed switch, sold through trade distributors) and a non-smart LED bulb (the obvious record 'dumb light bulb' searchers want; Feit/GE/Sylvania/Signify all serve JS-rendered pages).",
+    "petlibro-granary-camera-feeder rejection has no alternative. The non-camera Granary (AF005/AF006) is the natural candidate — PETLIBRO documents on-unit schedule programming for it — and is unresearched.",
+    "Five of nine rejections still have no alternative to point at. SCOUT now asks for pairs; older rejections predate that.",
+    "TIER SKEW: fixed and holding (71 D0 / 34 above, from 63/20). Watch the opposite failure now — the quota rewards classifying upward, and only one shape of that (D1 without a radio) is checked.",
+    "WebSearch budget (200/session, shared with subagents) was exhausted for three waves running and is now shaping output — it caused the proxy-citation failure and cost the Cressi record. Raising CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION is the fix if genuine discovery is wanted rather than verification from seeded lists.",
+    "DEFERRED by the repo owner until the site is usable: RSS/Atom for /updates, and sitemap.xml. /updates was named with a feed in mind so nothing needs restructuring."
   ],
-  "_note": "Strict rotation through schema/taxonomy.json domains. The agent never chooses; it reads domain_rotation_pos and advances it. Discovery is currently running as parallel domain-scoped waves rather than the one-device-per-subagent shape in ORCHESTRATOR.md — see journal entries 2026-09-02-discover-wave1 onward for why, and update ORCHESTRATOR.md if this holds."
+  "_note": "Strict rotation through schema/taxonomy.json domains; the agent never chooses. Discovery currently runs as parallel domain-scoped waves of THREE agents rather than the one-device-per-subagent shape in ORCHESTRATOR.md — see the journal from 2026-09-02-discover-wave1 onward for why, and amend ORCHESTRATOR.md if this holds. Session limits kill waves routinely; every brief must tell agents to write each record to disk as it is finished.",
+  "_start_here": "Read CLAUDE.md first — it carries the environment quirks, the gates, how to run a wave, and the review checklist for agent output. Then this file's `unfinished` list, then the last two or three entries in data/journal/. Everything needed to continue is in the repo; nothing important lives only in a conversation.",
+  "as_of": "2026-09-04",
+  "catalog": {
+    "records_on_disk": 115,
+    "published": 105,
+    "tiers": {
+      "D0": 71,
+      "D1": 10,
+      "D2": 23,
+      "D3": 1
+    },
+    "rejections": 9,
+    "domains_at_target": "8 of 14",
+    "launch_gate": "BACKLOG.md"
+  }
 }

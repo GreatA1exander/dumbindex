@@ -14,12 +14,16 @@ validator and golden gate on every change, which does not currently run anywhere
 
 **Launch (announcing it) waits for all of:**
 
-| Gate | 2026-09-03 | Target |
+| Gate | 2026-09-04 | Target |
 |---|---|---|
-| No domain below 5 records | 8 of 14 below | 14 of 14 at 5+ |
-| High-traffic domains (kitchen, av, security, computing, climate) | 2, 9, 2, 10, 7 | 10-15 each |
-| Total published records | 66 | 120-150 |
+| No domain below 5 records | 2 of 14 below (health 6, photo 5) | 14 of 14 at 5+ |
+| High-traffic domains (kitchen, av, security, computing, climate) | 8, 9, 7, 10, 7 | 10-15 each |
+| Total published records | 105 | 120-150 |
+| Domains at 8+ | 8 of 14 | 14 of 14 |
 | `/downgrades` demonstrates the thesis | historical section only | at least one observed entry |
+
+Six domains remain short of 8: photo 3, baby-pet 3, health 2, climate 1, security 1,
+tools 1. Four of those are one or two records from target.
 
 **Repo public: done** (2026-09-02). MIT for code, CC BY-SA 4.0 for data, CI running the
 validator, golden gate, build and page-weight check on every push, plus a weekly link
@@ -62,18 +66,21 @@ The GE family record works because GE publishes its own "does my appliance have 
 check. The others name connectivity differently (SmartThings, ThinQ) and need their own
 identification procedures.
 
-**Weight future runs toward D2 and D3.** *(Getting worse, not better.)*
-Published tiers as of 2026-09-03: **49 D0, 5 D1, 11 D2, 1 D3**. Three quarters of the
-catalog is now devices where the answer was never in doubt — and the ratio has moved the
-wrong way as the catalog has grown, because D0 records are the cheapest to research and
-agents given a per-domain quota naturally find them first.
+**Weight future runs toward D2 and D3.** *(Fixed, and holding — keep watching.)*
+Published tiers 2026-09-04: **71 D0, 10 D1, 23 D2, 1 D3.** Three waves ago it was 63 D0
+against 20 above it, and worsening every wave.
 
-That is a problem worth naming plainly. Nobody agonises over whether a keyed padlock
-phones home. The purchases people actually struggle with are the contested ones: the
-camera that works locally but only if you never open the app, the thermostat that is fine
-until a firmware update, the appliance sold in two configurations under one model number.
-Those are D2 and D3, they are where the ladder earns its keep, and there are twelve of
-them.
+**Fix adopted 2026-09-03** and written into `agents/SCOUT.md` under "Your quota is by
+tier, not by record count": a run is measured on how many D1/D2/D3 records it produces,
+not how many records; a D0 in an already-covered subcategory is worth close to nothing; a
+D0 in an EMPTY subcategory still earns its place; searches are spent on facts that decide
+a tier, never on price. Wave 5 ran 6 of 8 above D0, wave 6 ran 10 of 15.
+
+The thing to watch now is the opposite failure. The quota gives agents a reason to
+classify upward, and wave 6 produced the first instance — a radio-free bench supply filed
+D1 on defensible-sounding reasoning. `validate.mjs` now fails any D1 without a radio, but
+the incentive is still there and only that one shape of it is checked.
+
 
 **Fix adopted 2026-09-03** and written into `agents/SCOUT.md` under "Your quota is by
 tier, not by record count": a run is measured on how many D1/D2/D3 records it produces,

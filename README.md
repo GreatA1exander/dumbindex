@@ -28,6 +28,8 @@ Device data is [CC BY-SA 4.0](data/LICENSE) — reuse it, keep it open.
 ## Repo map
 
 ```
+CLAUDE.md          orientation for an AI session picking this up cold: environment,
+                   gates, how to run a research wave, how to review what it produces
 agents/
   PRINCIPLES.md    the constitution — prepended to every agent, every model size
   ORCHESTRATOR.md  top-level scheduled-run prompt; delegates, never researches
