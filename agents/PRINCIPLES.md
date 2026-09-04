@@ -78,6 +78,35 @@ The corollary is a rule the validator now enforces: **D1 requires an actual radi
 means a radio exists and still has nowhere to phone home. A device with no radio and no
 vendor cloud is D0, and filing it as D1 quietly overstates how contested it was.
 
+**D1 is a negative claim, and negative claims have to be hunted rather than noticed.**
+Every other tier rests on something you found: a cloud endpoint, an account gate, a
+liberation guide. D1 rests on something you did *not* find, and the two ways that goes
+wrong both showed up in one wave.
+
+- *Judging the core-function path instead of the device.* The Garmin Alpha 200i was filed
+  D1 on genuinely clean evidence — the collar transmits to the handheld over a Part 95J
+  MURS link, there is no cloud in the tracking path, and Garmin says so. All true, and
+  not the question. The same handheld has Bluetooth, Wi-Fi, an Iridium radio and a
+  "Connected Features" page in Garmin's own manual naming Garmin Explore. A vendor cloud
+  plainly exists; it simply is not needed to track a dog. That is D2, and the honest
+  record says the tracking path is clean *within* D2 rather than borrowing D1 for it.
+  **Ask what the whole device can reach, not what its best feature avoids.**
+- *Reading silence as absence.* The Panasonic S5II was filed D1 partly on a support page
+  where "no account requirement appears anywhere in the feature descriptions" — a page
+  that simply does not discuss accounts. Panasonic does host an online LUT library. The
+  tier survived, but only because a better fact existed underneath: Panasonic's own
+  procedure has you disconnect the camera before the phone goes online, so the camera
+  reaches nothing. **A page that does not mention a cloud is not a page saying there
+  isn't one.** Cite the document that describes what the device *does* connect to.
+
+So, before filing D1: enumerate every radio in the device, not just the one carrying core
+function — the validator now rejects a D1 whose `radios` still contains `unknown`, because
+an unidentified radio is an unfinished search. Then read the two places a vendor cloud is
+declared if it exists at all: the manual's connected-features or network section, and the
+companion app's own documentation. Say in `tier_rationale` where you looked. If the
+answer is "the vendor operates no cloud for this device", that sentence is the load-bearing
+claim of the record and needs a source behind it like any other.
+
 **An account on the device is not an account with the vendor.** Setting an admin
 username and password during setup of a NAS, a router, or a network camera creates a
 credential stored on hardware you own. Nothing is registered with anyone, nothing can be

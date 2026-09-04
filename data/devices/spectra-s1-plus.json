@@ -1,0 +1,78 @@
+{
+  "model_id": "spectra-s1-plus",
+  "make": "Spectra Baby USA",
+  "model": "S1 Plus Rechargeable Double Electric Breast Pump",
+  "category": "baby-pet",
+  "subcategory": "breast pump",
+  "tier": "D0",
+  "tier_rationale": "Both the manufacturer's own product page and its own setup/operation instructions describe the S1 Plus entirely in terms of physical buttons, a digital display, and a rechargeable battery, with no mention of WiFi, Bluetooth, an app, or an account anywhere. No radio is claimed by the manufacturer or found by any reviewer. No intentional radiator, no vendor cloud: D0.",
+  "the_unplug_test": "There is nothing to unplug except the pump itself. It runs on physical buttons and an internal rechargeable battery, remembers your last session's settings on its own, and shuts off automatically after 30 minutes with no phone, app, or account involved at any point. It has behaved identically since the day it was made and always will.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Flanges, valves, backflow protectors, and tubing are sold as separate replacement parts by the manufacturer, since they are wear/hygiene items on any breast pump of this type."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.spectrababyusa.com/products/spectra-s1-plus-premier-rechargeable-double-electric-breast-pump",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's own product page: no mention of WiFi, Bluetooth, an app, or an account; pump described as controlled entirely by a 'one-touch button and digital controls', an LCD screen, an auto 30-minute shutoff timer, and a rechargeable battery.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.spectrababyusa.com/pages/s1-and-s2-instructions",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's own setup/operation instructions for the S1/S2 Plus: power button, massage/expression mode buttons, vacuum-level buttons, and an automatic 30-minute shutoff, with no WiFi, Bluetooth, app, or FCC-compliance statement referenced anywhere in the instructions.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "An FCC lookup was not completed for this device specifically (only a secondary, un-cited search snippet claimed a Part 15B unintentional-radiator compliance statement, which was not independently verified against a primary source and so is not used to support this record). This does not change the tier — no vendor markets any connectivity for this pump and both manufacturer sources describe pure physical controls — but a direct FCC/label check would tighten the record.",
+    "Price band left unknown per project policy on search budget."
+  ],
+  "conflicts_with": null,
+  "notes": "First record in the breast pump subcategory. Written to pair with a contested app-first pump (Elvie Stride or Willow) in the same wave, where core functions like changing suction mode or seeing output may run through the phone app rather than the device.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D0, first record in the breast pump subcategory.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 3,
+    "failed_fetches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

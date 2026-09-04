@@ -1,0 +1,90 @@
+{
+  "model_id": "zooz-zse41",
+  "make": "Zooz",
+  "model": "ZSE41 800LR Z-Wave Long Range Open/Close XS Sensor",
+  "category": "security",
+  "subcategory": "door sensor",
+  "tier": "D1",
+  "tier_rationale": "Contains a Z-Wave radio (FCC ID 2AZ2V-ZSE41) but Zooz operates no cloud service, app, or account for this product at all. It pairs only to a Z-Wave hub the owner supplies and controls (Home Assistant, Hubitat, SmartThings, HomeSeer, Vera, or Zooz's own Z-Box), and the manufacturer's own manual states no Zooz account or internet connection is needed for any of it.",
+  "the_unplug_test": "Nothing changes, because there was never a Zooz cloud to unplug from. The sensor reports open/close state over Z-Wave directly to whatever hub the owner set it up with; if that hub is a local one (Home Assistant, Hubitat), the whole chain from magnet to automation never leaves the house. Losing your home internet connection has no effect at all — only losing the hub itself would.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "zwave"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "zwave"
+  ],
+  "fcc_id": "2AZ2V-ZSE41",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Single user-replaceable CR2032 coin cell; the sensor and reed switch are a sealed plastic shell with no other serviceable parts."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Zooz (manufacturer)",
+      "url": "https://www.getzooz.com/zooz-zse41-open-close-xs-sensor/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.support.getzooz.com/kb/article/2227-zse41-open-close-xs-sensor-user-manual/",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer user manual: pairing is done entirely through the owner's Z-Wave hub (button press or S2 DSK/QR pairing), lists compatible controllers (Z-Box, Home Assistant, HomeSeer, Hubitat, SmartThings), and states no Zooz account or cloud service is required for the sensor to function; the only optional account-like step is product registration for an extended warranty, unrelated to operation.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.getzooz.com/zooz-zse41-open-close-xs-sensor/",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer product page confirms the sensor requires a separately-sold Z-Wave hub, is supported natively by open local platforms (Home Assistant, Hubitat, HomeSeer, Vera, Ezlo) with only reduced settings access on the closed SmartThings/Ring Alarm ecosystems, and makes no mention of a Zooz-run cloud or app for this device.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fcc.report/FCC-ID/2AZ2V-ZSE41",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "FCC equipment authorization confirms an intentional Z-Wave radiator under grantee 2AZ2V, consistent with the manufacturer's own radio-protocol claim.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Current US retail price band not established.",
+    "Not confirmed whether the SmartStart/S2 QR-code inclusion path phones anywhere before pairing to the local hub completes; the manual describes it as a local pairing aid (DSK entry) rather than a cloud handshake, but this specific point was not independently corroborated."
+  ],
+  "conflicts_with": null,
+  "notes": "First door sensor in the catalog and a clean textbook D1: a radio is present, no vendor cloud exists for it at all, and the only thing it ever talks to is hardware the owner chose and controls. Filed at D1 rather than D2 deliberately, per PRINCIPLES §1 — there is no cloud here for anything to be 'optional' relative to.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 3,
+    "failed_fetches": 0
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

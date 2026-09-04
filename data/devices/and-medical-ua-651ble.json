@@ -1,0 +1,97 @@
+{
+  "model_id": "and-medical-ua-651ble",
+  "make": "A&D Medical",
+  "model": "UA-651BLE",
+  "category": "health",
+  "subcategory": "blood pressure monitor",
+  "tier": "D2",
+  "tier_rationale": "The manufacturer's own instruction manual documents a Bluetooth Low Energy radio used only to push readings to the free 'A&D Connect' app and its optional cloud account; the monitor completes a measurement and displays systolic, diastolic and pulse on its own screen with no pairing, app, or account of any kind, and pairing is opt-in and revocable from the monitor's own buttons.",
+  "the_unplug_test": "Press START with no phone anywhere nearby and the cuff inflates, measures, and shows systolic, diastolic and pulse on the monitor's own display exactly as it would paired. Nothing about taking a reading requires Bluetooth, an app, or an account. What is genuinely different from a plain dumb monitor: this device has no button-accessible memory or recall function of its own. Up to 30 readings are held in an internal buffer purely so they can be pushed to a phone the next time one connects — without ever using the A&D Connect app, you see this reading once, on the display, for about a minute before the monitor auto-shuts-off, and then it is gone to you (though not erased from the buffer). The manual itself tells the reader to 'remove the cuff and record your data' by hand.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "partially",
+  "offline_losses": [
+    "any way to review a past reading once its ~1-minute display window ends — the monitor has no recall/memory button; the internal 30-reading buffer exists only to feed the app, not for the owner to browse directly",
+    "automatic date/time stamping (the monitor's clock is set only by syncing to a paired receiver and has no manual clock-adjustment function)",
+    "sharing readings with a doctor or family member, and any cloud backup via the optional A&D Connect account"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Runs on 4 AA/LR6/R6P batteries or an optional AC adapter, not a sealed pack. Cuff is sold as a separate consumable part (catalog numbers documented per arm size)."
+  },
+  "availability": "in_stock",
+  "price_band": "$60-80",
+  "price_observed": "2026-09-04",
+  "where_to_buy": [
+    {
+      "name": "A&D Medical (manufacturer)",
+      "url": "https://medical.andonline.com/product/premium-blood-pressure-monitor-ua-651ble/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://medical.andonline.com/wp-content/uploads/2022/08/UA-651BLE-Manual-1WMPD4004526C.pdf",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Instruction manual: Parts Identification shows a single START button and a display (no memory/recall button); 'Bluetooth Transmission' section states the device needs a receiver app to receive data and names the 'A&D Connect' app; 'Pairing' section describes pairing as an explicit, user-initiated, unpair-and-repair action from the monitor itself; 'Transmitting temporarily stored data' states up to 30 measurement sets are held only to be transmitted once a connection is made, and clock time is synced from the paired receiver with 'no clock adjustment function' on the monitor. 'After Measurement' instructs the user to 'remove the cuff and record your data,' and the device auto-powers-off about one minute after a reading.",
+      "archive_url": null
+    },
+    {
+      "url": "https://medical.andonline.com/ad-connect-app/",
+      "class": "C",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer app page describing A&D Connect as the companion app for this device line, offering sharing of results by email/social media and a cloud account for backup and privacy control — corroborates that a nameable A&D cloud service exists and is a separate, optional layer on top of the monitor's own Bluetooth pairing. Fetched only as a summary; full page content could not be retrieved (403) and this claim is not load-bearing for the tier.",
+      "archive_url": null
+    },
+    {
+      "url": "https://medical.andonline.com/product/premium-blood-pressure-monitor-ua-651ble/",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's own product page for SKU UA-651BLE, listed at $69.99 and currently sold: 'easy, one button operation', readings sent 'wirelessly via Bluetooth to supported phone/tablet', with the companion app described as storing readings and tracking progress. Confirms current availability, the single-button operation the offline_losses depend on, and that the app is an addition to a monitor that measures on its own.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Does launching the A&D Connect app for the first time force account creation before it will pair with the monitor at all, or can it store data locally on the phone without a cloud login? This decides whether account_required should be 'app_only' (as filed) or 'none'. Not confirmed — the app's own store listing could not be fetched.",
+    "FCC grant for the Bluetooth module was not looked up; the manual's own explicit description of the BLE radio was treated as sufficient primary evidence of its presence, so the FCC step was skipped to conserve search budget rather than because it was inconclusive.",
+    "Firmware update mechanism and whether it can be declined: not documented in the sections read.",
+    "Current US price band not established.",
+    "The manufacturer's product page names the companion app 'A&D Heart Track' while A&D's own app page names 'A&D Connect'. Both are A&D services and either way a nameable vendor cloud exists, so the D2 call is unaffected, but the record should name whichever app actually pairs with this SKU today."
+  ],
+  "conflicts_with": null,
+  "notes": "Filed as the direct counterpart to omron-bp5255 (also D2) to show that 'cloud-optional' is not one uniform experience: both monitors take a full measurement offline with no account, but the Omron keeps a real, button-browsable 30-reading history on the device itself while this A&D model's internal storage is a transmit buffer the owner can never see without the app. Same tier, materially different unplug experience — the difference is recorded in offline_losses rather than the tier, per PRINCIPLES.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 3,
+    "failed_fetches": 3
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "No self-hosted replacement for A&D Connect was found; the monitor's transmit buffer is proprietary and not documented as accessible to third-party software."
+}

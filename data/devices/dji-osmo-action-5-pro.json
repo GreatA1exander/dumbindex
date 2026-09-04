@@ -1,0 +1,94 @@
+{
+  "model_id": "dji-osmo-action-5-pro",
+  "make": "DJI",
+  "model": "Osmo Action 5 Pro",
+  "category": "photo",
+  "subcategory": "action camera",
+  "tier": "REJECT",
+  "tier_rationale": "DJI's own user manual states, without an offline alternative: 'Make sure to activate the camera using DJI Mimo before first use,' with the activation procedure requiring Wi-Fi and Bluetooth enabled on a phone and the DJI Mimo app to 'follow the instructions to activate the camera.' DJI's own support documentation for this exact model adds the deciding fact the manual omits: 'Please ensure that your mobile device remains connected to the Internet during the activation process.' No manual, offline, or account-free activation path is documented anywhere for this camera -- unlike the GoPro HERO13 Black, whose mandatory first firmware update can be applied from a downloaded file with no app and no internet-gated handshake. An absolute, internet-required activation gate before any first use, with no cited path around it, matches the REJECT row of the decision table.",
+  "the_unplug_test": "It will not shoot out of the box. DJI's own manual requires activating the camera through the DJI Mimo app before first use, and DJI's own support article for this exact model states the phone must stay connected to the internet during that activation. There is no documented way to skip this or complete it offline. Once activation is done, the camera's own buttons handle ordinary recording without the app -- but the one-time gate itself is absolute and internet-dependent, which is what determines the tier here, the same pattern this catalog already found and rejected in the DJI Neo drone.",
+  "status": "rejected",
+  "rejection_reason": "Mandatory, internet-required app activation before first use, stated in the manufacturer's own manual and support documentation, with no offline or account-free path around it.",
+  "account_required": "for_setup",
+  "works_offline": "unknown",
+  "offline_losses": [
+    "first-time activation cannot be completed at all without an internet-connected mobile device, per DJI's own support documentation",
+    "DJI Mimo app functions (transfer, editing, sharing, livestreaming) require the app and its own connectivity"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": ["unknown"],
+  "phones_home": "unknown",
+  "radios": ["wifi", "ble"],
+  "fcc_id": "2ANDR-AC0042024",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Not researched within budget."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "DJI Store (manufacturer)",
+      "url": "https://store.dji.com/product/osmo-action-5-pro"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": null,
+  "sources": [
+    {
+      "url": "https://dl.djicdn.com/downloads/DJI_Osmo_Action_5_Pro/UM/20240919/DJI_Osmo_Action_5_Pro_User_Manual_v1.0_en.pdf",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's own current user manual (v1.0), section 2.4 Activation, verbatim: 'Make sure to activate the camera using DJI Mimo before first use.' Steps: power on, 'Enable Wi-Fi and Bluetooth on the mobile device,' launch DJI Mimo, connect, 'follow the instructions to activate the camera.' No manual/offline activation path or account step is described in the manual itself; confirms Wi-Fi and Bluetooth radios."
+    },
+    {
+      "url": "https://support.dji.com/help/content?customId=en-us03400011286&spaceId=34&re=US&lang=en&documentType=artical&paperDocType=paper",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "DJI's own support article, 'A Beginner's Guide to Osmo Action 5 Pro': 'Please ensure that your mobile device remains connected to the Internet during the activation process' -- the deciding fact establishing the activation gate requires internet, not merely local Bluetooth/Wi-Fi pairing to the phone."
+    },
+    {
+      "url": "https://fccid.io/2ANDR-AC0042024",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "FCC grant summary for grantee SZ DJI Osmo Technology Co.,Ltd. (grantee code 2ANDR), FCC ID 2ANDR-AC0042024, confirming the Osmo Action 5 Pro holds an intentional-radiator grant consistent with its Wi-Fi/Bluetooth module."
+    }
+  ],
+  "open_questions": [
+    "Whether the DJI Mimo activation step specifically requires creating or logging into a DJI account (as opposed to merely an internet connection to validate the device) was not confirmed -- DJI's support article is explicit about the internet requirement but silent on account creation specifically for this step, same open question as on the dji-neo record.",
+    "Whether ongoing use after the one-time activation is capped or restricted without a continued app/internet connection (as the DJI Neo manual documents for itself) was not checked for this camera within budget.",
+    "Whether any documented liberation or offline-activation-bypass path exists was not researched within budget.",
+    "Current US price was not researched, per project budget guidance to leave price unknown rather than spend a search confirming it."
+  ],
+  "conflicts_with": null,
+  "notes": "Confirms the seeded hypothesis: this is the same absolute internet-gated activation pattern already established and rejected for the DJI Neo drone, now found in DJI's own action-camera line. The GoPro HERO13 Black, already in this catalog at D2 and the same premium action-camera price band, is the direct counter-example: its manual requires a mandatory first firmware update but explicitly documents a no-app, no-account, no-internet-required-at-the-camera manual update path (a file downloaded from gopro.com/update on any computer). That is the alternative this rejection points to.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published, rejected.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 3,
+    "failed_fetches": 2
+  },
+  "local_replacement": "none",
+  "local_replacement_note": null,
+  "alternatives": [
+    {
+      "model_id": "gopro-hero13-black",
+      "why": "Same job (premium action camera) and price band. GoPro's own manual documents no app, no account and no activation step before shooting; the one mandatory firmware update has a documented non-app manual path."
+    }
+  ]
+}

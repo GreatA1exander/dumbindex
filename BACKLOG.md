@@ -14,16 +14,26 @@ validator and golden gate on every change, which does not currently run anywhere
 
 **Launch (announcing it) waits for all of:**
 
-| Gate | 2026-09-04 | Target |
-|---|---|---|
-| No domain below 5 records | 2 of 14 below (health 6, photo 5) | 14 of 14 at 5+ |
-| High-traffic domains (kitchen, av, security, computing, climate) | 8, 9, 7, 10, 7 | 10-15 each |
-| Total published records | 105 | 120-150 |
-| Domains at 8+ | 8 of 14 | 14 of 14 |
-| `/downgrades` demonstrates the thesis | historical section only | at least one observed entry |
+| Gate | 2026-09-04 (after wave 7) | Target | |
+|---|---|---|---|
+| No domain below 5 records | 0 of 14 below | 14 of 14 at 5+ | ✅ |
+| Domains at 8+ | 14 of 14 | 14 of 14 | ✅ |
+| Total published records | 120 | 120-150 | ✅ |
+| High-traffic domains (kitchen, av, security, computing, climate) | 8, 9, 8, 10, 8 | 10-15 each | ❌ |
+| `/downgrades` demonstrates the thesis | historical section only | at least one observed entry | ❌ |
 
-Six domains remain short of 8: photo 3, baby-pet 3, health 2, climate 1, security 1,
-tools 1. Four of those are one or two records from target.
+**Three of five rows now pass.** Wave 7 closed the last six short domains (photo, baby-pet,
+health, climate, security, tools) and took the total from 105 to 120, the bottom of the band.
+
+What remains is density in the five domains people actually arrive through, and one observed
+downgrade. The density row wants roughly 11 more records concentrated in kitchen, av, security
+and climate — two waves' work. The `/downgrades` row cannot be scheduled the same way: it needs
+a vendor to remove a function from a shipped device and us to catch it, which is what the
+`watch` job exists for and what the ledger candidates in `state.json` are closest to.
+
+Note that the per-domain floor no longer chooses the next wave, so the strict rotation through
+`taxonomy.json` is deliberately suspended until this table is clear. `state.json` records that
+and says to resume from photo afterwards.
 
 **Repo public: done** (2026-09-02). MIT for code, CC BY-SA 4.0 for data, CI running the
 validator, golden gate, build and page-weight check on every push, plus a weekly link
@@ -66,28 +76,36 @@ The GE family record works because GE publishes its own "does my appliance have 
 check. The others name connectivity differently (SmartThings, ThinQ) and need their own
 identification procedures.
 
-**Weight future runs toward D2 and D3.** *(Fixed, and holding — keep watching.)*
-Published tiers 2026-09-04: **71 D0, 10 D1, 23 D2, 1 D3.** Three waves ago it was 63 D0
-against 20 above it, and worsening every wave.
+**Weight future runs toward D2 and D3.** *(Fixed. Stop watching this; watch the next one.)*
+Published tiers 2026-09-04, after wave 7: **76 D0, 12 D1, 31 D2, 1 D3.** Four waves ago it
+was 63 D0 against 20 above it, and worsening every wave.
 
 **Fix adopted 2026-09-03** and written into `agents/SCOUT.md` under "Your quota is by
 tier, not by record count": a run is measured on how many D1/D2/D3 records it produces,
 not how many records; a D0 in an already-covered subcategory is worth close to nothing; a
 D0 in an EMPTY subcategory still earns its place; searches are spent on facts that decide
-a tier, never on price. Wave 5 ran 6 of 8 above D0, wave 6 ran 10 of 15.
+a tier, never on price. Wave 5 ran 6 of 8 above D0, wave 6 ran 10 of 15, wave 7 ran 10 of
+15. Three waves is enough to call it: this is the normal shape of a run now.
 
-The thing to watch now is the opposite failure. The quota gives agents a reason to
-classify upward, and wave 6 produced the first instance — a radio-free bench supply filed
-D1 on defensible-sounding reasoning. `validate.mjs` now fails any D1 without a radio, but
-the incentive is still there and only that one shape of it is checked.
+**The thing to watch instead — the defences all point one way.** The quota gives agents a
+reason to classify upward, and there are now two checks on that: `validate.mjs` fails a D1
+with no radio (wave 6, a radio-free bench supply) and fails a D1 whose `radios` contains
+`unknown` (wave 7, see below). But wave 7's actual errors both ran the *other* way — two
+records filed **D1 because nobody found a vendor cloud**, in cases where one existed and
+had not been looked for. That is harder to catch, because a D1 reads as more confident and
+better-researched than a D2, and because it is a claim about an absence.
 
+`agents/PRINCIPLES.md` now carries "D1 is a negative claim, and negative claims have to be
+hunted rather than noticed", naming both failure modes: judging the core-function path
+instead of the whole device (Garmin Alpha 200i — clean MURS tracking link, and a handheld
+with Wi-Fi, Bluetooth and Garmin Explore), and reading silence as absence (Panasonic S5II —
+a support page that does not mention accounts is not a page saying there are none).
 
-**Fix adopted 2026-09-03** and written into `agents/SCOUT.md` under "Your quota is by
-tier, not by record count": a run is measured on how many D1/D2/D3 records it produces,
-not how many records; a D0 in an already-covered subcategory is worth close to nothing;
-searches are spent on facts that decide a tier, never on price. Watch whether the ratio
-actually moves — the previous note said this was a research-priority item and it drifted
-for four waves without anyone acting on it.
+**A remaining hole: D3 is one record out of 120.** It is the tier with the most work behind
+each entry and the one a reader with a soldering iron actually comes for, and no wave has
+ever been briefed to hunt it. The ESPHome, Tasmota, LocalTuya and Zigbee2MQTT device indexes
+list model numbers and are the obvious hunting ground. This is the one job that would
+genuinely need the raised search budget, because the candidates are not known in advance.
 
 **A single D0 record is still worth writing when its subcategory is empty**, because
 someone searching "dumb light bulb" needs to find one. The problem is the fiftieth, not

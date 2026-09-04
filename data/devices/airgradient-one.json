@@ -1,0 +1,103 @@
+{
+  "model_id": "airgradient-one",
+  "make": "AirGradient",
+  "model": "AirGradient ONE (I-9PSL)",
+  "category": "climate",
+  "subcategory": "air quality monitor",
+  "tier": "D2",
+  "tier_rationale": "A vendor cloud (the AirGradient Dashboard) exists and requires an account, but it is a separate, later step from basic operation: the manufacturer's own assembly guide shows the OLED display lighting up with live sensor readings immediately on power-up, before Wi-Fi or dashboard registration happens, and the manufacturer publishes and maintains a local HTTP API and local MQTT path that can post to the owner's own server with cloud posting disabled entirely.",
+  "the_unplug_test": "The 1.3-inch OLED display keeps showing live CO2, PM2.5, TVOC, NOx, temperature and humidity with no Wi-Fi configured at all — the display works from first power-on, before any network setup happens. If Wi-Fi is configured but pointed at your own network with cloud posting turned off (the documented `postDataToAirGradient` config flag), the device serves current readings at its own local HTTP endpoint and can publish to a local MQTT broker of your choosing indefinitely. What you lose without the AirGradient Dashboard is remote access from outside your network, AirGradient's own historical charts, and any alerts routed through their servers.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "AirGradient Dashboard's hosted historical charts, remote/away-from-home access, and dashboard-routed alerts",
+    "over-the-air firmware updates pushed via the dashboard (local flashing remains possible)"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "rest",
+    "mqtt"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Open hardware: PCB, sensor modules (Plantower PMS5003, Senseair S8, SGP41) and enclosure are individually documented and sold as spares; the 'kit' SKU ships as user-assembled parts by design."
+  },
+  "availability": "in_stock",
+  "price_band": "$138-230",
+  "price_observed": "2026-09-04",
+  "where_to_buy": [
+    {
+      "name": "AirGradient (manufacturer)",
+      "url": "https://www.airgradient.com/indoor/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://github.com/airgradienthq/arduino/blob/master/docs/local-server.md",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Official firmware repository documentation (from firmware 3.0.10 onward): local HTTP API at /measures/current returns live sensor data over the LAN with mDNS discovery, /config exposes a postDataToAirGradient flag to disable cloud posting and a configurationControl:'local' mode that prevents the cloud from overriding local settings, and a configurable MQTT broker URL for publishing to a self-hosted broker. Documented and maintained by AirGradient itself, not a third party.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.airgradient.com/documentation/kb/one-v9",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer assembly/setup guide: powering the assembled board on shows the OLED display light up with readings within seconds, and Wi-Fi connection plus AirGradient Dashboard registration are presented as a distinct, subsequent onboarding step rather than a precondition for the display to work.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.airgradient.com/documentation/kb/connect-airgradient-one-to-dashboard",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer documentation states the device will not send data to the AirGradient Dashboard until both Wi-Fi connection and dashboard registration are completed, confirming cloud upload is gated behind an account that is not required merely to operate the monitor.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.airgradient.com/indoor/",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Product page: 'AirGradient ONE (Model I-9PSL)', fully assembled $230 / kit $138, dashboard is 'subscription free and included with every monitor' with 12 months of data-platform/API access, and the page explicitly offers connecting the monitor to Home Assistant or your own server as an alternative to the hosted dashboard.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "FCC ID was searched but not found under an obvious AirGradient grantee; the board likely uses a pre-certified ESP32 module carrying its own FCC ID rather than a device-level grant issued to AirGradient. Not treated as meaningful either way and not load-bearing for this D2 call, since the manufacturer's own documentation already establishes the Wi-Fi radio directly.",
+    "Whether firmware OTA updates pushed from the dashboard can be declined on a device that is otherwise kept fully local was not found in the sections read.",
+    "'phones_home' is filed as 'unknown'. It was briefly filed as 'analytics' on the assumption that a connected-but-cloud-posting-disabled unit still reaches AirGradient for firmware/dashboard check-ins, but no source confirms or denies that, and an assumed value is exactly what this field must not carry. Resolving it means watching a unit's outbound traffic with postDataToAirGradient false.",
+    "After 12 months, does the dashboard/API access become a paid subscription, or does it remain free indefinitely? The product page describes 12 months included but does not state the price or terms after that period. This does not affect the tier (the local API is independent of the dashboard) but affects local_replacement framing and belongs in vendor-ledger watch if it turns out to convert to a paid tier."
+  ],
+  "conflicts_with": null,
+  "notes": "The strongest health-of-category signal in this catalog's climate domain: every other climate record is D0, and air quality monitor was an empty subcategory before this record. AirGradient is open hardware with a vendor that documents and maintains its own local API rather than treating it as an unsupported side door — close to as good as a D2 gets, and worth watching for whether the post-12-month dashboard terms ever convert this from vendor_risk 0.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 4,
+    "failed_fetches": 0
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "Vendor's own local HTTP API and MQTT publishing (documented above) replace the dashboard's live-data function entirely; ESPHome also lists AirGradient ONE as a supported device for owners who want to replace the stock firmware outright."
+}

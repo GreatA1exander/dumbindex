@@ -1,0 +1,82 @@
+{
+  "model_id": "traeger-tailgater-20",
+  "make": "Traeger",
+  "model": "Tailgater 20 (TFB30KLF)",
+  "category": "tools",
+  "subcategory": "grill",
+  "tier": "D0",
+  "tier_rationale": "Manufacturer's own product page states plainly that this grill 'is not equipped with WiFIRE® connectivity,' and it ships with Traeger's Digital Arc Controller — a dial-and-display unit with no radio — rather than the WiFi-equipped D2 Controller used on Traeger's Pro and Ironwood lines. Traeger demonstrably files FCC grants for its WiFi-enabled controllers and accessories (grantee 2AZAM), so the vendor's own explicit 'not equipped' statement is corroborated rather than just unsearched.",
+  "the_unplug_test": "There is no router this grill has ever known about. Fill the hopper, flip the power switch, turn the dial to a temperature, and the auger, igniter and fan run the whole cook exactly as they would in a house with no internet at all. Nothing is lost, because nothing was ever connected.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Traeger sells replacement Digital Arc controllers, meat probes, and hopper/auger parts directly; the controller is a bolt-on module rather than an integrated board."
+  },
+  "availability": "in_stock",
+  "price_band": "$450-550",
+  "price_observed": "2026-09-04",
+  "where_to_buy": [
+    {
+      "name": "Traeger (manufacturer)",
+      "url": "https://www.traeger.com/pellet-grills/portable/tailgater-black"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.traeger.com/pellet-grills/portable/tailgater-black",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer product page states this grill 'is not equipped with WiFIRE® connectivity,' names the Digital Arc controller, and lists current price $499.99, 300 sq in cooking area, 8 lb hopper, and 120V AC power with no mention of any account or app requirement.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2AZAM-BAC619",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Sibling-control check: grantee 2AZAM (Traeger Pellet Grills LLC) holds FCC grants for its WiFi-enabled controllers and accessories (e.g. an induction cooktop, a wireless meat thermometer for WiFIRE grills), establishing that Traeger files when a product has a radio, which makes the manufacturer's 'not equipped with WiFIRE' statement for the Tailgater meaningful rather than an unchecked claim.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Did not confirm directly on fccid.io that no grant exists specifically for the Digital Arc controller module; relied on the manufacturer's own explicit connectivity statement plus the sibling-grant pattern rather than an exhaustive grantee-wide search, to conserve budget."
+  ],
+  "conflicts_with": null,
+  "notes": "Published as the D0 half of a same-brand pair with traeger-pro-575: identical company, same 'wood pellet grill and smoker' category, differing only in which controller module is bolted on — the model-number-is-the-whole-story pattern PRINCIPLES calls out. Grill was an empty subcategory before this record.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 4,
+    "failed_fetches": 1
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

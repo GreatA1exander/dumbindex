@@ -1,0 +1,93 @@
+{
+  "model_id": "nikon-z50ii",
+  "make": "Nikon",
+  "model": "Z 50II",
+  "category": "photo",
+  "subcategory": "digital camera",
+  "tier": "D2",
+  "tier_rationale": "Nikon's own online Reference Guide names a real, Nikon-operated cloud endpoint distinct from local app pairing: 'Nikon Imaging Cloud is Nikon's cloud service,' and connecting to it requires an account ('You must create a Nikon ID and register with Nikon Imaging Cloud to use the service. Complete registration and sign in ... before connecting to the camera'). That is separate from SnapBridge, whose pairing procedure (Bluetooth pairing, confirm a matching authentication code on both devices) contains no Nikon ID or account step anywhere in the manual. Initial camera setup ('choose a language and time zone and set the clock') is done entirely on the camera with no smartphone or account mentioned as a prerequisite. Because a named vendor cloud exists (Nikon Imaging Cloud) and all core function -- shooting, menus, SnapBridge pairing -- works with no account and no connection, this is D2, matching the Sony/Fujifilm shape already in this catalog rather than the account-free D1 of the Ricoh GR IIIx.",
+  "the_unplug_test": "It works exactly the same. First-time setup is language, time zone and clock, done on the camera itself with no phone or account involved anywhere in Nikon's own setup instructions. With Wi-Fi and Bluetooth off you lose SnapBridge's phone pairing and remote control -- pairing itself needs only a Bluetooth authentication code, not a Nikon ID -- and Nikon Imaging Cloud, a separate Nikon-operated service that does require a Nikon ID and is off until you deliberately register and connect. Nothing about taking a photo, changing a setting, or reviewing images on the camera depends on either.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "SnapBridge app remote control and Bluetooth/Wi-Fi image transfer to a paired phone (pairing itself needs no Nikon ID, only a Bluetooth confirmation code)",
+    "Nikon Imaging Cloud, a separate opt-in service requiring a Nikon ID and registration before it can be connected to the camera"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": ["ble", "unknown"],
+  "phones_home": "unknown",
+  "radios": ["wifi", "ble"],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Not researched within budget."
+  },
+  "availability": "unknown",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Nikon USA (manufacturer)",
+      "url": "https://www.nikonusa.com/p/z50ii/1784/overview"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://onlinemanual.nikonimglib.com/z50II/en/26-01.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Nikon's own Z50II online Reference Guide: 'Nikon Imaging Cloud is Nikon's cloud service that can be used in a web browser of the computer or smart device'; 'Connect your camera with Nikon Imaging Cloud to access a variety of services' and 'you can use Nikon Imaging Cloud via the Internet even if there are no smart devices or computers nearby' -- establishing a real, named, Nikon-operated cloud endpoint for this camera, distinct from local SnapBridge pairing."
+    },
+    {
+      "url": "https://onlinemanual.nikonimglib.com/z50II/en/26-02.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Same Reference Guide, connection-setup page: 'You must create a Nikon ID and register with Nikon Imaging Cloud to use the service. Complete registration and sign in on the computer or smart device before connecting to the camera' -- confirms Nikon Imaging Cloud requires a Nikon account, separately from camera pairing."
+    },
+    {
+      "url": "https://onlinemanual.nikonimglib.com/z50II/en/24-02.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Same Reference Guide, wireless-connections page: pairing procedure is '[Connect to smart device] > [Pairing (Bluetooth)]' on the camera, then open the SnapBridge app and 'confirm that the camera and smart device display the same authentication code' -- a local Bluetooth pairing handshake with no Nikon ID or sign-in step described."
+    },
+    {
+      "url": "https://onlinemanual.nikonimglib.com/z50II/en/03-06.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Same Reference Guide, initial camera setup: 'Turn the camera on, choose a language, and set the clock. Before using the camera for the first time, follow the steps below to choose a language and time zone and set the clock' -- setup is language, time zone, DST, clock and date format, performed on the camera with no smartphone or account step."
+    }
+  ],
+  "open_questions": [
+    "The specific FCC grant covering the Z50II's Wi-Fi/Bluetooth module was not located within budget. Nikon Corporation's FCC grantee code (CGJ) was confirmed to exist and to cover other Nikon radio equipment, but the exact camera-module grant was not pinned down. Not required for this D2 claim, which rests on the manual rather than the FCC check.",
+    "Whether firmware updates can be declined, and what telemetry the camera sends to Nikon with Wi-Fi/Bluetooth on but no Nikon Imaging Cloud account connected, are unconfirmed.",
+    "Current US availability and price were not researched, per project budget guidance to leave price unknown rather than spend a search confirming it."
+  ],
+  "conflicts_with": null,
+  "notes": "Confirms the seeded hypothesis exactly: SnapBridge pairing is a local Bluetooth handshake requiring only a matching on-screen code, while the account gate sits one layer further out, on Nikon Imaging Cloud specifically. Same D1/D2 boundary logic as sony-a6700 (Creators' Cloud) and fujifilm-x100vi (Timeline/network service); contrast with ricoh-gr-iiix, whose manual documents no cloud endpoint at all.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 7,
+    "failed_fetches": 0
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "Images and video are standard files on a plain SD card; any computer or NAS handles storage and backup with no vendor software required. Nikon Imaging Cloud's function (remote cloud storage/access) has no first-party local equivalent, but nothing about it is required to use the camera."
+}

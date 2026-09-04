@@ -1,0 +1,91 @@
+{
+  "model_id": "willow-go",
+  "make": "Willow",
+  "model": "Willow Go Wearable Breast Pump",
+  "category": "baby-pet",
+  "subcategory": "breast pump",
+  "tier": "D2",
+  "tier_rationale": "Willow operates a real account/cloud service for its app (its own privacy notice describes data collected 'when you sign up for an account' for the Willow 3.0 and Willow Go apps and services), and the pump pairs to that app over Bluetooth. But core operation — power on/off, switching between stimulation and expression modes, and adjusting suction across nine levels — is performed with physical buttons on the pump itself, confirmed independently by multiple reviewers, and no account or app is needed to complete setup or to pump. Vendor cloud exists and is optional for the thing the appliance exists to do: this is the D2 row, not REJECT, despite this being exactly the domain where an app-first product usually fails that test.",
+  "the_unplug_test": "The pump keeps working exactly the same. Power, mode (stimulation/expression), and suction level (nine settings) are all controlled with physical buttons on top of the pump, and multiple reviewers confirm they used it this way without the phone. Leaving your phone in another room costs you the live suction readout, session-time tracking, and firmware update checks, all of which live in the Willow app and the account behind it — but not the ability to pump.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "live session/suction display and history in the phone app",
+    "Apple Watch companion controls (Willow 3.0/app ecosystem)",
+    "firmware update checks, which are delivered through the app"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "analytics",
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://onewillow.com/pages/privacy-notice",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Willow's own privacy notice, covering the Willow 3.0 and Willow Go pumps and their apps/services, states Willow 'receives and stores information you provide when you sign up for an account' — establishing a real, nameable vendor account/cloud service tied to the app.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.reviewed.com/parenting/content/willow-go-pump-review",
+      "class": "B",
+      "accessed": "2026-09-04",
+      "supports": "Independent mainstream review (USA Today/Reviewed network) confirming physical buttons on top of the pump control suction across nine levels, and describing the app as assisting with 'basic charging steps and also keeping track of pumping time' — i.e. supplementary, not required for pumping.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fathercraft.com/willow-go-review/",
+      "class": "B",
+      "accessed": "2026-09-04",
+      "supports": "Independent review confirming the Willow Go has physical buttons for power, mode switching (stimulation/expression), and suction adjustment, and that a reviewer used the pump this way in preference to the app, and that the app is not required to operate the pump.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether Bluetooth pairing to the app itself requires an account to be signed in first (as opposed to only account-gated cloud features like history sync) was not separately confirmed — account_required is set to app_only on the reasonable reading that no account is needed unless the app is used at all, per Willow's own 'you can use the pumps without the app' guidance, but this is worth tightening.",
+    "Radio confirmed as Bluetooth via setup instructions ('ensure Bluetooth is enabled, hold the pump near your phone'); no FCC lookup was completed to confirm the absence of WiFi hardware.",
+    "Whether firmware updates delivered through the app can be permanently declined, or are eventually required, is unconfirmed.",
+    "Price band left unknown per project policy on search budget."
+  ],
+  "conflicts_with": null,
+  "notes": "The pair to spectra-s1-plus (D0, no radio at all) in the same subcategory. Two earlier, more vaguely-worded search snippets suggested Willow pumps have 'no physical buttons' and are 'app-controlled devices' — that claim did not survive contact with multiple independent hands-on reviews, all of which describe a physical button panel controlling every core function, so this record does not repeat it. This is a good example of the domain's stated trap (app-first products in baby-pet usually round-trip through a cloud) not automatically applying: a real cloud exists here, but it is genuinely optional, which is why this is D2 rather than REJECT.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D2, as the app-first contrast to spectra-s1-plus.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 5,
+    "failed_fetches": 1
+  },
+  "local_replacement": "none",
+  "local_replacement_note": "The lost functions (session history, live suction readout in-app, Apple Watch integration) live entirely in Willow's app and account; there is no third-party or owner-run software that reconstructs them, since the pump exposes no documented local API or protocol to build against."
+}

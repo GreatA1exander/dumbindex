@@ -1,0 +1,86 @@
+{
+  "model_id": "petlibro-granary-af006",
+  "make": "PETLIBRO",
+  "model": "Granary Automatic Feeder AF006 / PLAF006 (\"Basic Button Type\")",
+  "category": "baby-pet",
+  "subcategory": "pet feeder",
+  "tier": "D0",
+  "tier_rationale": "PETLIBRO's own support documentation describes the entire feeding schedule and manual-feed procedure using only the unit's Setting, +/-, unlock, and manual-feed buttons, with no mention of WiFi, Bluetooth, an app, or an account anywhere. The grantee that files FCC radio grants for every WiFi/Bluetooth model in this exact product line (2A3DE, Shenzhen Libro Technology) has no grant on file for PLAF005 or PLAF006, against 24 grants covering its connected siblings — the sibling-control heuristic that turns an absent grant into real evidence. No radio, no vendor cloud, so it cannot phone home because it has no mouth.",
+  "the_unplug_test": "There is no router to unplug. The schedule is set on the unit itself with a Setting button and +/– buttons, up to six meals a day, and a separate manual-feed button dispenses food on demand independent of the schedule. No app, no account, and no WiFi hardware exists to lose. This is the same device before and after any network in the house goes down, because it was never on one.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://petlibro.com/pages/how-do-i-set-a-feeding-schedule-on-the-granary-automatic-feeder-af005-af006-plaf005-plaf006",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's own support page for AF005/AF006/PLAF005/PLAF006 describes setting a feeding schedule (up to 6 meals/day) entirely with the unit's Setting and +/- buttons. No mention of WiFi, Bluetooth, an app, or an account anywhere on the page.",
+      "archive_url": null
+    },
+    {
+      "url": "https://petlibro.com/pages/how-to-feed-manually-on-the-granary-automatic-feeder-af005-af006-plaf005-plaf006",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's own support page confirming manual feeding is performed with a physical unlock button plus a manual-feed button, independent of the schedule, with no app or account referenced.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2A3DE",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Full grant list for grantee 2A3DE (Shenzhen Libro Technology, PETLIBRO's FCC filer) lists 24 grants covering every WiFi/Bluetooth PETLIBRO feeder, fountain, camera and litter box in the current line (e.g. PLAF103 'Granary Automatic Pet Feeder-WiFi Control', PLAF108 'Air WiFi Feeder', PLAF203 camera feeder) but no grant for PLAF005 or PLAF006. Since this vendor demonstrably files for every radio-equipped model, the absence for this exact model is meaningful evidence of no radio, not just a missed search.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Power source (AC adapter vs. D-cell battery backup) was described in secondary retailer/manual-aggregator summaries but not confirmed against a PETLIBRO-hosted primary source; left unconfirmed rather than guessed.",
+    "Price band left unknown — not worth spending search budget on per project policy; check a current retailer listing before publishing a price.",
+    "Whether AF005 (reported elsewhere as the smaller 3L single-tray sibling) is identical in electronics to AF006 was not independently verified; this record covers AF006/PLAF006 specifically, which matches the Amazon listing titled 'Granary 5L Basic Button Type'."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the non-connected sibling of petlibro-granary-camera-feeder (REJECT, PLAF203U) and the alternative that rejection lacked. PETLIBRO sells at least three tiers under closely related naming — this button-only feeder, a WiFi-only feeder (PLAF103), and the WiFi+camera feeder (PLAF203/PLAF203U) — so the model number is the entire story when shopping this line; do not assume 'Granary' alone tells you anything about connectivity.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D0, as the alternative petlibro-granary-camera-feeder's rejection was missing.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 4,
+    "failed_fetches": 2
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

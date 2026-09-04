@@ -1,0 +1,90 @@
+{
+  "model_id": "trividia-true-metrix",
+  "make": "Trividia Health",
+  "model": "TRUE METRIX Self Monitoring Blood Glucose System",
+  "category": "health",
+  "subcategory": "glucose meter",
+  "tier": "D0",
+  "tier_rationale": "The manufacturer's own owner's booklet documents a physical data port ('Data Contacts') used only to connect the meter to a computer by cable for upload, and no wireless capability of any kind. Trividia demonstrably files FCC grants when a product has a radio — the sibling TRUE METRIX AIR meter and its Bluetooth module both hold grants under the same grantee code — and no grant of any kind exists for the plain TRUE METRIX, which is the meaningful absence PRINCIPLES §3 asks for.",
+  "the_unplug_test": "There is nothing to unplug. Insert a test strip, apply a drop of blood, and a result appears on the display in about four seconds and is stored automatically in the meter's own memory (up to 500 results, with 7-, 14- and 30-day averages computable on the device). Every one of those functions is identical whether or not you ever own a computer or a phone. The only thing the meter cannot do standalone is print or export history to a PC, which requires TRUEmanager software over a wired cable — not a network, an account, or a vendor server.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "Single user-replaceable CR2032 lithium coin cell; test strips and control solution are the ongoing consumables."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Trividia Health (manufacturer)",
+      "url": "https://www.trividiahealth.com/blood-glucose-monitoring-system/true-metrix/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.trividiahealth.com/wp-content/uploads/2024/01/TRUE-METRIX-Owners-Booklet-English-RE4TVH35_012224.pdf",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Owner's booklet: meter has a Display Screen, Test Port, Strip Release Button, and 'Data Contacts' described as connecting 'meter with computer for data upload' — a wired contact pad, not a radio. No mention of Bluetooth, Wi-Fi, or any app anywhere in the device description, setup, or memory sections. Documents on-device memory with 7-, 14- and 30-day averages and full result history browsing from the meter's own buttons.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.trividiahealth.com/blood-glucose-monitoring-system/true-metrix/",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer product page distinguishes this model from the TRUE METRIX AIR, stating the AIR model adds 'Bluetooth Smart' connectivity to the TRUE MANAGER AIR app while the standard TRUE METRIX has no wireless functionality; data transfer for the standard meter is via TRUEmanager Diabetes Management Software over a cable.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2ADDB",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Sibling-control check: grantee 2ADDB (Trividia Health, Inc.) holds FCC grants 2ADDB-AIR-01 and 2ADDB-AIR-02 (Bluetooth module and Bluetooth-equipped meter, for the AIR product) plus 2ADDB-PET-01 and 2ADDB-NIPRO-01 (other Bluetooth modules). No grant of any kind exists for a device named TRUE METRIX. The vendor files for its radio-equipped meters, so the absence for this model is meaningful rather than an unsearched gap.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Current US retail price band not established — not spent on search per budget guidance.",
+    "Exact current retail model/SKU number varies by reseller (e.g. Walgreens house-branded runs); the manufacturer identifies the device by product name rather than a single numeric SKU, and the owner's booklet on file is revision RE4TVH35 Rev. 51 (2024)."
+  ],
+  "conflicts_with": null,
+  "notes": "Published as the passing half of the glucose-meter pair for this catalog: a conventional strip meter with no radio at all, distinguished from its own Bluetooth sibling (TRUE METRIX AIR) only by the absence of 'AIR' in the name — the model-number-is-the-whole-story pattern PRINCIPLES flags. Glucose meter was an empty subcategory before this record.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 4,
+    "failed_fetches": 1
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

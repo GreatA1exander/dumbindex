@@ -1,0 +1,75 @@
+{
+  "run_id": "2026-09-04-discover-wave7",
+  "job": "discover",
+  "prompt_version": "tier-quota-v1 + seeded-candidates",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "Close the last six domains short of the launch gate's 8-record floor: photo and baby-pet (3 each), health (2), climate, security and tools (1 each). Three agents, tier quota, seeded candidate lists, the domain's most likely tier error named in each brief.",
+
+  "outcome": "All three completed; second consecutive wave with no agent killed. 15 records, and every domain in the taxonomy is now at 8 or more published records.",
+  "devices_added": 15,
+  "domains": {"photo": 4, "baby-pet": 5, "health": 2, "climate": 1, "security": 1, "tools": 2},
+  "tier_split": {"D0": 5, "D1": 2, "D2": 7, "REJECT": 1},
+
+  "catalog_after": {
+    "published": 120,
+    "tiers": {"D0": 76, "D1": 12, "D2": 31, "D3": 1},
+    "domains_below_8": 0
+  },
+
+  "findings": [
+    "The tier quota held for a third wave: 10 of 15 above D0, against 10 of 15 in wave 6 and 3 of 17 in wave 4. It is now the normal shape of a run rather than a result.",
+    "THE FINDING OF THIS WAVE: the orchestrator independently re-verified three deciding facts, and all three were wrong or unsupported. That is not a sampling estimate of the error rate — the three were chosen because they looked soft — but it is the first time a review pass went three for three, and two of the three changed something a reader would act on. Wave 6 re-verified two deciding facts and found nothing. The difference is that this wave's reviewer went after negative claims specifically, and negative claims are where the errors are.",
+    "Seeded lists kept the search budget from binding for the first time in four waves. The three agents used roughly 30, 22 and an unreported but comparable number of searches — well inside the 200 session cap that had been exhausted in each of the previous three waves. No agent improvised a citation, and the proxy-citation failure mode from wave 6 did not recur. The budget was not raised; the briefs simply spent less by naming candidates in advance.",
+    "Three pairs were produced, and two of them retired rejections that had nowhere to send a reader. petlibro-granary-af006 (D0) is the non-camera sibling the petlibro-granary-camera-feeder rejection had been pointing nowhere for since wave 2; garmin-alpha-200i-t5 (D2) is the subscription-free dog tracker the fi-series-3-plus rejection lacked. The third pair, traeger-tailgater-20 (D0) and traeger-pro-575 (D2), is the same maker's grill with and without a radio — the sibling-model shape that keeps producing the catalog's most useful records.",
+    "Agents dropped four seeds on evidence and said why, which is the behaviour the brief asks for and is worth recording as working. The CGM rejection was dropped because Dexcom and Libre both appear to offer a standalone reader path, contradicting the seed's premise — a REJECT declined for exactly the right reason. Insta360 X4 was dropped because a Class C signal about a forced app login could not be raised to Class A or B. Elvie Stride was dropped because its own support docs contradicted the hypothesis that the app was required. Willow Go survived the same test and landed as a legitimate D2 rather than the hypothesised REJECT."
+  ],
+
+  "system_gaps_found": [
+    {
+      "gap": "D1 is a negative claim — 'the vendor operates no cloud for this device' — and nothing in the procedure treated it as one. Every other tier rests on something the agent found: an endpoint, an account gate, a liberation guide. D1 rests on something not found, and both failures this wave were that same shape. VERIFIER already carried the mirror-image rule for D2 ('before assigning D2, name the vendor's cloud endpoint'); there was no corresponding discipline for the tier that claims there is no endpoint to name.",
+      "instances": [
+        "garmin-alpha-200i-t5 was filed D1 on genuinely clean evidence about the wrong scope. The collar transmits to the handheld over a Part 95J MURS link, there is no cloud in the tracking path, and Garmin says so — all true. The same handheld carries Bluetooth, Wi-Fi and an Iridium radio and has a 'Connected Features' page in Garmin's own manual naming Garmin Explore. The record's radios field listed only the collar link plus 'unknown'. Corrected to D2, radios enumerated, and the tracking path described as clean within D2 rather than borrowing D1 for it.",
+        "panasonic-lumix-s5ii was filed D1 partly on a Panasonic support page where 'no account creation, login, or cloud storage requirement appears anywhere' — a page that does not discuss accounts at all. Panasonic does host an online LUT library of about 200 creator LUTs. The tier survived, but only because a better fact existed underneath and had not been found: Panasonic's own LUT download procedure has you disconnect the camera before the phone goes online, so the camera itself reaches nothing. Rationale, unplug test and sources rewritten to rest on that."
+      ],
+      "fix": "Three parts. (1) PRINCIPLES gains 'D1 is a negative claim, and negative claims have to be hunted rather than noticed', naming both failure modes — judging the core-function path instead of the device, and reading silence as absence — and requiring that a D1 rationale say where the vendor cloud was looked for. (2) validate.mjs now fails any D1 whose radios list contains 'unknown': D1 claims no radio on the device reaches the vendor, and that cannot be established about a radio nobody identified. D2 and above may carry 'unknown' freely, because those tiers rest on a cloud that was found. (3) Verified the check bites by reinstating the Garmin's original tier and radios and watching validate.mjs fail on it. No existing record was affected — no D1 in the catalog carried 'unknown'."
+    },
+    {
+      "gap": "Two records filed phones_home as 'analytics' while their own open_questions admitted the value was a cautious default with no source behind it. 'Unknown is publishable, a wrong value is not' is an explicit project invariant, and a guess dressed as a cautious guess is still a guess.",
+      "fix": "Both corrected to 'unknown' (airgradient-one, neptune-apex-el) with the open question rewritten to say what would actually resolve it — watching a unit's outbound traffic with cloud posting disabled. Not mechanised: the validator cannot tell a sourced 'analytics' from an assumed one. This is a review-checklist item, and it is now the second-most-common defect after the hedged deciding fact."
+    },
+    {
+      "gap": "When a wave finally supplies the alternative a rejection was missing, the rejection's open_questions keep saying no alternative exists. Both rejections retired this wave had that contradiction, and the schema requires alternatives on rejections but nothing checks the prose around it.",
+      "fix": "Stale questions removed from petlibro-granary-camera-feeder and fi-series-3-plus. Worth a validator check later — a rejection whose alternatives array is non-empty should not carry an open question asserting the array is empty — but the phrasing varies too much to match reliably yet, so it stays a review item."
+    },
+    {
+      "gap": "Three new verified records carried vendor_risk null. House style is 0 for verified records (no documented incident) and null only on rejections; 113 records used 0 and the 11 nulls were all rejections until this wave.",
+      "fix": "Normalised to 0. Low stakes, but vendor_risk feeds the ledger surface and an unexplained null reads as unassessed rather than assessed-and-clean."
+    }
+  ],
+
+  "honest_limitations": [
+    "The launch gate is not met. Two of its five rows still fail: the high-traffic domains (kitchen, av, security, computing, climate) want 10-15 records each and sit at 8, 9, 8, 10, 8; and /downgrades still has no observed entry, only the historical section. Total published (120) has reached the bottom of its 120-150 band and every domain is now at 8+, so those two rows are what remains.",
+    "Twelve of the fifteen deciding facts were not independently re-derived by the orchestrator. Given that three of three spot-checks found something, the honest reading is that this wave probably still contains errors of the same class, in the records nobody looked at twice.",
+    "traeger-pro-575 is the thinnest record of the wave and was published anyway. Its D2 originally rested on a manufacturer page describing WiFIRE's added features plus a Class C troubleshooting blog — inference that a cook needs no app, rather than a document saying so. A Class A Traeger burn-in guide was found in review and added, but that guide names Ironwood, Timberline and Silverton in its WiFIRE section rather than the Pro 575; the procedure applies because the Pro 575 is a WiFIRE grill on the same D2 Controller, and the gap is recorded in the record's own open_questions.",
+    "and-medical-ua-651ble is a materially weaker D2 than the Omron it was written as a counterpart to, and the tier does not show it: the monitor has no recall button, so a reading is gone about a minute after it appears, and the internal 30-reading buffer exists only to feed the app. The agent put this in offline_losses rather than bending the tier, which is correct, but a reader scanning tiers alone would not learn it. Worth asking whether the site surfaces offline_losses prominently enough for D2 records.",
+    "The Cressi Leonardo (wave 6) and the two purchasability-blocked records (GRI door contact, non-smart LED bulb) were all left untouched again. None were in scope for this wave's briefs.",
+    "No FCC grant was located for four records (nikon-z50ii, panasonic-lumix-s5ii, and-medical-ua-651ble, traeger-pro-575). In each case the radio's presence is documented directly by the manufacturer, so the check was skipped to conserve budget rather than being inconclusive, and each record says so. That is the honest call, but it does mean the FCC step — the cheapest disambiguator VERIFIER has — is now routinely skipped whenever a manual mentions Wi-Fi."
+  ],
+
+  "sources_that_worked": [
+    {"domain": "manufacturer online manuals (onlinemanual.nikonimglib.com, www8.garmin.com, eww.pavc.panasonic.co.jp, av.jpn.support.panasonic.com)", "claims_supported": 14, "note": "Connected-features and setup sections decided four tiers on their own, including both corrections."},
+    {"domain": "fccid.io / fcc.report grantee pages", "claims_supported": 5, "note": "Sibling-control worked three times: PETLIBRO (24 grants, none for the model), Trividia (AIR has grants, plain meter has none), Traeger (files when it has a radio)."},
+    {"domain": "github.com (vendor firmware repos and third-party integrations)", "claims_supported": 2, "note": "airgradienthq/arduino documented the local HTTP API and the postDataToAirGradient flag — the strongest single local-path citation of the wave."}
+  ],
+  "sources_that_failed": [
+    {"domain": "manuals.plus / device.report / manualslib", "fetches": 4, "claims_supported": 0, "note": "403 as always; briefs warn about these and agents routed around them."},
+    {"domain": "support.traeger.com", "fetches": 1, "claims_supported": 0, "note": "403 to automated fetch; the traeger.com/learn equivalent served the same facts."},
+    {"domain": "apps.apple.com", "fetches": 1, "claims_supported": 0, "note": "404 on a constructed app-listing URL while chasing whether LUMIX Lab requires an account. The question is still open."}
+  ],
+
+  "searches_used": 60,
+  "wall_clock_min": 38,
+  "subagent_failures": [],
+
+  "surprises": "The review pass went three for three on deciding facts it chose to re-check, and the two that mattered were the same error wearing different clothes: a D1 filed because nobody found a vendor cloud, in cases where one existed and had not been looked for properly. The catalog has spent three waves building defences against classifying UPWARD — the tier quota's incentive, and the D1-without-a-radio check that caught it. This wave's errors both ran the other way, and they are harder to see, because a D1 record reads as more confident and better-researched than a D2. 'We checked and there is no cloud' is the strongest claim this site makes about a networked device, and until now it was the only tier claim with no procedure behind it."
+}

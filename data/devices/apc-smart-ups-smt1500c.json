@@ -63,7 +63,7 @@
       "class": "A",
       "accessed": "2026-09-03",
       "supports": "APC's own SmartConnect support documentation: when a SmartConnect plan lapses (e.g. after the warranty period), the device drops to 'Basic Monitoring' — the dashboard status view still works but event notifications, remote diagnostic tests, and remote firmware upgrades stop. This confirms the cloud tier degrades independently of the UPS's physical function, which is unaffected.",
-      "archive_url": null
+      "archive_url": "https://web.archive.org/web/20220906180110/https://smartconnect-support.apc.com/help/en/EcoStruxure%20Ready%20Smart-UPS%20Help%20Center/MN03.4.55.html"
     },
     {
       "url": "https://networkupstools.org/ddl/APC/Smart-UPS_1500.html",

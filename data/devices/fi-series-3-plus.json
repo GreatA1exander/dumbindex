@@ -64,7 +64,6 @@
     }
   ],
   "open_questions": [
-    "No verified local-only or subscription-free pet tracker exists yet in this catalog to list as an alternative. Finding one (or confirming none exists at acceptable evidence) is a discovery task.",
     "Whether the newer Series 3+ truly refuses to function at all without any membership (as one source claims) versus only losing out-of-range GPS (as another source describes for the collar generally) is unresolved between the two sources and should be confirmed against Fi's own support documentation, which returned 403 to automated fetch.",
     "FCC grant not located under 'Fi Series 3' search; a grantee-level search (the company operates as Fi, formerly Fi Technology) was not completed within budget.",
     "Current US price/availability directly from fi.com was not confirmed; figures here come from a third-party cost breakdown."
@@ -95,5 +94,11 @@
     "failed_fetches": 2
   },
   "local_replacement": "none",
-  "local_replacement_note": "No documented local-only mode. Location data outside home Wi-Fi is inherently cellular and vendor-relayed; there is no self-hosted or LAN alternative for the GPS function."
+  "local_replacement_note": "No documented local-only mode. Location data outside home Wi-Fi is inherently cellular and vendor-relayed; there is no self-hosted or LAN alternative for the GPS function.",
+  "alternatives": [
+    {
+      "model_id": "garmin-alpha-200i-t5",
+      "why": "A GPS dog tracker whose tracking path carries no subscription and no cloud: the collar transmits position to the handheld over a Part 95J MURS radio link and the handheld draws it on its own screen, working in country with no cell coverage. Sold outright rather than bundled with a plan. It is a different and more expensive class of product aimed at sporting dogs, and the same handheld's inReach satellite messaging is separately subscription-gated - but the thing Fi charges a membership for, knowing where the dog is, needs nothing here."
+    }
+  ]
 }

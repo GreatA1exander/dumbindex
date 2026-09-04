@@ -1,0 +1,114 @@
+{
+  "model_id": "panasonic-lumix-s5ii",
+  "make": "Panasonic",
+  "model": "Lumix S5II (DC-S5M2)",
+  "category": "photo",
+  "subcategory": "digital camera",
+  "tier": "D1",
+  "tier_rationale": "The camera has real Wi-Fi and Bluetooth and real companion apps (LUMIX Sync for pairing/remote control, LUMIX Lab for transfer/edit/LUT/firmware), but no Panasonic cloud endpoint that the camera itself connects to. Panasonic's own LUMIX CLUB cloud photo service -- the only Panasonic-run cloud that ever touched this product line -- was terminated on 2022-05-31 with accounts deleted, and Panasonic's termination notice lists the predecessor S5/S1 series as affected, not the S5II, which shipped afterwards. Panasonic does still host one online service in this ecosystem: the LUMIX Lab LUT library, roughly 200 creator LUTs offered free. It is reached by the PHONE, not the camera -- Panasonic's own procedure has you disconnect the camera's Wi-Fi first, then put the smartphone online to download, then transfer the LUT to the camera over the local link. LUMIX Sync's connection documentation for this exact model (DC-S5M2) requires no login for Bluetooth or Wi-Fi pairing. The only cloud the camera itself can be pointed at is Frame.io Camera-to-Cloud, a third-party (Adobe) service Panasonic integrates rather than operates, and an opt-in workflow feature rather than an account gate. Radio present, local pairing, and no vendor cloud endpoint on the camera to be optional about: D1, not D2.",
+  "the_unplug_test": "It works exactly the same. Turning the camera on for the first time brings up an on-camera time-zone and clock screen -- no smartphone, app, or account appears anywhere in that step. With Wi-Fi and Bluetooth off you lose LUMIX Sync's remote control and phone image transfer, and LUMIX Lab's transfer, editing and app-based firmware updates. Panasonic runs one online service you would notice missing -- a free library of about 200 creator LUTs -- but your phone fetches those, not the camera: Panasonic's own instructions have you disconnect the camera before the phone goes online. The camera never talks to Panasonic. The one cloud it can be pointed at directly, Frame.io Camera-to-Cloud, belongs to Adobe and is an optional workflow you would have to go and set up.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "LUMIX Sync remote shooting and Bluetooth/Wi-Fi image transfer to a paired phone (pairing itself needs no account)",
+    "LUMIX Lab in-app photo/LUT transfer, editing and firmware updates (no account required per Panasonic's own support page)",
+    "optional Frame.io Camera-to-Cloud direct upload, a third-party (Adobe) service, not a Panasonic cloud, requiring its own separate account if used"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "ble",
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Not researched within budget."
+  },
+  "availability": "unknown",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Panasonic (manufacturer support/spec page)",
+      "url": "https://help.na.panasonic.com/camera-camcorder/lumix-s-series/dc-s5m2x/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://eww.pavc.panasonic.co.jp/dscoi/DC-S5M2/html/DC-S5M2_DVQP2839_eng/0015.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Panasonic's own online Operating Instructions for the DC-S5M2 (S5II): 'When you turn the camera on for the first time, a screen to set the time zone and clock appears' -- setup is entirely on-camera, no smartphone, app or account mentioned."
+    },
+    {
+      "url": "https://av.jpn.support.panasonic.com/support/global/cs/soft/lumix_sync/en/DC-S5M2/connect_wf.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Panasonic's own LUMIX Sync connection guide for this exact model (DC-S5M2): Wi-Fi connection steps are 'enable the Wi-Fi function' on the phone, 'select the SSID displayed on the camera', 'start up LUMIX Sync' -- no account creation or login credential appears in any of the documented connection methods (QR code, manual password, network, tethering)."
+    },
+    {
+      "url": "https://av.jpn.support.panasonic.com/support/global/cs/soft/lumix_sync/en/connect_bt.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Panasonic's own LUMIX Sync Bluetooth pairing guide: 'Follow a simple connection setup procedure (pairing) to connect to a smartphone that supports Bluetooth Low Energy' -- local BLE pairing only, no LUMIX CLUB or Panasonic account referenced."
+    },
+    {
+      "url": "https://av.jpn.support.panasonic.com/support/global/cs/soft/lumix_lab/en/index.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Panasonic's own LUMIX Lab support portal: compatible-model list (DC-S5M2 included), release notes, system requirements and download links for the app that handles image transfer, editing, LUT transfer and on-camera firmware updates. Cited for what the app is and that it supports this model; the page does not discuss accounts either way."
+    },
+    {
+      "url": "https://av.jpn.support.panasonic.com/support/global/cs/info/wifi_info2/index.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Panasonic's own service-termination notice: LUMIX Wi-Fi cloud upload ('Upload an Images to Web Service' / 'Upload an Images to Cloud Sync. Service') applied to the predecessor 'DC-S1 / S1R / S1H / S5 / G100 / G110' line, terminated 2022-05-31 with accounts auto-deleted -- the S5II is not among the listed affected models, consistent with no cloud-sync feature carrying over to it."
+    },
+    {
+      "url": "https://av.jpn.support.panasonic.com/support/global/cs/soft/lumix_lab/en/cts/c0.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Panasonic's own LUMIX Lab operating instructions for downloading LUTs: the documented procedure is to select [Disconnect] to end the Wi-Fi connection with the camera, then connect the SMARTPHONE to the internet and download, after which 'LUTs you download are added to the bottom row of the LUT library on the [Device] side' and are transferred to the camera over the local link. This establishes both that Panasonic does host an online LUT library, and that the camera is explicitly disconnected while the phone reaches it - the camera itself never connects to a Panasonic service.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Whether the LUMIX Lab LUT library requires a Panasonic account to download from was not established -- Panasonic's LUMIX Lab support pages and FAQ do not discuss accounts either way. This does not bear on the tier, which rests on the camera not reaching a Panasonic service at all, but it is the open fact a reader who cares about the app should know is unresolved.",
+    "The specific FCC grant covering the S5II's Wi-Fi/Bluetooth module was not located within budget; Panasonic grantee codes (e.g. ACJ, ACL) were confirmed to file real radio-equipment grants, establishing sibling control, but the exact module grant for this camera was not pinned down. Not required for this D1 claim, which rests on the manual and app documentation.",
+    "Whether firmware updates can be declined, and what telemetry the camera or apps send to Panasonic with Wi-Fi/Bluetooth on, are unconfirmed.",
+    "Current US availability and price were not researched, per project budget guidance to leave price unknown rather than spend a search confirming it."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the seeded hypothesis paying off, with a correction. Unlike sony-a6700 (Creators' Cloud) and nikon-z50ii (Nikon Imaging Cloud), Panasonic operated a first-party cloud (LUMIX CLUB) for the S5II's immediate predecessor line and killed it in 2022, before the S5II shipped. It is tempting to write that as 'Panasonic has no cloud', and that would be wrong: the LUMIX Lab LUT library is a Panasonic-hosted online service and is alive. What makes this D1 rather than D2 is narrower and better documented -- the LUT library is an app-side service the camera is explicitly disconnected from while it is used, so there is no Panasonic endpoint the CAMERA reaches. Frame.io Camera-to-Cloud is the one cloud the camera itself can reach, and it is Adobe's, not Panasonic's -- worth flagging, since reading 'has cloud upload via firmware' as a vendor cloud is exactly the mistake this ladder is built to avoid.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D1. Tier rests on the camera reaching no Panasonic endpoint, not on Panasonic having no cloud at all -- the LUMIX Lab LUT library is Panasonic-hosted and is documented as an app-side service used with the camera disconnected.",
+      "source": "https://av.jpn.support.panasonic.com/support/global/cs/soft/lumix_lab/en/cts/c0.html",
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 8,
+    "failed_fetches": 2
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

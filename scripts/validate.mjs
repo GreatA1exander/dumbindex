@@ -97,6 +97,16 @@ for (const f of files) {
     const r = d.radios ?? [];
     if (r.length === 0 || (r.length === 1 && r[0] === "none"))
       E(`tier D1 with no radio — D1 means a radio exists and has nowhere to phone home. No radio and no vendor cloud is D0`);
+
+    // D1 is a NEGATIVE claim about the whole device: no radio in it reaches the vendor.
+    // You cannot make that claim about a radio you have not identified. An "unknown" in
+    // the radios list is the record admitting the enumeration is incomplete, which is
+    // exactly the state the Garmin Alpha 200i was filed in — radios ["two_way_radio",
+    // "unknown"], D1 justified on the collar's MURS link, while the handheld carried
+    // Bluetooth and Wi-Fi and reached Garmin Explore. D2+ may carry "unknown" freely:
+    // those tiers rest on a cloud that was found, not on one that was not.
+    if (r.includes("unknown"))
+      E(`tier D1 with "unknown" in radios — D1 claims no radio on this device reaches the vendor, which cannot be established about an unidentified radio. Enumerate every radio, or file the tier the identified ones support`);
   }
 
   // The decision table makes a mandatory VENDOR account at setup a REJECT trigger, so a

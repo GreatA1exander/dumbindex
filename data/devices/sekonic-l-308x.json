@@ -1,0 +1,81 @@
+{
+  "model_id": "sekonic-l-308x",
+  "make": "Sekonic",
+  "model": "L-308X Flashmate (L-308X-U)",
+  "category": "photo",
+  "subcategory": "light meter",
+  "tier": "D0",
+  "tier_rationale": "The L-308X-U is registered under FCC Part 15 Subpart B as an unintentional radiator (Class B verification), which is the opposite of an intentional-radiator grant and directly supports D0. Its own manufacturer spec sheet lists no Wi-Fi, Bluetooth, or any wireless connectivity; its 'cordless flash' metering mode is optical detection of a flash burst through the meter's own sensor, not a radio link of any kind. Operation is entirely physical controls (buttons, dial, single AA battery), with no app and no account anywhere in the product. No intentional radiator, no radio, no vendor cloud: D0.",
+  "the_unplug_test": "There is nothing to unplug. The L-308X-U has no network connection to lose in the first place -- it is a single-AA-battery incident/reflected light meter operated entirely through its own buttons and dial. Its 'cordless' flash-metering mode detects a flash burst optically through the meter's own sensor, not over any radio link. Nothing about it can phone home because it has no radio to do so with.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": ["none"],
+  "phones_home": "none",
+  "radios": ["none"],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Not researched within budget. Single AA battery, user-replaceable."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "B&H Photo",
+      "url": "https://www.bhphotovideo.com/c/product/1390250-REG/sekonic_401_305_l_308x_u_flashmate_light_meter.html"
+    },
+    {
+      "name": "Sekonic (manufacturer, global site)",
+      "url": "https://global.sekonic.com/sekonic-l-308x-flashmate-light-meter/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://global.sekonic.com/sekonic-l-308x-flashmate-light-meter/",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's own product page: full feature and specification list (incident/reflected metering, photo/cine/HD-cine modes, PC sync terminal, cordless flash detection, calibration compensation, three custom settings) contains no Wi-Fi, Bluetooth, app, or account of any kind -- purely a physical-control device."
+    },
+    {
+      "url": "https://www.bhphotovideo.com/c/product/1390250-REG/sekonic_401_305_l_308x_u_flashmate_light_meter.html",
+      "class": "B",
+      "accessed": "2026-09-04",
+      "supports": "Major retailer listing: confirms the device is 'registered as FCC Part 15 Subpart B Class B equipment,' i.e. an unintentional-radiator verification rather than an intentional-radiator grant -- the FCC-heuristic evidence that no radio transmitter is present. Also confirms current in-stock US availability."
+    }
+  ],
+  "open_questions": [
+    "Current US price was not researched, per project budget guidance to leave price unknown rather than spend a search confirming it.",
+    "Whether Sekonic's separately-sold wireless light meters (e.g. the L-858D-U, which does integrate a radio flash trigger) share any FCC grantee code with the L-308X was not checked; not needed for this D0 claim, which rests on the L-308X's own Part 15B classification and full spec sheet."
+  ],
+  "conflicts_with": null,
+  "notes": "First record in the previously empty 'light meter' subcategory. A clean, uncontested D0: no radio, no app, no cloud, nothing to lose when unplugged because there is nothing to plug in beyond a single AA battery.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D0.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 4,
+    "failed_fetches": 1
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

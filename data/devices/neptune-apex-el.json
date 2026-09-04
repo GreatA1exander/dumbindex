@@ -1,0 +1,97 @@
+{
+  "model_id": "neptune-apex-el",
+  "make": "Neptune Systems",
+  "model": "Apex EL Controller System",
+  "category": "baby-pet",
+  "subcategory": "aquarium controller",
+  "tier": "D2",
+  "tier_rationale": "The Apex EL ships with WiFi and Neptune's Apex Fusion cloud, but Neptune's own setup documentation states initial setup does not require an Apex Fusion account and the controller is configured through a local web dashboard (apex.local) served by the unit itself. Community sources corroborate that every programming and control function available through Fusion is also available locally, with Fusion described by experienced users as 'just a way to observe and program it' rather than a control path the device depends on. A documented local JSON/XML status API (status.json / status.xml) backs multiple actively maintained third-party integrations. Vendor cloud exists and is genuinely optional — the D2 row.",
+  "the_unplug_test": "Probes keep reading, outlets keep switching on the schedule you set, and alarms keep firing on the unit's own display and beeper, because all of that runs on the controller itself. You configure and change everything — temperature setpoints, dosing schedules, outlet timers, alarms — through the Apex's own local web page (apex.local) with a local admin login, no Apex Fusion account required to get there. What you lose without internet is Apex Fusion itself: viewing or changing your tank from outside your home network, and email/SMS/push alarm notifications when you're away. The tank does not notice.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "remote viewing/control from outside the home network via Apex Fusion",
+    "email/SMS/push alarm notifications when away from home"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "rest"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Modular system (base controller plus energy bar / probe modules connected over AquaBus); individual modules can be replaced without discarding the whole system, but no formal repairability source was checked."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://help.neptunesystems.com/getstarted/apexng/apex-wired/",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's own getting-started documentation: initial setup does not require an Apex Fusion account; the controller is configured via the local 'APEX Local' dashboard at Apex.local, with Fusion presented as an optional add-on providing 'access to control your Apex anywhere in the world where there is available Internet/Wi-Fi connection' and alarm notifications — i.e. remote access and alerting, not core function.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.reef2reef.com/threads/apex-not-connected-to-fusion.679814/",
+      "class": "B",
+      "accessed": "2026-09-04",
+      "supports": "Experienced-user forum consensus: 'The Apex will run fine without Fusion - Fusion is only a view via internet/cloud... You can do everything locally that you can do with Fusion... Fusion doesn't control the Apex - it's just a way to observe and program it.' Confirms full local programming (outlets, schedules) via a separate local admin login distinct from the Fusion account.",
+      "archive_url": null
+    },
+    {
+      "url": "https://github.com/jasonrod1/home-assistant-apex-neptune",
+      "class": "B",
+      "accessed": "2026-09-04",
+      "supports": "Actively maintained third-party Home Assistant integration polling the Apex's local status.xml/status.json endpoints over the LAN for temperature, pH, ORP, alkalinity, calcium and magnesium readings — corroborates a documented, usable local API independent of Apex Fusion.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.bulkreefsupply.com/apexel-controller-system-neptune-systems.html",
+      "class": "C",
+      "accessed": "2026-09-04",
+      "supports": "Current major-retailer listing confirming the Apex EL is sold new in the US today with built-in WiFi and Apex Fusion remote access as an advertised feature.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "FCC grant for the Apex EL's WiFi module was not located under a matching grantee in the time available; WiFi presence itself is not in doubt (stated directly by the manufacturer), so this does not affect the tier, but fcc_checked is left false rather than guessed.",
+    "Whether firmware updates can be declined is unconfirmed — left as firmware_ota_forced: unknown rather than guessed.",
+    "phones_home is filed as 'unknown'. It was briefly set to 'analytics' as a cautious default for a Wi-Fi device with an optional cloud account, but no source confirmed or denied telemetry when Fusion is never linked, and a cautious guess is still a guess. Resolving it means watching a unit's outbound traffic with Fusion unlinked.",
+    "Whether the local dashboard supports 100% of programmable logic (Apex's 'Advanced' programming language for conditional rules) or only basic schedules was not separately confirmed — sources describe 'programming outlets' and general control, not the full scripting language specifically."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the higher-value of the two aquarium-controller routes named in this wave's brief. The other (Inkbird ITC-308, a radio-free standalone temperature controller, versus the ITC-308-WIFI sold alongside it) was verified as a viable D0/D2-adjacent pair but not written up, to spend the record budget on this more contested and more valuable case: a real vendor cloud that is genuinely, not just theoretically, optional. local_replacement is 'full' because the local dashboard is not a workaround — it is Neptune's own documented primary configuration path, with Fusion as the add-on.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D2, first record in the aquarium controller subcategory.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 5,
+    "failed_fetches": 1
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "The local web dashboard (apex.local) plus the documented status.xml/status.json API is Neptune's own supported local path, not a third-party workaround, and multiple maintained Home Assistant integrations consume it directly for monitoring."
+}

@@ -59,8 +59,13 @@
   "open_questions": [
     "Whether the touch control panel on the camera model (AF203/PLAF203) can set a feeding schedule with no app and no account was checked against the PLAF203 manual and left unresolved: the manual's control section says only 'Download and install the PETLIBRO app' and 'Follow the instructions to configure the network', and documents no on-unit scheduling procedure. PETLIBRO's own support article for the NON-camera Granary (AF005/AF006) does document a full on-unit schedule procedure using the Setting and +/- buttons — so the capability exists in the product line and its absence from the camera model's manual may be an omission rather than a limitation. Settling this needs the printed manual or the device in hand.",
     "The non-camera Granary (AF005/AF006) is a strong candidate record in its own right and would be the natural alternative to list here: PETLIBRO documents on-unit schedule programming for it. It has not been researched or verified yet — until it is, this rejection has no alternative to point at.",
-    "No verified non-connected or account-free automatic pet feeder exists yet in this catalog to list as an alternative. Finding one is a discovery task.",
     "Whether firmware updates can be declined is unconfirmed."
+  ],
+  "alternatives": [
+    {
+      "model_id": "petlibro-granary-af006",
+      "why": "The non-camera sibling in the same product line (AF006/PLAF006). PETLIBRO documents its entire schedule and manual-feed procedure using only on-unit buttons, with no app, no account, and no WiFi/Bluetooth radio at all (D0) — confirmed both by the manufacturer's own support pages and by the absence of an FCC grant for this model against 24 grants covering every connected PETLIBRO feeder."
+    }
   ],
   "conflicts_with": null,
   "notes": "The interesting finding here is not that this feeder is badly behaved offline — by its own documentation it keeps a schedule running on batteries alone, which is better than many competitors — but that the project's own bar for D2 requires account-free setup, and this device's manufacturer-documented setup path does not offer that. Worth revisiting if PETLIBRO's manual turns out to describe a genuine app-free path via the touch panel.",

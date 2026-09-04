@@ -1,0 +1,108 @@
+{
+  "model_id": "garmin-alpha-200i-t5",
+  "make": "Garmin",
+  "model": "Alpha 200i handheld with T5 dog tracking collar",
+  "category": "baby-pet",
+  "subcategory": "pet tracker",
+  "tier": "D2",
+  "tier_rationale": "Dog tracking, the function this product is bought for, carries no vendor cloud: the collar's FCC grant (IPH-0199715) shows a 151.82-154.6 MHz transmitter certified under Part 95J MURS -- a rule-authorised personal radio service like FRS/GMRS, where an intentional-radiator grant is expected and is not evidence of a cloud -- and Garmin's own owner's manual describes the handheld and collar communicating over a direct, line-of-sight radio link, with position shown on the handheld's own screen. A Garmin support representative states on Garmin's own forum that tracking dogs requires no inReach subscription. But the handheld is not a radio-only device, and this record was first written as though it were. Garmin's own 'Connected Features' manual page names three: Garmin Explore (waypoint/track/route sync over Bluetooth to the Explore app), inReach tracking and messaging over the Iridium satellite network, and software updates over Wi-Fi. Garmin Explore is a nameable, Garmin-operated service the handheld reaches, so the D1 row -- 'no vendor cloud endpoint' -- does not apply. Setup completes and dogs are tracked with no account and nothing connected, which is the D2 row: a vendor cloud that exists and is genuinely optional for core function.",
+  "the_unplug_test": "Nothing changes about tracking your dog, because that never touched the internet. The handheld talks straight to the collar over a MURS-band radio link and draws the dog's position on its own screen; no phone, no app and no Garmin account are involved in that path, and it works in country with no cell coverage at all, which is the point of it. What you lose is the surrounding layer: syncing waypoints and tracks to the Garmin Explore app over Bluetooth, and pulling device software updates over Wi-Fi. The handheld also has Garmin's inReach satellite messaging built in, and that -- two-way text and SOS over Iridium -- needs a paid subscription and a Garmin account. That subscription gates a bolted-on satellite communicator, not the dog tracking.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [
+    "inReach satellite two-way messaging and SOS (a separate, subscription-gated feature unrelated to dog tracking)"
+  ],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "two_way_radio",
+    "ble",
+    "wifi",
+    "unknown"
+  ],
+  "fcc_id": "IPH-0199715",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Collar battery is a documented wear/replacement item; handheld uses an internal rechargeable battery. No teardown or parts-availability source checked."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://fccid.io/IPH-0199715",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "FCC grant for Garmin's 'Dog Collar' (T5-family) shows a 151.82-154.6 MHz transmitter under Part 95J (MURS, a rule-authorised personal radio service — an intentional-radiator grant here does not imply a vendor cloud, the same logic PRINCIPLES applies to CB/FRS/GMRS) plus a secondary 2450-2457 MHz Part 15C low-power link.",
+      "archive_url": null
+    },
+    {
+      "url": "https://forums.garmin.com/outdoor-recreation/outdoor-recreation-archive/f/inreach-general/254355/im-using-a-garmin-alpha-200i-why-do-i-need-a-subscription-to-track-my-dogs",
+      "class": "B",
+      "accessed": "2026-09-04",
+      "supports": "A Garmin support representative (Garmin-Andrew) states directly: 'An inReach subscription is required to use the satellite communication features of the Alpha 200i, but is not required to track dogs. You can track dogs without an inReach subscription.'",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.outdoorlife.com/gear/garmin-alpha-200i-review/",
+      "class": "B",
+      "accessed": "2026-09-04",
+      "supports": "Independent review confirming the dog's position displays directly on the handheld's own screen ('I could easily see exactly where he was in relation to me on the handheld') with no smartphone app involved in basic tracking, and describing inReach messaging as a separate subscription feature.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-CC4A1B19-DB82-48BD-8D75-7947204EE1A0/EN-US/GUID-C0E644E2-1E4B-4D06-8C51-6E9F025782E7.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Manufacturer's owner's manual page on 'Communication with the Collar' confirms the handheld and collar communicate via a direct radio link requiring line of sight for best signal, consistent with a point-to-point radio rather than an internet-mediated connection.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-CC4A1B19-DB82-48BD-8D75-7947204EE1A0/EN-US/GUID-ABA82EA1-91F0-4DEB-A12E-3FDB15ADA867.html",
+      "class": "A",
+      "accessed": "2026-09-04",
+      "supports": "Garmin's own Alpha 200i owner's manual, 'Connected Features' page, names the Garmin-operated services the handheld reaches and how: Garmin Explore, which 'syncs and shares waypoints, tracks, and routes with your navigator' via the Explore app over Bluetooth; inReach tracking, which records track points and transmits them over the Iridium satellite network; and software updates, received over a Wi-Fi network. This is the evidence that a nameable vendor cloud exists for this handheld (making D2 rather than D1 the correct row) and that the handheld carries Bluetooth and Wi-Fi radios in addition to the collar link.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "The Alpha 200i handheld's own FCC ID was not independently confirmed (a Garmin Part 15C 2.4 GHz grant, IPH-01999, was found but not confirmed to be this specific handheld model). The tier rests on the collar's confirmed MURS grant and on Garmin's own Connected Features documentation, not on the handheld's FCC filing.",
+    "The function of the collar's secondary 2450-2457 MHz Part 15C radio is unconfirmed. No source describes it reaching a phone, app or the internet; it is carried as an unidentified local link, which is why 'unknown' remains in the radios list alongside the identified ones.",
+    "Whether pairing the Garmin Explore app requires signing in to a Garmin account (as opposed to only the inReach service requiring one) was not confirmed. This does not bear on the tier -- setup and dog tracking need no account either way -- but it would sharpen account_required.",
+    "Collar and handheld firmware updates are performed by connecting the collar to a computer via USB and Garmin Express, per Garmin support articles, and the handheld can also take software updates over Wi-Fi. Whether a declined update is eventually enforced was not checked.",
+    "Enum gap: 'radios' has no value for a Part 95 MURS data-telemetry link distinct from a voice two-way radio. 'two_way_radio' was used because it shares the deciding evidentiary property (a rule-authorised Part 95 band where an intentional-radiator grant is expected and is not evidence of a vendor cloud), even though the traffic here is GPS position data, not voice. Worth a schema conversation.",
+    "Price band left unknown per project policy on search budget."
+  ],
+  "conflicts_with": null,
+  "notes": "This is the alternative that fi-series-3-plus (REJECT, subscription-gated pet tracker) lacked: a GPS dog tracker whose core function carries no subscription and no cloud in the tracking path. It was first filed D1, and that was wrong in an instructive way. The tracking evidence is genuinely clean -- a MURS grant and a point-to-point link -- and it is easy to let a clean core path stand in for the whole device. The handheld also has Bluetooth, Wi-Fi, Garmin Explore sync and an Iridium radio, all named on Garmin's own Connected Features page, so a vendor cloud plainly exists and the honest tier is D2. Do not confuse the inReach subscription with the dog tracking: it is a real, correctly-documented subscription for a different feature, and the record states it plainly rather than hiding it or letting it drag the tier down.",
+  "first_published": "2026-09-04",
+  "last_verified": "2026-09-04",
+  "changelog": [
+    {
+      "date": "2026-09-04",
+      "change": "First published at D2, as the alternative fi-series-3-plus's rejection lacked. Drafted at D1 on the strength of the MURS collar link and corrected before publication: Garmin's own Connected Features page names Garmin Explore, inReach and Wi-Fi software updates, so a vendor cloud exists and D1's 'no vendor cloud endpoint' does not hold. Dog tracking still requires none of it.",
+      "source": "https://www8.garmin.com/manuals/webhelp/GUID-CC4A1B19-DB82-48BD-8D75-7947204EE1A0/EN-US/GUID-ABA82EA1-91F0-4DEB-A12E-3FDB15ADA867.html",
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-04-discover-wave7",
+    "searches": 5,
+    "failed_fetches": 1
+  },
+  "local_replacement": "partial",
+  "local_replacement_note": "Waypoints, tracks and routes sync through Garmin Explore, but the same data moves over USB as GPX files and is handled by GPSBabel, QMapShack or any GPX-aware mapping software on hardware the owner runs. What has no local replacement is inReach satellite messaging and SOS, which depends on the Iridium network and Garmin's ground service by construction. Dog tracking needs neither."
+}
