@@ -11,10 +11,24 @@ const cls = (n) => (n == null ? "" : n > 180 ? "age rotten" : n > 60 ? "age stal
   </p>
 ) : (
   <div class="tablewrap">
-  <table class="devices">
+  <table class={`devices grid ${showDomain ? "with-type" : "no-type"}`}>
+    {/* Explicit widths, because a domain page stacks several of these tables and
+        auto-layout would size each one to its own contents — so MODEL would start at a
+        different x in every section and the page would read as ragged. */}
+    <colgroup>
+      <col class="c-make" />
+      <col class="c-model" />
+      {showDomain && <col class="c-type" />}
+      <col class="c-tier" />
+      <col class="c-acct" />
+      <col class="c-ota" />
+      <col class="c-price" />
+      <col class="c-verified" />
+    </colgroup>
     <thead>
       <tr>
-        <th>Device</th>
+        <th>Make</th>
+        <th>Model</th>
         {showDomain && <th>Type</th>}
         <th>Tier</th>
         <th>Account</th>
@@ -26,10 +40,10 @@ const cls = (n) => (n == null ? "" : n > 180 ? "age rotten" : n > 60 ? "age stal
     <tbody>
       {rows.map((d) => (
         <tr>
+          <td class="make">{d.make}</td>
           <td>
-            <a href={`/device/${d.model_id}/`}>{d.make}</a>
-            <span class="model"> {d.model}</span>
-            {d.record_type === "family" && <span class="famtag"> product line</span>}
+            <a class="model" href={`/device/${d.model_id}/`}>{d.model}</a>
+            {d.record_type === "family" && <span class="famtag">product line</span>}
             {d.availability === "discontinued" && <span class="age"> · discontinued</span>}
           </td>
           {showDomain && <td>{d.subcategory ?? d.category}</td>}

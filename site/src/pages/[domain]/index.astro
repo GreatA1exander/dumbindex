@@ -1,7 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import DeviceTable from "../../components/DeviceTable.astro";
-import { domains, byDomain, populatedSubs, slugify } from "../../lib/data.js";
+import { domains, byDomain, bySub, populatedSubs, slugify } from "../../lib/data.js";
 
 export function getStaticPaths() {
   return domains.map((d) => ({ params: { domain: d.slug }, props: { domain: d } }));
@@ -9,20 +9,40 @@ export function getStaticPaths() {
 const { domain } = Astro.props;
 const rows = byDomain(domain.slug);
 const subs = populatedSubs(domain.slug);
+
+// The domain page IS the "show everything" view — it just shows it grouped rather than
+// as one undifferentiated run of rows. Grouping only earns its keep past one subcategory;
+// with a single group the heading would repeat the h1 and say nothing.
+const grouped = subs.length > 1;
 ---
 <Base title={domain.name} current={domain.slug} description={domain.blurb}>
   <h1>{domain.name}</h1>
   <p class="lede">{domain.blurb}</p>
   {domain.problem && <p class="lede">{domain.problem}</p>}
 
-  {subs.length > 0 && (
+  {grouped && (
     <p class="filters">
-      <span class="lbl">Jump to</span>
+      <span class="lbl">On this page</span>
       {subs.map((s) => (
-        <a href={`/${domain.slug}/${slugify(s.sub)}/`}>{s.sub} ({s.count})</a>
+        <a href={`#${slugify(s.sub)}`}>{s.sub} ({s.count})</a>
       ))}
     </p>
   )}
 
-  <DeviceTable rows={rows} />
+  {grouped ? subs.map((s) => (
+    <section class="subsection">
+      <h2 id={slugify(s.sub)}>
+        {s.sub}
+        {/* A page of its own is only worth offering once there is more than one row on
+            it; "only bathroom scale (1)" leads to the same single record you can already
+            see. The subcategory page still exists either way, for deep links. */}
+        {s.count > 1 && (
+          <a class="only" href={`/${domain.slug}/${slugify(s.sub)}/`}>see just these {s.count}</a>
+        )}
+      </h2>
+      <DeviceTable rows={bySub(domain.slug, s.sub)} showDomain={false} />
+    </section>
+  )) : (
+    <DeviceTable rows={rows} showDomain={false} />
+  )}
 </Base>

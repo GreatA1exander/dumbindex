@@ -1,8 +1,18 @@
 ---
 import Base from "../layouts/Base.astro";
-import DeviceTable from "../components/DeviceTable.astro";
 import Tier from "../components/Tier.astro";
-import { devices, TIERS, domains, byDomain } from "../lib/data.js";
+import { devices, rejected, TIERS, domains, byDomain } from "../lib/data.js";
+
+// The homepage explains the thing. The catalogue lives at /devices/ and behind the
+// domain pages — dumping every record here stopped being readable somewhere around
+// sixty of them, and it is also the page nearest the 60 KB budget.
+const recent = [...devices]
+  .filter((d) => d.last_verified)
+  .sort((a, b) => b.last_verified.localeCompare(a.last_verified))
+  .slice(0, 8);
+// Taxonomy order, deliberately — the same order as the nav. Sorting by count would put
+// the list in a different order from the menu above it and reshuffle every wave.
+const populated = domains.map((d) => ({ ...d, count: byDomain(d.slug).length }));
 ---
 <Base title="Devices that still work when the internet doesn't" current="home"
       description="A verified catalog of appliances, dashcams, cameras, printers and tools that work without a vendor cloud.">
@@ -14,28 +24,71 @@ import { devices, TIERS, domains, byDomain } from "../lib/data.js";
     Every claim is sourced and dated.
   </p>
 
-  <div class="filters">
-    <span class="lbl">Tier</span>
+  <div class="identify">
+    <h2>What is in here</h2>
+    <p>
+      <strong>{devices.length} verified devices</strong> across {domains.length} categories,
+      plus <a href="/rejected/">{rejected.length} devices we checked and would not
+      recommend</a> — because a reader searching for a popular product deserves an answer
+      rather than silence. Start with a category below, or read
+      <a href="/devices/">the whole catalog in one table</a>.
+    </p>
+  </div>
+
+  <h2>The four tiers</h2>
+  <p class="lede">
+    Every device gets one of four grades, and the grade describes the hardware — never the
+    vendor's reputation. A company behaving badly is recorded separately, in the
+    <a href="/vendors/">ledger</a>.
+  </p>
+  <dl class="ladder">
     {Object.entries(TIERS).map(([t, m]) => (
-      <span><Tier tier={t} /> <span class="age">{m.name}</span></span>
+      <div class="rung">
+        <dt><Tier tier={t} /> <span class="rung-name">{m.name}</span></dt>
+        <dd>{m.short}</dd>
+      </div>
     ))}
-  </div>
+  </dl>
+  <p class="lede">
+    The grade you want depends on what you are buying. <a href="/method/">Method</a>
+    explains how a device earns one, and
+    <a href="/how-to-check/">How to check a device yourself</a> is the same procedure
+    written so you can run it on something we have not covered.
+  </p>
 
-  <h2>All verified devices ({devices.length})</h2>
-  <DeviceTable rows={devices} />
-
-  <h2>By type</h2>
+  <h2>Browse by type</h2>
   <div class="tablewrap">
-  <table class="devices">
-    <tbody>
-      {domains.map((d) => (
-        <tr>
-          <td><a href={`/${d.slug}/`}>{d.name}</a></td>
-          <td class="age">{d.blurb}</td>
-          <td class="num">{byDomain(d.slug).length}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+    <table class="devices">
+      <tbody>
+        {populated.map((d) => (
+          <tr>
+            <td><a href={`/${d.slug}/`}>{d.name}</a></td>
+            <td class="age">{d.blurb}</td>
+            <td class="num">{d.count}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </div>
+
+  <h2>Recently verified</h2>
+  <div class="tablewrap">
+    <table class="devices">
+      <tbody>
+        {recent.map((d) => (
+          <tr>
+            <td class="make">{d.make}</td>
+            <td><a class="model" href={`/device/${d.model_id}/`}>{d.model}</a></td>
+            <td>{d.subcategory ?? d.category}</td>
+            <td><Tier tier={d.tier} /></td>
+            <td class="num"><span class="age">{d.last_verified}</span></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="lede">
+    <a href="/updates/">Everything that changed</a>, including
+    <a href="/downgrades/">devices that got worse</a>.
+  </p>
 </Base>

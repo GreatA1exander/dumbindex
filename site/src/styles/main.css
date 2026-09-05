@@ -34,10 +34,17 @@ header.top { border-bottom: 2px solid var(--ink); }
 .logo { font: 700 1.35rem/1 var(--mono); letter-spacing: -.02em; text-decoration: none; }
 .logo span { color: var(--signal); }
 .tag { color: var(--ink-soft); font-size: .82rem; }
+/* Two navs, two priorities. Browsing by type is the primary act and gets ink weight;
+   the cross-section views are secondary and get a lighter row beneath. */
 nav.domains { border-bottom: 1px solid var(--rule); padding: .45rem 0; }
 nav.domains ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .15rem .9rem; }
-nav.domains a { font-size: .78rem; text-decoration: none; color: var(--ink-soft); white-space: nowrap; }
+nav.domains a { font-size: .78rem; text-decoration: none; color: var(--ink); white-space: nowrap; }
 nav.domains a:hover, nav.domains a[aria-current] { color: var(--signal); text-decoration: underline; }
+
+nav.views { border-bottom: 1px solid var(--rule); background: var(--rule-soft); padding: .3rem 0; }
+nav.views ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .15rem .9rem; }
+nav.views a { font: .72rem/1.5 var(--mono); text-decoration: none; color: var(--ink-soft); white-space: nowrap; }
+nav.views a:hover, nav.views a[aria-current] { color: var(--signal); text-decoration: underline; }
 
 /* ---- tier badges: text carries the meaning, colour only reinforces ---- */
 .tier { font: 700 .72rem/1 var(--mono); border: 1.5px solid currentColor;
@@ -48,11 +55,32 @@ nav.domains a:hover, nav.domains a[aria-current] { color: var(--signal); text-de
 /* ---- the table is the product ---- */
 .tablewrap { overflow-x: auto; }
 table.devices { width: 100%; border-collapse: collapse; font-size: .87rem; }
+
+/* .grid is the device listing proper. Fixed layout keeps every stacked table on a domain
+   page in the same column grid — without it each section sizes to its own contents and
+   MODEL starts at a different x in every one. min-width makes narrow screens scroll the
+   table rather than crush it. Plain .devices tables (the homepage's browse list) keep
+   auto layout, which is what a two-column list of prose wants. */
+table.devices.grid { table-layout: fixed; min-width: 42rem; }
+.grid col.c-make { width: 16%; }
+.grid col.c-model { width: 26%; }
+.grid col.c-type { width: 13%; }
+.grid col.c-tier { width: 6.5%; }
+.grid col.c-acct { width: 10%; }
+.grid col.c-ota { width: 11%; }
+.grid col.c-price { width: 8.5%; }
+.grid col.c-verified { width: 9%; }
+/* Without the Type column the freed width goes to make and model, the two that run long. */
+.grid.no-type col.c-make { width: 22%; }
+.grid.no-type col.c-model { width: 33%; }
+.grid td.make, .grid a.model { overflow-wrap: break-word; }
 table.devices th { text-align: left; font: 600 .72rem/1.3 var(--mono); text-transform: uppercase;
   letter-spacing: .04em; color: var(--ink-soft); border-bottom: 1.5px solid var(--ink); padding: .4rem .5rem; }
 table.devices td { border-bottom: 1px solid var(--rule-soft); padding: .45rem .5rem; vertical-align: baseline; }
 table.devices tr:hover td { background: var(--rule-soft); }
-.model { font-family: var(--mono); font-size: .82rem; }
+/* Make and model are separate columns, not one run-on string. The model number is the
+   thing you actually buy and search for, so it carries the link and the monospace. */
+a.model, .model { font-family: var(--mono); font-size: .82rem; }
 td.num, th.num { text-align: right; font-family: var(--mono); font-size: .78rem; white-space: nowrap; }
 
 .famtag { font: 600 .64rem/1 var(--mono); text-transform: uppercase; letter-spacing: .05em;
@@ -83,8 +111,25 @@ td.num, th.num { text-align: right; font-family: var(--mono); font-size: .78rem;
 .age.stale { color: var(--warn); }
 .age.rotten { color: var(--signal); font-weight: 700; }
 
-.filters { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0; align-items: center; }
+.filters { display: flex; flex-wrap: wrap; gap: .4rem .8rem; margin: 1rem 0; align-items: center; }
 .filters .lbl { font: .72rem/1 var(--mono); color: var(--ink-soft); text-transform: uppercase; }
+
+/* ---- homepage tier ladder ---- */
+/* Two across, so four tiers make a balanced 2x2 rather than a 3+1 orphan. */
+.ladder { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+          gap: .1rem 2rem; margin: 1rem 0 1.5rem; max-width: 52rem; }
+.ladder .rung { border-top: 1px solid var(--rule-soft); padding: .5rem 0; }
+.ladder dt { display: flex; align-items: baseline; gap: .45rem; }
+.ladder .rung-name { font: 600 .82rem/1 var(--mono); }
+.ladder dd { margin: .25rem 0 0; color: var(--ink-soft); font-size: .87rem; }
+
+/* ---- domain pages, grouped by subcategory ---- */
+.subsection { margin-bottom: 1.75rem; }
+.subsection h2 { display: flex; flex-wrap: wrap; align-items: baseline;
+                 justify-content: space-between; gap: .5rem; }
+.subsection h2 .only { font: .72rem/1 var(--mono); color: var(--ink-soft);
+                       text-decoration: none; font-weight: 400; }
+.subsection h2 .only:hover { color: var(--signal); text-decoration: underline; }
 
 h1 { font-size: 1.5rem; line-height: 1.25; margin: 1.4rem 0 .4rem; letter-spacing: -.015em; }
 h2 { font-size: 1.05rem; margin: 1.8rem 0 .5rem; border-bottom: 1px solid var(--rule); padding-bottom: .25rem; }
@@ -109,4 +154,8 @@ table.spec td { padding: .35rem 0; border-bottom: 1px solid var(--rule-soft); }
 footer { border-top: 2px solid var(--ink); margin-top: 3rem; padding: 1rem 0 2rem; font-size: .78rem; color: var(--ink-soft); }
 footer ul { list-style: none; padding: 0; margin: .5rem 0; }
 footer .promise { font-family: var(--mono); font-size: .72rem; }
-@media print { nav.domains, footer { display: none; } }
+nav.about { display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; margin-bottom: .8rem;
+            padding-bottom: .8rem; border-bottom: 1px solid var(--rule-soft); }
+nav.about a { font: 600 .78rem/1.4 var(--sans); color: var(--ink); }
+nav.about a:hover { color: var(--signal); }
+@media print { nav.domains, nav.views, footer { display: none; } }

@@ -76,22 +76,42 @@ Organization is the product. A flat list of 300 devices is a spreadsheet; the do
 structure is what makes it a reference. Navigation is generated from
 `schema/taxonomy.json`, so it can never drift from the data.
 
-**Three levels, and no more:**
+**The menu has two rows, and they answer two different questions.** The first row is the
+14 domains — "what kind of thing am I shopping for", which is why nearly everyone is
+here, and it gets full ink weight. The second is a lighter row of cross-sections of the
+same catalog: all devices, updates, downgrades, rejected, vendors, self-hostable. Pages
+that explain the *site* rather than help you use it — Method, How to check, Corrections —
+are not in the header at all; they live in the footer of every page. They are the most
+important pages for trusting the catalog and among the least important for using it, and
+putting them at the same level as "Kitchen & Cooking" said the opposite.
+
+**Three levels of catalog, and no more** (plus the flat index at `/devices/`):
 
 ```
-/                      the index — every device, one dense sortable table
-/automotive/           domain page — intro, subcategory jump-links, table
+/                      what this is — the ladder explained, then browse by type
+/devices/              the index — every device, one dense table
+/automotive/           domain page — intro, then a table per subcategory
 /automotive/dashcam/   subcategory page — the deepest useful page
 /device/viofo-a129/    the device record
 ```
 
-- **Home.** One table: make, model, domain, tier, verified date, in stock. Sortable and
-  filterable by tier and domain through plain links with query params — no cards, no grid,
-  no hero. A reader should scan forty rows without scrolling past anything decorative.
-  Above it, one line of text explaining the ladder, and the four tier badges as filters.
+- **Home.** *Amended 2026-09-04.* This used to be the full device table, on the reasoning
+  that a reader should be able to scan forty rows immediately. That stopped working
+  somewhere past sixty records: the page became a wall, it said nothing about what the
+  site was for, and it was the page closest to the 60 KB budget. Home is now an
+  explanation — what is in the catalog, the four tiers with a line each, then browse by
+  type — and the flat table moved to `/devices/`, linked from the nav and from home. The
+  rule that survives unchanged is **no cards, no grid, no hero, nothing decorative**: the
+  homepage is prose and tables, and the tier ladder is a definition list, not a card deck.
+- **`/devices/`.** The index that home used to be: make, model, type, tier, account,
+  forced OTA, price, verified. One row per record, no decoration.
 - **Domain pages** (14 of them). A short paragraph on what the cloud problem looks like
-  *in this domain specifically* — the printer story is not the dashcam story — then
-  subcategory jump-links, then the filtered table.
+  *in this domain specifically* — the printer story is not the dashcam story — then one
+  table **per subcategory**, in sections with in-page jump links. The domain page is the
+  "show me everything here" view; grouping is what keeps that from reading as an
+  undifferentiated run of rows. Every stacked table shares one fixed column grid, so the
+  columns line up down the whole page — sizing each table to its own contents makes the
+  page look ragged, which is a real defect and not a small one.
 - **Subcategory pages.** Same table, tighter scope. These are the pages that will rank in
   search, because "dashcam no app" is what people actually type. Give each one a
   hand-written sentence; a generated stub is worth nothing to a reader or a crawler.

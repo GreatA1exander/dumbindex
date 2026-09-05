@@ -20,20 +20,29 @@ const full = title ? `${title} — dumbindex` : "dumbindex";
         <span class="tag">Devices that still work when the internet doesn't.</span>
       </div>
     </div>
-    <nav class="domains" aria-label="Domains">
+    {/* Two rows, because these are two different questions. The first is "what kind of
+        thing am I shopping for", which is why most people are here. The second is
+        "show me a cross-section of the catalogue", which is a smaller and later need.
+        Method and How to check are deliberately not up here — they explain the site
+        rather than help you use it, and they are linked from the footer of every page. */}
+    <nav class="domains" aria-label="Browse by type">
       <div class="wrap">
         <ul>
-          <li><a href="/" aria-current={current === "home" ? "page" : undefined}>All</a></li>
           {domains.map((d) => (
             <li><a href={`/${d.slug}/`} aria-current={current === d.slug ? "page" : undefined}>{d.name}</a></li>
           ))}
+        </ul>
+      </div>
+    </nav>
+    <nav class="views" aria-label="Catalog views">
+      <div class="wrap">
+        <ul>
+          <li><a href="/devices/" aria-current={current === "devices" ? "page" : undefined}>All devices</a></li>
           <li><a href="/updates/" aria-current={current === "updates" ? "page" : undefined}>Updates</a></li>
           <li><a href="/downgrades/" aria-current={current === "downgrades" ? "page" : undefined}>Downgrades</a></li>
+          <li><a href="/rejected/" aria-current={current === "rejected" ? "page" : undefined}>Rejected</a></li>
           <li><a href="/vendors/" aria-current={current === "vendors" ? "page" : undefined}>Vendors</a></li>
           <li><a href="/self-hostable/" aria-current={current === "self-hostable" ? "page" : undefined}>Self-hostable</a></li>
-          <li><a href="/rejected/" aria-current={current === "rejected" ? "page" : undefined}>Rejected</a></li>
-          <li><a href="/method/" aria-current={current === "method" ? "page" : undefined}>Method</a></li>
-          <li><a href="/how-to-check/" aria-current={current === "how-to-check" ? "page" : undefined}>How to check</a></li>
         </ul>
       </div>
     </nav>
@@ -41,6 +50,12 @@ const full = title ? `${title} — dumbindex` : "dumbindex";
   <main class="wrap"><slot /></main>
   <footer>
     <div class="wrap">
+      <nav class="about" aria-label="About this site">
+        <a href="/method/">Method</a>
+        <a href="/how-to-check/">How to check a device yourself</a>
+        <a href="/corrections/">Corrections</a>
+        <a href="/devices.json">JSON</a>
+      </nav>
       <p class="promise">
         No trackers. No cookies. No third-party requests. No JavaScript required.
         Every page under 60&nbsp;KB.

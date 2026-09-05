@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import DeviceTable from "../components/DeviceTable.astro";
+import Tier from "../components/Tier.astro";
+import { devices, TIERS } from "../lib/data.js";
+---
+<Base title="All devices" current="devices"
+      description="Every verified device in the catalog, in one sortable table.">
+  <h1>All devices</h1>
+  <p class="lede">
+    Every verified record, {devices.length} of them, in one table. This is the flat view —
+    for a category with its own explanation of what makes it hard, use
+    <a href="/">browse by type</a>.
+  </p>
+
+  <div class="filters">
+    <span class="lbl">Tier</span>
+    {Object.entries(TIERS).map(([t, m]) => (
+      <span><Tier tier={t} /> <span class="age">{m.name}</span></span>
+    ))}
+  </div>
+
+  <DeviceTable rows={devices} />
+</Base>
