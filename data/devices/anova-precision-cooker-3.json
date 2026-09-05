@@ -1,0 +1,79 @@
+{
+  "model_id": "anova-precision-cooker-3",
+  "make": "Anova Culinary",
+  "model": "Precision Cooker 3.0 (AN525-US00)",
+  "category": "kitchen",
+  "subcategory": "sous vide",
+
+  "tier": "D2",
+  "tier_rationale": "Anova's own product page states the device is operated 'with the controls or the app' and describes a two-line touchscreen that sets time and temperature and starts a cook directly on the unit. A vendor cloud plainly exists and is nameable: the Anova Culinary app connects to Anova's own cloud for remote monitoring/control, and Anova's 2024 subscription FAQ describes an account-gated tier of that same app. Core function — heating water to a set temperature for a set time — runs entirely on-device with no app, no account and no network. What the subscription and account gate is app-only: recipe discovery, cook history, and remote start/monitor from a phone.",
+
+  "the_unplug_test": "You set time and temperature on the cooker's own touchscreen and press start; it heats the water bath and runs the cook with no WiFi, no app and no account, exactly as it would connected. What you lose without the cloud: starting or checking a cook from your phone, Anova's recipe library, cook history, and (for anyone who did not have an Anova account before 21 August 2024) those app features sit behind a $2/month or $10/year subscription. None of that touches the physical cook.",
+
+  "status": "verified",
+  "rejection_reason": null,
+
+  "account_required": "app_only",
+  "works_offline": "partially",
+  "offline_losses": [
+    "starting or monitoring a cook from the Anova Culinary app",
+    "Anova's recipe library and cook history",
+    "for accounts created on or after 2024-08-21, app access at all requires a paid subscription ($2/mo or $10/yr) — pre-existing accounts were grandfathered free"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": ["none"],
+  "phones_home": "unknown",
+
+  "radios": ["wifi", "ble"],
+  "fcc_id": "2APBOAN525",
+  "fcc_checked": true,
+
+  "liberation": null,
+  "local_replacement": "unknown",
+  "local_replacement_note": null,
+
+  "repairability": {"parts_available": "unknown", "ifixit_score": null, "notes": null},
+
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {"name": "Anova Culinary (manufacturer)", "url": "https://anovaculinary.com/products/anova-precision-cooker-3"}
+  ],
+  "affiliate": null,
+
+  "vendor_risk": 0,
+
+  "sources": [
+    {"url": "https://anovaculinary.com/products/anova-precision-cooker-3",
+     "class": "A", "accessed": "2026-09-05",
+     "supports": "Manufacturer product page states you 'Cook with the controls or the app' and describes the on-device two-line touchscreen used to set and monitor time/temperature directly; lists Dual Band WiFi (802.11 b/g/n) as the connectivity.",
+     "archive_url": null},
+    {"url": "https://fccid.io/2APBOAN525",
+     "class": "A", "accessed": "2026-09-05",
+     "supports": "FCC grant for Anova Applied Electronics, Inc., grant date 2023-04-24, covering a composite device with 2.4/5 GHz WiFi and Bluetooth Low Energy — confirms both radios on this exact model (AN525).",
+     "archive_url": null},
+    {"url": "https://www.engadget.com/home/kitchen-tech/anova-will-charge-customers-to-use-its-sous-vide-app-because-everything-must-be-a-subscription-151906912.html",
+     "class": "B", "accessed": "2026-09-05",
+     "supports": "Reports Anova's 2024-08-14 announcement of a $2/month or $10/year subscription for app remote-control/monitoring effective 2024-08-21, with pre-existing accounts grandfathered free; separately reports Anova's now-reversed plan (see community.home-assistant.io source) to end connectivity support for its original Bluetooth/Bluetooth+WiFi cookers.",
+     "archive_url": null},
+    {"url": "https://community.home-assistant.io/t/anova-adding-a-subscription-fee-to-their-app-cloud-access-dropping-support-for-models-with-bluetooth-even-if-they-have-wifi/761871",
+     "class": "B", "accessed": "2026-09-05",
+     "supports": "Community thread dated 2024-09 corroborating the 2024-08-20 subscription and connectivity-sunset announcement and the resulting owner backlash; independent of the Engadget report.",
+     "archive_url": null}
+  ],
+
+  "open_questions": [
+    "phones_home and firmware_ota_forced were not established by any source found — left unknown rather than guessed.",
+    "local_replacement is unknown: no ESPHome, Tasmota or third-party local-control project for this model was found in this pass, but the search was not exhaustive.",
+    "This is model AN525-US00 (Precision Cooker 3.0, WiFi). Anova also currently sells the smaller 'Nano 3.0' (AN500 series) and a Bluetooth-only variant; those were not separately verified and may carry different account/offline behavior."
+  ],
+  "conflicts_with": null,
+  "notes": "VENDOR-LEDGER CANDIDATE, not scored here (Anova is absent from data/vendors.json and this agent does not edit that file). Two dated incidents worth a human review: (1) 2024-08-14 announced / 2024-08-21 effective — Anova introduced a $2/mo or $10/yr subscription gating app remote-control and monitoring for any account created from that date forward; accounts existing before the cutoff were grandfathered free (source: Engadget, 2024-08). (2) Simultaneously with (1), Anova announced it would end app/cloud connectivity support entirely for its original first-generation Precision Cooker (Bluetooth-only and Bluetooth+WiFi models), effective September 2025 — a real 'shipped device loses function' plan. Anova reversed this on 2025-01-16 after owner backlash and committed to indefinite support for all versions instead (source: Anova's own blog post 'Good news about ongoing product support', updated 2025-01-16; corroborated independently by a Home Assistant community thread dated 2024-09 through 2025). Net effect: a real, dated threat to already-sold hardware that did not materialize. This looks like a disputed-but-partially-established pattern (ledger scale '1'), not a '2', because the harmful action was announced and then withdrawn before taking effect — but the subscription-for-new-accounts change did take effect and stands today. Recommend a human create an 'anova' vendor entry citing both dates.",
+
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [{"date": "2026-09-05", "change": "First published at D2.", "kind": "listed", "source": null}],
+
+  "agent_meta": {"model": "claude-sonnet-5", "prompt_version": "tier-quota-v1 + seeded-candidates", "run_id": "2026-09-05-discover-wave8", "searches": 40, "failed_fetches": 10}
+}

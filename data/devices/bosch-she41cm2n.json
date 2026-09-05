@@ -1,0 +1,101 @@
+{
+  "model_id": "bosch-she41cm2n",
+  "make": "Bosch",
+  "model": "SHE41CM2N",
+  "category": "kitchen",
+  "subcategory": "dishwasher",
+  "tier": "D2",
+  "tier_rationale": "A vendor cloud plainly exists and is nameable: Home Connect is a BSH-operated cloud API (developer.home-connect.com states 'Home Connect enabled appliances can only be addressed via the API; a direct connection to the appliance is not possible' for remote/app features). Setup requires no account, and Bosch's own support representative and independent owner reports confirm the dishwasher washes dishes normally with WiFi never configured. What is lost offline is app control and remote start. A forum report of a rinse-only cycle being gated behind Home Connect account creation is NOT counted here: it could not be tied to this model, and an account gating a cycle the hardware can already run would bear on the tier rather than merely on offline_losses, so it is carried as an open question until someone can attach it to a specific SKU.",
+  "the_unplug_test": "The dishwasher runs its normal wash cycles from the control panel with no WiFi ever set up and no Home Connect account created — Bosch's own support staff confirm this and an owner corroborates it. What you lose without the cloud: starting or monitoring a cycle from your phone, voice control through Alexa or Google Home, and the rinse-only cycle, which one owner report says is gated behind creating a Home Connect account. Firmware update behavior on this specific model was not established.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "partially",
+  "offline_losses": [
+    "starting or monitoring a cycle from the Home Connect app",
+    "Amazon Alexa / Google Home voice control"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "local_replacement": "none",
+  "local_replacement_note": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Major-appliance parts channel; Bosch dishwasher racks, pumps and control boards are widely stocked."
+  },
+  "availability": "in_stock",
+  "price_band": "$700-750",
+  "price_observed": "2026-09-05",
+  "where_to_buy": [
+    {
+      "name": "Bosch (manufacturer)",
+      "url": "https://www.bosch-home.com/us/en/product/SHE41CM2N"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.bosch-home.com/us/en/product/SHE41CM2N",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Manufacturer product page: current model, $729, listed as 'Wi-Fi enabled Home Connect' — marketing copy frames Home Connect as something that 'enhances' the cleaning experience rather than being required to use it.",
+      "archive_url": null
+    },
+    {
+      "url": "https://developer.home-connect.com/how_it_works",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "BSH's own Home Connect developer documentation: appliances are addressed only through the Home Connect API/cloud for remote features ('a direct connection to the appliance is not possible'), naming the cloud service this record's D2 tier depends on being real and optional.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.bestbuy.com/site/questions/bosch-800-series-18-front-control-smart-built-in-stainless-steel-tub-dishwasher-with-3rd-rack-44-dba-stainless-steel/6451969/question/f97570dd-bad3-3862-b5bd-95345809cbc6",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "A Bosch-affiliated support account (BoschAppliancesUSA) states directly 'Yes, you can use this Dishwasher without the Home Connect App', and an owner reports running the machine for two years without ever setting up WiFi; another commenter says the rinse-only cycle requires an account, which is why this record does not claim works_offline: fully.",
+      "archive_url": null
+    },
+    {
+      "url": "https://fccid.io/2AHES-COM2",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "FCC grant for BSH Home Appliances Corporation's WiFi communications module (2.4/5 GHz 802.11, no Bluetooth), confirming BSH files intentional-radiator grants for the WiFi hardware used in its Home Connect appliance line. The grant does not name this specific dishwasher model, so fcc_id is left null rather than asserted for this SKU.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Firmware update policy (forced vs. declinable) for this model was not found in any source — phones_home and firmware_ota_forced are left unknown rather than guessed.",
+    "Whether the rinse-only-cycle account gate is real on the SHE41CM2N, or whether the forum report describes a different Home Connect model in the same thread. This matters more than a missing feature would: an account gating a cycle the machine can physically run is close to the decision table's REJECT trigger for a gated hardware capability, so confirming it on this SKU would reopen the tier, not just lengthen offline_losses.",
+    "What data phones_home when Home Connect is active — no traffic analysis found."
+  ],
+  "conflicts_with": null,
+  "notes": "Cross-references ge-dishwashers-non-connected (D0, same job, no radio at all) as the no-cloud alternative in this subcategory. Also checked whether Bosch still sells any current-production dishwasher with no Home Connect at all, to pair a true D0/D2 sibling within one brand as the wave brief suggested: every current model found on bosch-home.com's front-control and top-control listings (SHE41CM2N, SHE41CM5N, SHE41CM6N, SHE3ADF5N, SHE43DM2N/5N/6N, SPE53C55UC, SGE53C55UC, SPE68C75UC) carries Wi-Fi enabled Home Connect as standard; the only Bosch models found without it (Ascenta SHX3AR75UC, 100-series SHXM4AY55N) are both marked 'no longer available' on Bosch's own site. Bosch appears to have discontinued its non-connected US dishwasher line entirely as of this check — worth flagging to the orchestrator rather than silently pairing with a stale SKU.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 33,
+    "failed_fetches": 9
+  }
+}

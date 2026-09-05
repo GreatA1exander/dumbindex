@@ -1,0 +1,102 @@
+{
+  "model_id": "sonos-ray",
+  "make": "Sonos",
+  "model": "Ray",
+  "category": "av",
+  "subcategory": "soundbar",
+  "tier": "REJECT",
+  "tier_rationale": "Sonos's own support documentation states plainly that creating a Sonos account is required the first time a Sonos system is set up, and the system-requirements page separately requires a high-speed internet connection and a smartphone running the Sonos app to complete setup — an account mandatory at setup is a REJECT trigger on its own under the decision table, independent of anything the bar does afterward.",
+  "status": "rejected",
+  "rejection_reason": "Setup cannot be completed without creating or logging into a Sonos account, and the app used to do that setup requires the device to be online. There is no path to first use that skips the account.",
+  "the_unplug_test": "This soundbar cannot be turned into a usable product without first going through the Sonos app and a Sonos account, which itself requires an internet connection to complete. Once set up it plays optical audio from a TV, but there is no way to get from box to working speaker with the router off, and no documented offline first-run path exists.",
+  "account_required": "for_setup",
+  "works_offline": "unknown",
+  "offline_losses": [
+    "Initial setup cannot be completed at all without the Sonos app and a Sonos account, which itself requires internet access."
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "local_replacement": "unknown",
+  "local_replacement_note": null,
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$250-280",
+  "price_observed": "2026-09-05",
+  "where_to_buy": [
+    {
+      "name": "Sonos (manufacturer)",
+      "url": "https://www.sonos.com/en-us/shop/ray"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 3,
+  "sources": [
+    {
+      "url": "https://support.sonos.com/en-us/article/creating-your-sonos-account",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Sonos's own support article states that when setting up a Sonos system for the first time, the owner will be required to create an account; no path to skip this is documented."
+    },
+    {
+      "url": "https://support.sonos.com/en-us/article/sonos-system-requirements",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Sonos's own system-requirements page lists a high-speed wired internet connection, a Wi-Fi router, and an iOS/Android device running the Sonos app as required to set up a Sonos system, corroborating that setup is not achievable offline."
+    },
+    {
+      "url": "https://www.sonos.com/en-us/shop/ray",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Manufacturer product page confirms current model, connectivity (optical, Wi-Fi, Bluetooth for setup handoff) and price ($279) for the Ray soundbar."
+    }
+  ],
+  "alternatives": [
+    {
+      "model_id": "klipsch-bar-48",
+      "why": "A soundbar at a comparable price with a wireless subwoofer, HDMI-ARC and optical inputs, Bluetooth streaming, and a full setup and firmware-update path documented start to finish with no app and no account of any kind."
+    }
+  ],
+  "open_questions": [
+    "Did not verify whether a Sonos soundbar retains any function if the account is later deleted or Sonos suspends it post-setup — out of scope for this rejection, which rests on the setup gate alone, but worth a follow-up record if Sonos's cloud dependency for day-to-day playback is characterized in detail.",
+    "Radios list (wifi, ble) is Sonos's generally-documented connectivity for this product line; not independently confirmed against an FCC grant for this run, since the rejection turns on the account-at-setup fact, not on the radio inventory."
+  ],
+  "conflicts_with": null,
+  "notes": "Sonos is a vendor-ledger candidate, not scored here per this run's brief (vendor_risk left at 0; scoring is the orchestrator's call). Documented incidents worth adding to data/vendors.json, each with its own source: (1) the 2019 'Recycle Mode' trade-up program that permanently bricked working speakers traded in for a discount, reversed after backlash in early 2020 (Engadget, What Hi-Fi, Consumer Reports coverage); (2) the 2020 announcement (partially reversed) that 'legacy' Sonos products would stop receiving software updates, raised by owners as an effective end-of-support date for hardware that still worked; (3) the May 2024 Sonos app rewrite, which shipped with missing core features (alarms, local music library browsing, playlist editing) and connectivity regressions on already-purchased hardware, leading to a federal class-action suit (Goodrow v. Sonos, filed June 2025) and roughly $500M of market-value loss cited in coverage of the CEO's departure.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "First published as REJECT.",
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-05",
+      "change": "vendor_risk raised 0 -> 3 when Sonos was added to the ledger with three dated incidents. The tier is unchanged and was never affected: REJECT rests on the account being mandatory at setup, which is a fact about the device, not about the vendor's conduct.",
+      "source": null,
+      "kind": "vendor_incident"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 5,
+    "failed_fetches": 1
+  }
+}

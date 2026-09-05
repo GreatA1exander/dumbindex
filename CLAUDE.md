@@ -60,6 +60,13 @@ Waves are the main activity. What has been learned the hard way:
 - **Ask for pairs.** The best output this project has produced is two records, not one:
   a device that passes and one that fails at the same job and price, cross-referenced.
 - Give each brief the tier error most likely *in that domain*.
+- **Naming an example record in a brief is a claim that the record is good.** Wave 8
+  pointed the kitchen agent at `ge-ranges-non-connected` for tone, and it came back with
+  a faithful copy — including the empty `known_dumb_models` and the open question saying
+  the tier might be wrong, both of which had been sitting in the original since Phase 0.
+  Agents copy the shape you show them, defects included. Check the example before you
+  cite it, and prefer one that was reviewed recently. (`validate.mjs` now catches the
+  loudest version of this: a verified record whose open questions name a different tier.)
 
 **WebSearch has a per-session budget (200) shared with every subagent.** Three agents
 exhaust it. When it runs out, agents start improvising — one cited a search-results page

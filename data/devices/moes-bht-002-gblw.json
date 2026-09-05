@@ -1,0 +1,95 @@
+{
+  "model_id": "moes-bht-002-gblw",
+  "make": "MOES",
+  "model": "BHT-002-GBLW",
+  "category": "climate",
+  "subcategory": "thermostat",
+  "tier": "D2",
+  "tier_rationale": "A Tuya-ecosystem cloud (BecaSmart/Smart Life) exists for this thermostat, but the manufacturer's own user manual documents that Manual mode and full six-period Programmable-schedule mode are both set directly at the unit's touchscreen with no Wi-Fi, app, or account involved at all — the Wi-Fi/app chapter is a separate, clearly optional section of the manual. Setup can be completed and the thermostat used indefinitely without ever creating a BecaSmart/Tuya account, so this is D2, not D3, despite an active Home Assistant/LocalTuya community around this exact model.",
+  "the_unplug_test": "This is a thermostat first. Pull the router and the touchscreen keeps doing its actual job: Manual mode still lets you press the arrows to set a target temperature that the NTC floor sensor and relay hold to within 0.5°C, and Programmable mode still lets you set all six daily periods and a separate weekday/weekend schedule directly at the unit — the manual documents this as ordinary operation, not a fallback. What disappears without Wi-Fi is anything that needs a phone: remote adjustment, Alexa/Google Home voice control, and the app pushing a schedule to the unit (the unit only accepts app-pushed schedules once it is actually connected). Nothing about basic heating control is gated behind a BecaSmart or Tuya account.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "remote/app control from a phone or tablet away from the thermostat",
+    "Amazon Alexa / Google Home / Tmall Genie / IFTTT voice and scene integration",
+    "push notifications and app-driven schedule sync (the unit only accepts an app-pushed schedule while connected; its own touchscreen schedule keeps running otherwise)"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$30-40",
+  "price_observed": "2026-09-05",
+  "where_to_buy": [
+    {"name": "MOES (official store, ships to US)", "url": "https://moeshouse.com/products/wifi-bht002-thermostats"}
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://intiel.com/storage/2021/12/User-Manual-BHT-002-EN.pdf",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Manufacturer's own BHT-002 series WiFi Thermostat user guide. Shows Manual and Programmable modes (including all six schedule periods and weekday/weekend split) are set entirely via the unit's own touchscreen with no mention of app or account; the separate WI-FI CONNECTION chapter requires downloading the 'My BecaSmart' app and registering an account (phone/email + password) only to enable remote/voice features, and states the unit's own schedule can only be edited at the unit itself once Wi-Fi is connected (the app then becomes the source of truth for schedule pushes)."
+    },
+    {
+      "url": "https://moeshouse.com/products/wifi-bht002-thermostats",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Current manufacturer retail listing: confirms the 'GB' (electric floor heating) WiFi variant matching BHT-002-GBLW, USD pricing ($36.99), and shipping to the United States."
+    },
+    {
+      "url": "https://github.com/rospogrigio/localtuya/blob/master/README.md",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "LocalTuya (actively maintained Home Assistant custom integration, repository last pushed 2026-01-29) documents an explicit datapoint mapping table for 'Moes BHT 002', evidence that a community-maintained fully-local control path exists for this exact model if an owner wants automation without the vendor cloud."
+    },
+    {
+      "url": "https://community.home-assistant.io/t/moes-bht-002-thermostat-local-control-tuya-based/151953",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "Long-running Home Assistant community thread specific to the BHT-002, corroborating that the thermostat runs the standard Tuya local protocol (local_key + device_id) and that local control works once extracted — corroborates the LocalTuya claim but is dated (2019-2020) so is not relied on alone."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "No FCC filing for 'BHT-002' or 'BHT-002-GBLW' was found under the Xiamen Beca Energysaving Technology grantee code (2AYF3), which does cover this vendor's other thermostats (BHT-9000, BHP8000). The Wi-Fi module is most likely a separately pre-certified radio module rather than a full-unit grant, which is common for this class of device, but this was not confirmed and fcc_id is left null.",
+    "Whether the exact ODM hardware sold as 'MOES BHT-002-GBLW' is identical to the hardware sold under the 'Beca'/BecaSmart branding in the manual, or a relabeled variant — both point at the same Tuya-ecosystem app and manual, and this project treats them as the same device, but a reader who owns one branded differently should confirm the DP mapping still matches before relying on LocalTuya.",
+    "phones_home and firmware_ota_forced are unknown: no source found describes what telemetry the stock cloud connection sends or whether OTA updates can be declined."
+  ],
+  "conflicts_with": null,
+  "notes": "Seeded as a D3 candidate (the LocalTuya/Home Assistant community activity around this exact model is real and well documented) but the manufacturer's own manual settles it as D2: full manual and programmable-schedule operation happens at the unit with no app or account, so the device is not cloud-dependent as sold. Filed here instead as a needed contested (non-D0) record in climate/thermostat, which the launch-gate brief specifically asked for.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "Published at D2. Cloud (BecaSmart/Tuya) exists but core heating control and full schedule programming both work entirely at the unit with no account.",
+      "kind": "listed",
+      "source": "https://intiel.com/storage/2021/12/User-Manual-BHT-002-EN.pdf"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 9,
+    "failed_fetches": 1
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "LocalTuya (Home Assistant custom integration) documents a datapoint mapping for this exact BHT-002 model and can drive it entirely over the local network once a Tuya local_key is extracted, replacing the cloud for automation purposes — though note this is not needed for the thermostat's core stand-alone function, which never touches the cloud at all."
+}

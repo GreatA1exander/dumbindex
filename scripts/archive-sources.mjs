@@ -87,3 +87,12 @@ if (!DRY) for (const doc of touched) writeFileSync(doc.p, JSON.stringify(doc.d, 
 
 console.log(`\n${filled} archived · ${missing} with no snapshot · ${alreadyFine} already had one · ${jobs.length - needed.length} live and fine${DRY ? "  (dry run, nothing written)" : ""}`);
 if (missing) console.log("A source with no snapshot and no live page cannot support a claim. Re-source it or withdraw the record.");
+if (filled)
+  console.log(
+    `\nREAD THE ${filled} SNAPSHOT${filled === 1 ? "" : "S"} BEFORE TREATING ${filled === 1 ? "IT" : "THEM"} AS RESOLVED.\n` +
+      "A capture of a URL is not a capture of the content that was cited. This is not a\n" +
+      "hypothetical: the snapshot attached to apc-smart-ups-smt1500c on 2026-09-04 turned\n" +
+      "out to be a page titled \"Select your warranty\" carrying none of the claim the\n" +
+      "source line described, and the citation had to be withdrawn. Attaching an\n" +
+      "archive_url makes a dead link checkable — it does not make it correct.",
+  );

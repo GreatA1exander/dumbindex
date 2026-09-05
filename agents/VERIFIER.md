@@ -23,6 +23,16 @@ produce a publishable record backed by qualifying evidence, or prove that you ca
    value documents in this project: they state what setup actually requires. Download and
    read the setup section and the specification table.
 
+   **When a fetch fails, the URL does not become a source.** You will hit 403s, dead
+   hosts and broken certificates constantly, and the temptation is to cite the page
+   anyway because you can infer what a vendor support article of that title must say.
+   Do not. Put it in `open_questions` — the URL, that it could not be retrieved, and what
+   it would have settled — and reach the claim another way or drop the claim. A record
+   that admits an unresolved question costs the project nothing. A `supports` line
+   written for an unread page is the one defect that cannot be caught by reading the
+   record, because it looks exactly like a good citation. See §2 of the principles for
+   the case that produced this rule.
+
 2. **Run the FCC check** (§3 of the principles). Search fccid.io for the **grantee**, not
    just the model — you need the vendor's whole grant list to interpret an absence.
    Record `fcc_id` if found and what radios the grant covers. Record

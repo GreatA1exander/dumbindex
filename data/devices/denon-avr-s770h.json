@@ -1,0 +1,100 @@
+{
+  "model_id": "denon-avr-s770h",
+  "make": "Denon",
+  "model": "AVR-S770H",
+  "category": "av",
+  "subcategory": "AV receiver",
+  "tier": "D2",
+  "tier_rationale": "Denon's own Quick Start Guide diagrams a 'Required for setup' list (TV, HDMI cable, speakers, speaker cables) that is separate from an 'Optional' list containing the LAN cable and Wi-Fi router, and the Setup Assistant reaches a 'Setup Assistant Complete!' screen before the HEOS and Denon AVR Remote apps are even mentioned as a later download step. HEOS is a real, nameable Denon cloud service — signing into a HEOS account is required only to use network music streaming and multi-room features, per Denon's own HEOS-account support article — but the receiver's core function, amplifying and switching HDMI/analog sources, requires no account and no network connection at all.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "Unplug the router and this receiver keeps doing its job: HDMI switching, video pass-through up to 8K, Dolby Atmos/DTS:X decoding, and amplification to seven channels all run locally with no network required, exactly as shipped. What stops working is HEOS multi-room audio, AirPlay 2, Spotify Connect and the online-streaming side of the HEOS app — anything that needs Denon's or a music service's server. The Setup Assistant that configures speakers and HDMI never asks for a network connection or an account; those only come up afterward, when you go looking for streaming.",
+  "account_required": "app_only",
+  "works_offline": "partially",
+  "offline_losses": [
+    "HEOS multi-room audio and the HEOS app's online music streaming (Spotify, TIDAL, Pandora, etc.)",
+    "AirPlay 2 and Bluetooth-app remote control features that route through the HEOS account",
+    "Voice control via Alexa/Google Assistant/Siri, which requires the receiver on the network and linked to those separate cloud accounts",
+    "Automatic firmware update checks (the setup wizard offers 'Update Later' and can be declined)"
+  ],
+  "firmware_ota_forced": "yes_but_blockable",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "local_replacement": "partial",
+  "local_replacement_note": "The receiver's core switching/amplification needs no replacement since it works fully offline. HEOS multi-room specifically has no open local equivalent; readers who want networked multi-room audio without a vendor account typically look at Home Assistant media-player integrations driving the receiver over its documented IP control protocol instead of HEOS, but that was not independently verified for this model this run.",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Denon (manufacturer)",
+      "url": "https://www.denon.com/en-us/product/av-receivers/avr-s770h/300777.html"
+    },
+    {
+      "name": "B&H Photo Video",
+      "url": "https://www.bhphotovideo.com/c/product/1776725-REG/denon_avrs770h_s_series_avr_s770h_7_2_channel_network.html"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://assets.denon.com/documentmaster/kr/avr-s770he2_eng_qsg_im_v00.pdf",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Official Quick Start Guide: the 'Before you begin' page lists a LAN cable or Wi-Fi router under 'Optional' equipment, separate from the 'Required for setup' list (TV, HDMI cable, speakers, speaker/subwoofer cables). The setup sequence reaches a 'Setup Assistant Complete!' screen, followed by an optional firmware-update prompt with an 'Update Later' choice, before the HEOS and Denon AVR Remote apps are introduced as a separate, later download step — establishing that core setup and use do not require network connection, an account, or an app."
+    },
+    {
+      "url": "https://support.denon.com/app/answers/detail/a_id/1968/~/the-heos-account-and-its-benefits",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Denon's own support article describes the HEOS account as needed to sign into most music streaming services through HEOS and to sync playlists/history across devices — confirming HEOS is a real vendor cloud service, gated behind an account, but scoped to streaming/multi-room rather than the receiver's amplification and switching function."
+    },
+    {
+      "url": "https://www.denon.com/en-us/product/av-receivers/avr-s770h/300777.html",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Manufacturer product page confirms current availability, 7.2-channel/75W amplification, HDMI 8K/4K120 switching, and built-in Wi-Fi/Bluetooth/HEOS as the networked-feature set."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "Did not run the FCC grantee search for D&M Holdings (grantee code BV2) to pin an exact FCC ID for this specific model's Wi-Fi/Bluetooth module — not required for a D2 tier call, which rests on the account/setup facts, but would be worth adding for completeness.",
+    "phones_home is left unknown: it is plausible the receiver checks Denon's servers for firmware availability once connected to a network even without a HEOS sign-in, but this was not independently confirmed with a source describing what data leaves the device before any account exists.",
+    "local_api is left unknown: Denon AVRs have historically exposed a documented Telnet/IP control protocol used by Home Assistant and Crestron/Control4 integrations, which would be relevant to local_replacement for HEOS multi-room, but a citation specific to the AVR-S770H's control protocol was not gathered this run.",
+    "firmware_ota_forced set to yes_but_blockable on the strength of the setup wizard's 'Update Later' option; whether updates can also be declined indefinitely after that point (vs. eventually forced) was not verified."
+  ],
+  "conflicts_with": null,
+  "notes": "Fills the empty 'AV receiver' subcategory in this domain. The most common tier error for this class of device is treating a bundled streaming platform (HEOS here, analogous to Sonos or Bose's app ecosystems) as automatically disqualifying — PRINCIPLES is explicit that a receiver's core function is amplification and switching, not the streaming app, and Denon's own Quick Start Guide draws that same line by making network setup optional and deferring the app download until after setup is already complete.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 8,
+    "failed_fetches": 0
+  }
+}

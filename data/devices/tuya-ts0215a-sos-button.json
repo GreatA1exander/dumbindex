@@ -1,0 +1,104 @@
+{
+  "model_id": "tuya-ts0215a-sos-button",
+  "make": "Tuya (white-label)",
+  "model": "TS0215A Zigbee SOS button",
+  "category": "security",
+  "subcategory": "key fob",
+  "tier": "D3",
+  "tier_rationale": "As sold, the button's entire purpose — alerting a caregiver remotely — requires pairing to a Tuya Zigbee gateway and the Tuya Smart/Smart Life app, per Tuya's own Zigbee SOS Button standard (ModelIdentifier TS0215A), which describes gateway-mediated, cloud-connected operation with no local-only mode documented. The underlying radio is a standard Tuya Zigbee fingerprint (TS0215A / TS0215A_sos) with its own actively maintained Zigbee2MQTT device page, so re-pairing it to a coordinator the owner runs removes Tuya entirely — a maintained, model-specific liberation path, which is the definition of D3.",
+  "the_unplug_test": "As sold, this is a single red button that only does its job — pushing an emergency alert to a caregiver's phone — once it has been paired to a Tuya Zigbee gateway and the Tuya Smart or Smart Life app, per Tuya's own developer documentation for this exact product line. There is no cited local-only mode for the stock pairing. Re-pair the button to a Zigbee2MQTT or ZHA coordinator instead (hold the button to enter pairing mode, same as pairing to any other Zigbee network) and it publishes a plain 'emergency' action on your own network, which you can then wire to any local automation — a self-hosted notification, a siren, a light — with no Tuya account or gateway anywhere in the path.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "for_core",
+  "works_offline": "no",
+  "offline_losses": [
+    "the entire notification function as sold — pressing the button does nothing useful without the Tuya gateway and app in the path"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "zigbee"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "zigbee"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": {
+    "method": "Re-pair the button to a Zigbee2MQTT or ZHA coordinator instead of a Tuya gateway: hold the button to enter pairing mode and join it to your own Zigbee network. It then publishes a standard 'emergency' action locally, which any home-automation setup can act on (notification, siren, light) with no vendor involvement.",
+    "difficulty": "software",
+    "reversible": true,
+    "maintained": true,
+    "guide_url": "https://www.zigbee2mqtt.io/devices/TS0215A_sos.html"
+  },
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Amazon US — 'Clouree' (one current rebrand of TS0215A; expect this listing to rotate)",
+      "url": "https://www.amazon.com/Clouree-Caregiver-Notification-Emergency-Waterproof/dp/B0FR21FQPP"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://developer.tuya.com/en/docs/iot/tuya-zigbee-sos-access-standard?id=K9ik6zvox5vkn",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Tuya's own Zigbee SOS Button connectivity standard: names 'TS0215A' as the ModelIdentifier used by gateways to recognize the device, and describes a gateway-mediated architecture (including cloud-pushed OTA updates) with no local-only notification mode documented — the basis for filing this as cloud-dependent as sold."
+    },
+    {
+      "url": "https://www.zigbee2mqtt.io/devices/TS0215A_sos.html",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "Zigbee2MQTT's device page for this exact Zigbee fingerprint (TS0215A_sos), vendor listed as Tuya, exposing a single 'emergency' action. Page shows a 2026-05-31 build/update timestamp, evidence the Tuya device converters are actively maintained. This is the liberation guide."
+    },
+    {
+      "url": "https://smarthomescene.com/reviews/tuya-zigbee-sos-smart-button-review/",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "Independent review of a rebrand of this same TS0215A_sos device (sold there as 'RSH-SOS05'), confirming it 'works with Zigbee2MQTT and ZHA out of the box' with no proprietary Tuya infrastructure needed once re-paired — corroborates the liberation path works in practice, not just on paper."
+    },
+    {
+      "url": "https://www.amazon.com/Clouree-Caregiver-Notification-Emergency-Waterproof/dp/B0FR21FQPP",
+      "class": "C",
+      "accessed": "2026-09-05",
+      "supports": "Current US retail listing (title: 'Clouree Tuya Zigbee Call Button ... App Notification Emergency Button SOS Alarm Bell ... No Monthly Fee') establishing this exact rebrand is presently buyable in the US and marketed on the Tuya app/notification feature. Not relied on alone for the tier claim."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "Taxonomy gap: none of security's listed subcategories (door lock, deadbolt, padlock, doorbell, intercom, indoor camera, outdoor camera, NVR, alarm panel, door sensor, motion sensor, glass break sensor, safe, garage door opener, gate opener, key fob) is a clean fit for a single-button wireless SOS/panic call button. Filed under 'key fob' as the closest existing category (both are small battery-powered wireless security remotes), but a 'panic button' or 'SOS button' subcategory would describe this device family more accurately — flagging for a human to decide.",
+    "This record is keyed to the Zigbee fingerprint TS0215A rather than to a retail brand, because the same hardware sells as Clouree, RSH-SOS05, Woox R7054 and Nedis depending on importer and region. That is the honest identity, but it means a reader cannot search a model number on a box: they have to buy something advertised as a Tuya Zigbee SOS button and confirm the coordinator reports TS0215A on pairing. If a durable, manufacturer-printed model number for this hardware exists, it was not found.",
+    "fcc_checked left false: this is a Zigbee-only device (2.4 GHz, IEEE 802.15.4) and the radio's presence is not in question, so the FCC check was not run given search budget — flagging per the wave-7 finding that this check is being skipped routinely.",
+    "phones_home, firmware_ota_forced unknown: no source describes exactly what the stock Tuya gateway pairing reports to Tuya's cloud, beyond the OTA-push mechanism named in the developer standard."
+  ],
+  "conflicts_with": null,
+  "notes": "Keyed to the Zigbee fingerprint rather than a brand, deliberately. This is generic Tuya white-label hardware that reaches US shelves under whatever name the importer of the moment is using — it has been reviewed as RSH-SOS05, sells in Europe as Woox R7054 / Nedis, and was listed on Amazon US as 'Clouree' when this record was written. All of them are one device: ModelIdentifier TS0215A, which is what a Zigbee coordinator sees and what Zigbee2MQTT's device page is written against. Buy on the fingerprint, not the brand — and expect the retail listing cited here to have rotated by the time you read this. Found via the seeded 'Tuya-ecosystem Zigbee sensor with a Zigbee2MQTT device page' lead. Several rebrands of the identical TS0215A_sos hardware were traced (RSH-SOS05, Woox R7054 [security-remote variant, EU-only, page no longer live], Clouree) before settling on a currently-live US Amazon listing. This churn is itself notable: the Zigbee2MQTT page is the durable citation; the retail SKU on top of it is not.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "First published at D3. Re-keyed before publication from the Amazon brand 'Clouree' and its ASIN to the Zigbee fingerprint TS0215A, which is stable, is what a coordinator reports, and is what the Zigbee2MQTT liberation guide is written against.",
+      "source": "https://www.zigbee2mqtt.io/devices/TS0215A_sos.html",
+      "kind": "listed"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 13,
+    "failed_fetches": 3
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "Once re-paired to a Zigbee2MQTT or ZHA coordinator, the button's emergency action can drive any self-hosted notification path (Home Assistant companion app push, ntfy, a local siren) — a full replacement of the app-notification function, run entirely on hardware the owner controls."
+}

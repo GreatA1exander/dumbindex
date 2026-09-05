@@ -1,0 +1,121 @@
+{
+  "model_id": "sonoff-basicr4",
+  "make": "SONOFF",
+  "model": "BASICR4",
+  "category": "lighting",
+  "subcategory": "smart plug alternative",
+  "tier": "D3",
+  "tier_rationale": "Cloud-dependent as sold: the official user manual's setup procedure requires downloading the eWeLink app and pairing the device to an eWeLink account, and unlike the R3-generation switches the BASICR4 has no over-the-air DIY mode at all — Sonoff's own DIY-mode documentation lists only the Basic R3, RF R3 and Mini. A currently maintained, model-specific local-control path exists via UART-flashed Tasmota or ESPHome, which is the definition of D3.",
+  "the_unplug_test": "As sold, network and app control need an eWeLink account from the first step of setup — there is no account-free commissioning path, and no DIY mode toggle like the older R3 switches have. A wired wall switch still cuts power to the load mechanically, which is not the same thing as the relay answering commands. Flash Tasmota or ESPHome over the exposed UART pads and that inverts: the switch runs entirely on your own network with no eWeLink involvement. Be aware the board has no isolating transformer — community documentation measures the ESP's ground near mains potential — so this is a soldering-iron project for someone comfortable working near line voltage, not a five-minute flash.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "for_setup",
+  "works_offline": "partially",
+  "offline_losses": [
+    "network and app control of the relay (setup itself requires the eWeLink app and account)",
+    "automations and schedules",
+    "Magic Switch Mode and eWeLink-side remote gateway features"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "unknown"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": "2APN5BASICR4",
+  "fcc_checked": true,
+  "liberation": {
+    "method": "Flash Tasmota or ESPHome over the exposed 3V3/RX/TX/GND UART pads inside the case (hold the button while applying power to enter bootloader mode), using a 3.3V USB-serial adapter. Both projects publish a configuration for this exact model (ESP32-C3, GPIO4 relay, GPIO9 button, GPIO6 LED). Once flashed, the switch answers local HTTP/MQTT (Tasmota) or the ESPHome native API with no eWeLink involvement.",
+    "difficulty": "soldering",
+    "maintained": true,
+    "guide_url": "https://devices.esphome.io/devices/sonoff-basic-r4-v10/"
+  },
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {"name": "SONOFF (official US store)", "url": "https://sonoff.tech/en-us/products/sonoff-basicr4-wi-fi-smart-switch"}
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://support.sonoff.tech/basicr4-usermanual/",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Official user manual: setup requires downloading the eWeLink app and pairing via QR code / Wi-Fi selection before the device can be added; no account-free commissioning path is documented. Also documents Magic Switch Mode and a LAN-control LED indicator, with no DIY-mode instructions anywhere in the document."
+    },
+    {
+      "url": "https://tasmota.github.io/docs/Sonoff-DIY/",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "Tasmota project's own documentation of Sonoff's official DIY mode states it is currently supported only on the Basic R3, RF R3 and Mini — the BASICR4 is not among them, corroborating that this generation has no vendor-provided local-mode toggle."
+    },
+    {
+      "url": "https://devices.esphome.io/devices/sonoff-basic-r4-v10/",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "ESPHome community device-index page for this exact model (BASIC R4 v1.0): confirms ESP32-C3, gives the working GPIO map (relay, button, LED, magic-switch pin) and a YAML config known to boot on current ESPHome releases. This is the liberation guide."
+    },
+    {
+      "url": "https://github.com/esphome/devices.esphome.io/commits/main/src/docs/devices/Sonoff-BASIC-R4-v1.0/index.md",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "Commit history for the ESPHome device page: added 2023-11-28, YAML corrected 2024-05-11, difficulty metadata added 2024-10-19, most recently touched 2025-11-19 — evidence the guide is actively maintained rather than a one-time drop."
+    },
+    {
+      "url": "https://templates.blakadder.com/sonoff_BASICR4.html",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "Tasmota device template for this exact model, giving the GPIO template string and USB-to-serial flashing method — a second, independent maintained path to the same local-only outcome. Also documents that the board has no isolating transformer and the ESP's ground has been measured near mains potential, which is why this is filed as a soldering-difficulty, safety-relevant liberation path rather than a plug-and-flash one."
+    },
+    {
+      "url": "https://fccid.io/2APN5BASICR4/Attestation-Statements/FCC-Attestation-Letter-US-AGENT-6766440",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "FCC grant 2APN5BASICR4 covers both a 2.4 GHz Wi-Fi module and Bluetooth Low Energy (separate BLE and Wi-Fi test reports listed), establishing both radios present on the device."
+    },
+    {
+      "url": "https://sonoff.tech/en-us/products/sonoff-basicr4-wi-fi-smart-switch",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Current SONOFF US store listing — the BASICR4 is in stock and is the successor SONOFF names to the discontinued BASICR2 (sonoff-basicr2 record)."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "Whether the eWeLink LAN Control mode (the LED's 'flashes twice: LAN' state) can be reached without ever completing cloud pairing first — manual and forum evidence both suggest cloud pairing happens first and local control is layered on top, not an alternative to it, but this project found no vendor documentation stating that plainly either way.",
+    "Whether reflashing back to stock eWeLink firmware after installing Tasmota/ESPHome is documented and reversible — no source found addressed this directly, so `liberation.reversible` is left unset rather than guessed.",
+    "local_api and phones_home are left unknown: the manual does not name a specific cloud endpoint or describe exactly what telemetry the stock firmware sends, and confirming that was not worth the search budget given the tier already turns on the account-at-setup fact.",
+    "How this differs from the R2 record: the R2 (D3, discontinued) lacked DIY mode because it predates the feature entirely and its only path was serial-flashed Tasmota. The R4 (D3, in stock) is a newer chip generation (ESP32-C3 vs ESP8266) that Sonoff simply never extended DIY mode to, despite offering it on the contemporaneous Mini/Basic R3 line — so the liberation path is the same shape (UART flash) but the reason cloud is mandatory is a product decision, not an accident of age. The R4 also adds a genuine electrical hazard (no isolation transformer) that the R2 record does not mention having checked."
+  ],
+  "conflicts_with": null,
+  "notes": "Resolves the BACKLOG.md item on the BASICR4. Filed under lighting/smart plug alternative to match the sonoff-basicr2 record, even though this wave's brief scoped discovery to climate, security and computing — flagged for the orchestrator's review since it falls outside those three domains.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "Published at D3. Cloud account required at setup (no account-free path, no DIY mode on this chip generation), but Tasmota and ESPHome both publish maintained, model-specific UART-flash configurations.",
+      "kind": "listed",
+      "source": "https://devices.esphome.io/devices/sonoff-basic-r4-v10/"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 7,
+    "failed_fetches": 1
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "Tasmota or ESPHome, flashed over UART, fully replaces eWeLink for the relay's core function — local HTTP/MQTT or the ESPHome native API, no vendor involvement. Note the hardware access itself carries a documented shock-hazard warning specific to this board (see sources)."
+}

@@ -5,67 +5,88 @@
   "model": "Ranges and wall ovens without WiFi Connect",
   "category": "kitchen",
   "subcategory": "range",
-
   "tier": "D0",
-  "tier_rationale": "GE sells connectivity as an identifiable feature ('WiFi Connect') and as a separately purchasable add-on module, so a model whose spec sheet omits it has no radio. GE documents this identification procedure itself.",
-
-  "identify": "Search the model number on geappliances.com, open the Specs & Details tab, and look for 'WiFi Connect' in the feature list or 'Smart' in the description. If neither appears, GE states the model is not connectable. Two things make this reliable rather than an inference from silence: GE publishes the check as its own support answer, and it sells a separate SmartHQ Connect Module (PBX23W00Y0) as an accessory — connectivity is an add-on on these lines, not something quietly present in every unit. Ignore trailing model-number characters; GE's own guidance says to pick the closest match, as suffixes encode colour and revision rather than features.",
-
+  "tier_rationale": "GE sells connectivity as an identifiable feature ('WiFi Connect') and as a separately purchasable add-on module, so a model whose spec sheet omits it has no radio. GE documents this identification procedure itself. The D0 claim here is scoped to models listing no connectivity at all; GE's 'Optional WiFi' range line is excluded, because whether those hold a dormant radio before the Connect+ module is fitted is unresolved and would change the tier for them.",
+  "identify": "Search the model number on geappliances.com, open the Specs & Details tab, and look for 'WiFi Connect' in the feature list or 'Smart' in the description. If neither appears, GE states the model is not connectable. Two things make this reliable rather than an inference from silence: GE publishes the check as its own support answer, and it sells a separate SmartHQ Connect Module (PBX23W00Y0) as an accessory — connectivity is an add-on on these lines, not something quietly present in every unit. Ignore trailing model-number characters; GE's own guidance says to pick the closest match, as suffixes encode colour and revision rather than features. SCOPE, and read this before using the procedure: this record covers GE models whose Specs & Details tab lists NO connectivity at all. It deliberately does NOT cover the 'Optional WiFi' line — the models GE sells with a socket for its separately-purchased Connect+ module. Whether those carry a dormant radio on the control board that the module activates, or whether the module is the only radio hardware, is not established: GE's own Connect+ product page does not say, and no FCC grant for the module was located. Until that is answered an Optional WiFi model cannot be called D0, so treat 'no WiFi Connect in the spec tab' as necessary but not sufficient — also confirm the model is not sold with an Optional WiFi socket.",
   "known_dumb_models": [],
-
   "the_unplug_test": "A GE range with no WiFi Connect on its spec sheet has no radio to switch off. You turn knobs, it heats. Nothing in it is waiting for an account, and GE cannot push it an update, because the connectivity hardware is an accessory the unit does not have.",
-
   "status": "verified",
   "rejection_reason": null,
-
   "account_required": "none",
   "works_offline": "fully",
   "offline_losses": [],
   "firmware_ota_forced": "no",
-  "local_api": ["none"],
+  "local_api": [
+    "none"
+  ],
   "phones_home": "none",
-
-  "radios": ["none"],
+  "radios": [
+    "none"
+  ],
   "fcc_id": null,
   "fcc_checked": false,
-
   "liberation": null,
   "local_replacement": "not_applicable",
   "local_replacement_note": null,
-
-  "repairability": {"parts_available": "yes", "ifixit_score": null,
-    "notes": "Major-appliance parts channel; burners, igniters and control knobs are stocked for years."},
-
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Major-appliance parts channel; burners, igniters and control knobs are stocked for years."
+  },
   "availability": "in_stock",
   "price_band": null,
   "price_observed": null,
-  "where_to_buy": [{"name": "GE Appliances — model lookup", "url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=34255"}],
-  "affiliate": null,
-
-  "vendor_risk": 0,
-
-  "sources": [
-    {"url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=34255",
-     "class": "A", "accessed": "2026-09-02",
-     "supports": "GE's own support article 'Does My Appliance Have WiFi Capability?' instructs owners to check the Specs & Details tab for 'WiFi Connect' or 'Smart', and states that if these are not listed the model is not connectable. This is the manufacturer publishing the identification procedure.",
-     "archive_url": null},
-    {"url": "https://www.geappliances.com/appliance/SmartHQ-Connect-Module-PBX23W00Y0",
-     "class": "A", "accessed": "2026-09-02",
-     "supports": "GE sells the SmartHQ Connect Module as a separate accessory, confirming that connectivity is an add-on on the affected lines rather than latent hardware present in every unit.",
-     "archive_url": null}
+  "where_to_buy": [
+    {
+      "name": "GE Appliances — model lookup",
+      "url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=34255"
+    }
   ],
-
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=34255",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "GE's own support article 'Does My Appliance Have WiFi Capability?' instructs owners to check the Specs & Details tab for 'WiFi Connect' or 'Smart', and states that if these are not listed the model is not connectable. This is the manufacturer publishing the identification procedure.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.geappliances.com/appliance/SmartHQ-Connect-Module-PBX23W00Y0",
+      "class": "A",
+      "accessed": "2026-09-02",
+      "supports": "GE sells the SmartHQ Connect Module as a separate accessory, confirming that connectivity is an add-on on the affected lines rather than latent hardware present in every unit.",
+      "archive_url": null
+    }
+  ],
   "open_questions": [
     "Populate known_dumb_models with a handful of currently-sold examples verified against the procedure, so the record has concrete starting points as well as a method.",
-    "Confirm whether a range that accepts the SmartHQ module contains a dormant radio or genuinely lacks one until the module is fitted. If the socket implies latent hardware, this record should move to D2 and say so.",
-    "Write the equivalent family records for Whirlpool, LG and Samsung, whose connected-feature naming differs (SmartThings, ThinQ)."
+    "Write the equivalent family records for Whirlpool, LG and Samsung, whose connected-feature naming differs (SmartThings, ThinQ).",
+    "Where the radio lives on GE's 'Optional WiFi' range line — on the control board, activated by the Connect+ module, or inside the module itself. GE's Connect+ product page (PBX10W00Y0/PBX23W00Y1) does not say, and no FCC grant for the module was located on fccid.io. This record is scoped to exclude that line rather than guess, so the answer would EXTEND this record rather than correct it. Resolving it needs the module's FCC filing or a teardown photo of an Optional WiFi control board."
   ],
   "conflicts_with": null,
   "notes": "The first family record. Large kitchen appliances churn SKUs faster than this project can track them, and a single model number would be stale within a year — so the durable deliverable is the procedure for identifying the non-connected variant, with the final SKU check left to the buyer at the point of purchase. Recorded to the same evidence standard as any device: the method is sourced to the manufacturer, not inferred.",
-
   "first_published": "2026-09-02",
   "last_verified": "2026-09-02",
-  "changelog": [{"date": "2026-09-02", "change": "First family record published.", "kind": "listed", "source": null}],
-
-  "agent_meta": {"model": "claude-opus-5", "prompt_version": "phase-0-manual", "run_id": "2026-09-02-phase0", "searches": 2}
+  "changelog": [
+    {
+      "date": "2026-09-02",
+      "change": "First family record published.",
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-05",
+      "change": "Scoped the D0 claim to models listing no connectivity at all, explicitly excluding the 'Optional WiFi' line. The record previously asserted D0 while its own open questions asked whether those models carry a dormant radio — the tier is now narrower than the doubt instead of wider than it.",
+      "source": null,
+      "kind": "correction"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-opus-5",
+    "prompt_version": "phase-0-manual",
+    "run_id": "2026-09-02-phase0",
+    "searches": 2
+  }
 }

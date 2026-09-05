@@ -1,0 +1,88 @@
+{
+  "model_id": "kanto-yu4",
+  "make": "Kanto",
+  "model": "YU4",
+  "category": "av",
+  "subcategory": "powered speaker",
+  "tier": "D1",
+  "tier_rationale": "The YU4's FCC grant (QKH-KANTOYU4) is filed simply as a 'Bluetooth Speaker' covering Bluetooth classic and BLE test modes — there is no Wi-Fi grant, and the rear panel's only inputs are RCA, 3.5mm AUX, two optical digital inputs, a USB charge-only port, and Bluetooth. The full 12-page user manual documents pairing, input selection, bass/treble/balance and standby entirely through the front-panel knob and included IR remote, with no app, no account, and no network step anywhere. A search for a Kanto companion app for this model turns up none — Kanto sells no software for the YU4 at all, so there is no vendor cloud for it to phone even if it wanted to.",
+  "status": "verified",
+  "the_unplug_test": "There is no router in this speaker's life to begin with. It takes a turntable, a phone over Bluetooth, or a TV over optical, and turns it into sound from a knob and a remote. Nothing about it changes whether your network exists or not, because nothing on it ever asked for one.",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "ble"
+  ],
+  "phones_home": "none",
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null,
+  "radios": [
+    "ble"
+  ],
+  "fcc_id": "QKH-KANTOYU4",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": "Passive right speaker is wired to the active left speaker with standard bare-wire speaker cable, and RCA/AUX/optical inputs use standard connectors; no proprietary connector locks the pair together."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Kanto Audio (manufacturer)",
+      "url": "https://kantoaudio.com/powered-speakers/yu4/"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.kantoaudio.com/wp-content/uploads/YU4_EngManual_2021-09-22-linear.pdf",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Official user manual: full front/rear panel diagram (RCA, AUX, dual optical, subwoofer out, USB charge port, Bluetooth), remote control layout, and operating instructions. No app, account, Wi-Fi, or network step appears anywhere in the manual; USB port is explicitly labeled 5V/1A charge-only."
+    },
+    {
+      "url": "https://fccid.io/QKH-KANTOYU4",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "FCC grant for the YU4 (grantee Kanto Distribution Inc., filed as 'Bluetooth Speaker') covers Bluetooth classic and BLE test modes only; no Wi-Fi (802.11) authorization exists for this model, confirming Bluetooth is the device's only radio."
+    },
+    {
+      "url": "https://kantoaudio.com/powered-speakers/yu4/",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Manufacturer product page confirms current availability and input list (RCA, AUX, dual optical, Bluetooth); no companion app is offered or referenced anywhere on Kanto's site for this product."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "Price not confirmed this run — left null rather than spend search budget on it, per project policy.",
+    "Did not independently verify Kanto's full product-support site for an absence of any account system company-wide (e.g. a warranty-registration portal); the absence of an app specifically for the YU4, and the FCC grant showing no Wi-Fi module, are the load-bearing facts for D1 rather than a claim that Kanto operates no cloud anywhere in its business."
+  ],
+  "conflicts_with": null,
+  "notes": "Fills the empty 'powered speaker' subcategory and is the domain's first D1. Distinguish from Kanto's networked models (e.g. the Kanto Ren, which does add Wi-Fi and a Google Cast-based app) — this record covers only the plain Bluetooth YU4/YU2/YUMAX-style line with no network hardware at all.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 4,
+    "failed_fetches": 0
+  }
+}

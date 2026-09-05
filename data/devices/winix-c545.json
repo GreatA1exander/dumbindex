@@ -1,0 +1,96 @@
+{
+  "model_id": "winix-c545",
+  "make": "Winix",
+  "model": "C545",
+  "category": "climate",
+  "subcategory": "air purifier",
+  "tier": "D2",
+  "tier_rationale": "The Winix Smart app and its account back a real vendor cloud (remote monitoring, app control), but the unit's own manual documents a full physical control panel — Power, Fan Speed, Auto, Sleep, Wi-Fi (a separate opt-in button), and Filter Reset — and states Auto mode is driven by the unit's own internal Smart Sensor, not the app or cloud. Core function (filtering air, automatically responding to detected air quality) works fully with no Wi-Fi ever configured, so this is D2.",
+  "the_unplug_test": "Never touch the Wi-Fi button and this air purifier works exactly as designed: press Power, cycle Fan Speed through Auto/Low/Medium/High/Turbo/Sleep, and Auto mode adjusts itself using the unit's own built-in Smart Sensor reading gas/odor levels in the room — none of that touches a network. What you lose without the app is remote monitoring of air quality from outside the house, remote control, and filter-life tracking pushed to your phone. The purifier does not need an account to purify air; it needs one only if you want to check on it from your phone.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "remote air-quality monitoring and control from the Winix Smart app",
+    "filter-life tracking pushed to a phone",
+    "any voice-assistant integration tied to the app"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$130-190",
+  "price_observed": "2026-09-05",
+  "where_to_buy": [
+    {
+      "name": "Amazon",
+      "url": "https://www.amazon.com/Winix-Cleaner-PlasmaWave-Technology-C545/dp/B084GKPZ4V"
+    },
+    {
+      "name": "Target",
+      "url": "https://www.target.com/p/winix-c545-4-stage-true-hepa-air-purifier-with-wifi-and-plasma-wave-technology/-/A-94577174"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://manuals.plus/winix/c545-true-hepa-4-stage-air-purifier-with-wi-fi-and-additional-filter-manual",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Mirrors the manufacturer's own C545 user manual (Winix's own PDF at winixamerica.com returns 403 to automated fetches, so this mirror carries the same text). Documents the full physical control panel — Power, Fan Speed/Auto/Sleep, Wi-Fi pairing button, Filter Reset — and states Auto mode adjusts fan speed based on the unit's own internal Smart Sensor detecting odorous gas, with no mention of needing the app or an account for that."
+    },
+    {
+      "url": "https://www.amazon.com/Winix-Cleaner-PlasmaWave-Technology-C545/dp/B084GKPZ4V",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Current US retail listing confirming the C545 is in stock and purchasable, used for availability."
+    },
+    {
+      "url": "https://www.target.com/p/winix-c545-4-stage-true-hepa-air-purifier-with-wifi-and-plasma-wave-technology/-/A-94577174",
+      "class": "B",
+      "accessed": "2026-09-05",
+      "supports": "Second current US retail listing corroborating in-stock availability and price range."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "Whether the Winix Smart app itself mandates account registration could not be confirmed — winixamerica.com returns 403 to automated fetches on both the product page and the Wi-Fi setup page. account_required is app_only, which is the house value for a device that works with no account and an app that may want one; the residual uncertainty is about the app, not the purifier, whose entire control panel is physical.",
+    "No FCC ID was found for the C545 specifically (a Winix grant for a different model, WINIX-QS, was found under a similar filing pattern, suggesting Winix does file per-model, but the C545's own ID was not located within budget).",
+    "phones_home and firmware_ota_forced are unknown — no source describes what the Wi-Fi module reports to Winix's cloud or whether firmware updates can be declined."
+  ],
+  "conflicts_with": null,
+  "notes": "Fills the empty climate/air purifier subcategory. Seeded as a possible D3/liberation candidate because of a documented ESP32 UART-bridge project (mill1000/esphome-winix-c545, requiring ESPHome 2026.7+, actively maintained) that intercepts the OEM Wi-Fi module's serial link — but the manual shows the vendor cloud was never load-bearing for core function to begin with, so the device is D2 on its own, and the ESPHome bridge is recorded as a local_replacement path rather than a liberation path.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "Published at D2. Physical control panel and internal air-quality sensor provide full core function with no Wi-Fi ever configured.",
+      "kind": "listed",
+      "source": "https://manuals.plus/winix/c545-true-hepa-4-stage-air-purifier-with-wi-fi-and-additional-filter-manual"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 6,
+    "failed_fetches": 4
+  },
+  "local_replacement": "partial",
+  "local_replacement_note": "mill1000/esphome-winix-c545 (actively maintained, requires ESPHome 2026.7+) adds an external ESP32 that taps the control board's UART to expose fan speed, mode, and sensor readings to Home Assistant locally, optionally disabling the OEM Wi-Fi module by grounding its reset pin. This replaces the app/cloud monitoring feature, not core function, which never depended on the cloud."
+}

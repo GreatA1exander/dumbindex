@@ -150,6 +150,23 @@ Every factual field carries a source. Sources are graded:
   derived from vendor copy.
 - Every source is stored with `url`, `class`, `accessed` (ISO date), and a one-line
   `supports` note saying which claim it backs.
+- **A page you did not successfully open is not a source.** If the fetch failed — 403,
+  timeout, dead host, broken TLS — the URL does not go in `sources`, whatever you believe
+  it says. Write the open question instead: name the URL, say it could not be retrieved,
+  and say what it would settle. Then reach the claim another way or drop it.
+
+  This rule is here because the catalog published a violation of it and did not notice
+  for three days. `apc-smart-ups-smt1500c` carried a Class A citation to a SmartConnect
+  support page with a detailed `supports` line — a lapsed plan costs event notifications,
+  remote diagnostics and remote firmware upgrades — while the *same record's*
+  `open_questions` admitted the page "could not be reached from here". The one archived
+  capture of that URL turned out to be a page titled "Select your warranty" containing
+  none of it. Nothing was invented maliciously: the agent knew what such a page usually
+  says and wrote it down. That is precisely the failure, and `accessed` being a date the
+  page was never accessed on is what makes it worse than a missing source.
+
+  The tell to look for in review: a `supports` note more specific than anything the
+  record's own `open_questions` says was actually confirmed.
 
 ---
 

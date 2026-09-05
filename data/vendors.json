@@ -8,35 +8,6 @@
     "_note_on_misrepresentation": "Loss of function is the primary axis, but it is not the only one that matters to this catalog. A vendor caught misrepresenting whether its device operates locally has attacked the exact claim this site exists to check, and scores here on the same scale — a device that was never doing what the box said is not meaningfully different, to a reader, from one that stopped."
   },
   "vendors": {
-    "hp": {
-      "name": "HP Inc.",
-      "vendor_risk": 3,
-      "summary": "Repeatedly shipped firmware that disabled third-party cartridges on printers customers already owned, across multiple jurisdictions and more than a decade. Settled repeatedly without admitting wrongdoing.",
-      "incidents": [
-        {
-          "date": "2020-11",
-          "type": "forced_firmware_removed_function",
-          "description": "A firmware update enabled Dynamic Security on some already-sold printer models, blocking non-HP cartridges. Customers were not notified the update would impede function and had no way to opt out.",
-          "source": "https://www.theregister.com/2025/03/19/hp_printer_lawsuit_settled/",
-          "class": "B"
-        },
-        {
-          "date": "2025-03",
-          "type": "settlement",
-          "description": "Class action settled with court approval. No customer payout and no admission of wrongdoing; owners of 21 named models gained the option to decline Dynamic Security firmware, and to downgrade firmware on those models only.",
-          "source": "https://www.techspot.com/news/107266-hp-settles-lawsuit-over-ink-blocking-printer-update.html",
-          "class": "B"
-        },
-        {
-          "date": "2018-2022",
-          "type": "prior_settlements",
-          "description": "Earlier Dynamic Security settlements: $1.5M in California (2018), AUD$50 per affected customer in Australia (2018), EUR10M in Italy (2020), $1.35M in Europe (2022).",
-          "source": "https://milberg.com/news/hp-printer-ink-monopoly/",
-          "class": "B"
-        }
-      ],
-      "verdict": "Assume any networked HP printer may lose third-party cartridge support via an update you cannot decline. Only models explicitly covered by the 2025 settlement have a documented opt-out."
-    },
     "brother": {
       "name": "Brother Industries",
       "vendor_risk": 1,
@@ -58,13 +29,6 @@
         }
       ],
       "verdict": "Prefer Brother models with no network interface, where the dispute is structurally moot — the printer cannot fetch an update on its own. On networked Brother models, decline firmware updates unless you need a specific fix."
-    },
-    "viofo": {
-      "name": "VIOFO",
-      "vendor_risk": 0,
-      "summary": "No incident found. Operates no cloud service for its dashcams at all, sells radio-free and radio-equipped models side by side, and distributes firmware as SD-card files rather than over the air.",
-      "incidents": [],
-      "verdict": "Structurally low risk: with no cloud and no OTA channel, there is no mechanism by which a shipped VIOFO camera could be changed after purchase."
     },
     "chamberlain": {
       "name": "Chamberlain Group (myQ, LiftMaster)",
@@ -124,6 +88,35 @@
       ],
       "verdict": "Treat any eufy local-storage claim as unverified until confirmed by packet capture rather than by the vendor's own description. The hardware may be fine; the vendor's account of it has been wrong before on precisely this point."
     },
+    "hp": {
+      "name": "HP Inc.",
+      "vendor_risk": 3,
+      "summary": "Repeatedly shipped firmware that disabled third-party cartridges on printers customers already owned, across multiple jurisdictions and more than a decade. Settled repeatedly without admitting wrongdoing.",
+      "incidents": [
+        {
+          "date": "2020-11",
+          "type": "forced_firmware_removed_function",
+          "description": "A firmware update enabled Dynamic Security on some already-sold printer models, blocking non-HP cartridges. Customers were not notified the update would impede function and had no way to opt out.",
+          "source": "https://www.theregister.com/2025/03/19/hp_printer_lawsuit_settled/",
+          "class": "B"
+        },
+        {
+          "date": "2025-03",
+          "type": "settlement",
+          "description": "Class action settled with court approval. No customer payout and no admission of wrongdoing; owners of 21 named models gained the option to decline Dynamic Security firmware, and to downgrade firmware on those models only.",
+          "source": "https://www.techspot.com/news/107266-hp-settles-lawsuit-over-ink-blocking-printer-update.html",
+          "class": "B"
+        },
+        {
+          "date": "2018-2022",
+          "type": "prior_settlements",
+          "description": "Earlier Dynamic Security settlements: $1.5M in California (2018), AUD$50 per affected customer in Australia (2018), EUR10M in Italy (2020), $1.35M in Europe (2022).",
+          "source": "https://milberg.com/news/hp-printer-ink-monopoly/",
+          "class": "B"
+        }
+      ],
+      "verdict": "Assume any networked HP printer may lose third-party cartridge support via an update you cannot decline. Only models explicitly covered by the 2025 settlement have a documented opt-out."
+    },
     "ring": {
       "name": "Ring (Amazon)",
       "vendor_risk": 2,
@@ -145,6 +138,42 @@
         }
       ],
       "verdict": "Assume any Ring feature that is free today may require a subscription later, on hardware you already own. The March 2024 change did not grandfather camera and doorbell owners."
+    },
+    "sonos": {
+      "name": "Sonos",
+      "vendor_risk": 3,
+      "summary": "Twice removed function from speakers already in customers' homes, five years apart, and in between split its own installed base into supported and legacy halves. Scored alongside Chamberlain rather than Ring because this is a repeated pattern across separate mechanisms — a deliberate bricking feature, an end-of-support split, and a software rewrite — not one recurring commercial decision.",
+      "incidents": [
+        {
+          "date": "2019-12",
+          "type": "vendor_bricked_working_hardware",
+          "description": "The Trade Up programme's 'Recycle Mode' permanently deactivated working speakers in exchange for 30% off a new one: confirming it in the app started a 21-day countdown after which the unit was bricked with no way to recover it, and recyclers could not resell or reuse the hardware. Eligible units included the Connect, Connect:Amp, ZP80/90/100/120 and Play:5 (Gen 1). Opt-in rather than forced — which is the honest qualification — but it destroyed functioning hardware by design. Withdrawn in March 2020 after sustained criticism; the discount now validates a serial number instead, and units already set to recycle could not be reversed.",
+          "source": "https://www.theregister.com/2020/03/06/sonos_ends_recycle_mode/",
+          "class": "B"
+        },
+        {
+          "date": "2020-01",
+          "type": "end_of_support_split",
+          "description": "Announced that a set of 'legacy' products would stop receiving software updates and new features from May 2020. The units kept playing, so this is the weakest of the three on the loss-of-function axis — but it partitioned existing systems, because a legacy device sharing a household system constrained what the rest of that system could do.",
+          "source": "https://www.engadget.com/2020-01-21-sonos-legacy-products-software-updates-ending.html",
+          "class": "B"
+        },
+        {
+          "date": "2024-05",
+          "type": "forced_software_removed_function",
+          "description": "The 7 May app rewrite shipped without features that worked on already-sold speakers the day before: alarms and sleep timers, local music library search and management, playlist editing, SonosNet Wi-Fi settings, and much of the accessibility support blind users relied on. The old app could not be kept. The CEO apologised, put the fixes on a public Trello board, and estimated $20-30M to repair; annual revenue fell 4% and he left the company in January 2025.",
+          "source": "https://www.theregister.com/2024/05/20/sonos_app_update_borks_users/",
+          "class": "B"
+        }
+      ],
+      "verdict": "The speakers are well made and the hardware is not the problem — the control layer is, and Sonos owns it entirely. There is no local-only mode: setup requires a Sonos account, so every unit is bound to a company that has twice decided what your existing hardware would stop doing. Buy it for what it does today, not for what it will still do in ten years, and prefer a bar that speaks HDMI-ARC or optical if longevity matters more than multi-room."
+    },
+    "viofo": {
+      "name": "VIOFO",
+      "vendor_risk": 0,
+      "summary": "No incident found. Operates no cloud service for its dashcams at all, sells radio-free and radio-equipped models side by side, and distributes firmware as SD-card files rather than over the air.",
+      "incidents": [],
+      "verdict": "Structurally low risk: with no cloud and no OTA channel, there is no mechanism by which a shipped VIOFO camera could be changed after purchase."
     },
     "withings": {
       "name": "Withings",

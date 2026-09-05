@@ -1,0 +1,101 @@
+{
+  "model_id": "ge-dishwashers-non-connected",
+  "record_type": "family",
+  "make": "GE Appliances",
+  "model": "Dishwashers without WiFi Connect",
+  "category": "kitchen",
+  "subcategory": "dishwasher",
+  "tier": "D0",
+  "tier_rationale": "GE publishes the same identification procedure it uses for ranges, applied here to dishwashers: check the model's Specs & Details tab for 'WiFi Connect' or 'Smart' in the description. GE also sells WiFi as an add-on ConnectPlus module (PBX10W00Y0, since superseded by PBX23W00Y1) for its 'Optional WiFi' dishwasher line, confirming connectivity is treated as a separable accessory on those models rather than latent hardware fitted to every unit. The D0 claim here is scoped to models listing no connectivity at all; GE's 'Optional WiFi' dishwasher line is excluded, because whether those hold a dormant radio before the Connect+ module is fitted is unresolved and would change the tier for them.",
+  "identify": "Search the model number on geappliances.com, open the Specs & Details tab, and look for 'WiFi Connect' or 'Smart' in the feature list or description, per GE's own support article 'Does My Appliance Have WiFi Capability?' (which applies to GE appliances generally, not only the ranges it uses as its example). If neither appears, GE states the model is not connectable. Two corroborating facts make this reliable: GE documents 'Built-In WiFi' and 'Optional WiFi' as two named tiers, and for the optional tier it sells a separate Connect+ WiFi module (PBX10W00Y0 / PBX23W00Y1) that plugs into an RJ45 port behind the toe-kick — connectivity is explicitly a fitted accessory on those models, not something present by default. Caution: GE's own product pages display a generic 'Built-in Wifi, Powered by SmartHQ' promotional section site-wide, on pages for models that do not have WiFi in their own Specs & Details tab — that section is marketing boilerplate for the SmartHQ ecosystem, not a per-model claim, and should be ignored in favor of the Specs & Details tab itself. SCOPE, and read this before using the procedure: this record covers GE models whose Specs & Details tab lists NO connectivity at all. It deliberately does NOT cover the 'Optional WiFi' line — the models GE sells with a socket for its separately-purchased Connect+ module. Whether those carry a dormant radio on the control board that the module activates, or whether the module is the only radio hardware, is not established: GE's own Connect+ product page does not say, and no FCC grant for the module was located. Until that is answered an Optional WiFi model cannot be called D0, so treat 'no WiFi Connect in the spec tab' as necessary but not sufficient — also confirm the model is not sold with an Optional WiFi socket.",
+  "known_dumb_models": [],
+  "the_unplug_test": "A GE dishwasher whose Specs & Details tab lists no 'WiFi Connect' or 'Smart' feature has no radio to switch off. You press a button, it washes. Nothing in it is waiting for an account, and GE cannot push it a firmware update, because there is no communications hardware in the unit to receive one.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": false,
+  "liberation": null,
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Major-appliance parts channel; racks, spray arms, control boards and door latches are stocked for years after a model is discontinued."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "GE Appliances — model lookup",
+      "url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=34255"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=34255",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "GE's own support article 'Does My Appliance Have WiFi Capability?' instructs owners to check the Specs & Details tab for 'WiFi Connect' or 'Smart', and states the guidance applies to GE appliance models generally, not to a single product category.",
+      "archive_url": null
+    },
+    {
+      "url": "https://www.geappliances.com/appliance/ConnectPlus-PBX10W00Y0",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "GE's own product page for the Connect+ WiFi module (PBX10W00Y0, superseded by PBX23W00Y1), described as sold separately and required to connect an 'Optional WiFi' appliance including dishwashers to home WiFi, confirming connectivity is an add-on on that line rather than always-present hardware.",
+      "archive_url": null
+    },
+    {
+      "url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=38303",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "GE support article 'Dishwasher - Set Up Optional WiFi with Connect Module' states a Connect Module (sold separately) is required to connect the dishwasher to home WiFi on the Optional WiFi line, naming the PBX23W00Y0 module by number.",
+      "archive_url": null
+    }
+  ],
+  "open_questions": [
+    "Populate known_dumb_models with a handful of currently-sold GDF/GDT models verified against the procedure. Several candidates checked during this pass (GDF511PSRSS, GDF620HMJES, GDF670SYVFS) turned out to be discontinued or out of stock at the time of check, despite lacking WiFi Connect in their Specs & Details tab, so none is listed here as a live example.",
+    "Confirm whether a dishwasher on the 'Optional WiFi' line contains a dormant WiFi radio on its main control board that the Connect+ module merely activates over the RJ45 link, or whether the module itself is the only radio hardware. If the former, this record should not describe those specific models as having 'no radio' even before the module is fitted.",
+    "The generic 'Built-in Wifi, Powered by SmartHQ' banner appearing on GE product pages regardless of the specific model's actual connectivity is a documentation quality problem on GE's own site, not just a research obstacle for this catalog — worth flagging if it causes a wrong tier elsewhere.",
+    "Where the radio lives on GE's 'Optional WiFi' dishwasher line — on the control board, activated by the Connect+ module, or inside the module itself. GE's Connect+ product page (PBX10W00Y0/PBX23W00Y1) does not say, and no FCC grant for the module was located on fccid.io. This record is scoped to exclude that line rather than guess, so the answer would EXTEND this record rather than correct it. Resolving it needs the module's FCC filing or a teardown photo of an Optional WiFi control board."
+  ],
+  "conflicts_with": null,
+  "notes": "Reuses the identification method already published in ge-ranges-non-connected, extended to dishwashers with a dishwasher-specific corroborating fact (the Connect+ module for the Optional WiFi line, PBX10W00Y0/PBX23W00Y1, distinct from the range's PBX23W00Y0 module). Every specific current model checked in this pass (GDF511PSRSS, GDF620HMJES, GDF670SYVFS, GDF630PSMSS) was either discontinued, out of stock, or returned a 404 on GE's own site by the time of verification — GE's built-in dishwasher lineup churns SKUs fast even by this domain's standard, which is exactly the condition PRINCIPLES §5b describes as calling for a family record rather than a device record.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "First published at D0 as a family record.",
+      "kind": "listed",
+      "source": null
+    },
+    {
+      "date": "2026-09-05",
+      "change": "Scoped the D0 claim to models listing no connectivity at all, explicitly excluding the 'Optional WiFi' line. The record previously asserted D0 while its own open questions asked whether those models carry a dormant radio — the tier is now narrower than the doubt instead of wider than it.",
+      "source": null,
+      "kind": "correction"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 24,
+    "failed_fetches": 6
+  }
+}

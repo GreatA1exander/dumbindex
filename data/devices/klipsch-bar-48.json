@@ -1,0 +1,97 @@
+{
+  "model_id": "klipsch-bar-48",
+  "make": "Klipsch",
+  "model": "Bar 48",
+  "category": "av",
+  "subcategory": "soundbar",
+  "tier": "D1",
+  "tier_rationale": "The Bar 48 has two radios — a Bluetooth link for streaming audio from a phone, and a proprietary 2.4GHz point-to-point link (FCC ID 2ATKO-BAR48, a separate 'low power communication device transmitter' grant alongside the Bluetooth spread-spectrum grant) that pairs the bar to its own wireless subwoofer and optional wireless surrounds — and no Wi-Fi grant of any kind. The full 28-page owner's manual documents setup, pairing, EQ modes, TV-remote programming and firmware updates end to end with no app, no account and no network step anywhere in it. Klipsch's own companion app (Klipsch Connect) is documented by Klipsch support as compatible only with the Cinema 600/700/800/1200 series; the Bar 48 is not on that list and has no app of its own. Firmware is updated by downloading a .bin file from klipsch.com/firmware to a computer, copying it to a FAT32 USB drive, and loading it into the bar's own USB port — a user-pulled, offline process, not a vendor push. Every documented path in and out of this device terminates at hardware the owner holds (a phone over Bluetooth, a USB drive, an IR remote); none of it touches a Klipsch server.",
+  "status": "verified",
+  "rejection_reason": null,
+  "the_unplug_test": "There is no router to unplug. This sound bar has no Wi-Fi and no app; it takes HDMI-ARC or optical audio from the TV, streams from a phone over Bluetooth, and talks to its own wireless subwoofer over a separate proprietary 2.4GHz link. Turn the router off and every one of those keeps working, because none of them ever went through it. The only thing you cannot do without a computer and a USB drive is push new firmware, and nothing pushes it to you.",
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "ble",
+    "ir"
+  ],
+  "phones_home": "none",
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null,
+  "radios": [
+    "ble",
+    "proprietary_24ghz"
+  ],
+  "fcc_id": "2ATKO-BAR48",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "limited",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Klipsch (manufacturer)",
+      "url": "https://www.klipsch.com/products/bar-48-soundbar"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://assets.klipsch.com/product-manuals/Bar-48_Manual_v07.pdf",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Full owner's manual: all connections (HDMI-ARC, digital optical, 3.5mm analog), remote control layout, Bluetooth pairing procedure, TV-remote programming, factory reset and FCC/IC compliance pages. No app, account, Wi-Fi, or network setup step appears anywhere in the 28 pages. The compliance page lists per-SKU radio tables; the Bar 48's own FCC-ID label (see fccid.io source below) confirms which apply to this model."
+    },
+    {
+      "url": "https://fccid.io/2ATKO-BAR48",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "FCC grant for the Bar 48 (grantee Soundlab Technology Co. Ltd, granted 2019-11-05) covers a Bluetooth spread-spectrum transmitter and a separate low-power 2.4GHz point-to-point transmitter used for the wireless subwoofer/surround link. No Wi-Fi (802.11) grant exists for this model."
+    },
+    {
+      "url": "https://support.klipsch.com/hc/en-us/articles/360043401632-Bar-48-Firmware-V30-V83a-Update-Instructions",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Klipsch's own support article: firmware is applied by downloading a file to a computer, copying it to a USB flash drive, and loading it into the sound bar's rear USB port — a manual, user-initiated process with no cloud or app step."
+    },
+    {
+      "url": "https://support.klipsch.com/hc/en-us/articles/360051711251-Cinema-800-Connecting-to-Klipsch-Connect-App",
+      "class": "A",
+      "accessed": "2026-09-05",
+      "supports": "Klipsch's own support documentation lists the Klipsch Connect companion app as compatible with the Cinema 600/700/800/1200 soundbar series; the Bar 48 is absent from every Klipsch Connect compatibility article, corroborating that it has no companion app or associated cloud account."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "Bar 48 does not appear on Klipsch's current sound-bars category page (which now shows only the Flexus line) — it may be a holdover SKU being sold through remaining stock rather than an actively restocked product. Availability is set to 'limited' rather than 'in_stock' on that basis; a reader should confirm current stock before buying.",
+    "Price not confirmed this run — left null rather than spend search budget on it, per project policy.",
+    "Did not independently verify the Surround 3 wireless-surround accessory's radio against a separate FCC grant; treated it as covered by the same proprietary 2.4GHz link named on the Bar 48's own compliance page."
+  ],
+  "conflicts_with": null,
+  "notes": "Cross-references klipsch-r-50m (a passive D0 bookshelf speaker from the same brand) and sonos-* soundbar records from this wave: same domain, opposite answers on whether a vendor account is required. Klipsch's newer Flexus soundbar line, which has replaced Bar 48 in the current lineup, uses Onkyo's Play-Fi platform and should be checked separately — the Play-Fi boilerplate that appears on the Bar 48 manual's shared compliance page belongs to that family, not this model.",
+  "first_published": "2026-09-05",
+  "last_verified": "2026-09-05",
+  "changelog": [
+    {
+      "date": "2026-09-05",
+      "change": "First published at D1.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-05-discover-wave8",
+    "searches": 7,
+    "failed_fetches": 3
+  }
+}

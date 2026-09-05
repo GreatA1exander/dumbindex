@@ -150,6 +150,28 @@ for (const f of files) {
   if (d.tier === "D3" && !d.liberation?.guide_url) E(`D3 requires liberation.guide_url`);
   // Unknowns are fine; silent unknowns are not.
   if (d.status === "insufficient_evidence" && !(d.open_questions?.length)) E(`insufficient_evidence with no open_questions`);
+
+  // The catalog's most common defect, by a distance: a record asserts a tier while its
+  // own open_questions concede the deciding fact is unconfirmed. Most of that is a
+  // judgement call no script can make — but its loudest form is not. When an open
+  // question names a DIFFERENT tier as where the record should go, the record has
+  // already admitted it does not believe its own verdict, and "verified" is the wrong
+  // status. Narrow on purpose: "would bear on the tier" or "worth revisiting" stay legal,
+  // because honest hedging is the behaviour we want, not the behaviour we are policing.
+  //
+  // Found when ge-ranges-non-connected — published since Phase 0 at D0 while asking "if
+  // the socket implies latent hardware, this record should move to D2 and say so" — was
+  // handed to a wave-8 agent as a template and the defect was faithfully copied into
+  // ge-dishwashers-non-connected. Published records become templates; this is the check
+  // that stops one bad one propagating.
+  if (d.status === "verified") {
+    const names = /should\s+(?:move\s+to|be\s+(?:filed|recorded|reclassified|scored)\s+(?:as|at)\s*)\s*(D0|D1|D2|D3|REJECT)\b/i;
+    for (const q of d.open_questions ?? []) {
+      const m = q.match(names);
+      if (m && m[1].toUpperCase() !== String(d.tier).toUpperCase())
+        E(`verified at ${d.tier}, but an open question says it should be ${m[1].toUpperCase()} — a record that names its own replacement tier is not verified. Resolve the fact, narrow the claim to what the evidence supports, or set status insufficient_evidence`);
+    }
+  }
   if (d.tier === "REJECT" && !d.rejection_reason) E(`REJECT with no rejection_reason`);
 
   // A rejection with nowhere to go wastes the reader's trip. If no alternative exists

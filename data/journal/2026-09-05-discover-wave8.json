@@ -1,0 +1,82 @@
+{
+  "run_id": "2026-09-05-discover-wave8",
+  "job": "discover",
+  "prompt_version": "tier-quota-v1 + seeded-candidates",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "Launch-gate density in the high-traffic domains, plus the first wave ever briefed to hunt D3. Three agents: kitchen (8 records, all D0), av (9 records, all D0), and a D3 hunt confined to climate/security/computing so a find would count twice.",
+
+  "outcome": "All three completed; third consecutive wave with no agent killed. 13 records, 11 of them above D0 — the best ratio the project has run. D3 went from 1 record to 3.",
+  "devices_added": 13,
+  "domains": {"av": 5, "kitchen": 4, "climate": 2, "security": 1, "lighting": 1},
+  "tier_split": {"D0": 2, "D1": 3, "D2": 5, "D3": 2, "REJECT": 1},
+
+  "catalog_after": {
+    "published": 131,
+    "tiers": {"D0": 78, "D1": 15, "D2": 35, "D3": 3},
+    "high_traffic_density": {"kitchen": 12, "av": 13, "computing": 10, "climate": 10, "security": 9}
+  },
+
+  "findings": [
+    "The D3 hunt worked, and the reason it worked is reusable: brief the agent at the INDEX rather than the device. Zigbee2MQTT and ESPHome both publish per-model pages keyed to exact model numbers and maintained continuously, which is precisely the 'cited, maintained guide for that exact model' the D3 bar demands. Told to start there, one agent tripled the tier in a single run. Every previous wave had been left to stumble into D3 and none ever did.",
+    "The two most D0-skewed domains are no longer skewed. av went from 9 records all D0 to 13 with four above; kitchen from 8 all D0 to 12 with three above. In both cases the contested records existed all along and nobody had gone looking, because a domain that reads as 'solved' stops attracting seeds.",
+    "The seeded Bosch dishwasher pair does not exist, and that is the most interesting negative result of the wave. Every current Bosch dishwasher ships Home Connect as standard; the only models without it are marked no-longer-available on Bosch's own site. The dumb dishwasher is disappearing from a vendor that was, until recently, the obvious answer. Worth the site saying out loud rather than filing as a failed seed.",
+    "Near-misses from the D3 hunt are worth as much as the hits, because nobody had mapped how hard D3 is to source. Two candidates (MOES BHT-002-GBLW thermostat, Winix C545 purifier) failed the bar in the same way and it was not the way anyone expected: they were not cloud-dependent as sold. Both have active hobbyist liberation projects, and the agent had inferred cloud dependency from that activity — but each manufacturer's own manual documents full local operation from the physical controls. An ESPHome project existing says someone wanted better integration, not that the vendor held the device hostage. Both were filed D2 in climate, which is what the brief asked for on a failed D3.",
+    "TP-Link Deco S4 was dropped for a reason that inverts the usual trap. OpenWrt genuinely supports 'Deco S4 v2' with a device-tree file touched as recently as 2026-05, but v3 ships a different unsupported SoC, and which revision current retail stock contains could not be established. The usual failure is a guide for the family being cited for a model; this was a guide for one hardware revision that the model name does not guarantee you receive."
+  ],
+
+  "system_gaps_found": [
+    {
+      "gap": "A defective published record was handed to an agent as a style example and the defect was faithfully copied into a new record. ge-ranges-non-connected has claimed D0 since Phase 0 while its own open_questions asked whether GE's 'Optional WiFi' line carries a dormant radio the add-on module merely activates — and said outright that if it does, 'this record should move to D2'. The wave-8 kitchen brief cited that record for tone. The new ge-dishwashers-non-connected came back with the same empty known_dumb_models and the same tier-undercutting question.",
+      "fix": "Three parts. (1) Both records narrowed to the claim the evidence supports: D0 scoped to GE models listing no connectivity at all, with the Optional WiFi line explicitly out of scope, and the dormant-radio question reframed as the reason for the scope limit rather than a doubt about the tier. GE's own Connect+ product page does not say where the radio lives and no FCC grant for the module was located, so the question stays open — it now extends the record rather than contradicting it. (2) validate.mjs fails any record that is `verified` while an open question names a DIFFERENT tier as where it should go. Deliberately narrow: 'would bear on the tier' and 'worth revisiting' stay legal, because honest hedging is the behaviour we want. Verified by reinstating the original ge-ranges wording and watching it fail. (3) CLAUDE.md now says naming an example record in a brief is a claim that the record is good — check it before you cite it."
+    },
+    {
+      "gap": "A published record carried a Class A citation whose `supports` line described a page nobody had opened. apc-smart-ups-smt1500c cited smartconnect-support.apc.com for a detailed claim about lapsed-plan feature loss, with an `accessed` date, while the same record's open_questions admitted the page 'could not be reached from here'. Wave 7's archive-sources.mjs then attached a Wayback snapshot and the wave-7 handoff recorded the blocker as lifted. Reading that snapshot this run: it is a page titled 'Select your warranty' containing none of it.",
+      "fix": "Citation withdrawn (tier unchanged at D2, which never rested on it; 2 Class A and 1 Class B remain, above the bar). PRINCIPLES §2 gains 'A page you did not successfully open is not a source', with this case written up and the review tell named: a `supports` note more specific than anything the record's own open_questions say was confirmed. VERIFIER step 1 gains the same rule at the point the fetch fails. archive-sources.mjs now prints a warning after attaching snapshots — a capture of a URL is not a capture of the content that was cited, and an archive_url makes a dead link checkable, not correct. This is the one defect that cannot be caught by reading a record, because it looks exactly like a good citation."
+    },
+    {
+      "gap": "A D3 record was keyed to a churning Amazon brand. The Tuya SOS button was filed as make 'Clouree' with an ASIN for a model number, while the agent's own open question documented the identical hardware selling as RSH-SOS05 and Woox R7054. A record named after whichever importer holds the listing this month dies when the listing rotates.",
+      "fix": "Re-keyed to tuya-ts0215a-sos-button — the Zigbee fingerprint, which is stable, is what a coordinator reports on pairing, and is what the Zigbee2MQTT liberation guide is written against. The rebrands are named in notes, and the retail listing is carried as one current example rather than as the identity. This is a shape the catalog will meet again: white-label Zigbee hardware is easy to source at fingerprint level and nearly impossible at SKU level, which is exactly the class the D3 vein runs through."
+    },
+    {
+      "gap": "The radios enum documented every exotic value and said nothing about `ble`, its most-used one (39 records). Three agents across two waves have now written 'Bluetooth classic' in a source line while tagging `ble`, each silently deciding the same thing.",
+      "fix": "Documented in the schema rather than split into a new value: `ble` means Bluetooth of any flavour, and the distinction is deliberately not modelled because a device whose only radio is Bluetooth cannot reach its maker under either profile. Adding `bluetooth_classic` would mean re-auditing 39 records for no reader-facing gain."
+    },
+    {
+      "gap": "winix-c545 was filed D2 with account_required 'unknown', which contradicts the tier — D2 requires setup to complete with no account.",
+      "fix": "Set to app_only, the house value used by three other records this wave for the identical shape (device works with no account, app may want one). The agent's residual uncertainty was about the app, which is what app_only already encodes."
+    }
+  ],
+
+  "ledger_changes": [
+    {
+      "vendor": "sonos",
+      "score": 3,
+      "why": "Added on the strength of three dated, independently reported incidents surfaced by the av agent and sourced by the orchestrator: the 2019 Recycle Mode that permanently bricked working speakers traded in for a discount (withdrawn March 2020), the 2020 legacy end-of-support split, and the May 2024 app rewrite that shipped without alarms, sleep timers, local library management, SonosNet controls and much of its accessibility support — features that had worked on those speakers the day before. Scored 3 alongside Chamberlain rather than 2 alongside Ring because it is a repeated pattern across separate mechanisms, not one recurring commercial decision. sonos-ray's vendor_risk raised 0 -> 3; its tier is untouched, because REJECT rests on the account being mandatory at setup, which is a fact about the device."
+    }
+  ],
+
+  "honest_limitations": [
+    "Security is one record short of 10 and is now the only high-traffic domain below target. The D3 hunt was supposed to help and produced exactly one security record. Empty subcategories remain: door lock, intercom, indoor camera, alarm panel, motion sensor, glass break sensor, gate opener.",
+    "The Anova ledger candidate is unscored and unsourced. The kitchen agent reported an August 2024 subscription for app remote control (new accounts only, existing grandfathered) and a simultaneous plan to end cloud support for first-generation Precision Cookers, reversed in January 2025 after backlash. That shape is scale 1 territory — a real threat to already-sold hardware that did not materialise — but the orchestrator did not source it independently this run, and an unsourced ledger entry is exactly what the ledger forbids.",
+    "The APC claim remains unresolved rather than disproven. The page that would settle it is the help centre's 'Subscription Overview', which the archived warranty page links to; archive.org rate-limits that help centre hard enough that a crawl of 60 pages returned 20, none of them the right one.",
+    "Ten of thirteen deciding facts were not independently re-derived. Three were: the Sonos account-at-setup gate (confirmed verbatim from Sonos's own support page), the GE dormant-radio question (could not be resolved, which is why both records were narrowed), and the APC citation (which is how that defect surfaced). Two of the three found something, consistent with wave 7.",
+    "sonoff-basicr4 landed in lighting rather than one of the three domains the D3 brief named. It was on the brief's own seed list as owed backlog work, and the agent flagged the conflict rather than hiding it, but it means the D3 hunt contributed one record to the density rows instead of two."
+  ],
+
+  "sources_that_worked": [
+    {"domain": "zigbee2mqtt.io and devices.esphome.io", "claims_supported": 5, "note": "Per-model pages keyed to exact fingerprints, with git history available as maintenance evidence. The reason the D3 hunt succeeded."},
+    {"domain": "manufacturer manuals and support portals (support.sonoff.tech, support.sonos.com, bosch-home.com, kantoaudio.com, assets.klipsch.com, assets.denon.com)", "claims_supported": 16, "note": "Setup sections decided almost every tier this wave."},
+    {"domain": "fccid.io", "claims_supported": 6, "note": "Sibling control worked for Epson, Fellow and Bosch; grants confirmed radio inventory for Klipsch and Kanto, which is what let two D1s be filed confidently."}
+  ],
+  "sources_that_failed": [
+    {"domain": "web.archive.org (bulk crawl)", "fetches": 60, "claims_supported": 0, "note": "Rate-limited to roughly a third of requests; the APC help centre could not be walked."},
+    {"domain": "winixamerica.com", "fetches": 2, "claims_supported": 0, "note": "403 to automated fetch on both product and setup pages."},
+    {"domain": "geappliances.com Connect+ module page", "fetches": 1, "claims_supported": 0, "note": "Does not say whether the module contains the radio — the single fact that would settle both GE family records."}
+  ],
+
+  "searches_used": 95,
+  "wall_clock_min": 52,
+  "subagent_failures": [],
+
+  "surprises": "Two, and they point the same way. First, the D3 hole was not hard — it was unbriefed. One agent pointed at the Zigbee2MQTT and ESPHome indexes tripled the tier in a single run, after seven waves in which D3 never came up. The bar was never the problem; nobody had been told where guides that meet it are published. Second, the two D3 candidates that failed did so because they were not cloud-dependent as sold, and the agent had inferred that dependency from the existence of an active hobbyist liberation project. That inference is seductive and backwards: a thriving ESPHome project usually means the device is pleasant to integrate, not that its vendor is holding it hostage. The catalog now has a name for both — where to look, and what looking there will fool you into believing."
+}

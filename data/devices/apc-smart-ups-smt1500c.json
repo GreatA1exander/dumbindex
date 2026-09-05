@@ -59,13 +59,6 @@
       "archive_url": null
     },
     {
-      "url": "https://www.smartconnect-support.apc.com/help/EN/EcoStruxure%20Ready%20Smart-UPS%20Help%20Center/MN03.4.55.html",
-      "class": "A",
-      "accessed": "2026-09-03",
-      "supports": "APC's own SmartConnect support documentation: when a SmartConnect plan lapses (e.g. after the warranty period), the device drops to 'Basic Monitoring' — the dashboard status view still works but event notifications, remote diagnostic tests, and remote firmware upgrades stop. This confirms the cloud tier degrades independently of the UPS's physical function, which is unaffected.",
-      "archive_url": "https://web.archive.org/web/20220906180110/https://smartconnect-support.apc.com/help/en/EcoStruxure%20Ready%20Smart-UPS%20Help%20Center/MN03.4.55.html"
-    },
-    {
       "url": "https://networkupstools.org/ddl/APC/Smart-UPS_1500.html",
       "class": "B",
       "accessed": "2026-09-03",
@@ -74,7 +67,7 @@
     }
   ],
   "open_questions": [
-    "The source cited for SmartConnect's plan-lapse behaviour (smartconnect-support.apc.com) could not be reached from here and has no Wayback snapshot, so that specific claim — that a lapsed plan costs you event notifications, remote diagnostics and remote firmware upgrades you had at purchase — is currently uncheckable by a reader. It does not affect the tier, which rests on three other sources: battery backup, AVR and surge protection are untouched by any subscription. But it is why APC is not in the vendor ledger despite looking like a candidate. Re-source it from a page that resolves, then reconsider.",
+    "Whether a lapsed SmartConnect plan costs event notifications, remote diagnostic tests and remote firmware upgrades that worked at purchase is UNRESOLVED and no longer cited here. A previous pass carried a Class A citation to smartconnect-support.apc.com describing exactly that, written without the page being reachable; the source has been removed. The single Wayback capture of that URL (2022-09-06) is a page titled 'Select your warranty' and says nothing about plan lapse or Basic Monitoring — it does point at a 'Subscription Overview' page, which is where the answer would be, and which could not be retrieved (archive.org rate-limits the surrounding help centre). This does not affect the tier: battery backup, AVR and surge protection are untouched by any subscription. It is why APC is still not in the vendor ledger.",
     "Confirm current retail price band from a live manufacturer or major-retailer listing page; dynamic JavaScript pricing could not be captured during this pass.",
     "Confirm whether the SMT1500C's USB/serial protocol is identical to the older 'Smart-UPS 1500' NUT reports it against, or whether it uses the newer Modbus-based protocol some owners report causing incomplete data (e.g. missing line-voltage readings) with apcupsd — this affects how complete a 'full' NUT-based local replacement really is.",
     "Confirm whether declining a SmartConnect firmware update is possible, and whether any firmware ever pushes automatically without user action.",
@@ -90,6 +83,12 @@
       "change": "First published at D2.",
       "kind": "listed",
       "source": null
+    },
+    {
+      "date": "2026-09-05",
+      "change": "Removed the smartconnect-support.apc.com citation. Its supports line described a lapsed-plan feature loss in detail, but the page was never successfully fetched and the only archived capture of that URL is an unrelated warranty page. Tier unchanged at D2, which never rested on it.",
+      "source": null,
+      "kind": "correction"
     }
   ],
   "agent_meta": {

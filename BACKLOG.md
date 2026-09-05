@@ -14,22 +14,23 @@ validator and golden gate on every change, which does not currently run anywhere
 
 **Launch (announcing it) waits for all of:**
 
-| Gate | 2026-09-04 (after wave 7) | Target | |
+| Gate | 2026-09-05 (after wave 8) | Target | |
 |---|---|---|---|
 | No domain below 5 records | 0 of 14 below | 14 of 14 at 5+ | ✅ |
 | Domains at 8+ | 14 of 14 | 14 of 14 | ✅ |
-| Total published records | 120 | 120-150 | ✅ |
-| High-traffic domains (kitchen, av, security, computing, climate) | 8, 9, 8, 10, 8 | 10-15 each | ❌ |
+| Total published records | 131 | 120-150 | ✅ |
+| High-traffic domains (kitchen, av, security, computing, climate) | 12, 13, **9**, 10, 10 | 10-15 each | ⚠️ |
 | `/downgrades` demonstrates the thesis | historical section only | at least one observed entry | ❌ |
 
-**Three of five rows now pass.** Wave 7 closed the last six short domains (photo, baby-pet,
-health, climate, security, tools) and took the total from 105 to 120, the bottom of the band.
+**Four rows pass and the fifth is one record away.** Wave 8 took kitchen 8→12 and av 9→13 —
+the two domains that had been 100% D0 — and climate 8→10. **Security sits at 9.** One record
+closes the row; `state.json` carries three ranked seeds for it.
 
-What remains is density in the five domains people actually arrive through, and one observed
-downgrade. The density row wants roughly 11 more records concentrated in kitchen, av, security
-and climate — two waves' work. The `/downgrades` row cannot be scheduled the same way: it needs
-a vendor to remove a function from a shipped device and us to catch it, which is what the
-`watch` job exists for and what the ledger candidates in `state.json` are closest to.
+The `/downgrades` row is the one that cannot be scheduled. It needs a vendor to remove function
+from a shipped device and us to *catch* it, rather than record it after the fact. That is what
+the `watch` job exists for, and it has never been run against the catalog. The nearest live
+candidates — Anova, Grizzl-E, Withings — are all in `state.json`. Until `watch` runs, this row
+stays open no matter how many records get added.
 
 Note that the per-domain floor no longer chooses the next wave, so the strict rotation through
 `taxonomy.json` is deliberately suspended until this table is clear. `state.json` records that
@@ -101,11 +102,20 @@ instead of the whole device (Garmin Alpha 200i — clean MURS tracking link, and
 with Wi-Fi, Bluetooth and Garmin Explore), and reading silence as absence (Panasonic S5II —
 a support page that does not mention accounts is not a page saying there are none).
 
-**A remaining hole: D3 is one record out of 120.** It is the tier with the most work behind
-each entry and the one a reader with a soldering iron actually comes for, and no wave has
-ever been briefed to hunt it. The ESPHome, Tasmota, LocalTuya and Zigbee2MQTT device indexes
-list model numbers and are the obvious hunting ground. This is the one job that would
-genuinely need the raised search budget, because the candidates are not known in advance.
+**D3 was one record out of 120. It is now three out of 131, and the method is the finding.**
+*(Wave 8. Was: "a remaining hole".)* Seven waves never produced a D3, and the bar was never
+the reason — nobody had been told where guides that meet it are published. Brief the agent at
+the **index**, not the device: `zigbee2mqtt.io` and `devices.esphome.io` publish per-model
+pages keyed to exact model numbers, maintained continuously, with git history you can cite as
+maintenance evidence. That is precisely "a cited, maintained guide for that exact model".
+OpenWrt's hardware table does the same, keyed to model *and revision*.
+
+The counter-lesson cost wave 8 two candidates and is worth as much: **an active hobbyist
+liberation project does not mean the device is cloud-dependent as sold.** It usually means the
+device is pleasant to integrate. Both the MOES thermostat and the Winix purifier were seeded
+as D3 off thriving ESPHome projects; both manufacturers' own manuals document full local
+operation from the physical controls. They are D2. Confirm the dependency from the manual
+before believing it.
 
 **A single D0 record is still worth writing when its subcategory is empty**, because
 someone searching "dumb light bulb" needs to find one. The problem is the fiftieth, not
