@@ -5,7 +5,7 @@ import { devices, rejected, TIERS, domains, byDomain } from "../lib/data.js";
 
 // The homepage explains the thing. The catalogue lives at /devices/ and behind the
 // domain pages — dumping every record here stopped being readable somewhere around
-// sixty of them, and it is also the page nearest the 60 KB budget.
+// sixty of them, and it was also the heaviest page on the site.
 const recent = [...devices]
   .filter((d) => d.last_verified)
   .sort((a, b) => b.last_verified.localeCompare(a.last_verified))

@@ -35,7 +35,7 @@ All five must pass before anything is committed. CI runs the first four on every
 node scripts/validate.mjs      # schema, enums, evidence bar, cross-field consistency
 node scripts/score-golden.mjs  # 19 hand-verified cases; fails if a trap regresses or <90%
 (cd site && npm run build)
-node scripts/pageweight.mjs    # <60KB/page, no <script>, no third-party assets
+node scripts/pageweight.mjs    # weight per record listed, no <script>, no third-party assets
 node scripts/check-links.mjs   # slow (~3 min); weekly in CI, not on every push
 node scripts/archive-sources.mjs  # fills archive_url from Wayback for sources that 404
 ```

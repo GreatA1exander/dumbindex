@@ -1,10 +1,13 @@
 ---
 import Base from "../../layouts/Base.astro";
 import Tier from "../../components/Tier.astro";
-import { devices, TIERS, domainBySlug, ageDays, slugify, vendorFor } from "../../lib/data.js";
+import { devices, rejected, TIERS, domainBySlug, ageDays, slugify, vendorFor } from "../../lib/data.js";
 
+// Rejections get a page of their own, same as anything else. Until now their reasoning
+// existed only on /rejected/, which forced that page to carry an essay per item and made
+// it the heaviest on the site. A record is a record; the verdict differs, not the format.
 export function getStaticPaths() {
-  return devices.map((d) => ({ params: { id: d.model_id }, props: { d } }));
+  return [...devices, ...rejected].map((d) => ({ params: { id: d.model_id }, props: { d } }));
 }
 const { d } = Astro.props;
 const dom = domainBySlug.get(d.category);
@@ -21,9 +24,23 @@ const fmt = (v) => (v == null ? "unknown" : Array.isArray(v) ? (v.length ? v.joi
   <h1>{d.make} <span class="model">{d.model}</span></h1>
 
   <p class="filters">
-    <Tier tier={d.tier} /> <strong>{TIERS[d.tier]?.name}</strong>
-    <span class="age">— {TIERS[d.tier]?.short}</span>
+    {/* There is no /tier/reject/ page to link to, and REJECT is a verdict rather than a
+        rung on the ladder, so the badge is plain text here. */}
+    <Tier tier={d.tier} link={d.tier !== "REJECT"} />
+    <strong>{d.tier === "REJECT" ? "Rejected" : TIERS[d.tier]?.name}</strong>
+    <span class="age">
+      — {d.tier === "REJECT"
+          ? "requires a vendor cloud or account for core function"
+          : TIERS[d.tier]?.short}
+    </span>
   </p>
+
+  {d.tier === "REJECT" && d.rejection_reason && (
+    <div class="unplug why-rejected">
+      <h2>Why it was rejected</h2>
+      <p>{d.rejection_reason}</p>
+    </div>
+  )}
 
   {d.record_type === "family" && (
     <p class="lede">

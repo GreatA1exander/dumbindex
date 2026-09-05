@@ -43,12 +43,24 @@ Hard rules, enforced in CI:
   because there are no cookies.
 - No JavaScript required to read anything. JS may enhance filtering; the filters must
   also work as plain links with query params.
-- Page weight budget: **< 60 KB** for any page, images included.
+- **A page must earn its weight.** *Amended 2026-09-05; was a flat < 60 KB budget.* The
+  flat cap was the wrong shape. It scored a 60 KB index listing 300 devices — the thing
+  this site exists to be — the same as a 60 KB page carrying ten essays, and a byte count
+  cannot tell those apart. It was also going to be breached by honest growth, and a limit
+  everyone expects to breach is one that gets raised rather than obeyed. The rule now:
+  below 35 KB nothing is questioned; above it a page may spend 1 KB per record it lists;
+  200 KB is the absolute backstop. A long table stays cheap per row, so it passes at any
+  length. A short page of long prose per item does not — which is the failure this is
+  actually guarding against. `scripts/pageweight.mjs` prints the median and the five
+  heaviest pages on every run, because a threshold nobody looks at until it trips is how
+  a site gets heavy one acceptable page at a time.
 - Static HTML, no client-side routing.
 - Works in reader mode, works in Lynx, prints correctly.
 
-Put these in the footer as a promise with the actual measured page weight next to it.
-It is the single most persuasive thing on the site to the audience you are courting.
+Put these in the footer as a promise. It is the single most persuasive thing on the site
+to the audience you are courting. The footer used to quote a byte number; it now says
+"Pages carry records, not decoration", because that is the claim the gate actually
+enforces and a number in static text drifts from the truth the moment the catalog grows.
 
 ## Visual direction: the service manual
 
@@ -98,7 +110,7 @@ putting them at the same level as "Kitchen & Cooking" said the opposite.
 - **Home.** *Amended 2026-09-04.* This used to be the full device table, on the reasoning
   that a reader should be able to scan forty rows immediately. That stopped working
   somewhere past sixty records: the page became a wall, it said nothing about what the
-  site was for, and it was the page closest to the 60 KB budget. Home is now an
+  site was for, and it was the heaviest page on the site. Home is now an
   explanation — what is in the catalog, the four tiers with a line each, then browse by
   type — and the flat table moved to `/devices/`, linked from the nav and from home. The
   rule that survives unchanged is **no cards, no grid, no hero, nothing decorative**: the

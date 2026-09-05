@@ -1,59 +1,70 @@
 ---
 import Base from "../layouts/Base.astro";
 import { rejected, domainBySlug } from "../lib/data.js";
+
+// A one-line verdict derived from structured fields rather than a truncated paragraph.
+// The rejection reasons run from 50 to 233 characters, so clipping them either wastes the
+// column or cuts mid-clause; and these two values ARE the two REJECT triggers in the
+// decision table, so the short form is the real answer, not a summary of it.
+const WHY = {
+  for_core: "subscription or account gates core function",
+  for_setup: "vendor account required to finish setup",
+};
+const why = (d) => WHY[d.account_required] ?? "see the record";
 ---
 <Base title="Rejected" current="rejected"
       description="Popular devices that did not qualify, and exactly why — so a search for them returns an answer rather than silence.">
   <h1>Rejected</h1>
   <p class="lede">
-    These devices were researched to the same standard as everything else and did not
-    qualify. They are listed rather than omitted because people search for them by name,
-    and finding nothing looks the same as not having checked. A rejection here is a
-    specific, sourced claim about what the device requires — not a verdict on whether it
-    is any good at its job.
+    These {rejected.length} devices were researched to the same standard as everything else
+    and did not qualify. They are listed rather than omitted because people search for them
+    by name, and finding nothing looks the same as not having checked. A rejection is a
+    specific, sourced claim about what the device requires — not a verdict on whether it is
+    any good at its job.
   </p>
   <p class="lede">
     A device is rejected when its <strong>core function</strong> needs a vendor cloud or a
-    mandatory account with no documented local path, or when a subscription gates
-    something the hardware can already do.
+    mandatory account with no documented local path, or when a subscription gates something
+    the hardware can already do. Open a record for the full reasoning, the sources behind
+    it, and what we suggest instead.
   </p>
 
   {rejected.length === 0 ? (
     <p class="empty">Nothing rejected yet.</p>
   ) : (
-    rejected.map((d) => (
-      <section>
-        <h2>{d.make} {d.model}</h2>
-        <p class="age">
-          {domainBySlug.get(d.category)?.name}{d.subcategory && <> · {d.subcategory}</>}
-          {d.price_band && <> · {d.price_band}</>}
-        </p>
-        <div class="unplug">
-          <h2>The unplug test</h2>
-          <p>{d.the_unplug_test}</p>
-        </div>
-        <p><strong>Why it was rejected:</strong> {d.rejection_reason}</p>
-        {d.alternatives?.length > 0 && (
-          <>
-            <p><strong>Consider instead:</strong></p>
-            <ul class="sources">
-              {d.alternatives.map((a) => (
-                <li><a href={`/device/${a.model_id}/`}>{a.model_id}</a><br />{a.why}</li>
-              ))}
-            </ul>
-          </>
-        )}
-        {d.notes && <p>{d.notes}</p>}
-        <p class="age">Sources:</p>
-        <ul class="sources">
-          {d.sources?.map((s) => (
-            <li>
-              <span class="evc">{s.class}</span> <a href={s.url} rel="nofollow">{s.url}</a>
-              <br /><span class="age">{s.supports} — accessed {s.accessed}</span>
-            </li>
+    <div class="tablewrap">
+      <table class="devices grid rejects">
+        <colgroup>
+          <col class="c-make" /><col class="c-model" /><col class="c-why" /><col class="c-instead" />
+        </colgroup>
+        <thead>
+          <tr><th>Make</th><th>Model</th><th>Why</th><th>Instead</th></tr>
+        </thead>
+        <tbody>
+          {rejected.map((d) => (
+            <tr>
+              <td class="make">{d.make}</td>
+              <td>
+                <a class="model" href={`/device/${d.model_id}/`}>{d.model}</a>
+                <br /><span class="age">{d.subcategory ?? domainBySlug.get(d.category)?.name}</span>
+              </td>
+              <td>{why(d)}</td>
+              <td>
+                {d.alternatives?.length > 0 ? (
+                  d.alternatives.map((a, i) => (
+                    <>
+                      {i > 0 && <br />}
+                      <a class="model" href={`/device/${a.model_id}/`}>{a.model_id}</a>
+                    </>
+                  ))
+                ) : (
+                  <span class="age">none yet</span>
+                )}
+              </td>
+            </tr>
           ))}
-        </ul>
-      </section>
-    ))
+        </tbody>
+      </table>
+    </div>
   )}
 </Base>
