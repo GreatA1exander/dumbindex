@@ -9,6 +9,50 @@
     "_note_on_forced_security_patches": "Motive is not the test; loss of function is. A forced update that removes NO function is not an incident and does not belong here — it is firmware_ota_forced on the device record, which already tells a reader the vendor can change their device without consent. A forced update that DOES remove function is an incident, scored on the normal scale, with the security motive recorded in the description rather than discounted from the score. Adopted 2026-09-14 over QNAP; applies to every vendor. The consequence is deliberate: a vendor can sit at 0 here and still be one you would keep off the internet, because 0 means \"no documented removal of function\", not \"safe\"."
   },
   "vendors": {
+    "anova": {
+      "name": "Anova Culinary",
+      "vendor_risk": 1,
+      "summary": "Announced it would end app and cloud support for first-generation Precision Cookers, then cancelled the plan before it took effect. Separately introduced an app subscription that binds new accounts only. Scored 1 because the threat to already-sold hardware was withdrawn — the ledger scores what happened, not what was announced.",
+      "incidents": [
+        {
+          "date": "2024-08",
+          "type": "subscription_added_for_new_accounts",
+          "description": "Anova introduced a $2/month or $10/year subscription for app remote control and monitoring, announced 2024-08-14 and effective 2024-08-21 for accounts created from that date onward; pre-existing accounts were grandfathered free. Announced at the same time: a plan to end app and cloud support entirely for original first-generation Precision Cookers from September 2025. The subscription binds only new buyers and does not gate the cook itself, which runs from the device's own touchscreen — so it does not on its own justify a higher score.",
+          "source": "https://www.engadget.com/home/kitchen-tech/anova-will-charge-customers-to-use-its-sous-vide-app-because-everything-must-be-a-subscription-151906912.html",
+          "class": "B"
+        },
+        {
+          "date": "2025-01-16",
+          "type": "reversal",
+          "description": "Anova cancelled the end-of-support plan before it took effect, in its own words committing 'to keeping all our cookers fully supported', noting original units are now over ten years old and still running on maintained legacy infrastructure. This is why the entry is 1 and not 2: shipped hardware was threatened and then was not harmed.",
+          "source": "https://anovaculinary.com/blogs/blog/good-news-about-ongoing-product-support",
+          "class": "A"
+        }
+      ],
+      "verdict": "The cooker itself is unaffected by any of this — time and temperature are set on its own touchscreen and the cook runs with no phone, account or subscription, which is why anova-precision-cooker-3 is D2. What the ledger records is that Anova has twice repriced the software around already-sold hardware and once proposed withdrawing it. Buy it for the cooker, not for the app."
+    },
+    "bambu-lab": {
+      "name": "Bambu Lab",
+      "vendor_risk": 1,
+      "summary": "Shipped firmware that put previously-free local printing behind cloud authentication, then documented a way back to full local control. Scored 1 rather than 2 because the loss was remediable without hardware changes — but it did ship, and anyone who took the update without knowing about Developer Mode lost local function until they found it.",
+      "incidents": [
+        {
+          "date": "2025-01",
+          "type": "forced_firmware_added_account_requirement",
+          "description": "Firmware 01.08.03.00 (X1 series, 2025-01-17) introduced a mandatory 'Authorization Control System' requiring Bambu Connect cloud authentication to bind the printer, start a print job — over LAN as well as cloud — access remote video, or update firmware. Previously-free local and third-party paths, including OrcaSlicer integration, stopped working for anyone who applied it. Two things keep this at 1 rather than 2: the update could be declined outright, and Bambu documented a Developer Mode plus LAN Only path restoring full local MQTT/FTP with no cloud account, since extended to the A-series that bambu-lab-a1 belongs to. Note the mitigation arrived alongside the backlash rather than ahead of it, so a reader who wants to score this harder has grounds.",
+          "source": "https://blog.bambulab.com/firmware-update-introducing-new-authorization-control-system-2",
+          "class": "A"
+        },
+        {
+          "date": "2025-01",
+          "type": "independent_report",
+          "description": "Independent coverage of the rollout and the resulting backlash from the OrcaSlicer and third-party-accessory community, including Bambu's public acknowledgement of the reaction.",
+          "source": "https://hackaday.com/2025/01/17/new-bambu-lab-firmware-update-adds-mandatory-authorization-control-system/",
+          "class": "B"
+        }
+      ],
+      "verdict": "Turn on Developer Mode and LAN Only before you need them, and decline firmware you have not read the notes for. The local path is real, documented and currently maintained — which is why bambu-lab-a1 is D2 — but January 2025 established that it is a setting Bambu controls rather than a property of the printer."
+    },
     "brother": {
       "name": "Brother Industries",
       "vendor_risk": 1,

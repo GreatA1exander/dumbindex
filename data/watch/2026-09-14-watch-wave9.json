@@ -1,0 +1,142 @@
+{
+  "run_id": "2026-09-14-watch-wave9",
+  "headline": "No observed downgrade found. Both sourced candidates (Bambu Lab, Anova) turn out to be narrow/reversed incidents under the ledger's own scale-1 definition, not observed removals of function from an already-published device. /downgrades' launch-gate row remains unmet after this run.",
+  "checked": [
+    {
+      "vendor": "Bambu Lab",
+      "records": [
+        "bambu-lab-a1"
+      ],
+      "result": "incident found",
+      "note": "Sourced the January 2025 mandatory-authorization dispute carried unscored through three waves. Confirmed via Bambu's own blog post and Hackaday: the 2025-01-17 firmware (beta 01.08.03.00) required Bambu Connect cloud authentication for previously-unauthenticated LAN/local operations on X1-series printers -- print initiation (LAN or cloud), firmware upgrades, remote video, motion/AMS/temperature control. This is real, dated, and established, not merely alleged. But it is narrow in the ledger's sense: an opt-out existed from day one (decline the firmware, keep the old version, per Bambu's own post), the change targeted X1-series only (the published bambu-lab-a1 is an A-series printer, not directly hit by the January 2025 rollout), and Bambu has since documented 'Developer Mode' + LAN Only mode restoring full local MQTT/FTP control with no cloud account, extended to 'all current printer series including the A series' per the A1's own wiki (accessed 2026-09-03). consumerrights.wiki (updated as recently as 2026-09-13) still describes the authorization requirement as standing for anyone who takes the new firmware without enabling Developer Mode -- so this is not a reversal, but it is also not an unmitigated forced loss. This is why it proposes to ledger scale 1, not 2: see ledger_proposals."
+    },
+    {
+      "vendor": "Anova Culinary",
+      "records": [
+        "anova-precision-cooker-3"
+      ],
+      "result": "incident found",
+      "note": "Sourced the wave-8 report. Confirmed via Anova's own blog ('Good news about ongoing product support!', updated 2025-01-16): Anova announced in 2024 a plan to end app/cloud support for original first-generation Precision Cookers effective September 2025, then explicitly reversed it in the same post before the cutoff arrived -- 'we've decided to cancel that plan and are committed to keeping all our cookers fully supported.' This is the textbook case the brief warned about: a reversal is not a removal. Separately, the 2024-08-14/08-21 app subscription for remote control did take effect and stands today, but it applies to accounts created after 2024-08-21 only; existing owners (including anyone who bought the published anova-precision-cooker-3 before that date) were grandfathered free, and the subscription gates app convenience, not the on-device cook. Neither half rises above ledger scale 1."
+    },
+    {
+      "vendor": "United Chargers (Grizzl-E)",
+      "records": [
+        "grizzl-e-classic-connect"
+      ],
+      "result": "inconclusive",
+      "note": "Could not independently corroborate the Class C community reports (Reddit r/evcharging, a SaskEV Facebook post) that chargers stop charging after a Wi-Fi drop, contradicting United Chargers' own 'still charges without Wi-Fi' documentation. WebSearch budget was exhausted (see Budget note below) before this could be searched properly this run -- no new fetch attempted beyond what the published record already cites. Remains uncorroborated Class C; does not meet the ledger's sourcing bar either way."
+    },
+    {
+      "vendor": "Withings",
+      "records": [
+        "withings-body-smart"
+      ],
+      "result": "inconclusive",
+      "note": "Attempted to fetch Withings' own support/press pages directly for anything dated after the record's last_verified (2026-09-02/03); both support.withings.com/hc/.../Privacy-FAQ and withings.com/us/en/press returned HTTP 403 to the fetch tool. WebSearch (which is how the existing ledger entry was found) was exhausted before a proper search pass could run. No promotion from ledger 1 to 2 is warranted without independent reporting, and none was found or ruled out this run."
+    },
+    {
+      "vendor": "AirGradient",
+      "records": [
+        "airgradient-one"
+      ],
+      "result": "no change",
+      "note": "Checked both the manufacturer's dashboard-connection KB page and the product page directly (Class A, fetched fresh). Both still describe the AirGradient Dashboard as 'subscription free and included with every monitor' with '12 months data platform / dashboard and API access' and are silent on what happens after 12 months -- identical to what the record already documents as an open question. No evidence found, positive or negative, that the post-12-month terms have converted to a paid tier for units already sold. This remains a real open question, not an observed downgrade: the record's own open_questions already flag it correctly and nothing here changes that."
+    },
+    {
+      "vendor": "QNAP",
+      "records": [
+        "qnap-ts-233-us"
+      ],
+      "result": "no change",
+      "note": "Checked BleepingComputer's QNAP coverage (Class B, fetchable) for anything after the record's last_verified (2026-09-03) or after the 2022 DeadBolt incident already in the ledger. Found only routine CVE-patch advisories (2025-01, 2025-10, 2025-11) and one older item -- 'QNAP pulls buggy QTS firmware causing widespread NAS issues' (2024-11) -- which is a botched-update-and-self-corrected bug, not a deliberate removal of function, and predates this record's publication. Nothing meets the forced-security-patch rule's bar (a forced patch that removes function): no new forced-update-with-loss incident found."
+    },
+    {
+      "vendor": "Sonos, Chamberlain, Ring, eufy, HP",
+      "records": [
+        "sonos-ray",
+        "chamberlain-b4643t",
+        "ring-battery-doorbell-2k",
+        "eufy-robovac-11s-max"
+      ],
+      "result": "inconclusive",
+      "note": "These five are already scored (vendor_risk 2-3) on established incidents predating this catalog. The brief asks whether anything NEW has happened to a published device since verification (all last_verified 2026-09-02, ~12 days ago). Blind fetches of vendor newsrooms/blogs and tech-site tag pages (theregister.com/software, engadget.com/tag/sonos, blog.myq.com) either 403'd, DNS-failed, or returned generic homepages with no vendor-specific hits -- these pages need a targeted WebSearch to find the right article, and WebSearch was exhausted (see Budget) before this sweep could be done properly. HP has no published device record in the catalog at all (the vendor_risk 3 entry has no device to observe a downgrade on), so it is not a live watch candidate regardless. Treat this whole group as NOT adequately swept this run, not as confirmed clean."
+    }
+  ],
+  "ledger_proposals": [
+    {
+      "vendor_slug": "bambu-lab",
+      "name": "Bambu Lab",
+      "proposed_risk": 1,
+      "rationale": "One dated, established, but narrow/mitigated incident: mandatory cloud authentication for previously-free local/LAN print functions, rolled out to X1-series firmware in January 2025, with an immediate opt-out (decline the update) and a subsequently documented 'Developer Mode' + LAN Only path that restores full local control with no cloud account, now extended across current printer lines. Not a 2 because the loss is avoidable and mitigated, not unilateral and unrecoverable like HP or Chamberlain; not a 0 because it did ship and did remove default local function for anyone who updated without knowing to flip Developer Mode.",
+      "incidents": [
+        {
+          "date": "2025-01",
+          "type": "forced_firmware_added_account_requirement",
+          "description": "Firmware beta 01.08.03.00 (X1 series, released 2025-01-17) introduced a mandatory 'Authorization Control System' requiring Bambu Connect cloud authentication to bind/unbind the printer, initiate a print job (LAN or cloud), access remote video, perform firmware upgrades, and control motion/temperature/fan/AMS settings -- functions previously usable over the LAN with no cloud account, including from third-party software (OrcaSlicer, Panda Touch accessories). Bambu's own post confirmed users could decline the update and keep prior firmware without restriction.",
+          "source": "https://blog.bambulab.com/firmware-update-introducing-new-authorization-control-system-2",
+          "class": "A"
+        },
+        {
+          "date": "2025-01",
+          "type": "independent_report",
+          "description": "Independent coverage of the same rollout and the resulting backlash from the OrcaSlicer/third-party accessory community, including a Reddit user extracting Bambu Connect's certificate to restore third-party access, and Bambu's public acknowledgement that 'our communication might have contributed to the confusion.'",
+          "source": "https://hackaday.com/2025/01/17/new-bambu-lab-firmware-update-adds-mandatory-authorization-control-system/",
+          "class": "B"
+        }
+      ]
+    },
+    {
+      "vendor_slug": "anova",
+      "name": "Anova Culinary",
+      "proposed_risk": 1,
+      "rationale": "Exactly the ledger's scale-1 shape: a real, dated, announced threat to already-sold hardware (ending app/cloud support for first-generation Precision Cookers) that was withdrawn before it took effect. Score what happened, not what was threatened. The separate 2024-08-21 subscription for app remote control did take effect and remains in force today, but it only binds new accounts going forward -- existing owners were grandfathered free -- so it does not independently justify a higher score on its own.",
+      "incidents": [
+        {
+          "date": "2024-08",
+          "type": "announced_end_of_support_and_subscription",
+          "description": "Anova announced (1) a $2/month or $10/year subscription for app remote-control/monitoring, effective 2024-08-21 for new accounts only (pre-existing accounts grandfathered free), and (2) a plan to end app and cloud support for original first-generation Precision Cookers entirely, effective September 2025.",
+          "source": "https://www.engadget.com/home/kitchen-tech/anova-will-charge-customers-to-use-its-sous-vide-app-because-everything-must-be-a-subscription-151906912.html",
+          "class": "B"
+        },
+        {
+          "date": "2025-01-16",
+          "type": "reversal",
+          "description": "Anova's own blog post reversed the end-of-support plan before it took effect: 'we've decided to cancel that plan and are committed to keeping all our cookers fully supported,' citing original units now over 10 years old still running on maintained legacy infrastructure. The subscription change from August 2024 was not reversed and stands today, but is not addressed in this post.",
+          "source": "https://anovaculinary.com/blogs/blog/good-news-about-ongoing-product-support",
+          "class": "A"
+        }
+      ]
+    }
+  ],
+  "observed_downgrades": [],
+  "record_changes_needed": [
+    {
+      "model_id": "bambu-lab-a1",
+      "field": "vendor_risk",
+      "from": 0,
+      "to": 1,
+      "why": "Contingent on the orchestrator adopting the bambu-lab ledger proposal above. Tier is unaffected either way (vendor conduct is not a tier input) but vendor_risk should track the ledger once it exists.",
+      "source": "https://blog.bambulab.com/firmware-update-introducing-new-authorization-control-system-2"
+    },
+    {
+      "model_id": "anova-precision-cooker-3",
+      "field": "vendor_risk",
+      "from": 0,
+      "to": 1,
+      "why": "Contingent on the orchestrator adopting the anova ledger proposal above. Tier is unaffected either way.",
+      "source": "https://anovaculinary.com/blogs/blog/good-news-about-ongoing-product-support"
+    }
+  ],
+  "nothing_found_for": [
+    "qnap (no new forced-update-removes-function incident since the 2022 DeadBolt entry already in the ledger)",
+    "airgradient (post-12-month dashboard terms remain undocumented either way -- checked and unchanged, still an open question rather than a finding)"
+  ],
+  "not_adequately_checked": [
+    "grizzl-e (Class C reports uncorroborated; needs a proper WebSearch pass not available this run)",
+    "withings (support/press pages 403'd to the fetch tool; needs a proper WebSearch pass)",
+    "sonos, chamberlain, ring, eufy (already-ledgered vendors; blind fetches of newsroom/tag pages were unproductive without WebSearch to locate the right article)",
+    "reolink, traeger, petlibro, willow, neptune systems (named in the sweep list but not reached before WebSearch was exhausted)",
+    "hp (no published device record exists in the catalog at all -- the ledger entry has nothing to watch against; flagging for the orchestrator's awareness, not a watch gap)"
+  ],
+  "budget_note": "WebSearch returned 'session has used its web search budget (200 of 200)' after only 2 calls from this agent -- the cap is shared across all agents running in this session, and it was apparently exhausted mostly by concurrent work before this job's searches landed. Everything past the first two queries (which sourced Bambu and Anova) relied on WebFetch against pages already known or guessed from the device records and vendor ledger, which is why the sweep beyond the two named-and-sourced candidates is thin. A re-run with dedicated search budget would likely resolve Grizzl-E and Withings and complete the vendor sweep."
+}

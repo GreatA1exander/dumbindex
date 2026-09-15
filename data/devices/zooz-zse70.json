@@ -1,0 +1,81 @@
+{
+  "model_id": "zooz-zse70",
+  "make": "Zooz",
+  "model": "ZSE70 800 Series Z-Wave Long Range Outdoor Motion Sensor (Motion/Temp/Lux)",
+  "category": "security",
+  "subcategory": "motion sensor",
+  "tier": "D1",
+  "tier_rationale": "Contains a Z-Wave 800-series radio under FCC grantee 2AZ2V (FCC ID 2AZ2V-ZSE70800), the same grantee Zooz uses on its other Z-Wave devices including the already-published zooz-zse41. Zooz's own manual, product page, and support-center FAQ for this model describe pairing only to a Z-Wave hub the owner supplies (Home Assistant, Hubitat, HomeSeer, SmartThings, Homey, Zooz's own local Z-Box, or a generic Z-Wave controller) and none mentions a Zooz account, app, or cloud service required for setup or operation.",
+  "the_unplug_test": "Nothing changes, because the sensor was never talking to anything but the Z-Wave hub in the house. It reports motion, temperature, and light level over Z-Wave directly to whatever hub the owner paired it to; on a local hub (Home Assistant, Hubitat) that report never leaves the LAN. Losing home internet has no effect on detection or reporting at all. Only losing the hub itself, or its batteries, would.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": ["zwave"],
+  "phones_home": "none",
+  "radios": ["zwave"],
+  "fcc_id": "2AZ2V-ZSE70800",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "limited",
+    "ifixit_score": null,
+    "notes": "User-replaceable 2x CR123A batteries, or an optional wired 12-24V AC/DC power option using sealed terminals. Sealed plastic outdoor enclosure with a tamper switch; no other user-serviceable parts documented."
+  },
+  "availability": "in_stock",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {"name": "Zooz (manufacturer)", "url": "https://www.getzooz.com/zse70-outdoor-motion-sensor/"}
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://www.getzooz.com/zse70-outdoor-motion-sensor/",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer product page: lists compatible Z-Wave hubs (Z-Box, Home Assistant, HomeSeer, Hubitat, Homey, Indigo, SmartThings), does not mention any Zooz cloud service, account, or proprietary app requirement, and states the device uses an 800-series Z-Wave chip with Z-Wave Long Range support."
+    },
+    {
+      "url": "https://www.support.getzooz.com/kb/article/2360-zse70-outdoor-motion-sensor-product-manual/?section_id=565",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer product manual (support center): confirms setup pairs to a Z-Wave hub only (Home Assistant, HomeSeer, Hubitat, SmartThings, Z-Box, or a generic Z-Wave controller), no Zooz account or app is required, and the only radio is the 800-series Z-Wave chip."
+    },
+    {
+      "url": "https://www.support.getzooz.com/kb/article/2361-zse70-outdoor-motion-sensor-faqs/",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer FAQ: confirms power options (2x CR123A battery, or 12-24V AC/DC wired) and does not mention any account, app, subscription, or cloud/internet requirement for operation."
+    },
+    {
+      "url": "https://fccid.io/2AZ2V-ZSE70800",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "FCC equipment authorization for grantee 2AZ2V (the same grantee that filed zooz-zse41's FCC ID, confirmed as Zooz's registered filer), model ZSE70800, classified Motion Sensor, granted on the 908.4-916 MHz / 912-920 MHz Z-Wave bands under Part 15C."
+    }
+  ],
+  "open_questions": [
+    "Current US retail price band not established.",
+    "The manufacturer's own manual PDF could not be text-extracted (binary/compressed stream) to directly quote its account/cloud language; the claim instead rests on the support-center manual, FAQ, and product pages, which state the same facts in readable form."
+  ],
+  "conflicts_with": null,
+  "notes": "Second Zooz Z-Wave sensor in the catalog and fills the empty 'motion sensor' subcategory in security. Same clean D1 pattern as zooz-zse41: a radio exists, Zooz operates no cloud for it, and the only thing it ever reaches is the owner's own hub. The predecessor ZSE29 (2AZ2V-ZSE29, same grantee) has been discontinued and replaced by this model per Zooz's own specs page, so this record targets the currently-sold SKU.",
+  "first_published": "2026-09-14",
+  "last_verified": "2026-09-14",
+  "changelog": [
+    {"date": "2026-09-14", "change": "First published at D1.", "kind": "listed", "source": null}
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-14-discover-wave9",
+    "searches": 5,
+    "failed_fetches": 1
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

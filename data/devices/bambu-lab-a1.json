@@ -45,7 +45,7 @@
     }
   ],
   "affiliate": null,
-  "vendor_risk": 0,
+  "vendor_risk": 1,
   "sources": [
     {
       "url": "https://wiki.bambulab.com/en/a1/manual/how-to-print-from-sd-card",
@@ -100,6 +100,12 @@
       "change": "First published at D2.",
       "kind": "listed",
       "source": null
+    },
+    {
+      "date": "2026-09-14",
+      "change": "vendor_risk 0 -> 1 on the vendor entering the ledger. Tier unchanged and never at issue: vendor conduct is not a tier input.",
+      "source": "https://blog.bambulab.com/firmware-update-introducing-new-authorization-control-system-2",
+      "kind": "vendor_incident"
     }
   ],
   "agent_meta": {

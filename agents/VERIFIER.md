@@ -23,6 +23,18 @@ produce a publishable record backed by qualifying evidence, or prove that you ca
    value documents in this project: they state what setup actually requires. Download and
    read the setup section and the specification table.
 
+   **fccid.io hosts the manufacturer's own filed manual, and reaching it costs no search
+   budget.** Anything with an intentional radiator had to file a user manual as a grant
+   exhibit, and fccid.io serves those PDFs at stable URLs under the grant — so a WebFetch
+   of `fccid.io/<GRANT-ID>` gets you a grantee's exhibit list and from there a Class A
+   manual you can read directly, with no WebSearch spent and no vendor site to be blocked
+   by. Wave 9 found this by necessity: an agent that started with the session's search
+   budget already at 200/200 produced two records anyway, and the deciding fact in both —
+   a physical button that operates the device with no app — came out of an FCC-filed
+   manual. It also works when the vendor's own site 403s you, which is common. Note the
+   limit: no grant means no filed manual, so this helps most for exactly the connected
+   devices whose tier is hardest to call.
+
    **When a fetch fails, the URL does not become a source.** You will hit 403s, dead
    hosts and broken certificates constantly, and the temptation is to cite the page
    anyway because you can infer what a vendor support article of that title must say.

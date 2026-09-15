@@ -14,23 +14,32 @@ validator and golden gate on every change, which does not currently run anywhere
 
 **Launch (announcing it) waits for all of:**
 
-| Gate | 2026-09-05 (after wave 8) | Target | |
+| Gate | 2026-09-14 (after wave 9) | Target | |
 |---|---|---|---|
 | No domain below 5 records | 0 of 14 below | 14 of 14 at 5+ | ✅ |
 | Domains at 8+ | 14 of 14 | 14 of 14 | ✅ |
-| Total published records | 131 | 120-150 | ✅ |
-| High-traffic domains (kitchen, av, security, computing, climate) | 12, 13, **9**, 10, 10 | 10-15 each | ⚠️ |
+| Total published records | 135 | 120-150 | ✅ |
+| High-traffic domains (kitchen, av, security, computing, climate) | 12, 13, 11, 10, 10 | 10-15 each | ✅ |
 | `/downgrades` demonstrates the thesis | historical section only | at least one observed entry | ❌ |
 
-**Four rows pass and the fifth is one record away.** Wave 8 took kitchen 8→12 and av 9→13 —
-the two domains that had been 100% D0 — and climate 8→10. **Security sits at 9.** One record
-closes the row; `state.json` carries three ranked seeds for it.
+**Four of five rows pass. Only `/downgrades` remains, and it is the one that cannot be
+scheduled.** Wave 9 closed the density row by taking security 9→11.
 
-The `/downgrades` row is the one that cannot be scheduled. It needs a vendor to remove function
-from a shipped device and us to *catch* it, rather than record it after the fact. That is what
-the `watch` job exists for, and it has never been run against the catalog. The nearest live
-candidates — Anova, Grizzl-E, Withings — are all in `state.json`. Until `watch` runs, this row
-stays open no matter how many records get added.
+The last row needs a vendor to remove function from a shipped device *and us to catch it* —
+not to record it after the fact. The `watch` job exists for exactly this and ran for the first
+time on 2026-09-14. **It found nothing**, which may simply be the true answer: no vendor behind
+a published record has been caught removing function since we verified it. But that run got 2
+of the session's 200 web searches because it shared a wave with two discovery agents, so it
+covered perhaps a fifth of the catalog. Grizzl-E and Withings — the two candidates that could
+actually change a score — went unchecked.
+
+So the honest state of this row is *unknown*, not *no*. Run `watch` on its own (one job type
+per run, per `OPERATIONS.md` §3) before concluding anything. See `data/watch/` for what has
+been covered and what has not.
+
+**Do not close this row by lowering the bar.** A `/downgrades` page that cries wolf about
+routine housekeeping teaches readers to skip it, and then the one alert that matters gets
+skipped too. An empty observed section is a better page than a padded one.
 
 Note that the per-domain floor no longer chooses the next wave, so the strict rotation through
 `taxonomy.json` is deliberately suspended until this table is clear. `state.json` records that

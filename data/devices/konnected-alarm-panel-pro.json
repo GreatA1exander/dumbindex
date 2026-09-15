@@ -1,0 +1,104 @@
+{
+  "model_id": "konnected-alarm-panel-pro",
+  "make": "Konnected",
+  "model": "Alarm Panel Pro 12-Zone Conversion Kit",
+  "category": "security",
+  "subcategory": "alarm panel",
+  "tier": "D2",
+  "tier_rationale": "Konnected operates a named optional cloud service (Konnected Cloud) that bridges the panel to Alexa/SmartThings and offers a firmware-customization service, but Konnected's own support documentation states plainly that 'all Konnected devices work fully without Konnected Cloud, giving you complete local control,' and the core function (reading wired alarm zones, driving sirens/strobes/switches) runs on the board itself over its documented Home Assistant, Hubitat, ESPHome, and Matter integrations. Wi-Fi credentialing can be done from a local browser via the device's own captive portal (192.168.4.1) with no app; a Konnected account is only required to reach Konnected Cloud, not to provision the board or use it through a self-hosted smart-home platform.",
+  "the_unplug_test": "The panel keeps reading every wired zone and driving sirens, strobes, and relay outputs exactly as before, because that logic runs on the board's own ESP32 and whatever local hub (Home Assistant, Hubitat) it is paired to. What stops working is anything routed through Konnected Cloud: the SmartThings/Alexa bridge integration and the remote firmware-customization service. If it was set up and is being run through Home Assistant or ESPHome rather than the Konnected app's cloud features, disconnecting the router changes nothing you would notice.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Konnected Cloud bridge to Alexa/SmartThings",
+    "remote device-customization/firmware service"
+  ],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "rest",
+    "matter"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi",
+    "ble"
+  ],
+  "fcc_id": "2AC7Z-ESPWROOM32D",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "yes",
+    "ifixit_score": null,
+    "notes": "Board is built around an off-the-shelf Espressif ESP32-WROOM-32D module; Konnected publishes web-based and command-line flashing tools and documents third-party ESPHome firmware, so the board is not locked to vendor firmware."
+  },
+  "availability": "in_stock",
+  "price_band": "$200-250",
+  "price_observed": "2026-09-14",
+  "where_to_buy": [
+    {
+      "name": "Konnected (manufacturer)",
+      "url": "https://konnected.io/products/konnected-alarm-panel-pro-12-zone-kit"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://support.konnected.io/introduction-to-konnected-cloud",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer support article states Konnected Cloud is optional ('All Konnected devices work fully without Konnected Cloud, giving you complete local control'), names what it adds (Alexa/SmartThings bridging, device-customization/firmware service), and states a Konnected account is created specifically 'to use Konnected Cloud' via the app, not to operate the device locally."
+    },
+    {
+      "url": "https://support.konnected.io/connecting-to-wifi-using-a-web-browser-captive-portal",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer support article documents provisioning Wi-Fi credentials entirely from a local browser at the device's own captive-portal address (192.168.4.1), with no Konnected app or account involved in that step, then discovering the device either in the Konnected app 'or your smart home platform' (e.g. Home Assistant/ESPHome)."
+    },
+    {
+      "url": "https://support.konnected.io/konnected-alarm-panel-pro-technical-specifications",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer technical specification page: confirms the radio hardware is an ESP32-WROOM-32D module (802.11 b/g/n 2.4GHz Wi-Fi plus Bluetooth v4.2 BR/EDR and BLE), lists the wired Ethernet/PoE+ option, and records FCC ID 2AC7Z-ESPWROOM32D and Industry Canada ID 21098-ESPWROOM32D for the radio module."
+    },
+    {
+      "url": "https://support.konnected.io/product-introduction",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer product introduction page confirms the Alarm Panel Pro connects wired alarm sensors, sirens, strobes and switches to smart-home platforms, and lists documented local-platform integrations: Home Assistant, SmartThings, Hubitat, ESPHome, and Matter."
+    },
+    {
+      "url": "https://konnected.io/collections/shop-now",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer shop listing gives the current model name (Alarm Panel Pro 12-Zone Conversion Kit) and price ($229.00)."
+    }
+  ],
+  "open_questions": [
+    "Whether launching the Konnected mobile app itself forces a login screen before local Wi-Fi provisioning/discovery, or only gates the Cloud-specific screens, was not confirmed by a source that shows the app's actual first-run flow; the captive-portal article implies local setup can bypass the app entirely by discovering the device through Home Assistant/ESPHome instead, which is the basis for account_required: app_only rather than for_setup.",
+    "'phones_home' is set to 'analytics' as a conservative default for a Wi-Fi device with an optional cloud bridge; no source was found describing exactly what telemetry, if any, the board sends when Konnected Cloud is not enabled."
+  ],
+  "conflicts_with": null,
+  "notes": "Fills the previously-empty 'alarm panel' subcategory in security. This is a conversion/interface board for existing wired alarm sensors and sirens rather than an all-in-one panel, but it is sold and documented by the manufacturer specifically as an alarm panel product line. The predecessor '6-Zone Konnected Alarm Panel' boards remain listed for sale alongside the Pro line; this record covers only the current-generation Pro 12-Zone Conversion Kit.",
+  "first_published": "2026-09-14",
+  "last_verified": "2026-09-14",
+  "changelog": [
+    {
+      "date": "2026-09-14",
+      "change": "First published at D2.",
+      "kind": "listed",
+      "source": null
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-14-discover-wave9",
+    "searches": 5,
+    "failed_fetches": 3
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "ESPHome native API / Home Assistant integration replaces the entire Konnected Cloud bridge; Konnected publishes both web-based and command-line flashing tools for running third-party ESPHome firmware on the board."
+}

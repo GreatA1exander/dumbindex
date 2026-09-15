@@ -1,0 +1,86 @@
+{
+  "run_id": "2026-09-14-discover-wave9",
+  "job": "discover + watch (two job types in one run — see system_gaps_found; this was a mistake)",
+  "prompt_version": "tier-quota-v1 + seeded-candidates",
+  "model": "claude-opus-5 orchestrating claude-sonnet-5 subagents",
+  "goal": "Close launch-gate row 1 by taking security past 10, run the `watch` job for the first time to see whether an observed downgrade exists, and take a second run at D3 now that the method is known.",
+
+  "outcome": "Row 1 of the launch gate is closed — all five high-traffic domains are at 10 or more. The watch job found no observed downgrade, which is the honest answer and leaves the last gate row open. The second D3 hunt produced no D3s, and its negative results are the most useful thing in the run.",
+  "devices_added": 4,
+  "domains": {"security": 2, "lighting": 1, "automotive": 1},
+  "tier_split": {"D0": 1, "D1": 1, "D2": 2},
+
+  "catalog_after": {
+    "published": 135,
+    "tiers": {"D0": 79, "D1": 16, "D2": 37, "D3": 3},
+    "high_traffic_density": {"kitchen": 12, "av": 13, "security": 11, "computing": 10, "climate": 10},
+    "launch_gate": "4 of 5 rows pass; /downgrades still needs an observed entry"
+  },
+
+  "decisions_adopted": [
+    "Forced security patches (open since wave 5, adopted by the repo owner 2026-09-14): motive is not the test, loss of function is. A forced update that removes NO function is not a ledger incident — it is firmware_ota_forced on the device record. One that DOES remove function is an incident on the normal scale, with the security motive recorded rather than discounted. The split exists to keep 'this vendor monetises your device' distinguishable from 'this vendor will reach into it without asking', because those call for different decisions. Written into PRINCIPLES §5 and the ledger's own _scale.",
+    "`panic button` added to the security taxonomy, next to `key fob`. tuya-ts0215a-sos-button moved there from `key fob`, which the record itself had flagged as a stretch."
+  ],
+
+  "ledger_changes": [
+    {"vendor": "qnap", "score": 2, "why": "First application of the new rule, and it lands on both sides of it. January 2022: QNAP force-installed firmware 5.0.0.1891 during the DeadBolt campaign, including on units where owners had disabled automatic updates, which QNAP confirmed. The forced install alone would have been firmware_ota_forced only — but it cost some owners working iSCSI, and users mid-recovery found it had removed the ransomware executable and ransom screen, leaving them unable to finish decrypting with a key they had bought. Shipped devices lost function, so it scores. 2 rather than 3: one incident, one mechanism. qnap-ts-233-us also moves firmware_ota_forced unknown -> yes."},
+    {"vendor": "bambu-lab", "score": 1, "why": "Proposed by the watch job and adopted. The January 2025 Authorization Control System firmware did put previously-free LAN printing behind cloud auth on shipped X1-series printers — established, not alleged. Held at 1 because the update could be declined and Developer Mode plus LAN Only restores full local control, now extended to the A-series. The entry records that the mitigation arrived alongside the backlash rather than ahead of it, so a reader who wants to score it harder can see why."},
+    {"vendor": "anova", "score": 1, "why": "Proposed by the watch job and adopted. The plan to end app and cloud support for first-generation Precision Cookers was cancelled on 2025-01-16 before it took effect; the 2024-08-21 app subscription binds new accounts only and does not gate the cook, which runs from the device's own touchscreen. Score what happened, not what was announced — this is the scale-1 shape exactly."}
+  ],
+
+  "findings": [
+    "THE WATCH JOB'S ANSWER IS 'NO', AND THAT IS THE RESULT. There is no observed downgrade: no vendor behind a published record has been caught removing function from a device since we verified it. /downgrades therefore still shows only historical incidents and the last launch-gate row stays open. This is worth more than a stretched entry would have been — a feed that cries wolf about its own housekeeping teaches readers to skip it, which is a failure mode BRAND.md names explicitly. The job also sourced two ledger candidates that had been carried unscored for three waves.",
+    "THE D3 HUNT FOUND NO D3s AND LEARNED MORE THAN THE ONE THAT DID. Both real candidates were killed by the same thing, and it is the trap wave 8 named: an active hobbyist liberation project sitting on top of a device that already works locally. The generalisation is now sharp enough to act on — for anything with a physical control surface (wall switches, dimmers, mapping robot vacuums), assume D2 and make the ESPHome project prove otherwise. A Dreame-platform manual obtained via FCC shows a physical Clean button starting full autonomous cleaning with Wi-Fi setup as a separate optional step, which makes the whole modern mapping-robovac architecture structurally D2 rather than the D3 lead it looks like.",
+    "A TECHNIQUE WORTH MORE THAN THE RECORDS IT PRODUCED: fccid.io hosts the manufacturer's own filed user manual as a grant exhibit, at a stable URL, reachable by WebFetch — so it costs NO search budget and works when the vendor's own site 403s. The D3 agent began its run with the session's WebSearch budget already exhausted at 200/200 and still produced two records, because the deciding fact in both (a physical button that runs the device with no app) came out of an FCC-filed manual. Folded into VERIFIER step 1.",
+    "Discipline held under budget exhaustion, which it did not in wave 6. The security agent hit 0/200 partway through and dropped four candidates — Aqara FP2, a Tuya TS0202, a non-Reolink indoor camera, Ecolink — rather than publish thin records, explicitly citing the new rule that a page you did not successfully open is not a source (Aqara's help centre 500'd on every fetch). Wave 6 in the same position invented a proxy citation. The rule is doing work."
+  ],
+
+  "system_gaps_found": [
+    {
+      "gap": "Two job types were run in one wave. OPERATIONS.md §3 and ORCHESTRATOR.md both say 'pick exactly one job type for this run', and mixing `watch` into a `discover` wave is why the watch job got 2 of the session's 200 web searches — the two discovery agents consumed the rest. Enough to source two ledger candidates; nowhere near enough to sweep the catalog. Grizzl-E, Withings, Sonos, Chamberlain, Ring, eufy, Reolink, Traeger, PETLIBRO, Willow and Neptune Systems all went unchecked.",
+      "fix": "Orchestrator error, and the existing process already prescribed the fix — the rule was simply not followed. data/watch/README.md now records the incident as the concrete reason for the rule, and watch findings are written to dated files under data/watch/ so runs accumulate rather than overwrite. The next watch run needs its own session."
+    },
+    {
+      "gap": "Third instance in two waves of the same defect: a field filled with a guess, with the record's own open_questions calling it a 'conservative default'. Always phones_home. The project's stated invariant is that unknown is publishable and a wrong value is not.",
+      "fix": "validate.mjs now fails any record whose open question calls a field a default while that field holds a real value. The care is in the second half: an already-corrected record describes the same phrase historically ('was briefly set to analytics as a cautious default, but no source confirmed it, so it is unknown'), so the rule reads the named field's ACTUAL value rather than pattern-matching prose. Verified to fail konnected-alarm-panel-pro and spare neptune-apex-el. Konnected's phones_home corrected to unknown."
+    },
+    {
+      "gap": "noco-gb40's D0 rationale argued from 'the pages' consistent, total silence on any wireless feature' — literally the inference-from-silence pattern PRINCIPLES §2 warns against, in a record that will be read as a template for every no-radio appliance after it.",
+      "fix": "Rewritten to argue from what the sources actually provide, which is stronger and different in kind: an exhaustive enumeration of the device's ports and controls. A spec table listing every interface is positive evidence of what a device contains; a support page failing to mention accounts is not. The tier is unchanged and correct — what changed is that the record now demonstrates the distinction instead of blurring it."
+    },
+    {
+      "gap": "martin-jerry-s01 was filed availability 'in_stock' while its own open question said the manufacturer's current shop no longer lists it and only an unconfirmed Amazon listing could be found.",
+      "fix": "Set to 'limited'. Also recorded the better lead the agent surfaced: Martin Jerry's successor RP-series ships preflashed with Tasmota or Zigbee from the factory, which would make those D1 as sold rather than D2 needing liberation."
+    },
+    {
+      "gap": "Enum gap flagged: 60-64 GHz mmWave presence radar has no value in `radios`. Hit while researching the Aqara FP2 and certain to recur as presence sensors spread.",
+      "fix": "Added `mmwave`, documented with the property that makes it unlike every other value in the list: it is an intentional radiator that talks to nothing — it reflects off people in the room — so its presence must never be read as a way home, and it should be tagged alongside the radio that actually carries the data. No record uses it yet; the FP2 was dropped as insufficient_evidence rather than filed."
+    }
+  ],
+
+  "honest_limitations": [
+    "The watch sweep is roughly one-fifth done. Two ledger candidates sourced, two vendors confirmed clean (QNAP, AirGradient), and eleven named vendors never reached. Grizzl-E and Withings — the two that could actually change a score — are both still unresolved, and both were specifically named in the brief.",
+    "No D3 this wave. The tier stands at 3 of 135. The method from wave 8 still works for finding candidates; what wave 9 established is that it finds candidates faster than it finds qualifiers, because the physical-override trap kills most of them.",
+    "The Aqara FP2 is a live, half-researched candidate rather than a clean drop. Radios confirmed (Wi-Fi, BLE, mmWave), an Aqara cloud confirmed to exist, no hub required for HomeKit — but the deciding D2 fact, whether setup completes without an Aqara account, was never established because help.aqara.com returned 500 on every fetch and there was no search budget left to find a community thread instead.",
+    "Only two of four new records had a deciding fact independently re-derived by the orchestrator, and neither re-derivation changed a tier — the two fixes this run were to how records argued and to a field value, not to a verdict. That is a weaker review pass than waves 7 and 8, mostly because the wave was smaller and the orchestrator's attention went to the ledger.",
+    "noco-gb40 is a D0 without sibling control. NOCO's findable FCC grantee covers wireless charging pads rather than jump starters, and fccid.io's search endpoint does not answer automated fetches, so the absence of a grant for this model carries no weight either way. The enumeration evidence is sound for a device of this kind but it is not the catalog's usual standard."
+  ],
+
+  "sources_that_worked": [
+    {"domain": "fccid.io grant exhibits (filed user manuals)", "claims_supported": 4, "note": "The wave's most valuable source class: Class A manufacturer manuals, stable URLs, no search budget, and reachable when the vendor's own site blocks fetches."},
+    {"domain": "support.getzooz.com and support.konnected.io", "claims_supported": 8, "note": "Both vendors document their no-cloud and cloud-optional positions plainly in their own support centres, which is why both security records verified quickly."},
+    {"domain": "vendor blogs (blog.bambulab.com, anovaculinary.com)", "claims_supported": 2, "note": "Both ledger entries rest on the vendor's own account of what it did, which is the strongest evidence a ledger entry can have."}
+  ],
+  "sources_that_failed": [
+    {"domain": "help.aqara.com", "fetches": 5, "claims_supported": 0, "note": "HTTP 500 on every attempt; cost the FP2 record."},
+    {"domain": "amcrest.com / support.amcrest.com", "fetches": 4, "claims_supported": 0, "note": "403 across the whole domain; cost the non-Reolink indoor camera."},
+    {"domain": "fccid.io/search.php", "fetches": 3, "claims_supported": 0, "note": "The grant pages fetch fine but the search endpoint does not answer automated requests, which is what blocked NOCO sibling control."}
+  ],
+
+  "searches_used": 200,
+  "search_budget_exhausted": true,
+  "wall_clock_min": 61,
+  "subagent_failures": [],
+
+  "surprises": "The run that produced the fewest records taught the most, and both lessons came from running out of something. The search budget hit its cap before the third agent asked a single question, and that agent responded by going to FCC grant exhibits for manufacturer manuals — a Class A source that costs no budget, works when vendor sites block you, and nobody had thought to name in eight previous waves. Separately, the watch job's answer was 'nothing has happened', which is the outcome a catalog like this most wants and the one that looks least like progress on a launch checklist. Both are reminders that the useful finding is often the one the run was not looking for."
+}

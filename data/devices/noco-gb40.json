@@ -1,0 +1,82 @@
+{
+  "model_id": "noco-gb40",
+  "make": "NOCO",
+  "model": "GB40 Boost Plus, 1000A Lithium Jump Starter",
+  "category": "automotive",
+  "subcategory": "jump starter",
+  "tier": "D0",
+  "tier_rationale": "No intentional radiator. NOCO's own product page and its dedicated support/specifications page for this exact model enumerate the device's complete interface: a USB-C charging input, a USB output for charging phones, an LED flashlight, and a single physical button with LED status indicators. That is an exhaustive feature list rather than a page that merely fails to mention wireless — a spec table enumerating every port and control is positive evidence of what the device contains. NOCO also names Bluetooth explicitly in the marketing for the products in its range that have it, so the vendor demonstrably advertises the feature when present. What is NOT available is the stronger sibling-control check PRINCIPLES §3 prefers: NOCO's FCC grantee code found within budget (2BH4L, 2024) covers wireless charging pads and stands rather than the jump-starter line, and no older grantee covering a Bluetooth-equipped NOCO jump starter was located, so the absence of a grant for the GB40 carries no weight here in either direction.",
+  "the_unplug_test": "There is no router to unplug for this device: it has no wireless radio of any kind, per NOCO's own product and support pages. It is a lithium battery, a pair of clamps, a USB-C port, and one button with status LEDs. It jump-starts a car and charges a phone exactly the same whether or not your home network, NOCO's servers, or the internet itself exist.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "none",
+  "works_offline": "fully",
+  "offline_losses": [],
+  "firmware_ota_forced": "no",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "none",
+  "radios": [
+    "none"
+  ],
+  "fcc_id": null,
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "in_stock",
+  "price_band": "$75-100",
+  "price_observed": "2026-09-14",
+  "where_to_buy": [
+    {
+      "name": "NOCO (official store)",
+      "url": "https://no.co/gb40"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://no.co/gb40",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer's current product page: confirms the model is in stock at $99.95, gives the full feature list (1000A peak jump-starting, 24Wh lithium battery, USB-C input, 2.1A USB output, 100-lumen LED flashlight), and contains no mention of Wi-Fi, Bluetooth, an app, or an account anywhere."
+    },
+    {
+      "url": "https://no.co/support/gb40",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Manufacturer's dedicated support/specifications page for this exact model: full spec table (battery capacity, charge times, weight, IP65 rating) with no reference to any wireless connectivity, app, or account, corroborating the product page."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "Sibling control was not established. NOCO's FCC grantee code found within budget (2BH4L, registered 2024) covers only wireless charging pads and stands, and no older NOCO grantee covering a Bluetooth-equipped jump starter or charger was located — fccid.io's search endpoint does not respond to automated fetches. The D0 therefore rests on the manufacturer's own exhaustive feature enumeration rather than on a confirmed absence of a grant. That is sound for a device of this kind, but a grantee-level check would make it stronger, and is the one thing a re-verification pass should do here.",
+    "firmware_ota_forced is set to 'no' by inference (no data-capable port or wireless radio is described, so there is no path for a forced update to arrive through), not from an explicit vendor statement ruling out updates."
+  ],
+  "conflicts_with": null,
+  "notes": "Fills the empty 'jump starter' subcategory in automotive. NOCO also sells a 'Boost X' line (GBX45/55/75/155); its own product page likewise made no mention of Bluetooth or an app despite the 'X' naming, so if NOCO sells a genuinely Bluetooth-connected jump starter (which would be an interesting D1 companion record, cross-referenced against this D0), it was not identified within this run's search budget.",
+  "first_published": "2026-09-14",
+  "last_verified": "2026-09-14",
+  "changelog": [
+    {
+      "date": "2026-09-14",
+      "change": "First published at D0. Fills the previously-empty automotive/jump starter subcategory.",
+      "kind": "listed",
+      "source": "https://no.co/gb40"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-14-discover-wave9",
+    "searches": 0,
+    "failed_fetches": 6
+  },
+  "local_replacement": "not_applicable",
+  "local_replacement_note": null
+}

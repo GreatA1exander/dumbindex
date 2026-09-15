@@ -1,0 +1,106 @@
+{
+  "model_id": "martin-jerry-s01",
+  "make": "Martin Jerry",
+  "model": "S01 Smart Switch (single), model MJ-S01",
+  "category": "lighting",
+  "subcategory": "wall switch",
+  "tier": "D2",
+  "tier_rationale": "The vendor's own FCC-filed user manual requires downloading the Smart Life app and registering a Tuya account before Wi-Fi pairing can even begin, so a real vendor cloud exists and is reached at first Wi-Fi setup. But that same manual lists a physical 'Main Button' that manually turns the switch on/off with no network or account involved at all, independent of the app steps. Installing and using the switch as a wall switch requires no account; the account is needed only for remote/voice-assistant control. That is D2 (cloud-optional, core function works unconnected), not D3.",
+  "the_unplug_test": "Wire it in like any wall switch and it works forever with no account and no network: the physical rocker toggles the relay directly, per Martin Jerry's own manual. Never touch the Smart Life app and you lose nothing but remote control, scheduling, and Alexa/Google voice commands. If you do pair it, losing Wi-Fi later still leaves the physical button working, because the manual documents it as an independent path to the relay, not one routed through the app.",
+  "status": "verified",
+  "rejection_reason": null,
+  "account_required": "app_only",
+  "works_offline": "fully",
+  "offline_losses": [
+    "Wi-Fi/app remote control",
+    "Alexa and Google Assistant voice control",
+    "scheduling and timers set via the app",
+    "away-from-home control"
+  ],
+  "firmware_ota_forced": "unknown",
+  "local_api": [
+    "none"
+  ],
+  "phones_home": "unknown",
+  "radios": [
+    "wifi"
+  ],
+  "fcc_id": "2ANJ7-S01",
+  "fcc_checked": true,
+  "liberation": null,
+  "repairability": {
+    "parts_available": "unknown",
+    "ifixit_score": null,
+    "notes": null
+  },
+  "availability": "limited",
+  "price_band": null,
+  "price_observed": null,
+  "where_to_buy": [
+    {
+      "name": "Amazon (MartinJerry brand, 4-pack listing)",
+      "url": "https://www.amazon.com/dp/B07GSTJ8TV"
+    }
+  ],
+  "affiliate": null,
+  "vendor_risk": 0,
+  "sources": [
+    {
+      "url": "https://fccid.io/2ANJ7-S01/User-Manual/User-manual-3808750",
+      "class": "A",
+      "accessed": "2026-09-14",
+      "supports": "Official user manual filed with the FCC grant for model S01 (FCC ID 2ANJ7-S01, grantee Dongguan MaiJia Intelligent Technology Co., Ltd., branded Martin Jerry on later manual pages and packaging marks). Part 3 requires downloading the Smart Life app and registering a new account (phone or email + password) before Wi-Fi pairing can proceed; no account-free network setup path is documented. Part 1 'Main Features' separately lists 'Manually Turn on/off the plug by the Main Button' as a feature of the physical switch, independent of the app/account steps. Also confirms 2.4GHz-only Wi-Fi and the FCC ID/grantee identity."
+    },
+    {
+      "url": "https://templates.blakadder.com/martin_jerry_MJ-S01.html",
+      "class": "B",
+      "accessed": "2026-09-14",
+      "supports": "Tasmota community device-template page for this exact model (ESP8266, relay on GPIO12, button on GPIO13, status LEDs on GPIO4/5), giving a working local-firmware GPIO map. Cited here to support local_replacement, not the tier."
+    },
+    {
+      "url": "https://github.com/blakadder/templates/commits/master/_templates/martin-jerry-MJ-S01",
+      "class": "B",
+      "accessed": "2026-09-14",
+      "supports": "Commit history for the Tasmota template file: content added 2019-12-14, last substantive content edit 2022-08-19 ('Update martin-jerry-MJ-S01'), most recent touch 2026-01-23 was a repository-wide metadata-key standardization pass rather than device-specific content. Used to support treating the liberation path as community-supported but not actively re-verified, not as a load-bearing 'currently maintained' claim (this record does not rest on D3's maintenance bar)."
+    },
+    {
+      "url": "https://www.martinjerry.com/shop-2",
+      "class": "B",
+      "accessed": "2026-09-14",
+      "supports": "Martin Jerry's own current shop listing (fetched 2026-09-14) sells only newer switches (RP-S01, RP-S02, RP-SD01, RP-ZB-S01/S02) explicitly shipped preflashed with Tasmota or as Zigbee/Matter devices, and does not list the MJ-S01 covered by this record — evidence that MJ-S01 is legacy stock rather than the manufacturer's current focus, noted in open_questions."
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07GSTJ8TV",
+      "class": "C",
+      "accessed": "2026-09-14",
+      "supports": "Current Amazon listing titled 'Smart Switch by MartinJerry | Works with Alexa ... Works with Google Home, No Hub Required ... Single Pole (4 Pack)', establishing the exact model is still sold in the US. Not relied on alone for the tier claim."
+    }
+  ],
+  "alternatives": [],
+  "open_questions": [
+    "Whether MJ-S01 is still actively stocked by Martin Jerry itself or is now Amazon-only legacy inventory: the manufacturer's current shop-2 page lists only newer preflashed-Tasmota and Zigbee/Matter switches (RP- series) and does not include MJ-S01. The Amazon listing (B07GSTJ8TV) matches the product title but full add-to-cart/in-stock status could not be confirmed from the page content retrieved this run.",
+    "firmware_ota_forced and phones_home are left unknown: no source describes whether stock Tuya firmware updates can be declined, or exactly what telemetry is sent to Tuya's cloud once an account is registered.",
+    "This record was found by searching the Tasmota template index for an app-and-account-first Wi-Fi wall switch expected to be D3 — the same trap wave 8 hit with the MOES thermostat and Winix purifier. The manufacturer's own manual documenting a working physical button independent of the app is the fact that moved this to D2 instead; recorded in detail in case a future re-check of this device family is tempted to re-file it as D3 on the strength of the Tasmota project alone."
+  ],
+  "conflicts_with": null,
+  "notes": "Fills out the thin 'wall switch' lighting subcategory, which previously held only the mechanical Lutron Diva SC-1PS (D0) — this gives it a contrasting Wi-Fi/cloud example. Parent OEM per the FCC filing is Dongguan MaiJia Intelligent Technology Co., Ltd.; 'Martin Jerry' is the storefront brand. Martin Jerry's newer RP- series switches ship preflashed with Tasmota from the factory (per templates.blakadder.com metadata: 'flash: preflashed') — those would be D1 as sold, not D2, but were not independently verified as a separate record this run; worth a future look since a factory-preflashed-local-firmware switch would be a notable, easy D1. Availability is 'limited' rather than 'in_stock': Martin Jerry's own current shop lists only the newer RP-series switches and not the MJ-S01, so what remains appears to be third-party retail stock. The successor line is the more interesting lead — those ship preflashed with Tasmota or Zigbee from the factory, which would make them D1 as sold rather than D2 needing liberation.",
+  "first_published": "2026-09-14",
+  "last_verified": "2026-09-14",
+  "changelog": [
+    {
+      "date": "2026-09-14",
+      "change": "First published at D2. Seeded as a candidate D3 (Wi-Fi wall switch with an active Tasmota community project) but the manufacturer's own FCC-filed manual documents a physical button that operates the relay with no account or network involved, which is D2's decision-table row, not D3's.",
+      "kind": "listed",
+      "source": "https://fccid.io/2ANJ7-S01/User-Manual/User-manual-3808750"
+    }
+  ],
+  "agent_meta": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "tier-quota-v1 + seeded-candidates",
+    "run_id": "2026-09-14-discover-wave9",
+    "searches": 0,
+    "failed_fetches": 9
+  },
+  "local_replacement": "full",
+  "local_replacement_note": "Tasmota, flashed onto the ESP8266 (relay GPIO12, button GPIO13, per the community template), replaces the Smart Life app with local HTTP/MQTT control and no Tuya account. The template's last substantive content update was 2022-08-19, so treat it as community-supported rather than under active development."
+}

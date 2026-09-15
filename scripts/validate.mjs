@@ -164,6 +164,30 @@ for (const f of files) {
   // handed to a wave-8 agent as a template and the defect was faithfully copied into
   // ge-dishwashers-non-connected. Published records become templates; this is the check
   // that stops one bad one propagating.
+  // "unknown is publishable, a wrong value is not" is a stated invariant, and agents keep
+  // breaking it the same way: filling a field they could not source and calling the guess
+  // a "conservative default" in the open questions. Three times in two waves, always on
+  // phones_home. If a record admits a value is a default, the honest value is `unknown`.
+  //
+  // Checking the named field's ACTUAL value matters, and is not pedantry — a record that
+  // was already corrected describes the same phrase historically ("was briefly set to
+  // 'analytics' as a cautious default, but no source confirmed it, so it is unknown"),
+  // and failing that would punish the fix.
+  {
+    const admits = /\b(conservative|cautious|safe|precautionary|sensible|reasonable)\s+default\b/i;
+    const guessable = ["phones_home", "firmware_ota_forced", "account_required", "works_offline", "local_replacement", "local_api"];
+    for (const q of d.open_questions ?? []) {
+      if (!admits.test(q)) continue;
+      for (const field of guessable) {
+        if (!q.includes(field)) continue;
+        const val = d[field];
+        const isUnknown = val === "unknown" || (Array.isArray(val) && val.every((x) => x === "unknown"));
+        if (val != null && !isUnknown)
+          E(`open question calls ${field} a default, but ${field} is "${Array.isArray(val) ? val.join(",") : val}" — a value you admit you guessed must be "unknown". Source it or leave it unknown`);
+      }
+    }
+  }
+
   if (d.status === "verified") {
     const names = /should\s+(?:move\s+to|be\s+(?:filed|recorded|reclassified|scored)\s+(?:as|at)\s*)\s*(D0|D1|D2|D3|REJECT)\b/i;
     for (const q of d.open_questions ?? []) {
