@@ -272,6 +272,34 @@ documented incident cannot be scored 0 regardless of how good the current produc
 that accepts forced OTA is a D2 device only until the vendor decides otherwise. Say so
 on the page.
 
+### Forced security patches: motive is not the test, loss of function is
+
+*Adopted 2026-09-14, after the question was carried unresolved through four waves. It
+arose over QNAP, which has force-pushed firmware to shipped NAS units in response to
+ransomware campaigns, and the answer applies to far more vendors than QNAP.*
+
+A vendor reaching into a device you own without asking, and a vendor taking something
+away from you, are two different facts. They are both worth knowing and this schema
+already has a home for each — so do not collapse them:
+
+- **A forced update that removes no function is not a ledger incident.** It is
+  `firmware_ota_forced: yes` on the device record, which already says exactly the thing a
+  reader needs to know: this vendor can and does change your device without your consent.
+  Do not put it in the ledger, and do not raise `vendor_risk` for it.
+- **A forced update that does remove function is a ledger incident**, scored on the
+  normal scale. Record the security motive in the incident description — but score the
+  loss, not the motive.
+
+The reason for the split is what it lets a reader tell apart. "This vendor monetises the
+device you bought" and "this vendor will reach into it without asking" call for different
+decisions: the first is a reason not to buy, the second is a reason to buy it and keep it
+off the internet. A ledger that scored both the same would tell you neither.
+
+Note the consequence, because it looks wrong at first glance: a vendor can be scored 0
+and still be one you would not connect to a network. `vendor_risk 0` means "no documented
+removal of function", not "safe". `firmware_ota_forced` carries the rest, which is why
+the field above is described the way it is.
+
 ---
 
 ## 5b. Family records — when a model number is the wrong answer

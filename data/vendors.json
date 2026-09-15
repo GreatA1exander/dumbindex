@@ -5,7 +5,8 @@
     "1": "One disputed or narrow incident, or a pattern alleged but not established.",
     "2": "At least one established incident of shipped devices losing function.",
     "3": "Repeated, established, cross-jurisdiction pattern of removing function from devices already sold.",
-    "_note_on_misrepresentation": "Loss of function is the primary axis, but it is not the only one that matters to this catalog. A vendor caught misrepresenting whether its device operates locally has attacked the exact claim this site exists to check, and scores here on the same scale — a device that was never doing what the box said is not meaningfully different, to a reader, from one that stopped."
+    "_note_on_misrepresentation": "Loss of function is the primary axis, but it is not the only one that matters to this catalog. A vendor caught misrepresenting whether its device operates locally has attacked the exact claim this site exists to check, and scores here on the same scale — a device that was never doing what the box said is not meaningfully different, to a reader, from one that stopped.",
+    "_note_on_forced_security_patches": "Motive is not the test; loss of function is. A forced update that removes NO function is not an incident and does not belong here — it is firmware_ota_forced on the device record, which already tells a reader the vendor can change their device without consent. A forced update that DOES remove function is an incident, scored on the normal scale, with the security motive recorded in the description rather than discounted from the score. Adopted 2026-09-14 over QNAP; applies to every vendor. The consequence is deliberate: a vendor can sit at 0 here and still be one you would keep off the internet, because 0 means \"no documented removal of function\", not \"safe\"."
   },
   "vendors": {
     "brother": {
@@ -116,6 +117,28 @@
         }
       ],
       "verdict": "Assume any networked HP printer may lose third-party cartridge support via an update you cannot decline. Only models explicitly covered by the 2025 settlement have a documented opt-out."
+    },
+    "qnap": {
+      "name": "QNAP Systems",
+      "vendor_risk": 2,
+      "summary": "Force-installed firmware on NAS units whose owners had switched automatic updates off, and that update cost some of them working function. The motive was a live ransomware campaign, which is recorded here rather than discounted — but the reader's takeaway is different in kind from HP or Sonos: this is not a vendor monetising hardware you bought, it is a vendor that will reach into it without asking.",
+      "incidents": [
+        {
+          "date": "2022-01",
+          "type": "forced_firmware_removed_function",
+          "description": "During the DeadBolt ransomware campaign, which had encrypted roughly 3,600 internet-exposed units, QNAP force-installed firmware 5.0.0.1891 on customer NAS devices — including, per owner and admin reports, on devices where automatic updates had been explicitly disabled. QNAP confirmed to BleepingComputer that it forced the install, citing a remote-code-execution flaw fixed in that build. Two losses followed for some owners: iSCSI connections stopped working after the update, and users who had bought a decryption key and were mid-recovery found the update had removed the ransomware executable and ransom screen, leaving them unable to finish decrypting their own data. The security motive is real and is why this is scored 2 rather than higher; the loss of function is why it is scored at all.",
+          "source": "https://www.bleepingcomputer.com/news/security/qnap-force-installs-update-after-deadbolt-ransomware-hits-3-600-devices/",
+          "class": "B"
+        },
+        {
+          "date": "2022-01-26",
+          "type": "vendor_advisory",
+          "description": "QNAP's own DeadBolt security advisory (QSA-22-02), confirming the campaign, the affected QTS versions and the company's instruction to update immediately and to disable internet-facing access — the vendor-side record of the event above.",
+          "source": "https://www.qnap.com/en-us/security-advisory/qsa-22-02",
+          "class": "A"
+        }
+      ],
+      "verdict": "Buy it, then keep it off the open internet — which is what you should do with any NAS, and what QNAP's own advisory tells you to do. The hardware is not the risk and nothing here is subscription-driven: a QNAP NAS still administers entirely from its local web interface with no account. What the ledger records is that the update channel is not yours to control, so assume any QNAP firmware can arrive unasked. That is a reason to firewall it, not a reason to avoid it."
     },
     "ring": {
       "name": "Ring (Amazon)",

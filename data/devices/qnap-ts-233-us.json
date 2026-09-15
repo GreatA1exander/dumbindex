@@ -16,7 +16,7 @@
     "App Center package downloads and firmware update checks (a firmware file can still be applied manually if downloaded elsewhere)",
     "Any QNAP first-party apps that themselves depend on an internet service (e.g. some backup/sync apps)"
   ],
-  "firmware_ota_forced": "unknown",
+  "firmware_ota_forced": "yes",
   "local_api": [
     "rest",
     "unknown"
@@ -43,7 +43,7 @@
     }
   ],
   "affiliate": null,
-  "vendor_risk": 0,
+  "vendor_risk": 2,
   "sources": [
     {
       "url": "https://docs.qnap.com/operating-system/qts/5.1.x/en-us/initializing-qts-using-the-cloud-installation-website-72BF4E0D.html",
@@ -69,12 +69,11 @@
   ],
   "open_questions": [
     "Whether myQNAPcloud Link/remote-connect is truly opt-in from a cold boot on a brand-new unit, or whether some current QTS versions nudge/require it during the very first Smart Installation Guide screen before it can be dismissed — sources describe it as disabled-by-default post-initialization but the first-run flow itself (Smart Installation Guide) was not traced screen-by-screen.",
-    "Whether firmware updates can be fully declined/blocked (firmware_ota_forced) — not established from documentation searched; QNAP has shipped many out-of-band security patches historically, but whether any can be forced without owner action was not confirmed.",
     "Exact local_api surface (QNAP has a documented REST-ish API for some apps, e.g. Container Station, File Station) was not itemized.",
-    "QNAP has no entry in data/vendors.json. It has a public history of NAS-targeting ransomware campaigns and periodic critical CVEs, which is a security-posture issue rather than a vendor-conduct (feature removal) issue and was not scored here; a dedicated vendor-ledger review is worth doing given how much surface a NAS's own software exposes."
+    "firmware_ota_forced is now 'yes' on the strength of the January 2022 DeadBolt response, where QNAP force-installed 5.0.0.1891 on units with automatic updates switched off. What is still not established is whether that was a one-off emergency power or the normal behaviour of the update channel — i.e. whether a QTS unit with auto-update disabled is reliably left alone in ordinary times. Treat 'yes' as the safe reading until someone documents the mechanism."
   ],
   "conflicts_with": null,
-  "notes": "The 2-bay TS-233-US: Ethernet-only, no radio in the base unit, and administered via the local QTS web interface. Distinguish this from QNAP's higher-end models that add Wi-Fi or additional cloud-tied apps by default — this record covers the TS-233-US specifically, not the wider QNAP catalog.",
+  "notes": "The 2-bay TS-233-US: Ethernet-only, no radio in the base unit, and administered via the local QTS web interface. Distinguish this from QNAP's higher-end models that add Wi-Fi or additional cloud-tied apps by default — this record covers the TS-233-US specifically, not the wider QNAP catalog. On vendor conduct: QNAP is in the ledger at 2 for the January 2022 forced firmware install, which overrode owners' disabled auto-update setting and cost some of them iSCSI and, mid-recovery, the ability to finish decrypting their own data. That does not touch this tier — the NAS still administers entirely from its local web interface with no vendor account, which is what D2 describes. It is a reason to keep the unit off the open internet, which QNAP's own advisory also recommends.",
   "first_published": "2026-09-03",
   "last_verified": "2026-09-03",
   "changelog": [
@@ -89,6 +88,12 @@
       "change": "account_required corrected for_setup -> none. The record's own reasoning established that the only mandatory account is a local administrator credential on the NAS; 'for_setup' means a VENDOR account and is a REJECT trigger, so the field contradicted the D2 it was filed under.",
       "kind": "correction",
       "source": "https://docs.qnap.com/operating-system/qts/5.1.x/en-us/initializing-qts-using-the-cloud-installation-website.html"
+    },
+    {
+      "date": "2026-09-14",
+      "change": "vendor_risk 0 -> 2 and firmware_ota_forced unknown -> yes, applying the newly adopted rule on forced security patches: the forced install alone would have been firmware_ota_forced only, but it removed function from shipped devices, which is a ledger incident regardless of motive. Tier unchanged at D2.",
+      "source": "https://www.bleepingcomputer.com/news/security/qnap-force-installs-update-after-deadbolt-ransomware-hits-3-600-devices/",
+      "kind": "vendor_incident"
     }
   ],
   "agent_meta": {
